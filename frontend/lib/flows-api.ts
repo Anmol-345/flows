@@ -1,5 +1,5 @@
 function getApiBase(): string {
-  let env = (process.env.NEXT_PUBLIC_FLOWS_API || '').trim().replace(/^["']|["']$/g, '');
+  let env = (process.env.NEXT_PUBLIC_FLOWS_API || process.env.NEXT_PUBLIC_GROWSTREAMS_API || 'https://growstreams-v3-production.up.railway.app').trim().replace(/^["']|["']$/g, '');
   if (!env) return '';
   if (!env.startsWith('http://') && !env.startsWith('https://')) {
     env = `https://${env}`;

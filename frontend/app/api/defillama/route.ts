@@ -3,7 +3,7 @@
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const SLUGS = ['FLOWS-payments', 'FLOWS-perps'];
+const SLUGS = ['growstreams-payments', 'growstreams-perps'];
 
 async function j(url: string) {
   const r = await fetch(url, { cache: 'no-store' });
@@ -15,8 +15,8 @@ async function j(url: string) {
 export async function GET() {
   try {
     const [pay, perps, dexVara, feesVara] = await Promise.all([
-      j('https://api.llama.fi/protocol/FLOWS-payments'),
-      j('https://api.llama.fi/protocol/FLOWS-perps').catch(() => null),
+      j('https://api.llama.fi/protocol/growstreams-payments'),
+      j('https://api.llama.fi/protocol/growstreams-perps').catch(() => null),
       j('https://api.llama.fi/overview/dexs/vara?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true').catch(() => null),
       j('https://api.llama.fi/overview/fees/vara?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true').catch(() => null),
     ]);
