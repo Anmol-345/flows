@@ -54,7 +54,7 @@ export function NetworkSection() {
             Value that grows at the speed of a block.
           </h2>
           <p style={{ fontSize: "18px", color: "#475569", maxWidth: "600px", margin: "0 auto", lineHeight: 1.6 }}>
-            GrowStreams streams rewards to contributors continuously on-chain. No middlemen, no delays.
+            Flows streams rewards to contributors continuously on-chain. No middlemen, no delays.
           </p>
         </div>
 

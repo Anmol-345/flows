@@ -2,8 +2,8 @@ FROM rust:latest
 
 WORKDIR /build
 
-COPY m1_beta_extracted/GrowStreams_Backend-M1-beta/contracts/token-vault/ ./token-vault/
-COPY m1_beta_extracted/GrowStreams_Backend-M1-beta/contracts/stream-core/ ./stream-core/
+COPY m1_beta_extracted/Flows_Backend-M1-beta/contracts/token-vault/ ./token-vault/
+COPY m1_beta_extracted/Flows_Backend-M1-beta/contracts/stream-core/ ./stream-core/
 
 RUN cat > /build/Cargo.toml << 'EOF'
 [workspace]

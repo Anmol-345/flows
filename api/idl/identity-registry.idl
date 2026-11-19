@@ -1,4 +1,4 @@
-// GrowStreams V1 — Identity Registry (Carried Forward)
+﻿// FLOWS V1 â€” Identity Registry (Carried Forward)
 // Binds GitHub identities to on-chain actor IDs with verification scores
 // Originally from: Vara-_Github_MVP/contracts/identity-registry.idl
 
@@ -49,3 +49,4 @@ service IdentityService {
     };
   }
 };
+

@@ -1,4 +1,4 @@
-#![no_std]
+﻿#![no_std]
 #![allow(static_mut_refs)]
 
 use sails_rs::{
@@ -7,7 +7,7 @@ use sails_rs::{
     prelude::*,
 };
 
-pub const MAX_MOVE_BPS: u64 = 800; // ±8% bounded oracle move guardrail
+pub const MAX_MOVE_BPS: u64 = 800; // Â±8% bounded oracle move guardrail
 /// Positions can only open/close against an oracle price pushed within this window.
 pub const MAX_ORACLE_AGE_SECS: u64 = 6 * 60 * 60;
 pub const BPS: u128 = 10_000;
@@ -177,7 +177,7 @@ impl StonkBaseService {
 
 #[service]
 impl StonkBaseService {
-    // --- 24/7 Bounded Oracle (±8% / 800 bps maxMoveBps) ---
+    // --- 24/7 Bounded Oracle (Â±8% / 800 bps maxMoveBps) ---
     #[export]
     pub fn push_oracle_prices(
         &mut self,
@@ -240,7 +240,7 @@ impl StonkBaseService {
         let order_id = state.next_order_id;
         state.next_order_id += 1;
 
-        // Notify GrowStreams TokenVault to reserve maker orderbook liquidity allocation
+        // Notify FLOWS TokenVault to reserve maker orderbook liquidity allocation
         let _ = msg::send(
             state.token_vault,
             ("VaultService", "ReserveOrderMargin", maker, amount_vara),
@@ -290,7 +290,7 @@ impl StonkBaseService {
         let maker_rebate = (fee_vara * 25) / 30;
         let protocol_fee = fee_vara.saturating_sub(maker_rebate);
 
-        // Route settlement & fee split through GrowStreams TokenVault & SplitsRouter
+        // Route settlement & fee split through FLOWS TokenVault & SplitsRouter
         let _ = msg::send(
             state.token_vault,
             (
@@ -328,7 +328,7 @@ impl StonkBaseService {
         trade_id
     }
 
-    // --- 1x–5x Stock & Perps Desk in gVARA (Perps Volume & Open Interest) ---
+    // --- 1xâ€“5x Stock & Perps Desk in gVARA (Perps Volume & Open Interest) ---
     #[export]
     pub fn open_stock_position(
         &mut self,
@@ -346,7 +346,7 @@ impl StonkBaseService {
         let now = exec::block_timestamp() / 1000;
         let lev = leverage.clamp(1, 5);
         let notional = margin_gvara.saturating_mul(lev as u128);
-        // SECURITY: no silent $100 default — a fresh oracle price must exist for this ticker.
+        // SECURITY: no silent $100 default â€” a fresh oracle price must exist for this ticker.
         let feed = state.feeds.get(&ticker).expect("No oracle feed for ticker");
         assert!(feed.fair_value_e8 > 0, "Oracle price is zero");
         assert!(now.saturating_sub(feed.updated_at) <= MAX_ORACLE_AGE_SECS, "Oracle price is stale");
@@ -356,7 +356,7 @@ impl StonkBaseService {
         state.next_pos_id += 1;
         let exec_fee = notional.saturating_mul(PERPS_FEE_BPS) / BPS;
 
-        // Lock gVARA margin collateral & collect 10 bps execution fee via GrowStreams TokenVault
+        // Lock gVARA margin collateral & collect 10 bps execution fee via FLOWS TokenVault
         let _ = msg::send(
             state.token_vault,
             (
@@ -483,3 +483,4 @@ impl StonkBaseService {
         }
     }
 }
+

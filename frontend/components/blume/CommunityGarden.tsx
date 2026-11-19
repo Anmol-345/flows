@@ -167,7 +167,7 @@ export function CommunityGardenSection() {
           </div>
           
           <p className="engine-desc">
-            Plug GrowStreams into any smart contract or dApp on Vara Network. Stream creation, milestone vesting, and gasless withdrawals require zero lockup and zero custodial risk.
+            Plug Flows into any smart contract or dApp on Vara Network. Stream creation, milestone vesting, and gasless withdrawals require zero lockup and zero custodial risk.
           </p>
 
           <div className="engine-tags">

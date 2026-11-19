@@ -1,4 +1,4 @@
-// GrowStreams V2 — PermissionManager IDL
+﻿// FLOWS V2 â€” PermissionManager IDL
 // Delegate roles and app-level permissions for stream management
 
 type Permission = struct {
@@ -47,3 +47,4 @@ service PermissionService {
     AllPermissionsRevoked: struct { granter: actor_id, grantee: actor_id, timestamp: u64 };
   }
 };
+

@@ -1,47 +1,47 @@
-# GrowStreams Agentic Layer — Implementation Plan
-### "The Network School for AI Agents" — Learn / Earn / Burn
+﻿# FLOWS Agentic Layer â€” Implementation Plan
+### "The Network School for AI Agents" â€” Learn / Earn / Burn
 
 ---
 
 ## 1. Architecture & Data Flow Diagram
 
 ```
-┌──────────────────────────────────────────────────────────────────────────┐
-│                            /agentic (Next.js 15)                         │
-│  LearnTerminal.tsx   EarnBountyBoard.tsx   BurnStreamTracker.tsx         │
-│        │                     │                        │                  │
-│        └────────── useAgenticStore (Zustand) ──────────┘                 │
-│                              │                                            │
-│              WalletProvider (SubWallet / Polkadot.js)                    │
-│                              │                                            │
-│                 React Query hooks (SWR-style polling/streaming)          │
-└───────────────┬───────────────────────────┬──────────────────────────────┘
-                │ REST/JSON                 │ SDK direct-to-chain (signed tx)
-                ▼                            ▼
-┌───────────────────────────────┐  ┌───────────────────────────────────────┐
-│   api/ (Express)               │  │  @growstreams/sdk (sails-js)          │
-│  /routes/agentic/*             │  │  sdk.learn.startSession()             │
-│  /services/session-metering    │  │  sdk.earn.submitBounty()              │
-│  /services/evaluator-webhook   │  │  sdk.burn.reportPR() → create_stream  │
-│  /services/credit-accounting   │  └───────────────┬───────────────────────┘
-└───────────────┬─────────────────────────────────────┘ signed extrinsic
-                │ writes                                 ▼
-                ▼                          ┌───────────────────────────────┐
-     ┌────────────────────┐                │  Gear Sails Contracts (Vara)  │
-     │  Supabase Postgres  │◄───event sub───┤  StreamCore  |  TokenVault    │
-     │  agent_sessions      │   (indexer)   └───────────────────────────────┘
-     │  agent_bounties       │
-     │  oss_contributions    │
-     └──────────┬────────────┘
-                │ Supabase Realtime (postgres_changes)
-                ▼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚                            /agentic (Next.js 15)                         â”‚
+â”‚  LearnTerminal.tsx   EarnBountyBoard.tsx   BurnStreamTracker.tsx         â”‚
+â”‚        â”‚                     â”‚                        â”‚                  â”‚
+â”‚        â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ useAgenticStore (Zustand) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜                 â”‚
+â”‚                              â”‚                                            â”‚
+â”‚              WalletProvider (SubWallet / Polkadot.js)                    â”‚
+â”‚                              â”‚                                            â”‚
+â”‚                 React Query hooks (SWR-style polling/streaming)          â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                â”‚ REST/JSON                 â”‚ SDK direct-to-chain (signed tx)
+                â–¼                            â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚   api/ (Express)               â”‚  â”‚  @FLOWS/sdk (sails-js)          â”‚
+â”‚  /routes/agentic/*             â”‚  â”‚  sdk.learn.startSession()             â”‚
+â”‚  /services/session-metering    â”‚  â”‚  sdk.earn.submitBounty()              â”‚
+â”‚  /services/evaluator-webhook   â”‚  â”‚  sdk.burn.reportPR() â†’ create_stream  â”‚
+â”‚  /services/credit-accounting   â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ signed extrinsic
+                â”‚ writes                                 â–¼
+                â–¼                          â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”                â”‚  Gear Sails Contracts (Vara)  â”‚
+     â”‚  Supabase Postgres  â”‚â—„â”€â”€â”€event subâ”€â”€â”€â”¤  StreamCore  |  TokenVault    â”‚
+     â”‚  agent_sessions      â”‚   (indexer)   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+     â”‚  agent_bounties       â”‚
+     â”‚  oss_contributions    â”‚
+     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                â”‚ Supabase Realtime (postgres_changes)
+                â–¼
    UI re-renders: live credit ticker, bounty status, stream $/sec counter
 ```
 
 **Lifecycle trace (Burn path, most complex):**
-1. Agent/dev opens PR on a tracked OSS repo → GitHub webhook hits `api/routes/agentic/webhooks/github.ts`.
-2. `evaluator-webhook.service.ts` pulls diff, sends to GPT-4o-mini scoring prompt → produces `qualityScore`, `linesOfImpact`.
-3. Score ≥ threshold → `credit-accounting.service.ts` computes payout rate → calls `sdk.burn.reportPR()`.
+1. Agent/dev opens PR on a tracked OSS repo â†’ GitHub webhook hits `api/routes/agentic/webhooks/github.ts`.
+2. `evaluator-webhook.service.ts` pulls diff, sends to GPT-4o-mini scoring prompt â†’ produces `qualityScore`, `linesOfImpact`.
+3. Score â‰¥ threshold â†’ `credit-accounting.service.ts` computes payout rate â†’ calls `sdk.burn.reportPR()`.
 4. SDK builds a sails-js message to `StreamCore.create_stream(recipient, ratePerSec, duration)`, signs with the **treasury/service account** (agents don't need their own gas for automated payouts), submits to Vara testnet.
 5. A long-running **Gear event listener** (`api/src/services/chain-indexer.ts`, node-cron or persistent subscription) picks up `StreamCreated`/`StreamClaimed` events, upserts into `oss_contributions` + a `streams` mirror table in Supabase.
 6. Supabase Realtime channel pushes the change; `/agentic` Burn tab's `useLiveStream` hook updates the per-second ticker client-side by interpolating between indexed checkpoints (no server round-trip needed for the animation itself).
@@ -57,7 +57,7 @@
 | `layout.tsx` | Wrap children in `<WalletProvider>` + `<QueryClientProvider>`. |
 | `providers.tsx` **(new)** | `WalletProvider` (SubWallet/Polkadot.js extension detection, account selection, session persistence in cookie). |
 | `store/useAgenticStore.ts` **(new)** | Zustand store: `{ wallet, activeSession, activeBounty, streamCache }`. |
-| `hooks/useLiveStream.ts` **(new)** | React Query hook, see §4. |
+| `hooks/useLiveStream.ts` **(new)** | React Query hook, see Â§4. |
 | `hooks/useLearnSession.ts` **(new)** | Mutations: `startSession`, `submitAnswer`, `endSession`. |
 | `hooks/useBounties.ts` **(new)** | Query: list/filter bounties; mutation: `claimBounty`. |
 | `loading.tsx`, `error.tsx` **(new)** | Standard Next.js boundaries. |
@@ -85,17 +85,17 @@
 |---|---|
 | `session-metering.service.ts` **(new)** | Tracks token usage per Learn session, converts to credits, writes `agent_sessions.credits_earned`. |
 | `evaluator-webhook.service.ts` **(new)** | GitHub signature verification, diff fetch, GPT-4o-mini scoring call, returns `{score, summary}`. |
-| `credit-accounting.service.ts` **(new)** | Central ledger logic: Learn credits, Earn payouts, Burn stream rates — single source of truth so contract calls and Supabase stay consistent. |
+| `credit-accounting.service.ts` **(new)** | Central ledger logic: Learn credits, Earn payouts, Burn stream rates â€” single source of truth so contract calls and Supabase stay consistent. |
 | `chain-indexer.service.ts` **(new)** | Persistent Gear event subscription (or cron-polled `getBlockEvents`), upserts `streams`, `bounty_claims`. |
-| `sails.service.ts` **(new)** | Wraps `@growstreams/sdk` server-side with the treasury keypair for automated `create_stream` calls. |
+| `sails.service.ts` **(new)** | Wraps `@FLOWS/sdk` server-side with the treasury keypair for automated `create_stream` calls. |
 
 ### `sdk/src/`
 | File | Change |
 |---|---|
-| `client.ts` | Add `learn`, `earn`, `burn` namespaces to `GrowStreamsClient`. |
-| `modules/learn.ts` **(new)** | `startSession()`, `submitAnswer()`, `getCredits()` — thin HTTP wrappers (Learn has no on-chain component by default). |
-| `modules/earn.ts` **(new)** | `listBounties()`, `claimBounty()` — builds sails-js message to `TokenVault.release_bounty`. |
-| `modules/burn.ts` **(new)** | `reportPR()`, `createStream()`, `getStream()` — builds sails-js message to `StreamCore.create_stream` / `.claim_stream`. |
+| `client.ts` | Add `learn`, `earn`, `burn` namespaces to `FLOWSClient`. |
+| `modules/learn.ts` **(new)** | `startSession()`, `submitAnswer()`, `getCredits()` â€” thin HTTP wrappers (Learn has no on-chain component by default). |
+| `modules/earn.ts` **(new)** | `listBounties()`, `claimBounty()` â€” builds sails-js message to `TokenVault.release_bounty`. |
+| `modules/burn.ts` **(new)** | `reportPR()`, `createStream()`, `getStream()` â€” builds sails-js message to `StreamCore.create_stream` / `.claim_stream`. |
 | `types.ts` | Add `AgentSession`, `Bounty`, `StreamHandle`, `PRContribution` interfaces. |
 | `idl/` | Ensure `StreamCore.idl`/`TokenVault.idl` are current; regenerate sails-js types via `sails-js-cli generate`. |
 
@@ -103,36 +103,36 @@
 
 ## 3. Step-by-Step Execution Phases
 
-### Phase 1 — Backend & Indexing Setup
-1. Write Supabase migrations for `agent_sessions`, `agent_bounties`, `oss_contributions`, plus mirror tables `streams`, `bounty_claims` (see §4 for schemas).
+### Phase 1 â€” Backend & Indexing Setup
+1. Write Supabase migrations for `agent_sessions`, `agent_bounties`, `oss_contributions`, plus mirror tables `streams`, `bounty_claims` (see Â§4 for schemas).
 2. Enable Row Level Security: users read their own sessions/claims; service role writes.
 3. Enable Supabase Realtime on all four tables (`ALTER PUBLICATION supabase_realtime ADD TABLE ...`).
 4. Stand up `chain-indexer.service.ts` as a long-lived worker (separate PM2/Docker process from the API, not inline in request handlers) subscribing to `StreamCreated`, `StreamClaimed`, `BountyReleased` Gear events.
 5. Add a node-cron reconciliation job (every 5 min) that re-fetches recent blocks to catch any missed events from the subscription.
 
-### Phase 2 — SDK Client Extensions
+### Phase 2 â€” SDK Client Extensions
 1. Regenerate sails-js typed clients from the latest `.idl` files for `StreamCore`/`TokenVault`.
 2. Implement `modules/burn.ts::createStream` as a typed transaction builder returning an unsigned extrinsic + a `.signAndSend()` helper, so both the frontend (user-signed) and backend (treasury-signed) paths reuse the same builder.
 3. Add `sdk.estimateGas()` helpers so the frontend can show fee previews before signing.
-4. Version bump `@growstreams/sdk`, publish to the monorepo's internal package registry/workspace link.
+4. Version bump `@FLOWS/sdk`, publish to the monorepo's internal package registry/workspace link.
 
-### Phase 3 — `/agentic` UI Dynamic Wiring
+### Phase 3 â€” `/agentic` UI Dynamic Wiring
 1. Implement `WalletProvider` with `@polkadot/extension-dapp` (`web3Enable`, `web3Accounts`, `web3FromAddress`).
-2. Swap all three tab components from static arrays to React Query hooks (§2 table).
+2. Swap all three tab components from static arrays to React Query hooks (Â§2 table).
 3. Add optimistic UI updates for `claimBounty`/`startSession` (mutate cache immediately, reconcile on tx confirmation).
 4. Wire `TxStatusToast` to a global mutation observer so any pending extrinsic across tabs shows consistent status.
 
-### Phase 4 — Agent Evaluator & Webhook Automation
-1. Register GitHub App/webhook on tracked repos → `POST /api/agentic/burn/webhooks/github` on `pull_request.closed` (merged=true).
+### Phase 4 â€” Agent Evaluator & Webhook Automation
+1. Register GitHub App/webhook on tracked repos â†’ `POST /api/agentic/burn/webhooks/github` on `pull_request.closed` (merged=true).
 2. `evaluator-webhook.service.ts` fetches diff via GitHub API, builds a scoring prompt, calls GPT-4o-mini, parses structured JSON score.
-3. If score passes threshold, `credit-accounting.service.ts` computes `ratePerSec` and calls `sails.service.ts::createStream` with the treasury account — fully automated, no human signer needed for standard payouts above/below configurable caps (large payouts route to a manual-approval queue instead).
-4. Indexer picks up the resulting `StreamCreated` event and closes the loop into Supabase → UI.
+3. If score passes threshold, `credit-accounting.service.ts` computes `ratePerSec` and calls `sails.service.ts::createStream` with the treasury account â€” fully automated, no human signer needed for standard payouts above/below configurable caps (large payouts route to a manual-approval queue instead).
+4. Indexer picks up the resulting `StreamCreated` event and closes the loop into Supabase â†’ UI.
 
 ---
 
 ## 4. Code Drafts for Critical Junctions
 
-### 4.1 React Query hook — live per-second streaming ticker
+### 4.1 React Query hook â€” live per-second streaming ticker
 
 ```typescript
 // frontend/src/app/agentic/hooks/useLiveStream.ts
@@ -222,7 +222,7 @@ export function useLiveStream(streamId: string) {
 }
 ```
 
-### 4.2 API route — PR verification → `StreamCore.create_stream`
+### 4.2 API route â€” PR verification â†’ `StreamCore.create_stream`
 
 ```typescript
 // api/src/routes/agentic/burn.ts
@@ -425,6 +425,6 @@ alter publication supabase_realtime add table agent_sessions, agent_bounties, os
 ---
 
 ### Notes / Open Decisions
-- **Treasury signer custody**: automated `create_stream` calls need a hot-wallet keypair in the API service — store via a secrets manager (not `.env` in plain text), and keep the `AUTO_APPROVE_CAP_USD` gate as the primary risk control.
-- **Learn tab on-chain footprint**: as scoped here, Learn credits are off-chain (Supabase ledger) until redeemed; redemption into on-chain tokens would call `TokenVault` separately — flag if you want that wired now vs. later.
+- **Treasury signer custody**: automated `create_stream` calls need a hot-wallet keypair in the API service â€” store via a secrets manager (not `.env` in plain text), and keep the `AUTO_APPROVE_CAP_USD` gate as the primary risk control.
+- **Learn tab on-chain footprint**: as scoped here, Learn credits are off-chain (Supabase ledger) until redeemed; redemption into on-chain tokens would call `TokenVault` separately â€” flag if you want that wired now vs. later.
 - **Indexer resilience**: run `chain-indexer.service.ts` as its own process with restart policies; a missed-event window is covered by the 5-minute reconciliation cron in Phase 1.

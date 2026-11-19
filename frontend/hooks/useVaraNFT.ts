@@ -60,7 +60,7 @@ export function useVaraNFT() {
 
     try {
       const metadata = {
-        name: `GrowStreams Scorecard - ${scoreData.githubId}`,
+        name: `Flows Scorecard - ${scoreData.githubId}`,
   description: `Web3 Contribution Score: ${scoreData.overallScore}`,
         image: `ipfs://${scoreData.cid}/image.png`, // TODO: Generate scorecard image
         attributes: [

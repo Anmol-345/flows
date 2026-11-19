@@ -1,4 +1,4 @@
-/* GrowStreams GSAP Scroll-Triggered UI */
+﻿/* FLOWS GSAP Scroll-Triggered UI */
 (function () {
   'use strict';
 
@@ -184,3 +184,4 @@
     loadGSAP(init);
   }
 })();
+

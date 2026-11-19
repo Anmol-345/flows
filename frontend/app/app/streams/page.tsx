@@ -2,11 +2,11 @@
 
 import { useEffect, useState, useCallback, FormEvent } from 'react';
 import Link from 'next/link';
-import { type StreamData } from '@/lib/growstreams-api';
+import { type StreamData } from '@/lib/flows-api';
 import {
   useStreamActions,
   useUnifiedVaraAccount,
-} from '@/hooks/useGrowStreams';
+} from '@/hooks/useFlows';
 import {
   MAINNET_CONTRACTS,
   ZERO_ACTOR_ID,
@@ -41,7 +41,7 @@ const GROW_TOKEN = MAINNET_CONTRACTS.growToken;
 const GVARA_TOKEN = MAINNET_CONTRACTS.gvaraV3;
 const MIN_BUFFER_SECONDS = 3600;
 const ONE_UNIT = 1_000_000_000_000;
-const USER_STREAMS_KEY = 'growstreams_user_streams_v3';
+const USER_STREAMS_KEY = 'flows_user_streams_v3';
 
 const LIVE_MAINNET_STREAMS: (StreamData & { blockHash?: string; isV3?: boolean })[] = [
   {
@@ -204,7 +204,7 @@ export default function StreamsPage() {
       try {
         const raw = localStorage.getItem(USER_STREAMS_KEY);
         if (raw) savedLocal = JSON.parse(raw);
-        const namesRaw = localStorage.getItem('growstreams_names');
+        const namesRaw = localStorage.getItem('flows_names');
         if (namesRaw) setStreamNames(JSON.parse(namesRaw));
       } catch {}
 
@@ -232,7 +232,7 @@ export default function StreamsPage() {
     const updated = { ...streamNames, [id]: name };
     setStreamNames(updated);
     try {
-      localStorage.setItem('growstreams_names', JSON.stringify(updated));
+      localStorage.setItem('flows_names', JSON.stringify(updated));
     } catch {}
   };
 

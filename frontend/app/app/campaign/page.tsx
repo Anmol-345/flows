@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { useActiveAccount } from '@/hooks/useActiveAccount';
-import { api } from '@/lib/growstreams-api';
+import { api } from '@/lib/flows-api';
 import {
   Trophy, GitBranch, Twitter, Zap, ArrowRight, CheckCircle,
   AlertCircle, Loader2, DollarSign, Users, Calendar, Star, PartyPopper, Crown,
@@ -138,7 +138,7 @@ export default function CampaignPage() {
                   VarAIbot Challenge Complete! 🎉
                 </h2>
                 <p className="text-sm leading-relaxed mb-4 max-w-2xl">
-                  Big thanks to everyone who participated in the VarAIbot Challenge by GrowStreams 🙌
+                  Big thanks to everyone who participated in the VarAIbot Challenge by Flows 🙌
                   The videos and PR shared by the community were incredibly valuable and played a key role in improving the project.
                 </p>
                 <p className="text-xs gs-sub mb-4 max-w-xl">
@@ -229,9 +229,9 @@ export default function CampaignPage() {
               <Trophy className="w-8 h-8" />
             </div>
           </div>
-          <h1 className="gs-display text-40px-heading-thin text-black">GrowStreams Campaign</h1>
+          <h1 className="gs-display text-40px-heading-thin text-black">Flows Campaign</h1>
           <p className="gs-muted max-w-lg mx-auto">
-            Earn XP and USDC rewards by contributing code or creating content about GrowStreams.
+            Earn XP and USDC rewards by contributing code or creating content about Flows.
           </p>
         </div>
       </Reveal>
@@ -368,7 +368,7 @@ export default function CampaignPage() {
                   type="text"
                   value={xHandle}
                   onChange={e => setXHandle(e.target.value)}
-                  placeholder="e.g. @growstreams"
+                  placeholder="e.g. @flows"
                   className="gs-input"
                 />
               </div>
@@ -421,7 +421,7 @@ export default function CampaignPage() {
             <ul className="space-y-2 text-sm gs-sub">
               <li className="flex items-start gap-2">
                 <span className="gs-mono text-moss mt-0.5 font-medium">1.</span>
-                Submit a PR to GrowStreams repo
+                Submit a PR to Flows repo
               </li>
               <li className="flex items-start gap-2">
                 <span className="gs-mono text-moss mt-0.5 font-medium">2.</span>
@@ -449,7 +449,7 @@ export default function CampaignPage() {
             <ul className="space-y-2 text-sm gs-sub">
               <li className="flex items-start gap-2">
                 <span className="gs-mono text-forest mt-0.5 font-medium">1.</span>
-                Post about GrowStreams (@GrowwStreams / #GrowStreams)
+                Post about Flows (@Flows / #Flows)
               </li>
               <li className="flex items-start gap-2">
                 <span className="gs-mono text-forest mt-0.5 font-medium">2.</span>

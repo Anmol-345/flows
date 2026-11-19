@@ -1,4 +1,4 @@
-# Native VARA Deployment Guide
+﻿# Native VARA Deployment Guide
 
 This guide covers building, deploying, and wiring the modified TokenVault and StreamCore contracts with native VARA support.
 
@@ -17,7 +17,7 @@ This guide covers building, deploying, and wiring the modified TokenVault and St
 
 ```bash
 # In WSL or Linux terminal
-cd /path/to/GrowStreams_Backend
+cd /path/to/FLOWS_Backend
 ./scripts/build.sh
 ```
 
@@ -63,7 +63,7 @@ node scripts/deploy-js/deploy.mjs
 
 **Expected output:**
 ```
-=== GrowStreams V2 — Deploy to Vara Testnet ===
+=== FLOWS V2 â€” Deploy to Vara Testnet ===
 Node: wss://testnet.vara.network
 Target: all
 
@@ -118,7 +118,7 @@ This script will:
 
 **Expected output:**
 ```
-=== GrowStreams V2 — Wire Contracts ===
+=== FLOWS V2 â€” Wire Contracts ===
 Node: wss://testnet.vara.network
 
 StreamCore: 0xabcd...1234
@@ -131,13 +131,13 @@ Account: 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
   Sending message to 0x1234...abcd...
   In block: 0xblock...hash1
   Finalized: 0xfinal...hash1
-  ✅ Success! Block: 0xfinal...hash1
+  âœ… Success! Block: 0xfinal...hash1
 
 2. Setting TokenVault address in StreamCore...
   Sending message to 0xabcd...1234...
   In block: 0xblock...hash2
   Finalized: 0xfinal...hash2
-  ✅ Success! Block: 0xfinal...hash2
+  âœ… Success! Block: 0xfinal...hash2
 
 === Wiring Complete ===
 ```
@@ -267,3 +267,4 @@ const withdrawPayload = encodeSailsCall(
 3. Update frontend to support native VARA deposits/withdrawals
 4. Deploy remaining contracts (splits-router, permission-manager, etc.)
 5. Implement full cross-contract integration for all contracts
+

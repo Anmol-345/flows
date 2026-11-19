@@ -1,7 +1,7 @@
 export const HERO_CONTENT = {
   headline: "Money that moves as fast as work gets done",
   subheadline:
-    "GrowStreams turns any token into a live, per-second payment — streaming payroll, grants, and revenue share natively on Vara, with zero intermediaries.",
+    "Flows turns any token into a live, per-second payment — streaming payroll, grants, and revenue share natively on Vara, with zero intermediaries.",
   cta: {
     label: "Launch App",
     href: "/app",

@@ -6,7 +6,6 @@ import { Menu, X, Wallet, User } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CreateProfileModal } from "./create-profile-modal";
 import { useProfile } from "@/hooks/useProfile";
-import Image from "next/image";
 
 interface NavigationProps {
   currentPage?:
@@ -19,7 +18,7 @@ interface NavigationProps {
     | "explore";
 }
 
-// Custom Provn Logo Component
+// Custom Brand Component
 const ProvnLogo = ({ isScrolled }: { isScrolled: boolean }) => {
   return (
     <motion.div
@@ -27,14 +26,7 @@ const ProvnLogo = ({ isScrolled }: { isScrolled: boolean }) => {
       whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.2 }}
     >
-      <Image
-        src="/logo.png"
-        alt="Logo"
-        width={isScrolled ? 300 : 360}
-        height={88}
-        priority
-        className="h-24 w-auto object-contain"
-      />
+      <span className="font-bold text-xl tracking-tight">Flows</span>
     </motion.div>
   );
 };

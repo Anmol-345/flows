@@ -1,4 +1,4 @@
-// GrowStreams V2 — BountyAdapter IDL
+﻿// FLOWS V2 â€” BountyAdapter IDL
 // Connects AI code verification scores to stream creation/adjustment
 // Bridges V1 identity-registry scoring with V2 streaming payments
 
@@ -62,3 +62,4 @@ service BountyService {
     BountyCancelled: struct { id: u64, refunded: u128, timestamp: u64 };
   }
 };
+

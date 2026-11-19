@@ -1,9 +1,9 @@
-# GrowStreams E2E Validation Report
+﻿# FLOWS E2E Validation Report
 
 **Date**: 2026-03-17  
-**Environment**: `https://growstreams-launch-production.up.railway.app` (Railway)  
+**Environment**: `https://FLOWS-launch-production.up.railway.app` (Railway)  
 **Branch**: `Launch`  
-**Commit**: `9b2c059` — fix: handle 429 rate-limit in X stream retry with 60s backoff
+**Commit**: `9b2c059` â€” fix: handle 429 rate-limit in X stream retry with 60s backoff
 
 ---
 
@@ -11,22 +11,22 @@
 
 | Step | Status | Evidence |
 |------|--------|----------|
-| Webhook endpoint reachable | ✅ PASS | `POST /api/webhooks/github` → 200 |
-| HMAC signature verification | ✅ PASS | Signed payload accepted; unsigned would be rejected 401 |
-| Deduplication (delivery ID) | ✅ PASS | Code reviewed — in-memory Set with 1000-entry cap |
-| Event dispatch (pull_request.opened) | ✅ PASS | Logs: `[webhook] pull_request.opened #1 (merged=false)` |
-| GitHub agent activated | ✅ PASS | Logs: `[github-agent] PR #1 opened by e2e_alpha_gh` |
-| Bearer PAT auth via `ghApiFetch` | ✅ PASS | Uses `Authorization: Bearer <token>` with native fetch |
-| Retry logic (1 retry on 5xx/403/429) | ✅ PASS | Code deployed — retries on transient failures with backoff |
-| Error logging (status code + body) | ✅ PASS | Logs: `GitHub API GET ... → 404 Not Found: {"message":"Not Found"...}` |
-| try/catch around LLM scoring | ✅ PASS | Code deployed — scoring failure won't crash handler |
-| try/catch around XP awarding | ✅ PASS | Code deployed — XP failure won't crash handler |
-| **PR diff fetch** | ❌ BLOCKED | PAT `ghp_...0K0` is **expired/revoked** (returns 401 on authenticated endpoints) |
-| **LLM scoring** | ⏸ NOT TESTED | Blocked by PAT — no diff fetched |
-| **XP awarding** | ⏸ NOT TESTED | Blocked by PAT — no score produced |
-| **Comment posting** | ⏸ NOT TESTED | Blocked by PAT — requires write access |
+| Webhook endpoint reachable | âœ… PASS | `POST /api/webhooks/github` â†’ 200 |
+| HMAC signature verification | âœ… PASS | Signed payload accepted; unsigned would be rejected 401 |
+| Deduplication (delivery ID) | âœ… PASS | Code reviewed â€” in-memory Set with 1000-entry cap |
+| Event dispatch (pull_request.opened) | âœ… PASS | Logs: `[webhook] pull_request.opened #1 (merged=false)` |
+| GitHub agent activated | âœ… PASS | Logs: `[github-agent] PR #1 opened by e2e_alpha_gh` |
+| Bearer PAT auth via `ghApiFetch` | âœ… PASS | Uses `Authorization: Bearer <token>` with native fetch |
+| Retry logic (1 retry on 5xx/403/429) | âœ… PASS | Code deployed â€” retries on transient failures with backoff |
+| Error logging (status code + body) | âœ… PASS | Logs: `GitHub API GET ... â†’ 404 Not Found: {"message":"Not Found"...}` |
+| try/catch around LLM scoring | âœ… PASS | Code deployed â€” scoring failure won't crash handler |
+| try/catch around XP awarding | âœ… PASS | Code deployed â€” XP failure won't crash handler |
+| **PR diff fetch** | âŒ BLOCKED | PAT `ghp_...0K0` is **expired/revoked** (returns 401 on authenticated endpoints) |
+| **LLM scoring** | â¸ NOT TESTED | Blocked by PAT â€” no diff fetched |
+| **XP awarding** | â¸ NOT TESTED | Blocked by PAT â€” no score produced |
+| **Comment posting** | â¸ NOT TESTED | Blocked by PAT â€” requires write access |
 
-### Verdict: **PARTIAL PASS — BLOCKED by expired GitHub PAT**
+### Verdict: **PARTIAL PASS â€” BLOCKED by expired GitHub PAT**
 
 **Action required**: Generate a new GitHub Personal Access Token (classic) with `repo` scope and update `GITHUB_APP_PRIVATE_KEY` on Railway.
 
@@ -36,23 +36,23 @@
 
 | Step | Status | Evidence |
 |------|--------|----------|
-| Bearer token configured | ✅ PASS | `X_BEARER_TOKEN` set on Railway |
-| Write credentials configured | ✅ PASS | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` set |
-| Stream rules cleared + set | ✅ PASS | Logs: `Cleared 1 existing stream rules` → `Stream rules set` |
-| Stream rule value | ✅ PASS | `@GrowStreams OR @GrowwStreams OR #GrowStreams -is:retweet lang:en` |
-| Filtered stream connected | ✅ PASS | Logs: `Filtered stream started, listening for GrowStreams mentions` |
-| 429 rate-limit retry | ✅ PASS | Code deployed — 60s backoff on 429, 5s on 503 |
-| 503 retry | ✅ PASS | Code deployed — 2 attempts with backoff |
-| Auto-reconnect | ✅ PASS | `stream.autoReconnect = true`, 5 retries |
-| try/catch around LLM scoring | ✅ PASS | Code deployed — scoring failure won't crash stream |
-| try/catch around XP awarding | ✅ PASS | Code deployed — XP failure won't crash stream |
-| try/catch around thread bonus | ✅ PASS | Code deployed |
-| **Live tweet processed** | ⏸ NOT TESTED | No real `#GrowStreams` tweet observed during validation window |
-| **LLM content scoring** | ⏸ NOT TESTED | Awaiting real tweet |
-| **XP awarding** | ⏸ NOT TESTED | Awaiting real tweet |
-| **Reply posted** | ⏸ NOT TESTED | Awaiting real tweet |
+| Bearer token configured | âœ… PASS | `X_BEARER_TOKEN` set on Railway |
+| Write credentials configured | âœ… PASS | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` set |
+| Stream rules cleared + set | âœ… PASS | Logs: `Cleared 1 existing stream rules` â†’ `Stream rules set` |
+| Stream rule value | âœ… PASS | `@FLOWS OR @GrowwStreams OR #FLOWS -is:retweet lang:en` |
+| Filtered stream connected | âœ… PASS | Logs: `Filtered stream started, listening for FLOWS mentions` |
+| 429 rate-limit retry | âœ… PASS | Code deployed â€” 60s backoff on 429, 5s on 503 |
+| 503 retry | âœ… PASS | Code deployed â€” 2 attempts with backoff |
+| Auto-reconnect | âœ… PASS | `stream.autoReconnect = true`, 5 retries |
+| try/catch around LLM scoring | âœ… PASS | Code deployed â€” scoring failure won't crash stream |
+| try/catch around XP awarding | âœ… PASS | Code deployed â€” XP failure won't crash stream |
+| try/catch around thread bonus | âœ… PASS | Code deployed |
+| **Live tweet processed** | â¸ NOT TESTED | No real `#FLOWS` tweet observed during validation window |
+| **LLM content scoring** | â¸ NOT TESTED | Awaiting real tweet |
+| **XP awarding** | â¸ NOT TESTED | Awaiting real tweet |
+| **Reply posted** | â¸ NOT TESTED | Awaiting real tweet |
 
-### Verdict: **PASS (infrastructure) — awaiting real tweet for full E2E**
+### Verdict: **PASS (infrastructure) â€” awaiting real tweet for full E2E**
 
 The X stream is connected and listening. The pipeline will process tweets automatically when they arrive.
 
@@ -62,11 +62,11 @@ The X stream is connected and listening. The pipeline will process tweets automa
 
 | Step | Status | Evidence |
 |------|--------|----------|
-| `awardXP` function | ✅ PASS | Tested via `/api/campaign/award-xp` — Logs: `[xp] Awarded 200 XP` |
-| Referral bonus | ✅ PASS | Logs: `[xp] Referral bonus: 10 XP to 0xE2E_ALPHA...` |
-| Leaderboard | ✅ PASS | `/api/leaderboard` returns ranked participants |
-| Cron jobs (daily-xp, snapshot, x-reeval) | ✅ PASS | Scheduled on deployment startup |
-| Payout snapshot | ✅ PASS | `/api/campaign/payout-snapshot` → 6 participants, 2720 total XP |
+| `awardXP` function | âœ… PASS | Tested via `/api/campaign/award-xp` â€” Logs: `[xp] Awarded 200 XP` |
+| Referral bonus | âœ… PASS | Logs: `[xp] Referral bonus: 10 XP to 0xE2E_ALPHA...` |
+| Leaderboard | âœ… PASS | `/api/leaderboard` returns ranked participants |
+| Cron jobs (daily-xp, snapshot, x-reeval) | âœ… PASS | Scheduled on deployment startup |
+| Payout snapshot | âœ… PASS | `/api/campaign/payout-snapshot` â†’ 6 participants, 2720 total XP |
 
 ### Verdict: **PASS**
 
@@ -75,7 +75,7 @@ The X stream is connected and listening. The pipeline will process tweets automa
 ## 4. Code Changes Made
 
 ### `api/src/services/github-agent.mjs`
-- **Removed** Octokit dependency — replaced with native `fetch` + `Bearer` token auth
+- **Removed** Octokit dependency â€” replaced with native `fetch` + `Bearer` token auth
 - **Added** `ghApiFetch()` helper with:
   - `Authorization: Bearer <PAT>` header
   - 1 automatic retry on 5xx, 403, 429 with exponential backoff
@@ -98,10 +98,10 @@ The X stream is connected and listening. The pipeline will process tweets automa
 
 | # | Issue | Severity | Resolution |
 |---|-------|----------|------------|
-| 1 | **GitHub PAT expired** (`ghp_...0K0` returns 401) | 🔴 CRITICAL | Generate new PAT with `repo` scope → update `GITHUB_APP_PRIVATE_KEY` on Railway |
-| 2 | **No real PR to test full scoring** | 🟡 MEDIUM | After PAT is refreshed, open a real PR or re-send webhook for an existing PR |
-| 3 | **No live tweet observed** | 🟡 MEDIUM | Post a tweet with `#GrowStreams` to trigger full X pipeline validation |
-| 4 | **X stream 429 on first deploy** | 🟢 RESOLVED | Added 429 retry with 60s backoff; second deploy connected successfully |
+| 1 | **GitHub PAT expired** (`ghp_...0K0` returns 401) | ðŸ”´ CRITICAL | Generate new PAT with `repo` scope â†’ update `GITHUB_APP_PRIVATE_KEY` on Railway |
+| 2 | **No real PR to test full scoring** | ðŸŸ¡ MEDIUM | After PAT is refreshed, open a real PR or re-send webhook for an existing PR |
+| 3 | **No live tweet observed** | ðŸŸ¡ MEDIUM | Post a tweet with `#FLOWS` to trigger full X pipeline validation |
+| 4 | **X stream 429 on first deploy** | ðŸŸ¢ RESOLVED | Added 429 retry with 60s backoff; second deploy connected successfully |
 
 ---
 
@@ -109,12 +109,13 @@ The X stream is connected and listening. The pipeline will process tweets automa
 
 | Component | Status |
 |-----------|--------|
-| GitHub Webhook (infra) | ✅ PASS |
-| GitHub Scoring Pipeline | ❌ BLOCKED (expired PAT) |
-| X Stream (infra) | ✅ PASS |
-| X Scoring Pipeline | ⏸ AWAITING real tweet |
-| XP Pipeline | ✅ PASS |
-| Resilience (retry + try/catch) | ✅ PASS |
-| Error Logging | ✅ PASS |
+| GitHub Webhook (infra) | âœ… PASS |
+| GitHub Scoring Pipeline | âŒ BLOCKED (expired PAT) |
+| X Stream (infra) | âœ… PASS |
+| X Scoring Pipeline | â¸ AWAITING real tweet |
+| XP Pipeline | âœ… PASS |
+| Resilience (retry + try/catch) | âœ… PASS |
+| Error Logging | âœ… PASS |
 
-**Overall**: Infrastructure is production-ready. One critical blocker remains — the GitHub PAT must be refreshed before the GitHub scoring pipeline can function.
+**Overall**: Infrastructure is production-ready. One critical blocker remains â€” the GitHub PAT must be refreshed before the GitHub scoring pipeline can function.
+

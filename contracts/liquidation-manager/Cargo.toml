@@ -1,9 +1,9 @@
-[package]
+﻿[package]
 name = "liquidation-manager"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "GrowStreams Liquidation Manager — solvency enforcement for Super Token streams"
+description = "FLOWS Liquidation Manager â€” solvency enforcement for Super Token streams"
 
 [dependencies]
 sails-rs.workspace = true
@@ -16,3 +16,4 @@ sails-rs = { workspace = true, features = ["wasm-builder"] }
 
 [lib]
 crate-type = ["cdylib", "rlib"]
+

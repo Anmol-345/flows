@@ -96,7 +96,7 @@ export default function ResultPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-2xl font-bold text-provn-text">
-              GrowStreams
+              Flows
             </Link>
             <div className="flex items-center gap-3">
               <button
@@ -176,7 +176,7 @@ export default function ResultPage() {
       {/* Footer */}
       <div className="border-t border-provn-border mt-16 py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-provn-muted">
-          <p>Powered by GrowStreams GitHub AI On-Chain Engine • Built on Vara Network</p>
+          <p>Powered by Flows GitHub AI On-Chain Engine • Built on Vara Network</p>
         </div>
       </div>
     </div>

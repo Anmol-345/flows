@@ -1,21 +1,21 @@
-//! GrowStreams stream-core for Vara.eth (ethexe runtime)
+﻿//! FLOWS stream-core for Vara.eth (ethexe runtime)
 //!
 //! Key differences from the Vara-native version:
 //!
-//! 1. NO cross-program async calls — ethexe forbids `wait`-based blocking and
+//! 1. NO cross-program async calls â€” ethexe forbids `wait`-based blocking and
 //!    `send_bytes_for_reply(...).await` patterns.  Token custody is handled by
 //!    the companion Solidity contract (StreamEscrow.sol) on the Ethereum side.
 //!    This program is a pure stream-state registry.
 //!
-//! 2. sails-rs with `ethexe` feature (1.0.0) — NOT the Vara-native 0.6 build.
+//! 2. sails-rs with `ethexe` feature (1.0.0) â€” NOT the Vara-native 0.6 build.
 //!
-//! 3. `static mut` replaced with `RefCell` — required for ethexe safety.
+//! 3. `static mut` replaced with `RefCell` â€” required for ethexe safety.
 //!
 //! 4. Public types: `[u8; 32]` for account IDs (bytes32 in Solidity).
-//!    `Option<T>` is not SolValue — queries return concrete types with an
+//!    `Option<T>` is not SolValue â€” queries return concrete types with an
 //!    `exists` bool field instead.
 //!
-//! 5. Constructor cannot be named `new` — reserved keyword in Solidity.
+//! 5. Constructor cannot be named `new` â€” reserved keyword in Solidity.
 //!
 //! skill: vara-eth-contract-writer
 
@@ -52,7 +52,7 @@ pub struct Stream {
     pub status: StreamStatus,
 }
 
-/// Full stream view — for SCALE/Sails clients only (not Solidity-ABI-exposed).
+/// Full stream view â€” for SCALE/Sails clients only (not Solidity-ABI-exposed).
 /// Solidity callers use the individual primitive getter methods instead.
 #[derive(Debug, Clone, Encode, Decode, TypeInfo)]
 pub struct StreamView {
@@ -168,7 +168,7 @@ pub struct StreamCoreEthProgram(RefCell<StreamCoreEthState>);
 
 #[program]
 impl StreamCoreEthProgram {
-    /// Constructor — cannot be named `new` (reserved Solidity keyword).
+    /// Constructor â€” cannot be named `new` (reserved Solidity keyword).
     /// `admin` is the Mirror address of StreamEscrow.sol (bytes32-padded EVM addr).
     pub fn initialize(admin: [u8; 32], min_buffer_seconds: u64) -> Self {
         Self(RefCell::new(StreamCoreEthState::new(admin, min_buffer_seconds)))
@@ -190,7 +190,7 @@ impl<'a> StreamService<'a> {
     // ---- Commands ----
 
     /// Register a new stream. Token escrow is handled by StreamEscrow.sol on
-    /// the Ethereum side — this call only records the stream state.
+    /// the Ethereum side â€” this call only records the stream state.
     /// `caller` = msg.sender as bytes32, `now_secs` = block.timestamp (from Solidity).
     #[export]
     pub fn create_stream(
@@ -336,7 +336,7 @@ impl<'a> StreamService<'a> {
             .expect("emit StreamResumed");
     }
 
-    /// Record a deposit from the Solidity side — called after ERC20 is escrowed.
+    /// Record a deposit from the Solidity side â€” called after ERC20 is escrowed.
     #[export]
     pub fn record_deposit(&mut self, caller: [u8; 32], stream_id: StreamId, amount: u128) {
         let mut state = self.0.borrow_mut();
@@ -357,7 +357,7 @@ impl<'a> StreamService<'a> {
             .expect("emit DepositRecorded");
     }
 
-    /// Record a withdrawal from the Solidity side — called after ERC20 is released.
+    /// Record a withdrawal from the Solidity side â€” called after ERC20 is released.
     #[export]
     pub fn record_withdraw(&mut self, caller: [u8; 32], stream_id: StreamId, amount: u128, now_secs: u64) {
         let mut state = self.0.borrow_mut();
@@ -510,3 +510,4 @@ impl<'a> StreamService<'a> {
         self.0.borrow().active_count
     }
 }
+

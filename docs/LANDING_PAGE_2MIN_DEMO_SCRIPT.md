@@ -1,12 +1,12 @@
-# GrowStreams Landing Page Demo (2-Minute Script)
+﻿# FLOWS Landing Page Demo (2-Minute Script)
 
 **Target Duration:** 2:00 minutes  
 **Audience:** Developers, Projects, Web3 Community  
-**Goal:** Showcase GrowStreams landing page and drive integration interest
+**Goal:** Showcase FLOWS landing page and drive integration interest
 
 ---
 
-## 🎬 SECTION 1: Hero - Per-Second Money Streaming (0:00 - 0:30)
+## ðŸŽ¬ SECTION 1: Hero - Per-Second Money Streaming (0:00 - 0:30)
 
 ### [0:00 - 0:30] **Opening Hook & Live Demo**
 
@@ -17,19 +17,19 @@
   - Left: `company.vara` 
   - Center: Animated flow line with particles
   - Right: `alice.vara`
-  - "🟢 Streaming" badge
+  - "ðŸŸ¢ Streaming" badge
   - Withdrawable: `$1247.8111` (live counter)
   - Buffer: `8h remaining`
-- Green "🟢 LIVE ON VARA TESTNET" badge pulsing
+- Green "ðŸŸ¢ LIVE ON VARA TESTNET" badge pulsing
 - Buttons visible: "Integrate (10 min)" and "Launch App"
 
 **NARRATION:**
-> "This is GrowStreams. Watch this - company.vara is streaming money to alice.vara right now. Not tomorrow. Not in batches. Right now. Per second. The withdrawable balance updates continuously - $1247... $1248... this is real-time token streaming on Vara Network."
+> "This is FLOWS. Watch this - company.vara is streaming money to alice.vara right now. Not tomorrow. Not in batches. Right now. Per second. The withdrawable balance updates continuously - $1247... $1248... this is real-time token streaming on Vara Network."
 
 **ON SCREEN TEXT (overlay):**
-- "💰 Live: $1247.8111 → $1248.0223"
-- "⚡ Per-second settlement"
-- "🌐 Live on Vara Testnet"
+- "ðŸ’° Live: $1247.8111 â†’ $1248.0223"
+- "âš¡ Per-second settlement"
+- "ðŸŒ Live on Vara Testnet"
 
 **VISUAL HIGHLIGHT:**
 - Circle the incrementing balance counter
@@ -44,7 +44,7 @@
 
 ---
 
-## 💡 SECTION 2: Money Streaming, Simplified (0:30 - 0:55)
+## ðŸ’¡ SECTION 2: Money Streaming, Simplified (0:30 - 0:55)
 
 ### [0:30 - 0:55] **Core Features**
 
@@ -57,7 +57,7 @@
 **CARD 1: Token Agnostic**
 - Icon: Stacked layers
 - "Stream USDC, VARA, or any token. One protocol, all tokens."
-- Badges: "● USDC  ● VARA  ● Any ERC-20"
+- Badges: "â— USDC  â— VARA  â— Any ERC-20"
 
 **CARD 2: Buffer & Solvency**  
 - Icon: Shield/Protection
@@ -68,7 +68,7 @@
 - "Plug into any app. StreamCore, SplitsRouter - modular and flexible."
 
 **NARRATION:**
-> "GrowStreams makes streaming simple. First, it's token-agnostic. Stream USDC, VARA, or any token you want. Second, buffer and solvency - deposits ensure streams never fail. And third, it's composable. Plug our contracts into your dApp like LEGO blocks."
+> "FLOWS makes streaming simple. First, it's token-agnostic. Stream USDC, VARA, or any token you want. Second, buffer and solvency - deposits ensure streams never fail. And third, it's composable. Plug our contracts into your dApp like LEGO blocks."
 
 **VISUAL EFFECTS:**
 - Hover over each card (1-2 seconds each)
@@ -76,48 +76,48 @@
 - Code icon pulses
 
 **ON SCREEN TEXT:**
-- "✅ Any Token"
-- "✅ Always Solvent"
-- "✅ Plug & Play"
+- "âœ… Any Token"
+- "âœ… Always Solvent"
+- "âœ… Plug & Play"
 
 **VISUAL TRANSITION:**
 - Scroll down to use cases
 
 ---
 
-## 🎯 SECTION 3: Use Cases - Endless Possibilities (0:55 - 1:20)
+## ðŸŽ¯ SECTION 3: Use Cases - Endless Possibilities (0:55 - 1:20)
 
 ### [0:55 - 1:20] **Real-World Applications**
 
 **VISUAL:**
 - "One protocol, endless possibilities" headline
 - Gradient text on "endless possibilities" (purple/pink)
-- Subtitle: "From payroll to gaming rewards — stream money for any use case."
+- Subtitle: "From payroll to gaming rewards â€” stream money for any use case."
 - Six use case cards appear in grid:
 
 **Row 1:**
-1. **Bounties & Gigs** 🎯
+1. **Bounties & Gigs** ðŸŽ¯
    - "AI-verified work triggers instant streams"
    - Badges: Work-triggered, Instant pay, AI-verified
 
-2. **Streaming Payroll** ⏰
+2. **Streaming Payroll** â°
    - "Per-second salary with pause/resume and clawback rules"
    - Badges: HR, Recurring, Pause/Resume
 
-3. **Subscriptions** 💳
+3. **Subscriptions** ðŸ’³
    - "Pay-as-you-go billing. Cancel anytime, stop paying instantly"
    - Badges: Pay-as-you-go, Cancel anytime
 
 **Row 2:**
-4. **Revenue Share** 💰
+4. **Revenue Share** ðŸ’°
    - "Route incoming funds to teams, contributors, and referrers automatically via splits"
    - Badges: Routing, Teams, Referrals
 
-5. **Vesting Streams** 🔒
+5. **Vesting Streams** ðŸ”’
    - "Linear token unlock with configurable stoppability"
    - Badges: Linear unlock, Configurable
 
-6. **Grants & Milestones** 🏆
+6. **Grants & Milestones** ðŸ†
    - "Milestone-based streaming with transparent runway tracking"
    - Badges: Milestone-based, Transparent
 
@@ -134,7 +134,7 @@
 
 ---
 
-## 💻 SECTION 4: Integrate in 10 Minutes (1:20 - 1:50)
+## ðŸ’» SECTION 4: Integrate in 10 Minutes (1:20 - 1:50)
 
 ### [1:20 - 1:50] **Developer Integration**
 
@@ -147,10 +147,10 @@
 
 **STEP 00: Install SDK**
 ```javascript
-npm i @growstreams/sdk
+npm i @FLOWS/sdk
 
-import { GrowStreams } from '@growstreams/sdk';
-const client = new GrowStreams({
+import { FLOWS } from '@FLOWS/sdk';
+const client = new FLOWS({
   network: 'vara-testnet'
 });
 ```
@@ -187,9 +187,9 @@ Network: Vara Testnet
 - Copy button appears on hover
 
 **ON SCREEN TEXT:**
-- "⚡ 4 steps"
-- "⏱️ 10 minutes"
-- "📦 npm i @growstreams/sdk"
+- "âš¡ 4 steps"
+- "â±ï¸ 10 minutes"
+- "ðŸ“¦ npm i @FLOWS/sdk"
 
 **VISUAL (code continues scrolling):**
 ```javascript
@@ -212,7 +212,7 @@ await client.streams.create({
 
 ---
 
-## 🚀 SECTION 5: Call to Action (1:50 - 2:00)
+## ðŸš€ SECTION 5: Call to Action (1:50 - 2:00)
 
 ### [1:50 - 2:00] **Closing & CTA**
 
@@ -222,28 +222,28 @@ await client.streams.create({
 - "Launch App" button visible
 - "Join Pilot" link below
 - Bottom shows contract info:
-  - "📍 STATUS: Vara Testnet (Live)"
-  - "📜 CONTRACTS: StreamCore + TokenVault"
+  - "ðŸ“ STATUS: Vara Testnet (Live)"
+  - "ðŸ“œ CONTRACTS: StreamCore + TokenVault"
 
 **NARRATION:**
-> "GrowStreams. Per-second money streaming on Vara. Integrate in ten minutes. Launch your app today. The future of payments is streaming."
+> "FLOWS. Per-second money streaming on Vara. Integrate in ten minutes. Launch your app today. The future of payments is streaming."
 
 **VISUAL:**
 - Cursor hovers over "Integrate (10 min)" button
 - Button glows brighter
-- Quick flash of URL: `growstreams.xyz`
+- Quick flash of URL: `FLOWS.xyz`
 
 **ON SCREEN FINAL TEXT:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     🌊 GrowStreams 🌊
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+     ðŸŒŠ FLOWS ðŸŒŠ
 
   Integrate in 10 minutes
 
-🌐 growstreams.xyz/app/grow
-📚 docs.growstreams.io
-💻 github.com/growstreams
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ðŸŒ FLOWS.xyz/app/grow
+ðŸ“š docs.FLOWS.io
+ðŸ’» github.com/FLOWS
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL:**
@@ -256,7 +256,7 @@ await client.streams.create({
 
 ---
 
-## 🎥 Production Notes
+## ðŸŽ¥ Production Notes
 
 ### Timing Breakdown
 - **Section 1:** Hero (0:30) - 25%
@@ -339,7 +339,7 @@ await client.streams.create({
 - "Production-ready" (integration)
 
 **Pauses:**
-- After "This is GrowStreams" (0.5s)
+- After "This is FLOWS" (0.5s)
 - After showing live counter (1s)
 - After "One protocol" (0.3s)
 - After listing use cases (0.5s)
@@ -375,8 +375,8 @@ await client.streams.create({
 **Animation:** Fade in (0.3s), hold (2s), fade out (0.3s)  
 
 **When to Use:**
-- Key statistics: "$1247 → $1248"
-- Feature highlights: "✅ Any Token"
+- Key statistics: "$1247 â†’ $1248"
+- Feature highlights: "âœ… Any Token"
 - Call to action: "Integrate in 10 min"
 - URLs at end
 
@@ -388,9 +388,9 @@ await client.streams.create({
 - Code blocks (centered)
 
 **Slow Scrolls:**
-- Hero → Features (smooth)
-- Features → Use Cases (smooth)
-- Use Cases → Integration (smooth)
+- Hero â†’ Features (smooth)
+- Features â†’ Use Cases (smooth)
+- Use Cases â†’ Integration (smooth)
 
 **Zooms:**
 - Zoom in on live counter (1.2x)
@@ -424,7 +424,7 @@ await client.streams.create({
 
 ---
 
-## 📱 Alternative Cuts
+## ðŸ“± Alternative Cuts
 
 ### 60-Second Version (Social Media)
 **Structure:**
@@ -451,11 +451,11 @@ await client.streams.create({
 
 ---
 
-## 🎬 Shot List (Detailed)
+## ðŸŽ¬ Shot List (Detailed)
 
 ### Shot 1: Title/Logo (0:00-0:03)
 - **Duration:** 3 seconds
-- **Visual:** GrowStreams logo fade in
+- **Visual:** FLOWS logo fade in
 - **Audio:** Music starts
 - **Text:** None
 
@@ -551,7 +551,7 @@ await client.streams.create({
 
 ---
 
-## ✅ Pre-Production Checklist
+## âœ… Pre-Production Checklist
 
 ### Website/Landing Page
 - [ ] Latest version deployed
@@ -589,7 +589,7 @@ await client.streams.create({
 
 ---
 
-## 📊 Success Metrics
+## ðŸ“Š Success Metrics
 
 ### Video Performance
 - **Views:** 3,000+ in first week
@@ -610,7 +610,7 @@ await client.streams.create({
 
 ---
 
-## 🎨 Brand Guidelines
+## ðŸŽ¨ Brand Guidelines
 
 ### Color Palette
 - **Primary:** Teal/Green `#00FFA3` (CTA, accents)
@@ -636,5 +636,6 @@ await client.streams.create({
 **Script Version:** 1.0  
 **Duration:** 2:00 minutes  
 **Last Updated:** 2026-02-27  
-**Prepared By:** GrowStreams Team  
-**Status:** Ready for Production 🎬
+**Prepared By:** FLOWS Team  
+**Status:** Ready for Production ðŸŽ¬
+

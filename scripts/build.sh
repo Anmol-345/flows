@@ -1,14 +1,14 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
-# GrowStreams V2 — Build contracts to WASM
+# FLOWS V2 â€” Build contracts to WASM
 # Usage: ./scripts/build.sh
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 CONTRACTS_DIR="$PROJECT_ROOT/contracts"
 
-echo "=== GrowStreams V2 — Contract Build ==="
+echo "=== FLOWS V2 â€” Contract Build ==="
 echo ""
 
 # Check toolchain
@@ -82,3 +82,4 @@ done
 echo ""
 echo "=== Build complete ==="
 echo "WASM artifacts in: $OUTPUT_DIR"
+

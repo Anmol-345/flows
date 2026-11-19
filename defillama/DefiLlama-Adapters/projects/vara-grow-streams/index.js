@@ -1,10 +1,10 @@
-const blake = require('blakejs')
+﻿const blake = require('blakejs')
 const { post } = require('../helper/http')
 
 const VARA_RPC = 'https://rpc.vara.network'
 const VARA_DECIMALS = 1e12
 
-// GrowStreams V2 & V3 Vara Mainnet program IDs from `deploy-state.json` in https://github.com/Satyam-10124/growstreams-v3
+// FLOWS V2 & V3 Vara Mainnet program IDs from `deploy-state.json` in https://github.com/Satyam-10124/FLOWS-v3
 // 1. TokenVault (V2 & V3): native VARA & VFT collateral custody vaults
 const TOKEN_VAULT_V2 = '0x20099b7637ae936670f54464c4109d1f028fbb63230e151ea4ef29c4a94cbcef'
 const TOKEN_VAULT_V3 = '0x657cf9c4f929aeac97092037826c1117f9e6cd0e3c4edc44e49decc17b840aa9'
@@ -30,7 +30,7 @@ const DISTRIBUTION_POOL = '0x7aaa5fa39237ad7f63a78d5acd8a0ff080bd034b8e78de5d475
 const LIQUIDATION_MANAGER = '0x411c62d126b3131ace5e94b618b8cbbdbffb5b9cfdd656f2f6da0786f60cb2c3'
 // 11. SuperToken gGROW (`super-token`): GROW-backed streaming SuperToken
 const SUPER_TOKEN_GGROW = '0x4a9718de4055470963104a4c08e5154ad0c2c48a699996b59e861de9393bf347'
-// 12. GROW Token (`grow-token`): GrowStreams governance & campaign token
+// 12. GROW Token (`grow-token`): FLOWS governance & campaign token
 const GROW_TOKEN = '0x728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163'
 // 13. QuestSeeds (`quest-seeds`): campaign & referral reward contract
 const QUEST_SEEDS = '0xefbe2c4a66e05cbde419196c1196ff6e790a59b7c0fd601ebc035c3c8dd7466d'
@@ -111,7 +111,7 @@ async function getSpendableNative(addresses, at) {
 }
 
 /**
- * Sums spendable native VARA locked across all deployed GrowStreams V2 & V3 contracts on Vara Mainnet.
+ * Sums spendable native VARA locked across all deployed FLOWS V2 & V3 contracts on Vara Mainnet.
  */
 async function tvl(api) {
   const at = await rpc('chain_getFinalizedHead', [])
@@ -122,6 +122,7 @@ async function tvl(api) {
 }
 
 module.exports = {
-  methodology: 'GrowStreams deploys and owns the V2 & V3 token vaults, wVARA and gVARA wrapper programs, StreamCore, SplitsRouter, BountyAdapter, PermissionManager, IdentityRegistry, DistributionPool, LiquidationManager, gGROW, GROW, and QuestSeeds contracts on Vara Mainnet. TVL is the combined spendable native VARA held across all protocol contracts.',
+  methodology: 'FLOWS deploys and owns the V2 & V3 token vaults, wVARA and gVARA wrapper programs, StreamCore, SplitsRouter, BountyAdapter, PermissionManager, IdentityRegistry, DistributionPool, LiquidationManager, gGROW, GROW, and QuestSeeds contracts on Vara Mainnet. TVL is the combined spendable native VARA held across all protocol contracts.',
   vara: { tvl },
 }
+

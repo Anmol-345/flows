@@ -1,9 +1,9 @@
-/**
- * Deploy StonkBase × GrowStreams Spot CLOB Orderbook DEX & 5x RWA Perps Desk on Vara Mainnet
+﻿/**
+ * Deploy StonkBase Ã— FLOWS Spot CLOB Orderbook DEX & 5x RWA Perps Desk on Vara Mainnet
  * ==========================================================================================
  * Uploads `stonkbase_vara_desk.opt.wasm` and instantiates two dedicated Sails programs:
  *   1. `stonkbase-orderbook`: On-chain Spot CLOB Orderbook DEX (`PlaceSpotOrder`, `FillSpotOrder`, `GetSpotTrade`)
- *   2. `stonkbase-vara-desk`: On-chain 1x–5x Leveraged RWA Perpetuals Desk (`OpenStockPosition`, `CloseStockPosition`, `GetPosition`)
+ *   2. `stonkbase-vara-desk`: On-chain 1xâ€“5x Leveraged RWA Perpetuals Desk (`OpenStockPosition`, `CloseStockPosition`, `GetPosition`)
  */
 
 import { GearApi, GearKeyring, generateCodeHash } from '@gear-js/api';
@@ -42,7 +42,7 @@ if (!wasmPath) {
   throw new Error(`Compiled WASM not found in any candidate path: ${WASM_CANDIDATES.join(', ')}`);
 }
 const code = readFileSync(wasmPath);
-console.log(`📦 Loaded compiled WASM (${code.length} bytes): ${wasmPath}`);
+console.log(`ðŸ“¦ Loaded compiled WASM (${code.length} bytes): ${wasmPath}`);
 
 const api = await GearApi.create({ providerAddress: VARA_NODE });
 let keyring;
@@ -56,16 +56,16 @@ const { data } = await api.query.system.account(keyring.address);
 const balance = Number(BigInt(data.free.toString())) / 1e12;
 
 console.log('================================================================================');
-console.log('🚀 DEPLOYING STONKBASE SPOT CLOB ORDERBOOK & 5X RWA PERPS DESK TO VARA MAINNET');
-console.log(`🏦 Admin Account: ${keyring.address} (${adminHex})`);
-console.log(`💰 Available VARA: ${balance.toFixed(4)} VARA`);
+console.log('ðŸš€ DEPLOYING STONKBASE SPOT CLOB ORDERBOOK & 5X RWA PERPS DESK TO VARA MAINNET');
+console.log(`ðŸ¦ Admin Account: ${keyring.address} (${adminHex})`);
+console.log(`ðŸ’° Available VARA: ${balance.toFixed(4)} VARA`);
 console.log('================================================================================');
 
 const parser = await SailsIdlParser.new();
 const idlText = readFileSync(IDL_PATH, 'utf8');
 
 async function deployInstance(label, useCodeUpload = false, existingCodeId = null) {
-  console.log(`\n── Deploying ${label} ──`);
+  console.log(`\nâ”€â”€ Deploying ${label} â”€â”€`);
   const sails = new Sails(parser);
   sails.parseIdl(idlText);
   sails.setApi(api);
@@ -89,16 +89,16 @@ async function deployInstance(label, useCodeUpload = false, existingCodeId = nul
   console.log(`   In block:   ${blockHash}`);
   await isFinalized;
   const finalId = programId ?? tx.programId;
-  console.log(`   ✅ ${label} live at: ${finalId}`);
+  console.log(`   âœ… ${label} live at: ${finalId}`);
   return finalId;
 }
 
 const orderbookId = '0x2c1dd07810480a34b7369fbf0ff0c97651c6db1f26ffc5eaff6490d6b20263cf';
-console.log(`✅ Using deployed StonkBase Spot CLOB Orderbook DEX: ${orderbookId}`);
+console.log(`âœ… Using deployed StonkBase Spot CLOB Orderbook DEX: ${orderbookId}`);
 
 // Compute codeId from uploaded code
 const codeId = generateCodeHash(code);
-console.log(`🔑 Uploaded Code ID: ${codeId}`);
+console.log(`ðŸ”‘ Uploaded Code ID: ${codeId}`);
 
 const perpsDeskId = await deployInstance('StonkBase 5x RWA Perps Desk (stonkbase-vara-desk)', false, codeId);
 await sleep(4000);
@@ -124,7 +124,7 @@ for (const [label, progId] of [
   ['stonkbase-orderbook', orderbookId],
   ['stonkbase-vara-desk', perpsDeskId],
 ]) {
-  console.log(`\n── Seeding 24/7 Bounded Oracle Feeds on ${label} (${progId.slice(0, 14)}...) ──`);
+  console.log(`\nâ”€â”€ Seeding 24/7 Bounded Oracle Feeds on ${label} (${progId.slice(0, 14)}...) â”€â”€`);
   const sails = new Sails(parser);
   sails.parseIdl(idlText);
   sails.setApi(api);
@@ -139,7 +139,7 @@ for (const [label, progId] of [
     .withGas(50_000_000_000n);
   const { blockHash, isFinalized } = await tx.signAndSend();
   await isFinalized;
-  console.log(`   ✅ Seeded Oracle Feeds in block ${blockHash}`);
+  console.log(`   âœ… Seeded Oracle Feeds in block ${blockHash}`);
 }
 
 const nowIso = new Date().toISOString();
@@ -165,11 +165,12 @@ for (const statePath of [resolve(PROJECT_ROOT, 'deploy-state.json'), resolve(__d
     note: 'On-chain 1x-5x Leveraged RWA Perpetuals & Stock Desk (OpenStockPosition, CloseStockPosition)',
   };
   writeFileSync(statePath, JSON.stringify(st, null, 2) + '\n');
-  console.log(`💾 Updated ${statePath}`);
+  console.log(`ðŸ’¾ Updated ${statePath}`);
 }
 
 await api.disconnect();
-console.log('\n🎉 DEPLOYMENT COMPLETE!');
-console.log(`   • stonkbase-orderbook: ${orderbookId}`);
-console.log(`   • stonkbase-vara-desk: ${perpsDeskId}`);
+console.log('\nðŸŽ‰ DEPLOYMENT COMPLETE!');
+console.log(`   â€¢ stonkbase-orderbook: ${orderbookId}`);
+console.log(`   â€¢ stonkbase-vara-desk: ${perpsDeskId}`);
 process.exit(0);
+

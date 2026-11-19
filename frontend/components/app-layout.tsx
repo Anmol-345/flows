@@ -199,7 +199,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               </div>
               <div className="flex items-baseline gap-1.5">
                 <span className={`font-semibold tracking-tight text-sm ${euclidLight ? 'text-[#111827]' : 'text-white'}`}>
-                  GrowStreams
+                  Flows
                 </span>
                 <span className="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#E6F4ED] text-[#136F46] font-semibold">
                   Prime
@@ -331,7 +331,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         >
           {/* Mobile close row */}
           <div className="lg:hidden h-12 px-4 flex items-center justify-between border-b border-[#E6E8E5]">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#136F46]">GrowStreams Prime</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#136F46]">Flows Prime</span>
             <button onClick={() => setSidebarOpen(false)} className="p-1 rounded-md text-[#6B7280]" aria-label="Close menu">
               <X className="w-4 h-4" />
             </button>

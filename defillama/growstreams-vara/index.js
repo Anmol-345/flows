@@ -1,5 +1,5 @@
-/**
- * Official DeFiLlama TVL, Volume & Fees Adapter — GrowStreams V3 × StonkBase (Vara Network)
+﻿/**
+ * Official DeFiLlama TVL, Volume & Fees Adapter â€” FLOWS V3 Ã— StonkBase (Vara Network)
  * =========================================================================================
  * 100% Direct On-Chain Sails Smart Contract Queries on Vara Mainnet (wss://rpc.vara.network).
  * Zero off-chain API dependency: queries StreamCore, TokenVault, BountyAdapter, SplitsRouter,
@@ -168,3 +168,4 @@ module.exports = {
     fetch: fetchDimensions,
   },
 };
+

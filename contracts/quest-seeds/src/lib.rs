@@ -1,4 +1,4 @@
-#![no_std]
+﻿#![no_std]
 
 use sails_rs::{
     collections::BTreeMap,
@@ -45,7 +45,7 @@ pub struct QuestSeedsState {
 impl QuestSeedsState {
     fn new(admin: ActorId) -> Self {
         Self {
-            name: String::from("GrowStreams Seeds"),
+            name: String::from("FLOWS Seeds"),
             symbol: String::from("SEEDS"),
             decimals: 0,
             total_supply: 0,
@@ -216,3 +216,4 @@ impl SeedsService {
         }
     }
 }
+

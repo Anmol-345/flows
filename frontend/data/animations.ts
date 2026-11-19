@@ -1,6 +1,6 @@
 export const HERO_HEADLINE = [
   {
-    text: "GrowStreams processes billions of transactions every day,",
+    text: "Flows processes billions of transactions every day,",
     accent: false,
   },
   { text: "but most of that data is hard to use.", accent: true },
@@ -168,7 +168,7 @@ export const ENRICHMENT_DETAILS: [string, string][] = [
 ];
 
 export const ENRICHMENT_HEADLINE =
-  "GrowStreams decodes on-chain events in real time, adding structure, accuracy, and intelligence at every layer.";
+  "Flows decodes on-chain events in real time, adding structure, accuracy, and intelligence at every layer.";
 
 export const ENRICHMENT_LIVE_CELLS: [number, number][] = [
   [6, 2],

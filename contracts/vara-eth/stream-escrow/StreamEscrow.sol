@@ -3,7 +3,7 @@ pragma solidity ^0.8.24;
 
 /**
  * @title StreamEscrow
- * @notice Solidity side of the GrowStreams Vara.eth integration.
+ * @notice Solidity side of the Flows Vara.eth integration.
  *
  * Architecture (from vara-eth-solidity-integrator skill):
  *   - This contract holds ERC-20 tokens (USDC) in escrow.

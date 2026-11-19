@@ -1,4 +1,4 @@
-import express from 'express';
+﻿import express from 'express';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { trackSessionUsage, endSession } from '../../services/session-metering.service.mjs';
 import { query, queryOne } from '../../services/db.mjs';
@@ -30,7 +30,7 @@ async function promptVirtuals(systemPrompt, userMessage = null) {
   if (userMessage) messages.push({ role: 'user', content: userMessage });
 
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 8000); // 8 s timeout
+  const timeout = setTimeout(() => controller.abort(), 8000); // 8â€¯s timeout
 
   try {
     const vResponse = await fetch(`https://compute.virtuals.io/v1/chat/completions`, {
@@ -85,7 +85,7 @@ router.post('/session/start', async (req, res) => {
   const { walletAddress, bountyId } = req.body;
   if (!walletAddress) return res.status(400).json({ error: 'walletAddress required' });
 
-  let initialGreeting = 'Welcome to the GrowStreams Network School. To begin, describe your understanding of token streaming.';
+  let initialGreeting = 'Welcome to the FLOWS Network School. To begin, describe your understanding of token streaming.';
 
   // B5 fix: wrap entire route in try/catch
   try {
@@ -113,7 +113,7 @@ router.post('/session/start', async (req, res) => {
 
 // POST /session/:id/answer
 router.post('/session/:id/answer', async (req, res) => {
-  // B2 fix: :id is the session UUID — validate it exists before proceeding
+  // B2 fix: :id is the session UUID â€” validate it exists before proceeding
   const { id } = req.params;
   const { walletAddress, message } = req.body;
 
@@ -288,3 +288,4 @@ async function trackSessionUsageById(sessionId, walletAddress, promptTokens, com
 }
 
 export default router;
+

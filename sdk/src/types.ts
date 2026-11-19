@@ -98,7 +98,7 @@ export interface PayloadResult {
   payload: string;
 }
 
-export interface GrowStreamsConfig {
+export interface FlowsConfig {
   baseUrl: string;
   timeout?: number;
 }

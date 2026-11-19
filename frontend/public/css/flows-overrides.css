@@ -8,7 +8,7 @@
 }
 
 .sidecar-hero-layers {
-  background-image: url('/images/hero/growstream-hero-bg.png') !important;
+  background-image: url('/images/hero/flows-hero-bg.png') !important;
   background-size: cover !important;
   background-position: top center !important;
   background-repeat: no-repeat !important;
@@ -37,7 +37,7 @@
 }
 
 .sidecar-conclusion__media {
-  background-image: url('/images/footer/growstream-footer-bg.jpg') !important;
+  background-image: url('/images/footer/flows-footer-bg.jpg') !important;
   background-size: cover !important;
   background-position: center bottom !important;
 }

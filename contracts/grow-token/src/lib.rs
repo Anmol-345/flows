@@ -1,4 +1,4 @@
-#![no_std]
+﻿#![no_std]
 
 use sails_rs::{
     collections::BTreeMap,
@@ -42,7 +42,7 @@ impl GrowTokenState {
             balances.insert(admin, initial_supply);
         }
         Self {
-            name: String::from("GrowStreams Token"),
+            name: String::from("FLOWS Token"),
             symbol: String::from("GROW"),
             decimals: 12,
             total_supply: initial_supply,
@@ -216,3 +216,4 @@ impl VftService {
         }
     }
 }
+

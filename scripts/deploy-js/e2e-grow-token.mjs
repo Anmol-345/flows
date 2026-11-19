@@ -1,4 +1,4 @@
-import { GearApi, GearKeyring, decodeAddress } from '@gear-js/api';
+﻿import { GearApi, GearKeyring, decodeAddress } from '@gear-js/api';
 import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -382,7 +382,7 @@ async function main() {
   try {
     const { Keyring } = await import('@polkadot/keyring');
     const kr = new Keyring({ type: 'sr25519', ss58Format: 137 });
-    receiverKeyring = kr.addFromUri('//GrowStreamsGrowTestReceiver');
+    receiverKeyring = kr.addFromUri('//FLOWSGrowTestReceiver');
     receiverHex = '0x' + Buffer.from(receiverKeyring.publicKey).toString('hex');
     console.log(`  Receiver address: ${receiverKeyring.address}`);
     console.log(`  Receiver hex: ${receiverHex}`);
@@ -421,7 +421,7 @@ async function main() {
   console.log(`  Flow rate: ${flowRate} units/sec`);
   console.log(`  Stream deposit: ${streamDeposit} units (${Number(streamDeposit) / 1e12} GROW)`);
 
-  let growStreamId = 0n;
+  let FlowId = 0n;
   console.log('[GROW-13] Create GROW token stream');
   try {
     const receiver = encodeActorId(receiverHex);
@@ -438,10 +438,10 @@ async function main() {
     const vecLen = (lenByte & 3) === 0 ? lenByte >> 2 : ((listBuf[0] | (listBuf[1] << 8)) >> 2);
     const idsBuf = listBuf.subarray((lenByte & 3) === 0 ? 1 : 2);
     if (vecLen > 0 && idsBuf.length >= 8) {
-      growStreamId = idsBuf.readBigUInt64LE((vecLen - 1) * 8);
+      FlowId = idsBuf.readBigUInt64LE((vecLen - 1) * 8);
     }
-    console.log(`  Stream ID: ${growStreamId}`);
-    assert(growStreamId >= 1n, `GROW stream created (ID=${growStreamId})`);
+    console.log(`  Stream ID: ${FlowId}`);
+    assert(FlowId >= 1n, `GROW stream created (ID=${FlowId})`);
   } catch (err) {
     console.log(`  ERROR: ${err.message}`); failed++;
   }
@@ -456,8 +456,8 @@ async function main() {
 
   console.log('[GROW-15] Check withdrawable balance');
   try {
-    if (growStreamId === 0n) throw new Error('No stream created');
-    const payload = buildPayload('StreamService', 'GetWithdrawableBalance', encodeU64LE(Number(growStreamId)));
+    if (FlowId === 0n) throw new Error('No stream created');
+    const payload = buildPayload('StreamService', 'GetWithdrawableBalance', encodeU64LE(Number(FlowId)));
     const reply = await queryState(gearApi, keyring, STREAM_CORE_ID, payload);
     const data = skipStrings(reply, 2);
     const withdrawable = data.readBigUInt64LE(0);
@@ -469,8 +469,8 @@ async function main() {
 
   console.log('[GROW-16] Get stream details');
   try {
-    if (growStreamId === 0n) throw new Error('No stream');
-    const payload = buildPayload('StreamService', 'GetStream', encodeU64LE(Number(growStreamId)));
+    if (FlowId === 0n) throw new Error('No stream');
+    const payload = buildPayload('StreamService', 'GetStream', encodeU64LE(Number(FlowId)));
     const reply = await queryState(gearApi, keyring, STREAM_CORE_ID, payload);
     const sBuf = skipStrings(reply, 2);
     if (sBuf[0] === 1) {
@@ -496,13 +496,13 @@ async function main() {
 
   console.log('[GROW-17] Receiver calls Withdraw');
   try {
-    if (!receiverKeyring || growStreamId === 0n) throw new Error('No receiver keyring or stream');
+    if (!receiverKeyring || FlowId === 0n) throw new Error('No receiver keyring or stream');
 
     // Wait a few more seconds for accrual
     console.log('  Waiting 8s for more accrual...');
     await new Promise(r => setTimeout(r, 8000));
 
-    const payload = buildPayload('StreamService', 'Withdraw', encodeU64LE(Number(growStreamId)));
+    const payload = buildPayload('StreamService', 'Withdraw', encodeU64LE(Number(FlowId)));
     const withdrawReply = await sendMessage(gearApi, receiverKeyring, STREAM_CORE_ID, payload);
     console.log(`  Withdraw tx sent, reply: ${withdrawReply ? withdrawReply.slice(0, 40) + '...' : 'ok'}`);
     assert(true, 'Receiver Withdraw transaction succeeded');
@@ -516,8 +516,8 @@ async function main() {
 
   console.log('[GROW-18] Verify stream withdrawn > 0');
   try {
-    if (growStreamId === 0n) throw new Error('No stream');
-    const payload = buildPayload('StreamService', 'GetStream', encodeU64LE(Number(growStreamId)));
+    if (FlowId === 0n) throw new Error('No stream');
+    const payload = buildPayload('StreamService', 'GetStream', encodeU64LE(Number(FlowId)));
     const reply = await queryState(gearApi, keyring, STREAM_CORE_ID, payload);
     const sBuf = skipStrings(reply, 2);
     if (sBuf[0] === 1) {
@@ -551,7 +551,7 @@ async function main() {
       assert(true, `Receiver received ${Number(recvGrowBalance)} units of GROW via stream`);
       console.log('  REAL GROW TOKENS STREAMED FROM VAULT TO RECEIVER ON-CHAIN');
     } else {
-      console.log('  NOTE: Receiver GROW balance is 0 — cross-contract VFT transfer may be async');
+      console.log('  NOTE: Receiver GROW balance is 0 â€” cross-contract VFT transfer may be async');
       console.log('  (Vault records the withdrawal, but VFT transfer needs gas reservation)');
       assert(true, 'Withdraw recorded in stream (VFT transfer may be async)');
     }
@@ -664,3 +664,4 @@ main().catch(err => {
   console.error('Fatal:', err.message);
   process.exit(1);
 });
+

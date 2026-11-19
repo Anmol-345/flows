@@ -63,9 +63,9 @@ export interface UserPortfolioPosition {
   meta?: Record<string, any>;
 }
 
-export const WALLET_STORAGE_KEY = 'growstreams_connected_wallet_v3';
-export const POSITIONS_STORAGE_KEY = 'growstreams_user_positions_v3';
-export const SQUADS_STORAGE_KEY = 'growstreams_custom_squads_v3';
+export const WALLET_STORAGE_KEY = 'flows_connected_wallet_v3';
+export const POSITIONS_STORAGE_KEY = 'flows_user_positions_v3';
+export const SQUADS_STORAGE_KEY = 'flows_custom_squads_v3';
 
 // Singleton GearApi connection so signing and RPC queries never fail
 let cachedGearApiPromise: Promise<any> | null = null;
@@ -532,7 +532,7 @@ export async function connectBrowserVaraWallet(): Promise<{
   }
 
   const { web3Enable, web3Accounts } = await import('@polkadot/extension-dapp');
-  const extensions = await web3Enable('GrowStreams Prime');
+  const extensions = await web3Enable('Flows Prime');
   if (!extensions || extensions.length === 0) {
     throw new Error(
       'No Vara wallet extension detected. Please install or unlock SubWallet, Talisman, or Polkadot.js extension in your browser.'
@@ -542,7 +542,7 @@ export async function connectBrowserVaraWallet(): Promise<{
   const rawAccounts = await web3Accounts();
   if (!rawAccounts || rawAccounts.length === 0) {
     throw new Error(
-      'No accounts found in your wallet extension. Please unlock SubWallet/Talisman and authorize GrowStreams.'
+      'No accounts found in your wallet extension. Please unlock SubWallet/Talisman and authorize Flows.'
     );
   }
 
@@ -563,7 +563,7 @@ export async function connectBrowserVaraWallet(): Promise<{
   const savedAddr = localStorage.getItem(WALLET_STORAGE_KEY);
   const selected = mapped.find((m) => m.address === savedAddr) || mapped[0];
   localStorage.setItem(WALLET_STORAGE_KEY, selected.address);
-  window.dispatchEvent(new CustomEvent('growstreams-wallet-changed', { detail: selected }));
+  window.dispatchEvent(new CustomEvent('flows-wallet-changed', { detail: selected }));
 
   return { accounts: mapped, selected };
 }
@@ -581,7 +581,7 @@ export async function signSailsExtrinsicOnMainnet(params: {
   ideaUrl: string;
 }> {
   const { web3Enable, web3FromSource, web3FromAddress, web3Accounts } = await import('@polkadot/extension-dapp');
-  await web3Enable('GrowStreams Prime');
+  await web3Enable('Flows Prime');
 
   const allAccounts = await web3Accounts();
   if (!allAccounts || allAccounts.length === 0) {
@@ -645,7 +645,7 @@ export async function signSailsExtrinsicOnMainnet(params: {
           reject(new Error('Transaction failed on-chain (ExtrinsicFailed). Check your VARA gas balance.'));
           return;
         }
-        window.dispatchEvent(new CustomEvent('growstreams-wallet-changed'));
+        window.dispatchEvent(new CustomEvent('flows-wallet-changed'));
         resolve({
           blockHash,
           signerAddress: targetAccount.address,
@@ -738,7 +738,7 @@ export function recordUserPosition(pos: UserPortfolioPosition) {
     const existing = getSavedUserPositions();
     const updated = [pos, ...existing];
     localStorage.setItem(POSITIONS_STORAGE_KEY, JSON.stringify(updated));
-    window.dispatchEvent(new CustomEvent('growstreams-positions-changed'));
+    window.dispatchEvent(new CustomEvent('flows-positions-changed'));
   } catch {}
 }
 
@@ -757,7 +757,7 @@ export function updateSavedPositionStatus(id: string, status: UserPortfolioPosit
         : p
     );
     localStorage.setItem(POSITIONS_STORAGE_KEY, JSON.stringify(updated));
-    window.dispatchEvent(new CustomEvent('growstreams-positions-changed'));
+    window.dispatchEvent(new CustomEvent('flows-positions-changed'));
   } catch {}
 }
 
@@ -821,7 +821,7 @@ export function saveCustomSquad(squad: CustomSquadConfig) {
     const existing = getSavedCustomSquads();
     const updated = [squad, ...existing];
     localStorage.setItem(SQUADS_STORAGE_KEY, JSON.stringify(updated));
-    window.dispatchEvent(new CustomEvent('growstreams-squads-changed'));
+    window.dispatchEvent(new CustomEvent('flows-squads-changed'));
   } catch {}
 }
 
@@ -837,7 +837,7 @@ export function useVaraWallet() {
     if (!savedAddr) return;
     try {
       const { web3Enable, web3Accounts } = await import('@polkadot/extension-dapp');
-      const exts = await web3Enable('GrowStreams Prime');
+      const exts = await web3Enable('Flows Prime');
       if (!exts || exts.length === 0) return;
       const raw = await web3Accounts();
       if (!raw || raw.length === 0) return;
@@ -862,8 +862,8 @@ export function useVaraWallet() {
       if (e?.detail) setWallet(e.detail);
       else refreshSavedWallet();
     };
-    window.addEventListener('growstreams-wallet-changed', onWalletEvent);
-    return () => window.removeEventListener('growstreams-wallet-changed', onWalletEvent);
+    window.addEventListener('flows-wallet-changed', onWalletEvent);
+    return () => window.removeEventListener('flows-wallet-changed', onWalletEvent);
   }, [refreshSavedWallet]);
 
   const connect = useCallback(async () => {
@@ -888,14 +888,14 @@ export function useVaraWallet() {
     if (found) {
       setWallet(found);
       localStorage.setItem(WALLET_STORAGE_KEY, found.address);
-      window.dispatchEvent(new CustomEvent('growstreams-wallet-changed', { detail: found }));
+      window.dispatchEvent(new CustomEvent('flows-wallet-changed', { detail: found }));
     }
   }, [accounts]);
 
   const disconnect = useCallback(() => {
     setWallet(null);
     localStorage.removeItem(WALLET_STORAGE_KEY);
-    window.dispatchEvent(new CustomEvent('growstreams-wallet-changed', { detail: null }));
+    window.dispatchEvent(new CustomEvent('flows-wallet-changed', { detail: null }));
   }, []);
 
   return {

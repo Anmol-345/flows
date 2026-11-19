@@ -1,11 +1,11 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Test the full GROW token flow via Railway-deployed API.
  * Sender: admin wallet (server-side keyring)
  * Receiver: kGihti2NTt1m7F5TvijpYgpQGcwgRVREsgSYyoaX9SBUgMwRm
  */
 
-const API = 'https://growstreams-core-production.up.railway.app';
+const API = 'https://FLOWS-core-production.up.railway.app';
 const GROW_TOKEN = '0x05a2a482f1a1a7ebf74643f3cc2099597dac81ff92535cbd647948febee8fe36';
 const RECEIVER = 'kGihti2NTt1m7F5TvijpYgpQGcwgRVREsgSYyoaX9SBUgMwRm';
 
@@ -29,7 +29,7 @@ async function api(path, body) {
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 async function main() {
-  console.log('=== GrowStreams Railway E2E Test ===');
+  console.log('=== FLOWS Railway E2E Test ===');
   console.log(`API: ${API}`);
   console.log(`Receiver: ${RECEIVER}`);
   console.log(`Receiver hex: ${RECEIVER_HEX}`);
@@ -139,3 +139,4 @@ main().catch(err => {
   console.error('FAILED:', err.message);
   process.exit(1);
 });
+

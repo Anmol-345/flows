@@ -1,4 +1,4 @@
-import { GearApi, GearKeyring, decodeAddress } from '@gear-js/api';
+﻿import { GearApi, GearKeyring, decodeAddress } from '@gear-js/api';
 import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -22,11 +22,11 @@ if (RECEIVER_SS58) {
     if (typeof decoded === 'string') {
       RECEIVER_HEX = decoded.startsWith('0x') ? decoded : '0x' + decoded;
     } else {
-      // Uint8Array — convert raw bytes to hex
+      // Uint8Array â€” convert raw bytes to hex
       RECEIVER_HEX = '0x' + Array.from(new Uint8Array(decoded)).map(b => b.toString(16).padStart(2, '0')).join('');
     }
   } catch (err) {
-    console.error(`Invalid SS58 address: ${RECEIVER_SS58} — ${err.message}`);
+    console.error(`Invalid SS58 address: ${RECEIVER_SS58} â€” ${err.message}`);
     process.exit(1);
   }
 }
@@ -191,7 +191,7 @@ async function getBalance(api, address) {
 }
 
 async function main() {
-  console.log('=== GrowStreams V2 — E2E Test Suite ===\n');
+  console.log('=== FLOWS V2 â€” E2E Test Suite ===\n');
   console.log(`StreamCore:        ${STREAM_CORE_ID}`);
   console.log(`TokenVault:        ${TOKEN_VAULT_ID}`);
   console.log(`SplitsRouter:      ${SPLITS_ROUTER_ID || 'NOT DEPLOYED'}`);
@@ -214,7 +214,7 @@ async function main() {
   console.log(`Balance: ${(Number(BigInt(free.toString())) / 1e12).toFixed(4)} VARA\n`);
 
   // ===========================================================================
-  // StreamCore Tests — config + basic queries (stream lifecycle covered in native VARA section)
+  // StreamCore Tests â€” config + basic queries (stream lifecycle covered in native VARA section)
   // ===========================================================================
   console.log('--- StreamCore Tests ---\n');
 
@@ -243,7 +243,7 @@ async function main() {
     console.log(`  ERROR: ${err.message}`); failed++;
   }
 
-  // 3–11: Full lifecycle is exercised later in the Native VARA section.
+  // 3â€“11: Full lifecycle is exercised later in the Native VARA section.
   console.log('[3-11] Stream lifecycle covered in Native VARA test (skipped here)');
   skipped += 9;
 
@@ -443,7 +443,7 @@ async function main() {
       vecLen = (listBuf.readUInt32LE(0) >> 2);
     }
 
-    // Skip compact length prefix (assume small vec for tests → 1 byte prefix)
+    // Skip compact length prefix (assume small vec for tests â†’ 1 byte prefix)
     const idsBuf = listBuf.subarray(1);
     if (vecLen === 0 || idsBuf.length < 8) {
       throw new Error('Sender streams vec empty or malformed');
@@ -475,7 +475,7 @@ async function main() {
     console.log(`  ERROR: ${err.message}`); failed++;
   }
 
-  // Step 5b: Diagnostic — verify vault config has correct stream_core
+  // Step 5b: Diagnostic â€” verify vault config has correct stream_core
   console.log('[NATIVE-5b] Diagnostic: verify vault wiring');
   try {
     const vcPayload = buildPayload('VaultService', 'GetConfig');
@@ -507,7 +507,7 @@ async function main() {
     const allocated = allocatedLo | (allocatedHi << 64n);
     console.log(`  Vault allocation for stream ${nativeStreamId}: ${allocated} units (raw hex: ${allocBuf.subarray(0, 16).toString('hex')})`);
     if (allocated === 0n) {
-      console.log('  WARN: Cross-contract async allocation not reflected yet — Gear async messaging may need gas reservation');
+      console.log('  WARN: Cross-contract async allocation not reflected yet â€” Gear async messaging may need gas reservation');
       console.log('  (This is a known limitation of fire-and-forget msg::send_bytes in Gear)');
       skipped++;
     } else {
@@ -518,20 +518,20 @@ async function main() {
   }
 
   // Step 6: Verify withdraw is correctly gated to receiver only
-  // The sender cannot withdraw — only the receiver wallet can.
-  // This is correct protocol behavior: funds flow sender → vault → receiver.
+  // The sender cannot withdraw â€” only the receiver wallet can.
+  // This is correct protocol behavior: funds flow sender â†’ vault â†’ receiver.
   console.log('[NATIVE-6] Verify withdraw gated to receiver');
   try {
     if (nativeStreamId === 0n) throw new Error('nativeStreamId is 0');
     const payload = buildPayload('StreamService', 'Withdraw', encodeU64LE(Number(nativeStreamId)));
     await sendMessage(api, keyring, STREAM_CORE_ID, payload);
-    // If we get here, something is wrong — sender should NOT be able to withdraw
+    // If we get here, something is wrong â€” sender should NOT be able to withdraw
     assert(false, 'Withdraw should have been rejected for sender');
   } catch (err) {
     const isReceiverGated = err.message.includes('Only receiver can withdraw');
     assert(isReceiverGated, `Withdraw correctly rejected sender: ${err.message.slice(0, 80)}`);
     if (isReceiverGated) {
-      console.log('  (Receiver wallet must call Withdraw to receive VARA — correct protocol behavior)');
+      console.log('  (Receiver wallet must call Withdraw to receive VARA â€” correct protocol behavior)');
     }
   }
 
@@ -580,7 +580,7 @@ async function main() {
   try {
     // Derive a child keypair from deployer mnemonic for the receiver
     try {
-      receiverKeyring = await GearKeyring.fromSuri(VARA_SEED + '//growstreams//receiver');
+      receiverKeyring = await GearKeyring.fromSuri(VARA_SEED + '//FLOWS//receiver');
     } catch {
       receiverKeyring = await GearKeyring.fromMnemonic(VARA_SEED, { name: 'Receiver' });
     }
@@ -592,7 +592,7 @@ async function main() {
       // Fallback: use a deterministic seed
       const { Keyring } = await import('@polkadot/keyring');
       const kr = new Keyring({ type: 'sr25519', ss58Format: 137 });
-      receiverKeyring = kr.addFromUri('//GrowStreamsTestReceiver');
+      receiverKeyring = kr.addFromUri('//FLOWSTestReceiver');
     }
 
     const receiverAddress = receiverKeyring.address;
@@ -625,7 +625,7 @@ async function main() {
     console.log(`  ERROR: ${err.message}`); failed++;
   }
 
-  // Step 9: Create a NEW stream specifically from sender → derived receiver
+  // Step 9: Create a NEW stream specifically from sender â†’ derived receiver
   let receiverStreamId = 0n;
   console.log('[NATIVE-9] Create stream to derived receiver');
   try {
@@ -653,7 +653,7 @@ async function main() {
     const vecLen = (lenByte & 3) === 0 ? lenByte >> 2 : ((listBuf[0] | (listBuf[1] << 8)) >> 2);
     const idsBuf = listBuf.subarray((lenByte & 3) === 0 ? 1 : 2);
     receiverStreamId = idsBuf.readBigUInt64LE((vecLen - 1) * 8);
-    console.log(`  Stream created (ID=${receiverStreamId}) → receiver can now withdraw`);
+    console.log(`  Stream created (ID=${receiverStreamId}) â†’ receiver can now withdraw`);
     assert(receiverStreamId >= 1n, `Stream to derived receiver created (ID=${receiverStreamId})`);
   } catch (err) {
     console.log(`  ERROR: ${err.message}`); failed++;
@@ -663,8 +663,8 @@ async function main() {
   console.log('[NATIVE-10] Wait 12s for allocation + streaming accrual...');
   await new Promise(r => setTimeout(r, 12000));
 
-  // Step 11: RECEIVER calls Withdraw — this is the real money transfer!
-  console.log('[NATIVE-11] *** RECEIVER calls Withdraw — real VARA transfer ***');
+  // Step 11: RECEIVER calls Withdraw â€” this is the real money transfer!
+  console.log('[NATIVE-11] *** RECEIVER calls Withdraw â€” real VARA transfer ***');
   try {
     if (!receiverKeyring || receiverStreamId === 0n) throw new Error('No receiver keyring or stream');
 
@@ -710,7 +710,7 @@ async function main() {
     // With micro flow rates, gas > withdrawn, so net balance decreases.
     // Verify: withdrawn > 0 proves real money moved from vault to receiver.
     assert(withdrawnFromStream > 0n, `Vault transferred ${Number(withdrawnFromStream)} units to receiver`);
-    console.log('  ✅ REAL MONEY SUCCESSFULLY STREAMED FROM VAULT TO RECEIVER ON-CHAIN');
+    console.log('  âœ… REAL MONEY SUCCESSFULLY STREAMED FROM VAULT TO RECEIVER ON-CHAIN');
   } catch (err) {
     console.log(`  ERROR: ${err.message}`); failed++;
   }
@@ -722,7 +722,7 @@ async function main() {
     const payload = buildPayload('StreamService', 'GetStream', encodeU64LE(Number(receiverStreamId)));
     const reply = await queryState(api, keyring, STREAM_CORE_ID, payload);
     const streamBuf = skipStrings(reply, 2);
-    // Stream layout: Option<Stream> — first byte 0x01 means Some
+    // Stream layout: Option<Stream> â€” first byte 0x01 means Some
     // Stream: id(8) + sender(32) + receiver(32) + token(32) + flow_rate(u128=16) +
     //         start_time(u64=8) + last_update(u64=8) + deposited(u128=16) +
     //         withdrawn(u128=16) + streamed(u128=16) + status(1)
@@ -1170,3 +1170,4 @@ main().catch(err => {
   console.error('Fatal:', err.message);
   process.exit(1);
 });
+

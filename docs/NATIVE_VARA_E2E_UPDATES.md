@@ -1,4 +1,4 @@
-# Native VARA E2E Test Updates
+﻿# Native VARA E2E Test Updates
 
 ## Summary
 
@@ -232,7 +232,7 @@ node scripts/deploy-js/e2e-test.mjs
 
 **Expected output**:
 ```
-=== GrowStreams V2 — E2E Test Suite ===
+=== FLOWS V2 â€” E2E Test Suite ===
 
 StreamCore:        0xabcd...
 TokenVault:        0x1234...
@@ -285,7 +285,7 @@ node scripts/deploy-js/e2e-test.mjs 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGK
 
 ## Test Coverage
 
-### Native VARA Flow ✅
+### Native VARA Flow âœ…
 - Deposit native VARA with `msg::value()`
 - Create stream with `ActorId::zero()` token
 - Cross-contract call: `allocate_to_stream()`
@@ -294,17 +294,17 @@ node scripts/deploy-js/e2e-test.mjs 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGK
 - Native VARA transfer via `msg::send()`
 - Balance verification on receiver account
 
-### Token-Based Flow ⏭️ (Skipped)
+### Token-Based Flow â­ï¸ (Skipped)
 - `DepositTokens()` - Skipped (token-based)
 - ERC20-like token transfers - Not implemented yet
 - Token contract integration - Future work
 
-### Vault Pause/Unpause ✅
+### Vault Pause/Unpause âœ…
 - Emergency pause blocks deposits
 - Emergency unpause restores functionality
 - Tested with native deposits
 
-### Stream Lifecycle ✅
+### Stream Lifecycle âœ…
 - Create, pause, resume, update, stop, deposit
 - Sender/receiver stream queries
 - Active stream count tracking
@@ -372,3 +372,4 @@ node scripts/deploy-js/e2e-test.mjs 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGK
 | `native_vara_stream_lifecycle` | New test section | 7 comprehensive tests |
 
 **Total**: +2 helpers, +7 tests, +2 skipped, ~150 lines added
+

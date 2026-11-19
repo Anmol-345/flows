@@ -1,6 +1,6 @@
-export { GrowStreams } from './client.js';
+export { Flows } from './client.js';
 export type {
-  GrowStreamsConfig,
+  FlowsConfig,
   HealthResponse,
   StreamConfig,
   Stream,

@@ -1,5 +1,5 @@
-{
-  "campaignName": "GrowStreams V3 \u00d7 StonkBase \u2014 $1,085,420.45 USD ($1M+ DeFiLlama Verifiable) 500-User \u00d7 4,000-Agent Campaign",
+﻿{
+  "campaignName": "FLOWS V3 \u00d7 StonkBase \u2014 $1,085,420.45 USD ($1M+ DeFiLlama Verifiable) 500-User \u00d7 4,000-Agent Campaign",
   "executedAt": "2026-11-06T23:09:10.199Z",
   "varaPriceUsd": 0.00042293,
   "targetVolumeUsd": 1000000,
@@ -150,8 +150,8 @@
     }
   ],
   "auditDatabaseFiles": {
-    "jsonDbPath": "/Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/data/growstreams-audit-db.json",
-    "csvKeysPath": "/Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/data/growstreams-wallets-keys.csv",
+    "jsonDbPath": "/Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/data/FLOWS-audit-db.json",
+    "csvKeysPath": "/Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/data/FLOWS-wallets-keys.csv",
     "totalWalletsSaved": 4500,
     "totalAgentNetsSaved": 500
   },

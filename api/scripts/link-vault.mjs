@@ -1,4 +1,4 @@
-/**
+﻿/**
  * link-vault.mjs
  *
  * Signs and sends the set_stream_core transaction on the TokenVault
@@ -16,13 +16,13 @@
 
 import { GearApi, GearKeyring } from '@gear-js/api';
 
-// ── Contract addresses ─────────────────────────────────────────────────────
+// â”€â”€ Contract addresses â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const TOKEN_VAULT_ID  = '0x657cf9c4f929aeac97092037826c1117f9e6cd0e3c4edc44e49decc17b840aa9';
 const STREAM_CORE_ID  = '0xba0901f3ef665e956d8ab721686d97d2e5473092df34baf229e87ac826eadc4a';
 const VARA_NODE       = 'wss://rpc.vara.network';
-const API_BASE        = 'https://growstreams-api-v3-production.up.railway.app';
+const API_BASE        = 'https://FLOWS-api-v3-production.up.railway.app';
 
-// ── Main ───────────────────────────────────────────────────────────────────
+// â”€â”€ Main â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function main() {
   const seed = process.argv[2];
   if (!seed) {
@@ -83,7 +83,7 @@ async function main() {
         if (failed) {
           reject(new Error('Transaction failed on-chain: ' + JSON.stringify(failed.toHuman())));
         } else {
-          console.log(`\n✅ SUCCESS! Included in block: ${status.asInBlock.toHex()}`);
+          console.log(`\nâœ… SUCCESS! Included in block: ${status.asInBlock.toHex()}`);
           console.log(`\nTokenVault now trusts StreamCore: ${STREAM_CORE_ID}`);
           console.log('Streams should now work correctly.');
           resolve();
@@ -104,6 +104,7 @@ async function main() {
 }
 
 main().catch(err => {
-  console.error('\n❌ Error:', err.message);
+  console.error('\nâŒ Error:', err.message);
   process.exit(1);
 });
+

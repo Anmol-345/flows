@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { useIdentityActions, useUnifiedVaraAccount } from '@/hooks/useGrowStreams';
+import { useIdentityActions, useUnifiedVaraAccount } from '@/hooks/useFlows';
 import { toast } from 'sonner';
 import {
   Fingerprint, ShieldCheck, ExternalLink, CheckCircle2, Github, Award, Search,
@@ -42,7 +42,7 @@ const VERIFIED_MAINNET_BINDINGS: VerifiedBinding[] = [
   {
     actorId: '0xcf5df269ef1c8a53fed28a2fd5bef72ebccfd5acc9dedb187bc6f092c179bd22',
     ss58: 'kGcf5df269ef1c8a53fed28a2fd5bef72ebccfd5acc9dedb',
-    githubHandle: 'growstreams-ai-squad-01',
+    githubHandle: 'flows-ai-squad-01',
     role: 'Autonomous Stonk Signal & Perps Keeper Agent',
     score: 94,
     proofHash: '0x7c1d4e8f9a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d',
@@ -86,7 +86,7 @@ export default function IdentityPage() {
           actorId: targetActor,
           ss58: account?.address || 'kGk463…cc71',
           githubHandle: githubUsername.trim(),
-          role: 'Verified GrowStreams Builder & Trader',
+          role: 'Verified Flows Builder & Trader',
           score,
           proofHash: deterministicProof,
           verifiedBlock: 37610950,

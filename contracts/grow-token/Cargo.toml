@@ -1,9 +1,9 @@
-[package]
+﻿[package]
 name = "grow-token"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "GROW — fungible token for GrowStreams protocol on Vara"
+description = "GROW â€” fungible token for FLOWS protocol on Vara"
 
 [dependencies]
 sails-rs = "0.6"
@@ -16,3 +16,4 @@ sails-rs = { version = "0.6", features = ["wasm-builder"] }
 
 [lib]
 crate-type = ["cdylib", "rlib"]
+

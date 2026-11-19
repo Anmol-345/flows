@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+﻿import type { Metadata } from "next"
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
@@ -19,26 +19,22 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "GrowStreams — Vara-native Money Streaming Protocol",
+  title: "Flows â€” Vara-native Money Streaming Protocol",
   description:
-    "GrowStreams is a generalized token streaming protocol on Vara. Per-second payments for bounties, payroll, subscriptions, revenue share, grants, and more.",
+    "Flows is a generalized token streaming protocol on Vara. Per-second payments for bounties, payroll, subscriptions, revenue share, grants, and more.",
   openGraph: {
-    title: "GrowStreams — Vara-native Money Streaming Protocol",
+    title: "Flows â€” Vara-native Money Streaming Protocol",
     description:
-      "Per-second token streaming on Vara. Bounties, payroll, subscriptions, revenue share — all powered by real-time streams.",
-    url: "https://growstreams.xyz",
-    siteName: "GrowStreams",
-    images: [
-      { url: "/logo.png", width: 1200, height: 630, alt: "GrowStreams Protocol" },
-    ],
+      "Per-second token streaming on Vara. Bounties, payroll, subscriptions, revenue share â€” all powered by real-time streams.",
+    url: "https://FLOWS.xyz",
+    siteName: "Flows",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "GrowStreams — Vara-native Money Streaming Protocol",
+    title: "Flows â€” Vara-native Money Streaming Protocol",
     description:
-      "Per-second token streaming on Vara. Bounties, payroll, subscriptions, revenue share — composable, token-agnostic, real-time.",
-    images: ["/logo.png"],
+      "Per-second token streaming on Vara. Bounties, payroll, subscriptions, revenue share â€” composable, token-agnostic, real-time.",
   },
 }
 
@@ -50,7 +46,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link rel="icon" type="image/png" href="/logo-mark.png" />
         <link rel="stylesheet" href="/css/6997d9d9ea53150e.css" />
         <link rel="stylesheet" href="/css/fbcbfeb8105deba8.css" />
         <link rel="stylesheet" href="/css/febab3fae21381e6.css" />
@@ -62,7 +57,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/_astro/about.CnngLkgH.css" />
         <link rel="stylesheet" href="/_astro/index.D5hQtxWv.css" />
         <link rel="stylesheet" href="/_astro/index.T_1Ozbp6.css" />
-        <link rel="stylesheet" href="/css/growstream-overrides.css" />
+        <link rel="stylesheet" href="/css/flows-overrides.css" />
         <link rel="stylesheet" href="/css/gsap-streams.css" />
       </head>
       <Script
@@ -114,3 +109,4 @@ export default function RootLayout({
     </html>
   )
 }
+

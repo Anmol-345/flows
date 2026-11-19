@@ -1,5 +1,5 @@
-{
-  "name": "growstreams-deployer",
+﻿{
+  "name": "FLOWS-deployer",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -13,3 +13,4 @@
     "dotenv": "^16.4.5"
   }
 }
+

@@ -1,6 +1,6 @@
-// GrowStreams V2 — SplitsRouter IDL
+﻿// FLOWS V2 â€” SplitsRouter IDL
 // Weighted one-to-many distribution of incoming funds
-// V2+ — interface designed now, implementation deferred
+// V2+ â€” interface designed now, implementation deferred
 
 type SplitGroup = struct {
   id: u64,
@@ -59,3 +59,4 @@ service SplitsService {
     FundsDistributed: struct { group_id: u64, token: actor_id, total_amount: u128, recipient_count: u32, timestamp: u64 };
   }
 };
+

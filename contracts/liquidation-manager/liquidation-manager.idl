@@ -1,4 +1,4 @@
-// GrowStreams — Liquidation Manager IDL
+﻿// FLOWS â€” Liquidation Manager IDL
 // Solvency enforcement for Super Token streams
 
 type SolvencyStatus = enum {
@@ -60,3 +60,4 @@ service LiquidationService {
   query TotalLiquidations : () -> u64;
   query ComputeRisk : (stream_id: u64, sender: actor_id, super_token: actor_id, balance: u128, net_flow_rate: i128) -> StreamRisk;
 };
+

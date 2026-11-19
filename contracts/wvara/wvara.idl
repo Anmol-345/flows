@@ -1,4 +1,4 @@
-// GrowStreams — wVARA IDL
+﻿// FLOWS â€” wVARA IDL
 // Wrapped VARA: native VARA locked 1:1 as a VFT token for streaming
 
 type TokenMeta = struct {
@@ -13,7 +13,7 @@ constructor {
   New : ();
 };
 
-// Service name is "Vft" — MUST match token-vault's encode_call("Vft", ...) calls
+// Service name is "Vft" â€” MUST match token-vault's encode_call("Vft", ...) calls
 service Vft {
   // --- VFT standard (amounts are u256 as vec of 32 bytes LE) ---
   Transfer : (to: actor_id, amount: vec u8) -> bool;
@@ -37,3 +37,4 @@ service Vft {
   query Decimals : () -> u8;
   query GetMeta : () -> TokenMeta;
 };
+

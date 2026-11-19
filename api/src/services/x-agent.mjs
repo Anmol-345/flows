@@ -1,4 +1,4 @@
-import { TwitterApi } from 'twitter-api-v2';
+﻿import { TwitterApi } from 'twitter-api-v2';
 import { scoreContent } from './llm-scorer.mjs';
 import { awardXP, getInitialXP } from './xp-service.mjs';
 import { queryOne, query } from './db.mjs';
@@ -150,11 +150,11 @@ async function getParticipantRank(wallet) {
 // Build reply tweet text
 // ---------------------------------------------------------------------------
 function buildReplyText(score, xpAwarded, rank) {
-  let text = `\u{1F916} GrowStreams verified your post!\n\n`;
+  let text = `\u{1F916} FLOWS verified your post!\n\n`;
   text += `Score: ${score} / 100\n`;
   text += `XP: ${xpAwarded}\n`;
   if (rank) text += `\nRank: #${rank}\n`;
-  text += `\nLeaderboard:\ngrowstreams.xyz/leaderboard`;
+  text += `\nLeaderboard:\nFLOWS.xyz/leaderboard`;
   return text;
 }
 
@@ -350,7 +350,7 @@ export async function reevaluateTweet(contributionId, tweetId, wallet) {
     // 404 or similar = tweet deleted
     if (err.code === 404 || err.data?.status === 404) {
       await updateContribution(contributionId, { status: 'DELETED' });
-      console.log(`[x-agent] Tweet ${tweetId} deleted, status → DELETED`);
+      console.log(`[x-agent] Tweet ${tweetId} deleted, status â†’ DELETED`);
       return;
     }
     console.error(`[x-agent] Failed to fetch tweet ${tweetId}: ${err.message}`);
@@ -430,7 +430,7 @@ export async function startStream() {
     // Add our rule
     await client.v2.updateStreamRules({
       add: [
-        { value: '@GrowStreams OR @GrowwStreams OR #GrowStreams -is:retweet lang:en', tag: 'growstreams-mentions' },
+        { value: '@FLOWS OR @GrowwStreams OR #FLOWS -is:retweet lang:en', tag: 'FLOWS-mentions' },
       ],
     });
     console.log('[x-agent] Stream rules set');
@@ -479,18 +479,19 @@ export async function startStream() {
         console.log('[x-agent] Stream reconnected');
       });
 
-      console.log('[x-agent] Filtered stream started, listening for GrowStreams mentions');
-      return; // success — exit the retry loop
+      console.log('[x-agent] Filtered stream started, listening for FLOWS mentions');
+      return; // success â€” exit the retry loop
     } catch (err) {
       const isRetryable = err.message?.includes('503') || err.code === 503
         || err.message?.includes('429') || err.code === 429;
       console.error(`[x-agent] Failed to start stream (attempt ${streamAttempt}/${maxStreamAttempts}): ${err.message}`);
       if (isRetryable && streamAttempt < maxStreamAttempts) {
         const backoff = err.message?.includes('429') ? 60000 : 5000;
-        console.log(`[x-agent] ${err.message?.includes('429') ? '429 rate-limited' : '503'} — retrying stream in ${backoff / 1000}s...`);
+        console.log(`[x-agent] ${err.message?.includes('429') ? '429 rate-limited' : '503'} â€” retrying stream in ${backoff / 1000}s...`);
         await new Promise(r => setTimeout(r, backoff));
         continue;
       }
     }
   }
 }
+

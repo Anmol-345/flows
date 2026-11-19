@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Campaign Utility Functions
  * Helpers for the Web3 Contribution Challenge
  */
@@ -25,13 +25,13 @@ export interface CampaignParticipant {
  * Generate tweet text for sharing campaign results
  */
 export function generateCampaignTweet(scoreData: ScoreData, githubId: string): string {
-  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://growstreams.xyz';
+  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://FLOWS.xyz';
   
   return `I just verified my Web3 contributions on @VaraNetwork!\n` +
     `Score: ${scoreData.overall} | CID: ${scoreData.cid.substring(0, 10)}...\n` +
-    `Minted my Scorecard NFT 🎖️\n` +
-    `Join the leaderboard → ${baseUrl}/campaign/leaderboard\n` +
-    `#GrowStreamsChallenge #Vara #Web3Builders`;
+    `Minted my Scorecard NFT ðŸŽ–ï¸\n` +
+    `Join the leaderboard â†’ ${baseUrl}/campaign/leaderboard\n` +
+    `#FlowsChallenge #Vara #Web3Builders`;
 }
 
 /**
@@ -118,3 +118,4 @@ export function generateScorecardImageUrl(scoreData: ScoreData, githubId: string
   // This could be an API route that generates an SVG or uses a service like Canvas
   return `/api/scorecard-image?github=${githubId}&score=${scoreData.overall}`;
 }
+

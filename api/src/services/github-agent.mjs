@@ -1,4 +1,4 @@
-import { scorePR } from './llm-scorer.mjs';
+﻿import { scorePR } from './llm-scorer.mjs';
 import { awardXP, getInitialXP } from './xp-service.mjs';
 import { queryOne, queryAll, query } from './db.mjs';
 
@@ -13,7 +13,7 @@ function getToken() {
 function getRepoConfig() {
   return {
     owner: process.env.GITHUB_REPO_OWNER || 'BlockXAI',
-    repo: process.env.GITHUB_REPO_NAME || 'GrowStreams_Backend',
+    repo: process.env.GITHUB_REPO_NAME || 'FLOWS_Backend',
   };
 }
 
@@ -33,7 +33,7 @@ async function ghApiFetch(path, options = {}) {
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/vnd.github+json',
         'X-GitHub-Api-Version': '2022-11-28',
-        'User-Agent': 'GrowStreams-Bot/1.0',
+        'User-Agent': 'FLOWS-Bot/1.0',
       };
       if (options.body) headers['Content-Type'] = 'application/json';
 
@@ -45,7 +45,7 @@ async function ghApiFetch(path, options = {}) {
 
       if (!resp.ok) {
         const errorBody = await resp.text().catch(() => '(no body)');
-        const errMsg = `GitHub API ${method} ${path} → ${resp.status} ${resp.statusText}: ${errorBody.slice(0, 300)}`;
+        const errMsg = `GitHub API ${method} ${path} â†’ ${resp.status} ${resp.statusText}: ${errorBody.slice(0, 300)}`;
         console.error(`[github-agent] ${errMsg}`);
         if (attempt < maxAttempts && (resp.status >= 500 || resp.status === 403 || resp.status === 429)) {
           console.log(`[github-agent] Retrying (${attempt}/${maxAttempts})...`);
@@ -183,9 +183,9 @@ async function postComment(prNumber, body) {
 function buildScoreComment(result, xpAwarded, wallet) {
   const { score, factors, feedback } = result;
   const passed = score >= parseInt(process.env.SCORE_THRESHOLD || '70', 10);
-  const emoji = passed ? '✅' : '❌';
+  const emoji = passed ? 'âœ…' : 'âŒ';
 
-  let comment = `### 🤖 GrowStreams AI Review\n\n`;
+  let comment = `### ðŸ¤– FLOWS AI Review\n\n`;
   comment += `**Score: ${score}/100** ${emoji}\n\n`;
   comment += `| Factor | Score |\n|--------|-------|\n`;
   comment += `| Correctness | ${factors.correctness}/30 |\n`;
@@ -197,12 +197,12 @@ function buildScoreComment(result, xpAwarded, wallet) {
 
   if (passed && xpAwarded > 0) {
     comment += `---\n`;
-    comment += `🏆 **XP Awarded: ${xpAwarded} XP**`;
-    if (wallet) comment += ` → \`${wallet.slice(0, 8)}...${wallet.slice(-4)}\``;
-    comment += `\n📊 [View Leaderboard](https://growstreams.xyz/leaderboard)\n`;
+    comment += `ðŸ† **XP Awarded: ${xpAwarded} XP**`;
+    if (wallet) comment += ` â†’ \`${wallet.slice(0, 8)}...${wallet.slice(-4)}\``;
+    comment += `\nðŸ“Š [View Leaderboard](https://FLOWS.xyz/leaderboard)\n`;
   } else if (!passed) {
     comment += `---\n`;
-    comment += `💡 Score below ${process.env.SCORE_THRESHOLD || '70'}. `;
+    comment += `ðŸ’¡ Score below ${process.env.SCORE_THRESHOLD || '70'}. `;
     comment += `Push improvements to this PR and it will be re-scored automatically.\n`;
   }
 
@@ -210,10 +210,10 @@ function buildScoreComment(result, xpAwarded, wallet) {
 }
 
 function buildMergeBonusComment(bonusXP, wallet) {
-  let comment = `### 🤖 GrowStreams — Merge Bonus!\n\n`;
-  comment += `🎉 This PR was merged. **+${bonusXP} XP** merge bonus awarded`;
+  let comment = `### ðŸ¤– FLOWS â€” Merge Bonus!\n\n`;
+  comment += `ðŸŽ‰ This PR was merged. **+${bonusXP} XP** merge bonus awarded`;
   if (wallet) comment += ` to \`${wallet.slice(0, 8)}...${wallet.slice(-4)}\``;
-  comment += `.\n\n📊 [View Leaderboard](https://growstreams.xyz/leaderboard)\n`;
+  comment += `.\n\nðŸ“Š [View Leaderboard](https://FLOWS.xyz/leaderboard)\n`;
   return comment;
 }
 
@@ -310,7 +310,7 @@ export async function handlePROpened(payload) {
   if (!participant) {
     console.log(`[github-agent] ${authorLogin} not registered, skipping`);
     await postComment(prNumber,
-      `👋 Hey @${authorLogin}! Register at [GrowStreams](https://growstreams.xyz/campaign) to earn XP for your contributions.`
+      `ðŸ‘‹ Hey @${authorLogin}! Register at [FLOWS](https://FLOWS.xyz/campaign) to earn XP for your contributions.`
     );
     return;
   }
@@ -339,7 +339,7 @@ export async function handlePROpened(payload) {
       'REJECTED', `Trivial change: only ${meaningfulLines} meaningful lines changed.`, { trivial: true, meaningfulLines }
     );
     await postComment(prNumber,
-      `### 🤖 GrowStreams AI Review\n\n**Score: Below threshold**\n\nThis PR has fewer than 5 meaningful lines of change. Please submit more substantial contributions to earn XP.\n\n💡 Push more changes and it will be re-scored automatically.`
+      `### ðŸ¤– FLOWS AI Review\n\n**Score: Below threshold**\n\nThis PR has fewer than 5 meaningful lines of change. Please submit more substantial contributions to earn XP.\n\nðŸ’¡ Push more changes and it will be re-scored automatically.`
     );
     return;
   }
@@ -480,7 +480,7 @@ export async function handlePRSynchronized(payload) {
 
     if (result.score !== existing.score) {
       await postComment(prNumber, buildScoreComment(result, xpDelta > 0 ? xpDelta : 0, participant.wallet));
-      console.log(`[github-agent] PR #${prNumber} re-scored: ${existing.score} → ${result.score}`);
+      console.log(`[github-agent] PR #${prNumber} re-scored: ${existing.score} â†’ ${result.score}`);
     }
 
   } else if (existing.status === 'REJECTED' && result.score < threshold) {
@@ -544,5 +544,6 @@ export async function handlePRClosed(payload) {
   if (!existing) return;
 
   await updateContribution(existing.id, { status: 'CLOSED' });
-  console.log(`[github-agent] PR #${prNumber} contribution status → CLOSED`);
+  console.log(`[github-agent] PR #${prNumber} contribution status â†’ CLOSED`);
 }
+

@@ -1,15 +1,15 @@
-# GrowStreams V3 — Frontend Engineering & QA User Testing Guide
+﻿# FLOWS V3 â€” Frontend Engineering & QA User Testing Guide
 
 > [!IMPORTANT]
 > **Target Audience:** Frontend Engineering Team, QA / User Testing Team, and Grant / Ecosystem Reviewers.
 > **Live Network:** Vara Network Mainnet (`wss://rpc.vara.network`, Chain SS58 Prefix `137`)
-> **Repository:** [`Satyam-10124/growstreams-v3`](https://github.com/Satyam-10124/growstreams-v3) (`main`)
+> **Repository:** [`Satyam-10124/FLOWS-v3`](https://github.com/Satyam-10124/FLOWS-v3) (`main`)
 
 ---
 
 ## 1. System Architecture & Data Flow
 
-GrowStreams V3 is a real-time programmable liquidity, streaming settlement, autonomous AI agent society, and synthetic equity (`StonkBase` 5x) protocol built natively on **Vara Network** using the **Sails (`gstd`) Actor Framework**.
+FLOWS V3 is a real-time programmable liquidity, streaming settlement, autonomous AI agent society, and synthetic equity (`StonkBase` 5x) protocol built natively on **Vara Network** using the **Sails (`gstd`) Actor Framework**.
 
 ```mermaid
 flowchart LR
@@ -60,7 +60,7 @@ flowchart LR
 
 ## 2. Production Smart Contracts & Environment Setup
 
-### 2.1 Verified Vara Mainnet Contract Addresses ([`deploy-state.json`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/deploy-state.json))
+### 2.1 Verified Vara Mainnet Contract Addresses ([`deploy-state.json`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/deploy-state.json))
 
 | Contract Module | Role in User Flow | Vara Mainnet `ProgramId` (`0x...`) |
 | :--- | :--- | :--- |
@@ -103,33 +103,33 @@ NEXT_PUBLIC_GROW_TOKEN_ID=0x05a2ac92ecb13cec7ddb10d8fe2bef36aa2fc7e1fb9fdf6b5bf2
 
 | Route | Source File | Purpose & Key UI Elements |
 | :--- | :--- | :--- |
-| `/` | [`frontend/app/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/page.tsx) | **Main Landing Page:** Live protocol KPIs, streaming money animation, Agentic Society preview, StonkBase 5x overview, and direct CTA to launch `/app` or `/agentic`. |
-| `/protocol-overview` | [`frontend/app/protocol-overview/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/protocol-overview/page.tsx) | **Grant & Institutional Verifiable Dashboard:** Live on-chain contract balances, DeFiLlama adapter metrics, active 60-day streaming pillars (`Bounties #1..17`), and Subscan transaction links. |
-| `/agentic` | [`frontend/app/agentic/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/agentic/page.tsx) | **Autonomous Agent Society & StonkBase 5x Desk:** Interactive terminal to spawn 4-agent squads (`Signal`, `Trader`, `Split`, `Arb`), trade 5x leveraged synthetic equities (`NVDA`, `TSLA`, `AAPL`, `MSFT`, `SPY`, etc.), and monitor live agent-to-agent streams. |
-| `/use-cases` | [`frontend/app/use-cases/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/use-cases/page.tsx) | Interactive showcase of Payroll, AI Agent Bounties, Creator Revenue Splits, and DeFi Streaming Margin. |
-| `/developers` | [`frontend/app/developers/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/developers/page.tsx) | SDK snippets, Sails IDL references, and webhook integration docs. |
+| `/` | [`frontend/app/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/page.tsx) | **Main Landing Page:** Live protocol KPIs, streaming money animation, Agentic Society preview, StonkBase 5x overview, and direct CTA to launch `/app` or `/agentic`. |
+| `/protocol-overview` | [`frontend/app/protocol-overview/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/protocol-overview/page.tsx) | **Grant & Institutional Verifiable Dashboard:** Live on-chain contract balances, DeFiLlama adapter metrics, active 60-day streaming pillars (`Bounties #1..17`), and Subscan transaction links. |
+| `/agentic` | [`frontend/app/agentic/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/agentic/page.tsx) | **Autonomous Agent Society & StonkBase 5x Desk:** Interactive terminal to spawn 4-agent squads (`Signal`, `Trader`, `Split`, `Arb`), trade 5x leveraged synthetic equities (`NVDA`, `TSLA`, `AAPL`, `MSFT`, `SPY`, etc.), and monitor live agent-to-agent streams. |
+| `/use-cases` | [`frontend/app/use-cases/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/use-cases/page.tsx) | Interactive showcase of Payroll, AI Agent Bounties, Creator Revenue Splits, and DeFi Streaming Margin. |
+| `/developers` | [`frontend/app/developers/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/developers/page.tsx) | SDK snippets, Sails IDL references, and webhook integration docs. |
 
 ### 3.2 Authenticated Web3 DApp Routes (`/app/*`)
 
 | Route | Source File | Smart Contract Target | User Actions |
 | :--- | :--- | :--- | :--- |
-| `/app` | [`frontend/app/app/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/page.tsx) | All V3 Contracts | **Unified Command Center:** Displays connected wallet's Native `VARA`, `gVARA`, Vault balance, active incoming/outgoing streams, and quick actions. |
-| `/app/grow` | [`frontend/app/app/grow/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/grow/page.tsx) | `GrowToken` (`gVARA`) | **Wrap / Unwrap `gVARA`:** Deposit Native `VARA` to mint `1:1 gVARA` (`Deposit`) or burn `gVARA` to redeem Native `VARA` (`Withdraw`). |
-| `/app/vault` | [`frontend/app/app/vault/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/vault/page.tsx) | `TokenVault` | **Liquidity Buffer Vault:** Deposit/withdraw Native `VARA` (`DepositNative` / `WithdrawNative`) and manage stream buffer allocations. |
-| `/app/streams` | [`frontend/app/app/streams/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/streams/page.tsx) | `StreamCore` | **Stream Lifecycle Management:** Create a stream (`CreateStream`), top up deposit (`Deposit`), pause/stop (`StopStream`), receiver withdraw (`Withdraw`), and sender refund (`Refund`). |
-| `/app/splits` | [`frontend/app/app/splits/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/splits/page.tsx) | `SplitsRouter` | **Proportional Revenue Splits:** Create a split group with multiple recipients and weights (`bps` summing to `10,000`), update weights, and execute `Distribute`. |
-| `/app/bounties` | [`frontend/app/app/bounties/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/bounties/page.tsx) | `BountyAdapter` | **AI-Verified Bounties:** Create a bounty (`CreateBounty` with `max_flow_rate`, `min_score`, `total_budget`), claim as an agent (`ClaimBounty`), submit AI verification score (`VerifyAndStartStream`), and complete (`CompleteBounty`). |
-| `/app/identity` | [`frontend/app/app/identity/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/identity/page.tsx) | `IdentityRegistry` | **On-Chain Agent Identity:** Register an AI agent wallet (`RegisterAgent`), attach metadata URI, and view reputation score / total ratings. |
-| `/app/permissions` | [`frontend/app/app/permissions/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/permissions/page.tsx) | `PermissionManager` | **Delegated Access Control:** Grant or revoke scoped permissions (`GrantPermission` / `RevokePermission`) so an AI agent can manage streams on a user's behalf up to `max_amount` until `expires_at`. |
-| `/app/campaign` | [`frontend/app/app/campaign/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/campaign/page.tsx) | Campaign DB + API | **Stream-to-Earn Campaigns:** Creator & community quests rewarded with real-time `gVARA` streams. |
-| `/app/leaderboard` | [`frontend/app/app/leaderboard/page.tsx`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/frontend/app/app/leaderboard/page.tsx) | Leaderboard API | **Protocol Leaderboard:** Ranks top streamers, agent operators, and StonkBase traders by volume and PnL. |
+| `/app` | [`frontend/app/app/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/page.tsx) | All V3 Contracts | **Unified Command Center:** Displays connected wallet's Native `VARA`, `gVARA`, Vault balance, active incoming/outgoing streams, and quick actions. |
+| `/app/grow` | [`frontend/app/app/grow/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/grow/page.tsx) | `GrowToken` (`gVARA`) | **Wrap / Unwrap `gVARA`:** Deposit Native `VARA` to mint `1:1 gVARA` (`Deposit`) or burn `gVARA` to redeem Native `VARA` (`Withdraw`). |
+| `/app/vault` | [`frontend/app/app/vault/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/vault/page.tsx) | `TokenVault` | **Liquidity Buffer Vault:** Deposit/withdraw Native `VARA` (`DepositNative` / `WithdrawNative`) and manage stream buffer allocations. |
+| `/app/streams` | [`frontend/app/app/streams/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/streams/page.tsx) | `StreamCore` | **Stream Lifecycle Management:** Create a stream (`CreateStream`), top up deposit (`Deposit`), pause/stop (`StopStream`), receiver withdraw (`Withdraw`), and sender refund (`Refund`). |
+| `/app/splits` | [`frontend/app/app/splits/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/splits/page.tsx) | `SplitsRouter` | **Proportional Revenue Splits:** Create a split group with multiple recipients and weights (`bps` summing to `10,000`), update weights, and execute `Distribute`. |
+| `/app/bounties` | [`frontend/app/app/bounties/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/bounties/page.tsx) | `BountyAdapter` | **AI-Verified Bounties:** Create a bounty (`CreateBounty` with `max_flow_rate`, `min_score`, `total_budget`), claim as an agent (`ClaimBounty`), submit AI verification score (`VerifyAndStartStream`), and complete (`CompleteBounty`). |
+| `/app/identity` | [`frontend/app/app/identity/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/identity/page.tsx) | `IdentityRegistry` | **On-Chain Agent Identity:** Register an AI agent wallet (`RegisterAgent`), attach metadata URI, and view reputation score / total ratings. |
+| `/app/permissions` | [`frontend/app/app/permissions/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/permissions/page.tsx) | `PermissionManager` | **Delegated Access Control:** Grant or revoke scoped permissions (`GrantPermission` / `RevokePermission`) so an AI agent can manage streams on a user's behalf up to `max_amount` until `expires_at`. |
+| `/app/campaign` | [`frontend/app/app/campaign/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/campaign/page.tsx) | Campaign DB + API | **Stream-to-Earn Campaigns:** Creator & community quests rewarded with real-time `gVARA` streams. |
+| `/app/leaderboard` | [`frontend/app/app/leaderboard/page.tsx`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/frontend/app/app/leaderboard/page.tsx) | Leaderboard API | **Protocol Leaderboard:** Ranks top streamers, agent operators, and StonkBase traders by volume and PnL. |
 
 ---
 
 ## 4. The 6 Core Use Cases & User Flows
 
 ### Use Case 1: Wrapping Native `VARA` into Streaming `gVARA` & Buffer Vaulting
-- **Who:** Any new user or agent onboarding into GrowStreams.
+- **Who:** Any new user or agent onboarding into FLOWS.
 - **Why:** Native `VARA` is wrapped 1:1 into `gVARA` (`GrowToken`) or deposited into `TokenVault` so smart contracts can stream balances continuously per second without requiring a user signature every second.
 - **User Flow:**
   1. Connect SubWallet on `/app/grow` or `/app/vault`.
@@ -142,7 +142,7 @@ NEXT_PUBLIC_GROW_TOKEN_ID=0x05a2ac92ecb13cec7ddb10d8fe2bef36aa2fc7e1fb9fdf6b5bf2
 - **On-Chain Mechanics:**
   - Sender specifies `receiver` (`ActorId`), `token` (`gVARA` or `wVARA`), `flow_rate` (plancks/second), and `initial_deposit` (plancks).
   - Every second $t \in [\text{startTime}, \text{stopTime}]$, `StreamCore` accrues $\Delta V = \text{flow\_rate} \times \Delta t$ from the sender's deposit to the receiver's withdrawable balance.
-  - A **`2.5%` (`250 bps`) protocol service fee** is deducted on withdrawal/settlement and routed to the GrowStreams Protocol Treasury.
+  - A **`2.5%` (`250 bps`) protocol service fee** is deducted on withdrawal/settlement and routed to the FLOWS Protocol Treasury.
   - If the sender stops the stream early (`StopStream`), the unstreamed deposit is immediately refundable via `Refund(stream_id)`.
 
 ### Use Case 3: Multi-Recipient Revenue Splits (`SplitsRouter`)
@@ -180,13 +180,13 @@ NEXT_PUBLIC_GROW_TOKEN_ID=0x05a2ac92ecb13cec7ddb10d8fe2bef36aa2fc7e1fb9fdf6b5bf2
   1. Trader deposits `1x` spot `gVARA` margin (e.g., `200 gVARA`) and selects leverage (`1x` to `5x`, e.g., `5x` = `1,000 gVARA` notional exposure) and direction (`LONG` or `SHORT`).
   2. While the position is open, continuous funding/margin streams flow through `StreamCore` & `BountyAdapter`.
   3. Live Yahoo Finance / Pyth price feeds update PnL in real time via `/api/agents/stonkbase/*`.
-  4. Take-Profit (`+4%` auto-close) or Liquidation (`-80%` margin threshold monitored by [`api/src/cron/liquidator.mjs`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/api/src/cron/liquidator.mjs)) settles the position and distributes profits across the 4-agent squad (`60/15/15/10`).
+  4. Take-Profit (`+4%` auto-close) or Liquidation (`-80%` margin threshold monitored by [`api/src/cron/liquidator.mjs`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/api/src/cron/liquidator.mjs)) settles the position and distributes profits across the 4-agent squad (`60/15/15/10`).
 
 ---
 
 ## 5. Backend REST API Reference for Frontend Developers
 
-All endpoints are served by [`api/src/index.mjs`](file:///Users/satyamsinghal/Downloads/GrowStreams_Backend-anmolChanges/api/src/index.mjs) on `http://localhost:3001`:
+All endpoints are served by [`api/src/index.mjs`](file:///Users/satyamsinghal/Downloads/FLOWS_Backend-anmolChanges/api/src/index.mjs) on `http://localhost:3001`:
 
 | Endpoint | Method | Description |
 | :--- | :---: | :--- |
@@ -202,16 +202,16 @@ All endpoints are served by [`api/src/index.mjs`](file:///Users/satyamsinghal/Do
 | `/api/permissions` | `GET` / `POST` | Grant/revoke scoped agent permissions (`POST /api/permissions/grant`). |
 | `/api/agents/society/state` | `GET` | Live state of the autonomous Agent Society (active squads, ACP streams, split cascades). |
 | `/api/agents/stonkbase/state` | `GET` | Live StonkBase 5x orderbook, oracle equity prices (`NVDA`, `TSLA`, etc.), open positions, and PnL. |
-| `/api/agents/stonkbase/open` | `POST` | Open a new `1x–5x` `LONG`/`SHORT` synthetic stock position with `gVARA` margin. |
+| `/api/agents/stonkbase/open` | `POST` | Open a new `1xâ€“5x` `LONG`/`SHORT` synthetic stock position with `gVARA` margin. |
 | `/api/voucher/issue` | `POST` | Issues a gasless Vara voucher to a newly onboarded user wallet so they can transact with zero initial gas. |
 
 ---
 
-## 6. QA & User Testing Checklist (`TC-01` – `TC-12`)
+## 6. QA & User Testing Checklist (`TC-01` â€“ `TC-12`)
 
 ### Pre-Test Setup for QA Testers
 1. Install **SubWallet** or **Polkadot.js Extension** in Chrome/Brave.
-2. Switch network to **Vara Network Mainnet** (or import a test wallet funded with `50–100 VARA`).
+2. Switch network to **Vara Network Mainnet** (or import a test wallet funded with `50â€“100 VARA`).
 3. Ensure backend API (`port 3001`) and frontend (`port 3000`) are running.
 
 | Test ID | Feature Area | Route | Step-by-Step Test Action | Expected Result (UI + On-Chain) |
@@ -234,8 +234,9 @@ All endpoints are served by [`api/src/index.mjs`](file:///Users/satyamsinghal/Do
 ## 7. Action Items for the Frontend Team Before Public Launch
 
 1. **Production Environment Variables:**
-   - Replace `NEXT_PUBLIC_API_URL=http://localhost:3001` with the production HTTPS endpoint of your cloud backend (e.g. `https://api.growstreams.xyz` via Cloudflare reverse proxy to `localhost:3001`).
+   - Replace `NEXT_PUBLIC_API_URL=http://localhost:3001` with the production HTTPS endpoint of your cloud backend (e.g. `https://api.FLOWS.xyz` via Cloudflare reverse proxy to `localhost:3001`).
 2. **Mailbox Auto-Claim UX Indicator:**
    - When a user withdraws native `VARA` from `TokenVault` or `GrowToken` in the browser, show a 2-step toast notification: *"Step 1/2: Contract Withdrawal Confirmed"* $\to$ *"Step 2/2: Claiming Native VARA from Gear Mailbox"* so users understand why native `VARA` takes ~3 seconds after block inclusion to appear in their SubWallet free balance.
 3. **Keep Both Signing Modes Active:**
    - Maintain **Direct Wallet Signing** on `/app/*` for self-custodial users, and **Backend Relayer Execution** on `/agentic` so autonomous agents and StonkBase 5x trades execute seamlessly in the background without triggering 20 wallet popups per minute.
+

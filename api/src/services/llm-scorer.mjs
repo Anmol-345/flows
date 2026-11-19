@@ -1,4 +1,4 @@
-const PR_SCORING_PROMPT = `You are a code review AI for the GrowStreams open-source project.
+﻿const PR_SCORING_PROMPT = `You are a code review AI for the FLOWS open-source project.
 You score pull requests on a scale of 0 to 100 based on five factors.
 
 SCORING RUBRIC:
@@ -130,15 +130,15 @@ const response = await fetch('https://compute.virtuals.io/v1/chat/completions', 
 // CONTENT SCORING (X / Twitter posts)
 // ---------------------------------------------------------------------------
 
-const CONTENT_SCORING_PROMPT = `You are a content review AI for the GrowStreams open-source project.
-You score social media posts about GrowStreams on a scale of 0 to 100 based on five factors.
+const CONTENT_SCORING_PROMPT = `You are a content review AI for the FLOWS open-source project.
+You score social media posts about FLOWS on a scale of 0 to 100 based on five factors.
 
-GrowStreams is a money streaming infrastructure for Vara Network (Polkadot ecosystem).
+FLOWS is a money streaming infrastructure for Vara Network (Polkadot ecosystem).
 Good content explains the technology, shares tutorials, provides analysis, or creates educational threads.
 
 SCORING RUBRIC:
 - quality (0-30): Is the content well-written, clear, and engaging?
-- relevance (0-15): Does it meaningfully discuss GrowStreams, Vara, or streaming payments?
+- relevance (0-15): Does it meaningfully discuss FLOWS, Vara, or streaming payments?
 - originality (0-10): Is this original insight, or generic/copied content?
 - educationalValue (0-20): Does it teach something useful about the project or ecosystem?
 - engagement (0-25): Is the content structured to drive meaningful discussion and sharing?
@@ -268,3 +268,4 @@ export async function scoreContent(text, isThread, threadLength, hasMedia, engag
     contentType: 'general',
   };
 }
+

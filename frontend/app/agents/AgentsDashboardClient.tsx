@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import Link from 'next/link';
 import Providers from '@/components/providers';
 import VaraWalletButton from '@/components/VaraWalletButton';
-import { api } from '@/lib/growstreams-api';
+import { api } from '@/lib/flows-api';
 import {
   useVaraWallet,
   signSailsExtrinsicOnMainnet,
@@ -137,11 +137,11 @@ function AgentsDashboardContent() {
 
   useEffect(() => {
     syncPortfolioState();
-    window.addEventListener('growstreams-positions-changed', syncPortfolioState);
-    window.addEventListener('growstreams-squads-changed', syncPortfolioState);
+    window.addEventListener('flows-positions-changed', syncPortfolioState);
+    window.addEventListener('flows-squads-changed', syncPortfolioState);
     return () => {
-      window.removeEventListener('growstreams-positions-changed', syncPortfolioState);
-      window.removeEventListener('growstreams-squads-changed', syncPortfolioState);
+      window.removeEventListener('flows-positions-changed', syncPortfolioState);
+      window.removeEventListener('flows-squads-changed', syncPortfolioState);
     };
   }, [syncPortfolioState]);
 
@@ -839,7 +839,7 @@ function AgentsDashboardContent() {
           <div className="flex items-center gap-6 h-full">
             <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-base">
               <span className="text-[#136F46]">✦</span>
-              <span>GrowStreams</span>
+              <span>Flows</span>
               <span className="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-[#136F46]/10 text-[#136F46]">
                 Prime
               </span>
@@ -1000,7 +1000,7 @@ function AgentsDashboardContent() {
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
               <div>
                 <p className="text-[11px] font-mono uppercase tracking-widest text-[#6B7280]">
-                  GROWSTREAMS PRIME · MODULAR TRADING & AI SQUAD SUITE
+                  FLOWS PRIME · MODULAR TRADING & AI SQUAD SUITE
                 </p>
                 <div className="flex items-baseline gap-3 mt-1">
                   <span className="text-3xl sm:text-4xl font-semibold tracking-tight font-mono">

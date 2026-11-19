@@ -1,4 +1,4 @@
-const BASE = process.env.API_URL || 'http://localhost:3001';
+﻿const BASE = process.env.API_URL || 'http://localhost:3001';
 const DELAY = 2000;
 let passed = 0, failed = 0;
 
@@ -50,7 +50,7 @@ async function run(label, fn) {
 }
 
 async function main() {
-  console.log('=== GrowStreams V2 — API Integration Test ===\n');
+  console.log('=== FLOWS V2 â€” API Integration Test ===\n');
   console.log(`Target: ${BASE}\n`);
 
   // ---- Health ----
@@ -467,3 +467,4 @@ main().catch(err => {
   console.error('Fatal:', err.message);
   process.exit(1);
 });
+

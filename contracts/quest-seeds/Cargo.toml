@@ -1,9 +1,9 @@
-[package]
+﻿[package]
 name = "quest-seeds"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "SEEDS — quest reward token for GrowStreams on Vara"
+description = "SEEDS â€” quest reward token for FLOWS on Vara"
 
 [dependencies]
 sails-rs.workspace = true
@@ -16,3 +16,4 @@ sails-rs = { workspace = true, features = ["wasm-builder"] }
 
 [lib]
 crate-type = ["cdylib", "rlib"]
+

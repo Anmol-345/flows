@@ -1,4 +1,4 @@
-// GrowStreams — SEEDS Quest Reward Token IDL
+﻿// FLOWS â€” SEEDS Quest Reward Token IDL
 // Non-transferable by default, admin-minted on quest completion
 
 type SeedsMeta = struct {
@@ -35,3 +35,4 @@ service SeedsService {
   query Decimals : () -> u8;
   query GetMeta : () -> SeedsMeta;
 };
+

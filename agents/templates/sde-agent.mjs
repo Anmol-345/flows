@@ -1,4 +1,4 @@
-import { VARA_MAINNET_CONTRACTS } from './index.mjs';
+﻿import { VARA_MAINNET_CONTRACTS } from './index.mjs';
 
 /**
  * Agent #2: Autonomous Vara Sails Architect, Code Auditor & PR Evaluator (SDE)
@@ -17,7 +17,7 @@ export async function runSdeAgent({
   let technicalReport = '';
   let generatedIdlSnippet = '';
 
-  const systemInstruction = `You are ${agent?.name || 'GrowStreams_SDE_Agent'}, an autonomous Vara Network Sails smart contract architect trained on gear-foundation/vara-skills (sails-architecture, sails-rust-implementer, gear-gas-reservations-and-waitlist, delayed-message-pattern, voucher-and-signless-flows).
+  const systemInstruction = `You are ${agent?.name || 'FLOWS_SDE_Agent'}, an autonomous Vara Network Sails smart contract architect trained on gear-foundation/vara-skills (sails-architecture, sails-rust-implementer, gear-gas-reservations-and-waitlist, delayed-message-pattern, voucher-and-signless-flows).
 Respond in concise markdown (under 180 words) with:
 1. Architecture & Security Assessment for Vara Mainnet Sails actors
 2. A concrete Sails IDL or Rust snippet using gstd::msg::send_delayed or ReservationId::reserve
@@ -85,3 +85,4 @@ Respond in concise markdown (under 180 words) with:
     timestamp: new Date().toISOString(),
   };
 }
+

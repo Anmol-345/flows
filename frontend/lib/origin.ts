@@ -1,4 +1,4 @@
-// GrowStreams Camp Network Integration
+﻿// FLOWS Camp Network Integration
 
 // Helper function to get Camp Network SDK instance
 export const getCampNetworkSDK = (): any | null => {
@@ -21,17 +21,17 @@ export const campNetworkService = {
   initialized: false,
   
   async initialize() {
-    console.log('🔧 GrowStreams Camp Network service initialized (server-side mock)');
+    console.log('ðŸ”§ FLOWS Camp Network service initialized (server-side mock)');
     this.initialized = true;
   },
   
   async createIPNFT(params: any): Promise<{ tokenId: string; contractAddress?: string; transactionHash?: string; blockNumber?: number }> {
-    console.log('🔧 GrowStreams createIPNFT called (server-side mock)', params);
+    console.log('ðŸ”§ FLOWS createIPNFT called (server-side mock)', params);
     throw new Error('Camp Network SDK createIPNFT should be called from client-side only');
   },
   
   async createPost(params: any): Promise<{ postId: string; id?: string; transactionHash?: string }> {
-    console.log('🔧 GrowStreams createPost called (server-side mock)', params);
+    console.log('ðŸ”§ FLOWS createPost called (server-side mock)', params);
     throw new Error('Camp Network SDK createPost should be called from client-side only');
   }
 };

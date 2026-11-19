@@ -2,8 +2,8 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
-import { api } from '@/lib/growstreams-api';
-import { useGrowTokenActions, useVaultActions, useUnifiedVaraAccount } from '@/hooks/useGrowStreams';
+import { api } from '@/lib/flows-api';
+import { useGrowTokenActions, useVaultActions, useUnifiedVaraAccount } from '@/hooks/useFlows';
 import { fetchUserOnChainBalances } from '@/lib/vara-wallet';
 import { toast } from 'sonner';
 import {

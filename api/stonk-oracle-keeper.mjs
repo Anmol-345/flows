@@ -1,5 +1,5 @@
-/**
- * StonkBase Oracle Keeper — pushes real Pyth equity prices on-chain to StonkPerpsDesk.
+﻿/**
+ * StonkBase Oracle Keeper â€” pushes real Pyth equity prices on-chain to StonkPerpsDesk.
  * ----------------------------------------------------------------------------------
  * After the patched contract is deployed (push_oracle_prices is admin-only and open/close
  * positions require a fresh oracle price), this keeper is the ONLY writer of prices.
@@ -50,7 +50,7 @@ async function catalog() {
 async function fetchLiveExchangePrice(sym) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?interval=1d&range=2d`;
   const r = await fetch(url, {
-    headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GrowStreamsKeeper/2.0)' },
+    headers: { 'User-Agent': 'Mozilla/5.0 (compatible; FLOWSKeeper/2.0)' },
   });
   if (!r.ok) return null;
   const data = await r.json();
@@ -104,3 +104,4 @@ if (!process.argv.includes('--once')) {
 } else {
   await api.disconnect();
 }
+

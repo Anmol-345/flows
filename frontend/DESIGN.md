@@ -1,16 +1,16 @@
-# GrowStreams Design System
+﻿# FLOWS Design System
 
-Derived from the marketing homepage (`growstream-ui` → now `frontend/app/page.tsx`). This document defines the visual language used across the site **and** the `/app` dashboard. Reference implementations: `components/Hero.tsx`, `GSAP/*`, `components/gsui/*`.
+Derived from the marketing homepage (`Flow-ui` â†’ now `frontend/app/page.tsx`). This document defines the visual language used across the site **and** the `/app` dashboard. Reference implementations: `components/Hero.tsx`, `GSAP/*`, `components/gsui/*`.
 
 ---
 
 ## 1. Brand Idea
 
-A "financial instrument panel" aesthetic: paper-white surfaces, sage-green panels, ruler tick marks, cut corners, and arrow pointers — precision engineering applied to money streams.
+A "financial instrument panel" aesthetic: paper-white surfaces, sage-green panels, ruler tick marks, cut corners, and arrow pointers â€” precision engineering applied to money streams.
 
 ## 2. Color Palette
 
-Tokens live in the global stylesheet (`public/css/6997d9d9ea53150e.css`) and are usable as Tailwind-style class names anywhere (`bg-sage-1`, `text-moss`, …).
+Tokens live in the global stylesheet (`public/css/6997d9d9ea53150e.css`) and are usable as Tailwind-style class names anywhere (`bg-sage-1`, `text-moss`, â€¦).
 
 | Token        | Hex       | Role                                                        |
 | ------------ | --------- | ----------------------------------------------------------- |
@@ -33,7 +33,7 @@ Semantic mapping in the app:
 | Active/success  | `moss`                       |
 | Pending/warning | `clay`                       |
 | Danger/error    | red-500 `#fb2c36`            |
-| Info/neutral    | `black` at 60–80% or `sage-5`|
+| Info/neutral    | `black` at 60â€“80% or `sage-5`|
 | Highlight       | `lemongrass` on `forest`     |
 
 ## 3. Typography
@@ -59,11 +59,11 @@ Helper utilities defined in `globals.css`: `.gs-display` (naNSuperX), `.gs-mono`
 Rules:
 - Headings always naNSuperX with slight negative tracking.
 - Numbers/data/addresses always mono (`gs-mono`, `tabular-nums`).
-- Body copy FTPolar, generous line height, opacity ≤ 0.8 for secondary.
+- Body copy FTPolar, generous line height, opacity â‰¤ 0.8 for secondary.
 
 ## 4. Surfaces & Shapes
 
-- **Cut corners**: signature shape. Panels clip 1–17px corners via `clip-path: polygon(...)`. Utility classes `.gs-cut`, `.gs-cut-sm`, `.gs-card` (see globals.css). Corner size scales mobile→desktop via `--corner-size-mobile/desktop` custom properties.
+- **Cut corners**: signature shape. Panels clip 1â€“17px corners via `clip-path: polygon(...)`. Utility classes `.gs-cut`, `.gs-cut-sm`, `.gs-card` (see globals.css). Corner size scales mobileâ†’desktop via `--corner-size-mobile/desktop` custom properties.
 - **Cards** (`.gs-card`): white, 1px `rgba(9,15,5,.14)` line border, cut corners, hover lift `translateY(-2px)` + shadow. Variant `.gs-card--sage` = sage-1 panel.
 - **Ruler ticks**: vertical/horizontal hairline tick strips on section edges (see `Hero`'s `RulerSide`).
 - **Arrow pointers**: small triangle SVGs pointing inward at section edges.
@@ -80,11 +80,11 @@ All motion respects `prefers-reduced-motion` (via `gsap.matchMedia`).
 
 | Pattern                | Implementation                                | Used by                     |
 | ---------------------- | --------------------------------------------- | --------------------------- |
-| Scroll reveal          | `<Reveal>` — y+opacity+blur in, once, stagger support | every `/app` page   |
+| Scroll reveal          | `<Reveal>` â€” y+opacity+blur in, once, stagger support | every `/app` page   |
 | Pinned scrub story     | `HeroDataField`, `EnrichmentGrid` timelines   | homepage                    |
 | Float/bob loop         | sine yoyo tweens (hero mark, footer marks)    | homepage, empty states      |
 | Count-up numbers       | `<CountUp>` quickTo-style tween with snap     | stat cards                  |
-| Word-stagger headline  | word spans yPercent 110 → 0                   | homepage                    |
+| Word-stagger headline  | word spans yPercent 110 â†’ 0                   | homepage                    |
 
 Kit components in `components/gsui/`: `Reveal`, `RevealGroup`, `CountUp`, `PageHeader`, `Skeleton*`.
 
@@ -95,6 +95,7 @@ Skeletons over spinners. `.gs-skeleton` = sage gradient shimmer sweep (1.4s ease
 ## 7. Layout
 
 - Marketing container: `max-w-[66.75rem]` centered.
-- App shell: fixed sidebar (16rem) + sticky header (3.5rem) + scrollable main, content max-w 64–72rem.
+- App shell: fixed sidebar (16rem) + sticky header (3.5rem) + scrollable main, content max-w 64â€“72rem.
 - Spacing rhythm: sections `space-y-6`; inside cards `p-4/p-5`; grids `gap-3/gap-4`.
 - Radii: mostly square/cut-corner; only pills and icon tiles use rounding.
+

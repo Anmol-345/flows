@@ -204,7 +204,7 @@ export function HeroStreamShowcase() {
                   fontFamily: "ui-monospace, SFMono-Regular, monospace",
                 }}
               >
-                ~ growstreams --network --connections #{blockHeight}
+                ~ flows --network --connections #{blockHeight}
               </span>
             </div>
 
@@ -227,7 +227,7 @@ export function HeroStreamShowcase() {
           <div style={{ padding: "28px 32px", fontFamily: "ui-monospace, SFMono-Regular, monospace" }}>
             {/* Terminal Command Line */}
             <div style={{ fontSize: "12px", color: "#64748b", marginBottom: "16px" }}>
-              <span style={{ color: "#10b981" }}>$</span> growstreams --network --live
+              <span style={{ color: "#10b981" }}>$</span> flows --network --live
             </div>
 
             {/* Terminal Big Live Counter */}

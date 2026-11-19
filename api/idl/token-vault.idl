@@ -1,4 +1,4 @@
-// GrowStreams V3 — TokenVault IDL
+﻿// FLOWS V3 â€” TokenVault IDL
 // Deposit/buffer management, safe fungible token handling, emergency pause
 // Uses VaultError enum with #[export(unwrap_result)] for typed error surfaces
 
@@ -89,3 +89,4 @@ service VaultService {
     VaultUnpaused: struct { unpaused_by: actor_id, timestamp: u64 };
   }
 };
+

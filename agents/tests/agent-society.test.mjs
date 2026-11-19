@@ -1,4 +1,4 @@
-import test from 'node:test';
+﻿import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   listAgentTemplates,
@@ -13,7 +13,7 @@ import {
   stopAutonomousAgentWorker,
 } from '../runtime/index.mjs';
 
-test('GrowStreams 4-Agent Society Templates (60/15/15/10 Splits) & Deterministic Vara Wallet Factory', async () => {
+test('FLOWS 4-Agent Society Templates (60/15/15/10 Splits) & Deterministic Vara Wallet Factory', async () => {
   const templates = listAgentTemplates();
   assert.equal(templates.length, 4);
   assert.deepEqual(
@@ -72,10 +72,10 @@ test('Spawn 4 Agents, Auto-Schedule on Server Runtime & Execute 4-Hop Vara ACP J
   assert.ok(stats.totalAcpJobs >= 1);
 });
 
-test('StonkBase 24/7 Bounded Oracle (±8%), 1x–5x Stock Desk & Call the Open (1.20x Vaulted Weight)', async () => {
+test('StonkBase 24/7 Bounded Oracle (Â±8%), 1xâ€“5x Stock Desk & Call the Open (1.20x Vaulted Weight)', async () => {
   const board = getStonkBaseBoard();
   assert.equal(board.totalFeeds, 23); // 22 US Stocks/ETFs + VARA/USD
-  assert.equal(board.maxMoveBps, 800); // ±8% bounded guardrail
+  assert.equal(board.maxMoveBps, 800); // Â±8% bounded guardrail
 
   const trade = await openStockDeskPosition({
     traderWallet: 'kGkLork3scX9ngz3vhFywax2uC3LUfp7m1PMxkQXdtdsnYiZA',
@@ -112,3 +112,4 @@ test('StonkBase 24/7 Bounded Oracle (±8%), 1x–5x Stock Desk & Call the Open (
   assert.ok(sched.totalRegisteredSquads >= 1);
   stopAutonomousAgentWorker();
 });
+

@@ -1,4 +1,4 @@
-import 'dotenv/config';
+﻿import 'dotenv/config';
 import {
   connect,
   disconnect,
@@ -15,7 +15,7 @@ import {
 
 async function main() {
   console.log('================================================================================');
-  console.log('🚀 GROWSTREAMS V3 + SOCIETY OF AI AGENTS — LIVE VARA MAINNET E2E VERIFICATION');
+  console.log('ðŸš€ FLOWS V3 + SOCIETY OF AI AGENTS â€” LIVE VARA MAINNET E2E VERIFICATION');
   console.log('================================================================================');
 
   await connect();
@@ -133,3 +133,4 @@ main().catch(async (err) => {
   await disconnect();
   process.exit(1);
 });
+

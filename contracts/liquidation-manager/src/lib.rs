@@ -1,6 +1,6 @@
-#![no_std]
+﻿#![no_std]
 
-//! Liquidation Manager — solvency enforcement for GrowStreams Super Token streams.
+//! Liquidation Manager â€” solvency enforcement for FLOWS Super Token streams.
 //!
 //! ## Responsibilities
 //!
@@ -15,16 +15,16 @@
 //!    c. Records the liquidation event on-chain for auditability.
 //!    d. Optionally rewards the liquidator from the liquidation penalty buffer.
 //!
-//! 3. **Sentinel / top-up**: `top_up(stream_id, amount)` — any address can deposit
+//! 3. **Sentinel / top-up**: `top_up(stream_id, amount)` â€” any address can deposit
 //!    super tokens on behalf of a stream sender to keep the stream alive, functioning
 //!    as a Superfluid-style sentinel top-up mechanism.
 //!
 //! 4. **Risk scoring**: `get_stream_risk(stream_id)` returns a standardised struct
-//!    with remaining seconds, health factor, and solvency status — used by the off-
+//!    with remaining seconds, health factor, and solvency status â€” used by the off-
 //!    chain keeper cron to prioritise which streams to liquidate.
 //!
 //! ## No state migration needed
-//! This contract is entirely additive — it stores its own liquidation history and
+//! This contract is entirely additive â€” it stores its own liquidation history and
 //! integrates with `stream-core` and `super-token` via cross-contract calls only.
 
 use sails_rs::{
@@ -87,14 +87,14 @@ async fn call_checked(target: ActorId, payload: Vec<u8>) -> Vec<u8> {
     }
 }
 
-/// Query super_token.BalanceOf(account) → u128
+/// Query super_token.BalanceOf(account) â†’ u128
 async fn query_balance(super_token: ActorId, account: ActorId) -> u128 {
     let payload = encode_call("SuperTokenService", "BalanceOf", account);
     let reply = call_checked(super_token, payload).await;
     decode_u128_reply(reply.as_slice())
 }
 
-/// Query super_token.NetFlowRate(account) → i128
+/// Query super_token.NetFlowRate(account) â†’ i128
 async fn query_flow_rate(super_token: ActorId, account: ActorId) -> i128 {
     let payload = encode_call("SuperTokenService", "NetFlowRate", account);
     let reply = call_checked(super_token, payload).await;
@@ -105,10 +105,10 @@ async fn query_flow_rate(super_token: ActorId, account: ActorId) -> i128 {
 async fn settle_account(super_token: ActorId, account: ActorId) -> bool {
     let payload = encode_call("SuperTokenService", "SettleAccount", account);
     let reply = call_checked(super_token, payload).await;
-    !reply.is_empty() // settle_account returns null — any reply = success
+    !reply.is_empty() // settle_account returns null â€” any reply = success
 }
 
-/// Call stream_core.StopStream(stream_id) — Result<(), str>
+/// Call stream_core.StopStream(stream_id) â€” Result<(), str>
 async fn stop_stream(stream_core: ActorId, stream_id: u64) -> bool {
     let payload = encode_call("StreamService", "StopStream", stream_id);
     let reply = call_checked(stream_core, payload).await;
@@ -138,9 +138,9 @@ async fn transfer_reward(super_token: ActorId, to: ActorId, amount: u128) -> boo
 pub enum SolvencyStatus {
     /// Account has enough balance to sustain all outgoing flows.
     Solvent,
-    /// Account will run dry within `critical_seconds` — top-up urgently needed.
+    /// Account will run dry within `critical_seconds` â€” top-up urgently needed.
     Critical,
-    /// Account balance is zero or negative — stream must be liquidated now.
+    /// Account balance is zero or negative â€” stream must be liquidated now.
     Insolvent,
 }
 
@@ -192,7 +192,7 @@ struct LiqManagerState {
     config: LiquidationManagerConfig,
     /// History of all liquidations, keyed by stream_id
     liquidations: BTreeMap<u64, LiquidationRecord>,
-    /// stream_id → true if currently being processed (reentrancy guard)
+    /// stream_id â†’ true if currently being processed (reentrancy guard)
     processing: BTreeMap<u64, bool>,
 }
 
@@ -279,7 +279,7 @@ impl LiquidationService {
 impl LiquidationService {
 
     // -----------------------------------------------------------------------
-    // Core: solvency check (async — queries super token cross-contract)
+    // Core: solvency check (async â€” queries super token cross-contract)
     // -----------------------------------------------------------------------
 
     /// Check whether `account` is solvent with respect to its outgoing super
@@ -332,7 +332,7 @@ impl LiquidationService {
     /// Flow:
     /// 1. Query sender's real-time balance from the super token.
     /// 2. Assert the account is insolvent (balance = 0 or within critical threshold).
-    /// 3. Call `stream-core.StopStream(stream_id)` — this reverses the flow via super token.
+    /// 3. Call `stream-core.StopStream(stream_id)` â€” this reverses the flow via super token.
     /// 4. Settle the sender's account to materialise the final balance.
     /// 5. Pay liquidation reward to caller from the contract's own super token balance.
     /// 6. Record the liquidation event.
@@ -389,7 +389,7 @@ impl LiquidationService {
         // Step 3: Settle sender account to materialise final static balance
         settle_account(super_token, sender).await;
 
-        // Step 4: Pay liquidation reward to keeper (non-blocking — don't fail if reward transfer fails)
+        // Step 4: Pay liquidation reward to keeper (non-blocking â€” don't fail if reward transfer fails)
         let reward_paid = if reward > 0 {
             let ok = transfer_reward(super_token, caller, reward).await;
             if ok { reward } else { 0 }
@@ -418,7 +418,7 @@ impl LiquidationService {
     // -----------------------------------------------------------------------
 
     /// Top up a stream sender's super token balance on their behalf.
-    /// Anyone can call this — useful for automated keepers, sentinel contracts,
+    /// Anyone can call this â€” useful for automated keepers, sentinel contracts,
     /// or sponsors who want to keep a stream alive.
     ///
     /// Caller must hold the super tokens and have approved this contract.
@@ -520,7 +520,7 @@ impl LiquidationService {
         LiqManagerState::get().config.total_liquidations
     }
 
-    /// Pure solvency calculation — offline computation, no cross-contract call.
+    /// Pure solvency calculation â€” offline computation, no cross-contract call.
     /// Caller provides the balance and flow rate values (queried separately).
     #[export]
     pub fn compute_risk(
@@ -547,3 +547,4 @@ impl LiquidationService {
         }
     }
 }
+

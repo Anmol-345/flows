@@ -1,9 +1,9 @@
-[package]
+﻿[package]
 name = "bounty-adapter"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "GrowStreams V2 — AI-verified bounty adapter bridging scoring to streaming payments"
+description = "FLOWS V2 â€” AI-verified bounty adapter bridging scoring to streaming payments"
 
 [dependencies]
 sails-rs = "0.6"
@@ -16,3 +16,4 @@ sails-rs = { version = "0.6", features = ["wasm-builder"] }
 
 [lib]
 crate-type = ["cdylib", "rlib"]
+

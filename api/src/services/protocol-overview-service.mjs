@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
+﻿import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { getApi, query as sailsQuery, getProgramIds } from '../sails-client.mjs';
@@ -67,7 +67,7 @@ async function getAccountNativeVara(api, hexOrAddress) {
 
 /**
  * Queries all 12 deployed Sails smart contracts LIVE on Vara Mainnet (wss://rpc.vara.network)
- * and merges with the verified 100-User × 800-Agent execution ledger.
+ * and merges with the verified 100-User Ã— 800-Agent execution ledger.
  */
 export async function getProtocolOverviewMetrics() {
   const api = getApi();
@@ -172,7 +172,7 @@ export async function getProtocolOverviewMetrics() {
   const onChainPillar5Vara = parsePlanckToVara(bounty10Raw); // 64,500,000.00 VARA
   const onChainPillar6Vara = parsePlanckToVara(bounty11Raw); // 49,430,500.00 VARA
 
-  // Combine live on-chain smart contract reads with the 500-User × 4,000-Agent verifiable ledger
+  // Combine live on-chain smart contract reads with the 500-User Ã— 4,000-Agent verifiable ledger
   const ledgerSummary = ledger?.summary || ledger?.totals || {};
   const ledgerPillars = ledger?.pillars || {};
   const totalHumanUsers = Math.max(
@@ -276,7 +276,7 @@ export async function getProtocolOverviewMetrics() {
     Number(ledgerSummary.activeVaultedTvlVara || 0);
 
   return {
-    protocol: 'GrowStreams V3 × Nightshift (StonkBase) on Vara Network',
+    protocol: 'FLOWS V3 Ã— Nightshift (StonkBase) on Vara Network',
     network: {
       chain: 'Vara Network Mainnet',
       rpcEndpoint: process.env.VARA_NODE || 'wss://rpc.vara.network',
@@ -306,7 +306,7 @@ export async function getProtocolOverviewMetrics() {
       ),
     },
     pillars: {
-      // 1. Agent Society & ACP (100 Users × 800 Agents)
+      // 1. Agent Society & ACP (100 Users Ã— 800 Agents)
       agentsAndAcp: {
         title: 'Society of AI Agents (ACP & SplitsRouter 60/15/15/10)',
         contractAddress: VARA_MAINNET_CONTRACTS.splitsRouter,
@@ -365,9 +365,9 @@ export async function getProtocolOverviewMetrics() {
         vaultTurnoverVolumeUsd: Number((vaultTurnoverVolumeVara * VARA_USD_PRICE).toFixed(2)),
         streamProtocolRevenueVara,
       },
-      // 3. StonkBase 24/7 Synthetic Equity Desk (1x–5x Leverage)
+      // 3. StonkBase 24/7 Synthetic Equity Desk (1xâ€“5x Leverage)
       stonkBaseTrading: {
-        title: 'StonkBase 24/7 Stock Desk (1x–5x Leverage, ±8% Bounded Oracle)',
+        title: 'StonkBase 24/7 Stock Desk (1xâ€“5x Leverage, Â±8% Bounded Oracle)',
         totalSyntheticFeeds: 23,
         maxMoveCapBps: 800,
         totalTradesExecuted: Math.max(
@@ -388,7 +388,7 @@ export async function getProtocolOverviewMetrics() {
       },
       // 4. Call the Open (GREEN / RED Parimutuel with 1.20x Vaulted Boost)
       callTheOpen: {
-        title: 'Call the Open (GREEN/RED Parimutuel + 1.20× Vaulted Weight Boost)',
+        title: 'Call the Open (GREEN/RED Parimutuel + 1.20Ã— Vaulted Weight Boost)',
         vaultMultiplierBps: 12000,
         totalPredictionsStaked: Math.max(
           Number(ledgerSummary.totalCallTheOpenStakes || 0),
@@ -401,7 +401,7 @@ export async function getProtocolOverviewMetrics() {
         parimutuelRakeRevenueUsd: Number((callTheOpenRakeRevenueVara * VARA_USD_PRICE).toFixed(2)),
         invariantsEnforced: [
           'P1: Parimutuel Conservation (sum of payouts <= pool)',
-          'P2: 1.20× Vaulted Weight Boost in TokenVault',
+          'P2: 1.20Ã— Vaulted Weight Boost in TokenVault',
           'P3: 60s Lock Cutoff Prior to 09:30 ET Open',
           'P4: Single-Sided Pool Automatic Refund',
           'P5: Proportional Share Settlement',
@@ -447,7 +447,7 @@ export async function getProtocolOverviewMetrics() {
     verifiableOnChainProofs: ledger?.onChainTxProofs || ledger?.onChainProofs || [],
     sampleUsersAndAgents: ledger?.sampleUsers || ledger?.sampleUsersCohort || [],
     defiLlamaExport: {
-      adapterModule: 'defillama/growstreams-vara/index.js',
+      adapterModule: 'defillama/FLOWS-vara/index.js',
       chain: 'vara',
       coingeckoId: 'vara-network',
       methodology:
@@ -463,3 +463,4 @@ export async function getProtocolOverviewMetrics() {
     },
   };
 }
+

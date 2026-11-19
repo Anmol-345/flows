@@ -1,10 +1,10 @@
-# GrowStreams Foundation Demo Script
+﻿# FLOWS Foundation Demo Script
 **Complete Walkthrough: GROW Token, Vault, and Streaming**
 
 > **Duration:** 10-12 minutes  
 > **Setup:** Two browser windows side-by-side (Sender/Admin + Receiver)  
 > **Network:** Vara Testnet  
-> **URL:** https://growstreams-v2.vercel.app/app
+> **URL:** https://FLOWS-v2.vercel.app/app
 
 ---
 
@@ -27,7 +27,7 @@
 
 **[Screen: Landing page or Dashboard]**
 
-> "Welcome to GrowStreams, a programmable money streaming protocol built on Vara Network. Today I'll demonstrate the complete lifecycle: managing tokens, using the vault escrow system, and creating real-time streams."
+> "Welcome to FLOWS, a programmable money streaming protocol built on Vara Network. Today I'll demonstrate the complete lifecycle: managing tokens, using the vault escrow system, and creating real-time streams."
 
 **[Show both browser windows side-by-side]**
 
@@ -39,7 +39,7 @@
 
 **[Left screen: Navigate to 'Get GROW' / 'GROW Token' page]**
 
-> "GrowStreams uses the GROW token (a VFT standard token) for streaming. Let's start by getting some tokens."
+> "FLOWS uses the GROW token (a VFT standard token) for streaming. Let's start by getting some tokens."
 
 **[Click 'Faucet' button]**
 
@@ -128,7 +128,7 @@
 
 **[Show Stream Card]**
 
-> "Stream created! Status is 'Active'. Look at the 'Streamed' counter—it's increasing every second. This isn't an animation; it's the on-chain accrued value increasing with every block."
+> "Stream created! Status is 'Active'. Look at the 'Streamed' counterâ€”it's increasing every second. This isn't an animation; it's the on-chain accrued value increasing with every block."
 
 **[Quickly switch back to Vault page]**
 
@@ -187,7 +187,7 @@
 
 **[Show Dashboard]**
 
-> "And that is GrowStreams on Vara."
+> "And that is FLOWS on Vara."
 
 > "**Recap:**
 > 1.  **Get Tokens:** Mint or transfer GROW.
@@ -206,3 +206,4 @@
 2.  **Allocated vs. Available:** Emphasize this distinction in the Vault. It proves the solvency model (funds are reserved).
 3.  **Flow Rate:** Use `0.001` or `0.01`. If you use `1.0`, it drains too fast for a demo.
 4.  **Wait Times:** Vara testnet blocks are ~3s. Fill the silence while waiting for the "Success" toast.
+

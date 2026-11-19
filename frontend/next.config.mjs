@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+﻿/** @type {import('next').NextConfig} */
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -56,16 +56,16 @@ const nextConfig = {
 
     // Only warn about missing env vars instead of throwing
     if (isServer && (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)) {
-      console.warn('⚠️ Warning: Missing Supabase environment variables. Using mock data for development.')
+      console.warn('âš ï¸ Warning: Missing Supabase environment variables. Using mock data for development.')
     }
     
     return config;
   },
 
   // Proxy /api requests to the backend API
-  // Uses NEXT_PUBLIC_GROWSTREAMS_API env var; falls back to live Railway API
+  // Uses NEXT_PUBLIC_FLOWS_API env var; falls back to live Railway API
   async rewrites() {
-    let raw = (process.env.NEXT_PUBLIC_GROWSTREAMS_API || '').trim().replace(/^["']|["']$/g, '');
+    let raw = (process.env.NEXT_PUBLIC_FLOWS_API || '').trim().replace(/^["']|["']$/g, '');
     if (raw && !raw.startsWith('http://') && !raw.startsWith('https://') && !raw.startsWith('/')) {
       raw = `https://${raw}`;
     }
@@ -88,3 +88,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+

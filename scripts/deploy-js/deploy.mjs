@@ -1,4 +1,4 @@
-import { GearApi, GearKeyring } from '@gear-js/api';
+﻿import { GearApi, GearKeyring } from '@gear-js/api';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -186,7 +186,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log('=== GrowStreams V2 — Deploy to Vara Testnet ===');
+  console.log('=== FLOWS V2 â€” Deploy to Vara Testnet ===');
   console.log(`Node: ${VARA_NODE}`);
   console.log(`Target: ${target}`);
 
@@ -218,7 +218,7 @@ async function main() {
   const state = loadDeployState();
   const contracts = target === 'all' ? Object.keys(ARTIFACTS) : [target];
 
-  // Constructors take no args — admin is set from msg::source()
+  // Constructors take no args â€” admin is set from msg::source()
   const initPayload = encodeSailsInitPayload('New', '');
 
   for (const name of contracts) {
@@ -262,3 +262,4 @@ main().catch((err) => {
   console.error('Fatal error:', err.message);
   process.exit(1);
 });
+

@@ -43,7 +43,7 @@ export default function AgenticDashboard() {
   const [mobilePaneView, setMobilePaneView] = useState<'left' | 'right'>('left');
 
   useEffect(() => {
-    const saved = localStorage.getItem('growstreams_bounty_progress');
+    const saved = localStorage.getItem('flows_bounty_progress');
     if (saved) {
       try { setBountyProgress(JSON.parse(saved)); } catch {}
     }
@@ -52,7 +52,7 @@ export default function AgenticDashboard() {
   const handleMessageSent = (bountyId: string) => {
     setBountyProgress(prev => {
       const next = { ...prev, [bountyId]: (prev[bountyId] || 0) + 1 };
-      localStorage.setItem('growstreams_bounty_progress', JSON.stringify(next));
+      localStorage.setItem('flows_bounty_progress', JSON.stringify(next));
       return next;
     });
   };
@@ -204,7 +204,7 @@ export default function AgenticDashboard() {
             <span className="gs-hw-bar__dot" style={{ background: '#ff5f57' }} />
             <span className="gs-hw-bar__dot" style={{ background: '#febc2e' }} />
             <span className="gs-hw-bar__dot" style={{ background: '#28c840' }} />
-            <span className="gs-hw-bar__title">growstreams://agentic-workspace</span>
+            <span className="gs-hw-bar__title">flows://agentic-workspace</span>
             <div className="gs-hw-bar__status">
               <span className="gs-hw-status-dot" />
               LIVE

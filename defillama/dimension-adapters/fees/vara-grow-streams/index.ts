@@ -1,4 +1,4 @@
-import { PromisePool } from "@supercharge/promise-pool";
+﻿import { PromisePool } from "@supercharge/promise-pool";
 import type { FetchOptions, SimpleAdapter } from "../../adapters/types";
 import { CHAIN } from "../../helpers/chains";
 import { METRIC } from "../../helpers/metrics";
@@ -6,7 +6,7 @@ import { postURL } from "../../utils/fetchURL";
 
 const VARA_RPC = "https://rpc.vara.network";
 
-// Vara Mainnet program IDs from `deploy-state.json` in https://github.com/Satyam-10124/growstreams-v3
+// Vara Mainnet program IDs from `deploy-state.json` in https://github.com/Satyam-10124/FLOWS-v3
 // StreamCore (`stream-core`): continuous per-second token streaming engines (V2 legacy + V3 rotated treasury deployment)
 const STREAM_CORE_LEGACY = "0x8298c2eea5c6bbe55a9cfe72283b5399098fd6a54d9a2a14c2bedba8eea50659";
 const STREAM_CORE_V3 = "0x4ae03ca006e92fe188d3c61d3d39a1d05c9fdf1c0a16c750b103269deccfa784";
@@ -20,7 +20,7 @@ const WVARA = "f5e9cb1d1e46b0cda6578dd1684b30f281a45dfaa390e4945b7bfc8ab3e27f3d"
 // gVARA (`gvara-token` V2 & V3): 1:1 VARA-backed streaming SuperTokens
 const GVARA_LEGACY = "04314af41b7dbac322e3e66920211d2f799719e1cdc3122a99752f72b6ae84ee";
 const GVARA_V3 = "086c7257f39302f9346ed8b7d2839ef1c728fc04997b6056581c0b3f396710ee";
-// GROW (`grow-token`): GrowStreams protocol reward & staking token (`0x728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163`)
+// GROW (`grow-token`): FLOWS protocol reward & staking token (`0x728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163`)
 const GROW = "728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163";
 const SUPPORTED_TOKENS = new Set([WVARA, GVARA_LEGACY, GVARA_V3, GROW]);
 
@@ -342,7 +342,7 @@ function getBountiesSnapshot(): Promise<BountyRecord[]> {
 }
 
 /**
- * Computes GrowStreams daily volume, fees, and protocol revenue across `StreamCore` deployments and `BountyAdapter` (including StonkBase 1x spot margin & Agent Society ACP streams).
+ * Computes FLOWS daily volume, fees, and protocol revenue across `StreamCore` deployments and `BountyAdapter` (including StonkBase 1x spot margin & Agent Society ACP streams).
  */
 const fetch = async (options: FetchOptions) => {
   const dailyFees = options.createBalances();
@@ -466,7 +466,7 @@ const fetch = async (options: FetchOptions) => {
 
   if (volumePlancks > 0n) {
     // Fee routing verified in `contracts/stream-core/stream-core.idl` (`Config.fee_bps = 250`, `Config.treasury`) and `contracts/super-token/src/lib.rs` (`SuperTokenService::collect_fee` lines 682-701):
-    // `state.debit(from, amount); state.credit(treasury, amount);` — 100% of protocol service fees go directly to the GrowStreams protocol treasury (`Config.treasury`) with 0% supply-side or token-holder share.
+    // `state.debit(from, amount); state.credit(treasury, amount);` â€” 100% of protocol service fees go directly to the FLOWS protocol treasury (`Config.treasury`) with 0% supply-side or token-holder share.
     const feesVara = Number(feesPlancks) / VARA_DECIMALS;
     const volumeVara = Number(volumePlancks) / VARA_DECIMALS;
     dailyFees.addCGToken("vara-network", feesVara, METRIC.SERVICE_FEES);
@@ -479,8 +479,8 @@ const fetch = async (options: FetchOptions) => {
 
 const methodology = {
   Fees: "Users and autonomous agents pay fee_bps (StreamService::GetConfig, currently 250 = 2.5%) on StreamCore deposits and bounded per-window settlements across BountyAdapter (including Agent Society ACP splits and StonkBase 1x spot margin flows).",
-  Revenue: "100% of the 2.5% streaming and settlement fee is routed to the GrowStreams protocol treasury.",
-  ProtocolRevenue: "100% of the 2.5% streaming and settlement fee is routed to the GrowStreams protocol treasury.",
+  Revenue: "100% of the 2.5% streaming and settlement fee is routed to the FLOWS protocol treasury.",
+  ProtocolRevenue: "100% of the 2.5% streaming and settlement fee is routed to the FLOWS protocol treasury.",
   Volume: "VARA-denominated value deposited and streamed within the window across StreamCore and verified active BountyAdapter streams (including Agent Society ACP splits and StonkBase 1x spot margin collateral, strictly bounded by each bounty's total_budget cap).",
 };
 
@@ -489,10 +489,10 @@ export const breakdownMethodology = {
     [METRIC.SERVICE_FEES]: "Per-window streamed and deposited volume * fee_bps / 10_000 across StreamCore and BountyAdapter.",
   },
   Revenue: {
-    [METRIC.SERVICE_FEES]: "Full 2.5% protocol fee routed to the GrowStreams treasury; no supply-side cut.",
+    [METRIC.SERVICE_FEES]: "Full 2.5% protocol fee routed to the FLOWS treasury; no supply-side cut.",
   },
   ProtocolRevenue: {
-    [METRIC.SERVICE_FEES]: "Full 2.5% protocol fee routed to the GrowStreams treasury; no supply-side cut.",
+    [METRIC.SERVICE_FEES]: "Full 2.5% protocol fee routed to the FLOWS treasury; no supply-side cut.",
   },
 };
 
@@ -508,3 +508,4 @@ const adapter: SimpleAdapter = {
 };
 
 export default adapter;
+

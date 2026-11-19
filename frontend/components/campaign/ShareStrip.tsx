@@ -38,7 +38,7 @@ export function ShareStrip({
       `Tier: ${tier}\n` +
       `GitHub: @${username}\n\n` +
       `Powered by @VaraNetwork\n\n` +
-      `#GrowStreamsChallenge #Web3Builders #Vara`
+      `#FlowsChallenge #Web3Builders #Vara`
     );
     const url = encodeURIComponent(shareUrl);
     window.open(
@@ -82,7 +82,7 @@ export function ShareStrip({
             </p>
           )}
           <p className="text-provn-accent text-xs">
-            #GrowStreamsChallenge #Web3Builders #Vara
+            #FlowsChallenge #Web3Builders #Vara
           </p>
         </div>
       </div>

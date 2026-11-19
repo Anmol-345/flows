@@ -51,8 +51,8 @@ export function useActiveAccount(): ActiveAccount {
       }
     };
 
-    window.addEventListener('growstreams-wallet-changed', handler);
-    return () => window.removeEventListener('growstreams-wallet-changed', handler);
+    window.addEventListener('flows-wallet-changed', handler);
+    return () => window.removeEventListener('flows-wallet-changed', handler);
   }, [syncStored]);
 
   // Priority order:

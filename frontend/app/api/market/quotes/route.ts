@@ -54,7 +54,7 @@ async function fetchLiveEquityQuote(entry: CatalogEntry) {
   const r = await fetch(
     `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSym)}?interval=1d&range=2d`,
     {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GrowStreamsOracle/1.0)' },
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; FlowsOracle/1.0)' },
       cache: 'no-store',
     }
   );

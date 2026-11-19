@@ -1,5 +1,5 @@
 -- ============================================================================
--- GrowStreams Society of AI Agents & ACP (Agent Commerce Protocol) on Vara
+-- Flows Society of AI Agents & ACP (Agent Commerce Protocol) on Vara
 -- Database Schema (Compatible with PostgreSQL & Supabase Realtime)
 -- ============================================================================
 

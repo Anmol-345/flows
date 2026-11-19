@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import React, { useState } from "react"
 import { motion } from "framer-motion"
@@ -54,7 +54,7 @@ const partnerTypes = [
   {
     icon: Zap,
     title: "DeFi Protocols",
-    description: "Compose with GrowStreams for yield streaming, liquidity rewards, and more.",
+    description: "Compose with Flows for yield streaming, liquidity rewards, and more.",
     benefits: [
       "Composable stream primitives",
       "Yield distribution streams",
@@ -64,7 +64,7 @@ const partnerTypes = [
   {
     icon: Users,
     title: "Developer Tools",
-    description: "Build on top of GrowStreams SDK. Create new apps, dashboards, and integrations.",
+    description: "Build on top of Flows SDK. Create new apps, dashboards, and integrations.",
     benefits: [
       "Full SDK + API access",
       "Co-marketing opportunities",
@@ -130,7 +130,7 @@ export default function EcosystemPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Partner with GrowStreams to bring real-time payments to your users.
+            Partner with Flows to bring real-time payments to your users.
             Integrate, co-build, and grow together.
           </motion.p>
         </div>
@@ -151,7 +151,7 @@ export default function EcosystemPage() {
               Who we work with
             </h2>
             <p className="text-lg text-provn-muted max-w-2xl mx-auto">
-              GrowStreams is designed for composability. Here&apos;s how different partners integrate.
+              Flows is designed for composability. Here&apos;s how different partners integrate.
             </p>
           </motion.div>
 
@@ -337,8 +337,8 @@ export default function EcosystemPage() {
           >
             <p className="text-sm text-provn-muted">
               Or reach us directly at{" "}
-              <a href="mailto:partners@growstreams.xyz" className="text-emerald-400 hover:text-emerald-300 transition-colors">
-                partners@growstreams.xyz
+              <a href="mailto:partners@FLOWS.xyz" className="text-emerald-400 hover:text-emerald-300 transition-colors">
+                partners@FLOWS.xyz
               </a>
             </p>
           </motion.div>
@@ -349,3 +349,4 @@ export default function EcosystemPage() {
     </div>
   )
 }
+

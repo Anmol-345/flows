@@ -8,12 +8,12 @@ export default function Header() {
       <div className="container h-full">
         <div className="flex h-full items-center justify-between gap-x-8">
           <Link
-            aria-label="GrowStreams Home"
+            aria-label="Flows Home"
             className="inline-block text-forest cursor-pointer"
             href="/"
           >
             <h1 className="text-3xl font-bold font-sans tracking-tight">
-              GrowStreams
+              Flows
             </h1>
           </Link>
 

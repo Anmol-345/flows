@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { useActiveAccount } from '@/hooks/useActiveAccount';
-import { api } from '@/lib/growstreams-api';
+import { api } from '@/lib/flows-api';
 import {
   Trophy, Medal, TrendingUp, TrendingDown, Minus,
   Users, Zap, DollarSign, GitBranch, Twitter,
@@ -137,7 +137,7 @@ export default function LeaderboardPage() {
                 VarAIbot Challenge Complete! 🎉
               </h2>
               <p className="text-sm leading-relaxed mb-4 max-w-2xl">
-                Big thanks to everyone who participated in the VarAIbot Challenge by GrowStreams 🙌
+                Big thanks to everyone who participated in the VarAIbot Challenge by Flows 🙌
                 The videos and PR shared by the community were incredibly valuable and played a key role in improving the project.
               </p>
               <p className="text-xs gs-sub max-w-xl">

@@ -52,7 +52,7 @@ export default function WalletConnect() {
           </p>
           
           <h1 className="text-3xl font-light mb-3 text-white tracking-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
-            GrowStreams
+            Flows
           </h1>
           
           <p className="text-sm mb-8" style={{ color: '#6a8090' }}>

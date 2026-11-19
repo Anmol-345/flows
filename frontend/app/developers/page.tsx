@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -32,10 +32,10 @@ const fadeUp = {
   }),
 }
 
-const rustCode = `use growstreams::prelude::*;
+const rustCode = `use flows::prelude::*;
 
 // Initialize client
-let client = GrowStreams::new(
+let client = Flows::new(
     Network::VaraTestnet,
     &signer,
 );
@@ -55,22 +55,22 @@ let stream = client.stream().create(
 ).await?;`
 
 const cliCode = `# Install CLI
-$ npm install -g @growstreams/cli
+$ npm install -g @flows/cli
 
 # Deposit tokens
-$ growstreams vault deposit \\
+$ flows vault deposit \\
     --token USDC \\
     --amount 1000 \\
     --buffer 4h
 
 # Create a stream
-$ growstreams stream create \\
+$ flows stream create \\
     --receiver 0xBob...addr \\
     --token USDC \\
     --rate 0.000277
 
 # Check stream status
-$ growstreams stream status 0x...abc`
+$ flows stream status 0x...abc`
 
 const contractAddresses = [
   { name: "StreamCore", address: "0x7f3a...b2c1", network: "Vara Testnet" },
@@ -80,10 +80,10 @@ const contractAddresses = [
   { name: "BountyAdapter", address: "0x6e8d...f1a2", network: "Vara Testnet" },
 ]
 
-const quickstartCode = `import { GrowStreams } from '@growstreams/sdk';
+const quickstartCode = `import { Flows } from '@flows/sdk';
 
 // Initialize the SDK
-const gs = new GrowStreams({
+const gs = new Flows({
   network: 'vara-testnet',
   signer: walletSigner,
 });
@@ -103,7 +103,7 @@ const stream = await gs.stream.create({
 });
 
 console.log('Stream created:', stream.id);
-// Stream is now live — Bob earns every second!
+// Stream is now live â€” Bob earns every second!
 
 // Step 3: Receiver withdraws anytime
 await gs.stream.withdraw({
@@ -144,7 +144,7 @@ const sdkMethods = [
 const faqs = [
   {
     q: "What tokens are supported?",
-    a: "Currently USDC and VARA on Vara Testnet. More tokens will be added progressively. The protocol is token-agnostic — any ERC-20 compatible token can be streamed.",
+    a: "Currently USDC and VARA on Vara Testnet. More tokens will be added progressively. The protocol is token-agnostic â€” any ERC-20 compatible token can be streamed.",
   },
   {
     q: "How does the buffer model work?",
@@ -160,7 +160,7 @@ const faqs = [
   },
   {
     q: "How do I integrate with my existing app?",
-    a: "Install the SDK (`npm i @growstreams/sdk`), connect a signer, and call `stream.create()`. Most integrations take under 10 minutes.",
+    a: "Install the SDK (`npm i @flows/sdk`), connect a signer, and call `stream.create()`. Most integrations take under 10 minutes.",
   },
 ]
 
@@ -219,7 +219,7 @@ export default function DevelopersPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Build with <GradientText>GrowStreams</GradientText>
+            Build with <GradientText>Flows</GradientText>
           </motion.h1>
 
           <motion.p
@@ -253,7 +253,7 @@ export default function DevelopersPage() {
               SDK Reference
             </a>
             <a
-              href="https://github.com/growstreams"
+              href="https://github.com/FLOWS"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-provn-text border border-provn-border rounded-xl hover:border-provn-muted transition-all"
@@ -279,10 +279,10 @@ export default function DevelopersPage() {
             <div className="flex items-center gap-3">
               <Terminal className="w-5 h-5 text-emerald-400" />
               <code className="text-sm font-mono text-provn-text">
-                npm install @growstreams/sdk
+                npm install @flows/sdk
               </code>
             </div>
-            <CopyButton text="npm install @growstreams/sdk" />
+            <CopyButton text="npm install @flows/sdk" />
           </motion.div>
         </div>
       </section>
@@ -367,7 +367,7 @@ export default function DevelopersPage() {
                             .replace(/(import|from|const|await|new|let|use|pub|fn|async|mut)/g, '<span class="text-purple-400">$1</span>')
                             .replace(/('.*?'|".*?")/g, '<span class="text-emerald-400">$1</span>')
                             .replace(/(console\.log|\$)/g, '<span class="text-blue-400">$1</span>')
-                            .replace(/(Token|Amount|Buffer|Network|GrowStreams)/g, '<span class="text-cyan-400">$1</span>'),
+                            .replace(/(Token|Amount|Buffer|Network|Flows)/g, '<span class="text-cyan-400">$1</span>'),
                         }}
                       />
                     </div>
@@ -394,7 +394,7 @@ export default function DevelopersPage() {
               SDK <GradientText from="from-blue-400" to="to-purple-400">reference</GradientText>
             </h2>
             <p className="text-lg text-provn-muted">
-              All methods available in <code className="text-sm bg-provn-surface px-2 py-0.5 rounded">@growstreams/sdk</code>
+              All methods available in <code className="text-sm bg-provn-surface px-2 py-0.5 rounded">@flows/sdk</code>
             </p>
           </motion.div>
 
@@ -541,7 +541,7 @@ export default function DevelopersPage() {
                 icon: FileCode,
                 title: "Example Projects",
                 description: "Starter templates for payroll, bounties, subscriptions, and more.",
-                href: "https://github.com/growstreams",
+                href: "https://github.com/FLOWS",
                 cta: "View on GitHub",
               },
               {
@@ -585,3 +585,4 @@ export default function DevelopersPage() {
     </div>
   )
 }
+

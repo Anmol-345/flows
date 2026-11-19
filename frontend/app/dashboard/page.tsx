@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useEffect, useState, useMemo } from 'react';
 import Link from 'next/link';
@@ -82,7 +82,7 @@ const REGISTERED_AI_AGENTS: AgentEntry[] = [
     actorId: '0xdc7a23f0ff06ef964b12c38f907a21d58c44e9a1b2c3d4e5f60718293a4b5c6d',
     reservationId: '0x725f590c972b6332ef274d27f1cbd10514df803667357fc578b26adf71f9669e',
     voucherId: 'voucher_dc7a23f0ff06',
-    splitsShare: '60% Owners · 15% SDE · 15% Art · 10% X',
+    splitsShare: '60% Owners Â· 15% SDE Â· 15% Art Â· 10% X',
     jobsCompleted: 462,
     volumeVara: 364507.5,
     gasBurnedVara: 16.17,
@@ -100,7 +100,7 @@ const REGISTERED_AI_AGENTS: AgentEntry[] = [
     actorId: '0xdcac4d3a7047e7f53dbe622cb572a4bab3f1446f7bdbf3aacd5acbc01c34e449',
     reservationId: '0x841a2b3c4d5e6f708192a3b4c5d6e7f80112233445566778899aabbccddeeff0',
     voucherId: 'voucher_dcac4d3a7047',
-    splitsShare: '60% Owners · 15% SDE · 15% Art · 10% X',
+    splitsShare: '60% Owners Â· 15% SDE Â· 15% Art Â· 10% X',
     jobsCompleted: 462,
     volumeVara: 364507.5,
     gasBurnedVara: 15.84,
@@ -190,7 +190,7 @@ const REGISTERED_AI_AGENTS: AgentEntry[] = [
     actorId: '0xee8c0128711e0d1066778899aabbccddeeff00112233445566778899aabbccdd',
     reservationId: '0xee8c0128711e0d10123456789abcdef0123456789abcdef0123456789abcdef0',
     voucherId: 'voucher_ee8c0128711e',
-    splitsShare: '60% Owners · 15% SDE · 15% Art · 10% X',
+    splitsShare: '60% Owners Â· 15% SDE Â· 15% Art Â· 10% X',
     jobsCompleted: 478,
     volumeVara: 47145.75,
     gasBurnedVara: 9.82,
@@ -226,7 +226,7 @@ const REGISTERED_AI_AGENTS: AgentEntry[] = [
     actorId: '0xbacdd8d3e9a706815566778899aabbccddeeff00112233445566778899aabbcc',
     reservationId: '0xbacdd8d3e9a7068100112233445566778899aabbccddeeff0011223344556677',
     voucherId: 'voucher_bacdd8d3e9a7',
-    splitsShare: '60% Owners · 15% SDE · 15% Art · 10% X',
+    splitsShare: '60% Owners Â· 15% SDE Â· 15% Art Â· 10% X',
     jobsCompleted: 467,
     volumeVara: 364998.75,
     gasBurnedVara: 16.45,
@@ -244,7 +244,7 @@ const REGISTERED_AI_AGENTS: AgentEntry[] = [
     actorId: '0x6430016748711a295566778899aabbccddeeff00112233445566778899aabbcc',
     reservationId: '0x6430016748711a29112233445566778899aabbccddeeff001122334455667788',
     voucherId: 'voucher_643001674871',
-    splitsShare: '60% Owners · 15% SDE · 15% Art · 10% X',
+    splitsShare: '60% Owners Â· 15% SDE Â· 15% Art Â· 10% X',
     jobsCompleted: 467,
     volumeVara: 364998.75,
     gasBurnedVara: 15.9,
@@ -262,7 +262,7 @@ const REGISTERED_AI_AGENTS: AgentEntry[] = [
     actorId: '0x7c8a849b295cd893445566778899aabbccddeeff00112233445566778899aabb',
     reservationId: '0x7c8a849b295cd89399887766554433221100ffeeddccbbaa9988776655443322',
     voucherId: 'voucher_7c8a849b295c',
-    splitsShare: '60% Owners · 15% SDE · 15% Art · 10% X',
+    splitsShare: '60% Owners Â· 15% SDE Â· 15% Art Â· 10% X',
     jobsCompleted: 467,
     volumeVara: 364998.75,
     gasBurnedVara: 16.32,
@@ -280,7 +280,7 @@ const REGISTERED_AI_AGENTS: AgentEntry[] = [
     actorId: '0x0441e2c72bd64d1e33445566778899aabbccddeeff00112233445566778899aa',
     reservationId: '0x0441e2c72bd64d1eaabbccddeeff00112233445566778899aabbccddeeff0011',
     voucherId: 'voucher_0441e2c72bd6',
-    splitsShare: '60% Owners · 15% SDE · 15% Art · 10% X',
+    splitsShare: '60% Owners Â· 15% SDE Â· 15% Art Â· 10% X',
     jobsCompleted: 467,
     volumeVara: 364998.75,
     gasBurnedVara: 16.41,
@@ -298,7 +298,7 @@ const REGISTERED_AI_AGENTS: AgentEntry[] = [
     actorId: '0x3852bb9282e8a5802233445566778899aabbccddeeff00112233445566778899',
     reservationId: '0x3852bb9282e8a5801111222233334444555566667777888899990000aaaabbbb',
     voucherId: 'voucher_3852bb9282e8',
-    splitsShare: '60% Owners · 15% SDE · 15% Art · 10% X',
+    splitsShare: '60% Owners Â· 15% SDE Â· 15% Art Â· 10% X',
     jobsCompleted: 467,
     volumeVara: 364998.75,
     gasBurnedVara: 16.19,
@@ -316,7 +316,7 @@ const REGISTERED_AI_AGENTS: AgentEntry[] = [
     actorId: '0x8e5e32af9a3147b0112233445566778899aabbccddeeff001122334455667788',
     reservationId: '0x8e5e32af9a3147b0aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55',
     voucherId: 'voucher_8e5e32af9a31',
-    splitsShare: '60% Owners · 15% SDE · 15% Art · 10% X',
+    splitsShare: '60% Owners Â· 15% SDE Â· 15% Art Â· 10% X',
     jobsCompleted: 238,
     volumeVara: 23530.88,
     gasBurnedVara: 6.45,
@@ -538,20 +538,20 @@ const MAINNET_SAILS_CONTRACTS = [
   { id: '0xf5e9cb1d1e46b0cda6578dd1684b30f281a45dfaa390e4945b7bfc8ab3e27f3d', name: 'wVARA (Wrapped VARA)', pillar: 'TOKENS', role: '1:1 wrapped native VARA settlement asset (72,315 VARA locked, DeFiLlama TVL)', methods: 'Wrap, Unwrap, Transfer, Approve' },
   { id: '0x04314af41b7dbac322e3e66920211d2f799719e1cdc3122a99752f72b6ae84ee', name: 'gVARA V2 SuperToken', pillar: 'TOKENS', role: '1:1 VARA-backed streamable SuperToken & Perps margin asset (49,059 VARA)', methods: 'Mint, Burn, CollectFee, BalanceOf' },
   { id: '0x086c7257f39302f9346ed8b7d2839ef1c728fc04997b6056581c0b3f396710ee', name: 'gVARA V3 SuperToken', pillar: 'TOKENS', role: 'V3 7-day reward stream SuperToken', methods: 'Mint, Burn, CollectFee, Stream' },
-  { id: '0x728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163', name: 'GROW Token', pillar: 'TOKENS', role: 'GrowStreams ecosystem governance & campaign reward token', methods: 'Transfer, Mint, Approve, TotalSupply' },
+  { id: '0x728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163', name: 'GROW Token', pillar: 'TOKENS', role: 'Flows ecosystem governance & campaign reward token', methods: 'Transfer, Mint, Approve, TotalSupply' },
   { id: '0x4a9718de4055470963104a4c08e5154ad0c2c48a699996b59e861de9393bf347', name: 'gGROW SuperToken', pillar: 'TOKENS', role: 'GROW-backed streamable campaign reward SuperToken', methods: 'Mint, Burn, ContinuousFlow' },
-  { id: '0x411c62d126b3131ace5e94b618b8cbbdbffb5b9cfdd656f2f6da0786f60cb2c3', name: 'LiquidationManager', pillar: 'STREAMING', role: 'Enforces 1-hour solvency buffer (flow × 3,600s) & liquidates dry streams', methods: 'CheckSolvency, Liquidate' },
+  { id: '0x411c62d126b3131ace5e94b618b8cbbdbffb5b9cfdd656f2f6da0786f60cb2c3', name: 'LiquidationManager', pillar: 'STREAMING', role: 'Enforces 1-hour solvency buffer (flow Ã— 3,600s) & liquidates dry streams', methods: 'CheckSolvency, Liquidate' },
   { id: '0x68b9fd8f53f6557db2c26b5b9a7c63061bb7f36d379dc843b8a53e78f5692f45', name: 'SplitsRouter', pillar: 'AGENTS', role: 'Routes agent squad revenue 60% Owners / 15% SDE / 15% Art / 10% X', methods: 'CreateSplitGroup, Distribute, GetTotalDistributed' },
-  { id: '0x6f413156308663798a77507cf0ea6e79bdbf53add3579ccd4317fc320acf7f29', name: 'IdentityRegistry', pillar: 'CAMPAIGNS', role: 'On-chain Wallet ↔ X ↔ GitHub & Agent identity binding', methods: 'RegisterIdentity, Verify, GetIdentity' },
+  { id: '0x6f413156308663798a77507cf0ea6e79bdbf53add3579ccd4317fc320acf7f29', name: 'IdentityRegistry', pillar: 'CAMPAIGNS', role: 'On-chain Wallet â†” X â†” GitHub & Agent identity binding', methods: 'RegisterIdentity, Verify, GetIdentity' },
   { id: '0x52f4299e964dab5e97c91cdd10e2d6e635b19696ab8389889aabceba3de9e581', name: 'PermissionManager', pillar: 'AGENTS', role: 'Spawns & delegates scoped execution roles to 4-agent squads', methods: 'GrantRole, RevokeRole, HasPermission' },
-  { id: '0x7697bb2e8655e6cd7294389a0289355f48fd5459914d2a735c9966dad548bd4f', name: 'BountyAdapter', pillar: 'CAMPAIGNS', role: 'AI-scored quests (score ≥ 60 → 7-day reward stream; 91 settled bounties)', methods: 'CreateBounty, ClaimBounty, VerifyAndStartStream' },
+  { id: '0x7697bb2e8655e6cd7294389a0289355f48fd5459914d2a735c9966dad548bd4f', name: 'BountyAdapter', pillar: 'CAMPAIGNS', role: 'AI-scored quests (score â‰¥ 60 â†’ 7-day reward stream; 91 settled bounties)', methods: 'CreateBounty, ClaimBounty, VerifyAndStartStream' },
   { id: '0xefbe2c4a66e05cbde419196c1196ff6e790a59b7c0fd601ebc035c3c8dd7466d', name: 'QuestSeeds', pillar: 'CAMPAIGNS', role: 'On-chain proof-of-quest & campaign XP ledger', methods: 'Mint, AwardSeeds, Redeem' },
   { id: '0x7aaa5fa39237ad7f63a78d5acd8a0ff080bd034b8e78de5d4756d6fe4fb25b70', name: 'DistributionPool', pillar: 'CAMPAIGNS', role: 'Proportional season & leaderboard reward distribution pool', methods: 'DistributePool, Claim' },
   { id: '0x2c1dd07810480a34b7369fbf0ff0c97651c6db1f26ffc5eaff6490d6b20263cf', name: 'StonkBase Spot Order Book', pillar: 'STONKBASE', role: 'On-chain Maker/Taker CLOB for NVDA, TSLA, AAPL, SPY, QQQ, GROW vs VARA (107 fills)', methods: 'PlaceSpotOrder, FillSpotOrder, GetSpotTrade' },
-  { id: '0x8073da7aa8e51624ef4c1d41a8e22065cfe8b9ff9e6d5b7f969158397465da81', name: 'StonkBase 5x Desk & Call the Open', pillar: 'STONKBASE', role: '24/7 1x–5x isolated RWA stock perps & green/red opening bell market (75 positions)', methods: 'OpenStockPosition, CloseStockPosition, PushOraclePrices' },
+  { id: '0x8073da7aa8e51624ef4c1d41a8e22065cfe8b9ff9e6d5b7f969158397465da81', name: 'StonkBase 5x Desk & Call the Open', pillar: 'STONKBASE', role: '24/7 1xâ€“5x isolated RWA stock perps & green/red opening bell market (75 positions)', methods: 'OpenStockPosition, CloseStockPosition, PushOraclePrices' },
 ];
 
-export default function GrowStreamsProductAnalyticsDashboard() {
+export default function FLOWSProductAnalyticsDashboard() {
   const [activeTab, setActiveTab] = useState<DashboardTab>('OVERVIEW');
   const [organicOnlyMode, setOrganicOnlyMode] = useState<boolean>(false);
   const [darkMode, setDarkMode] = useState<boolean>(true);
@@ -600,7 +600,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
 
   const downloadExcludedWalletsJson = () => {
     const payload = {
-      protocol: 'GrowStreams V3 (Vara Mainnet)',
+      protocol: 'Flows V3 (Vara Mainnet)',
       exportedAt: new Date().toISOString(),
       policy:
         'Every Vara Grant KPI counts organic user wallets only. All protocol treasury, router, test, and autonomous AI agent wallets below are published and excluded from grant milestone calculations.',
@@ -618,7 +618,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'growstreams-vara-excluded-baseline-and-agent-wallets.json';
+    a.download = 'FLOWS-vara-excluded-baseline-and-agent-wallets.json';
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -716,10 +716,10 @@ export default function GrowStreamsProductAnalyticsDashboard() {
   const exp = stats?.explorerImpact || {
     latestDate: '2026-11-16',
     varaDailySignedExtrinsics: 835,
-    growStreamsDailyExtrinsics: 234,
+    FLOWSDailyExtrinsics: 234,
     extrinsicsSharePct: 28.0,
     varaDailyActiveAccounts: 121,
-    growStreamsDailyActiveWallets: 33,
+    FLOWSDailyActiveWallets: 33,
     activeAccountsSharePct: 27.3,
     varaDailyTransfers: 6854,
     varaDailyGasFeesVara: 473.77,
@@ -728,12 +728,12 @@ export default function GrowStreamsProductAnalyticsDashboard() {
 
   const dailyChartRows = useMemo(() => {
     const fallback = [
-      { date: '2026-11-11', volumeUsd: 2140, feesUsd: 53.5, varaChainExtrinsics: 542, growStreamsExtrinsics: 148, varaChainActiveAccounts: 95, growStreamsActiveWallets: 26, varaChainTransfers: 2295, varaChainFeesVara: 104.16 },
-      { date: '2026-11-12', volumeUsd: 4210, feesUsd: 105.25, varaChainExtrinsics: 752, growStreamsExtrinsics: 210, varaChainActiveAccounts: 153, growStreamsActiveWallets: 48, varaChainTransfers: 2660, varaChainFeesVara: 257.33 },
-      { date: '2026-11-13', volumeUsd: 2139, feesUsd: 60.44, varaChainExtrinsics: 538, growStreamsExtrinsics: 155, varaChainActiveAccounts: 103, growStreamsActiveWallets: 32, varaChainTransfers: 2120, varaChainFeesVara: 113.38 },
-      { date: '2026-11-14', volumeUsd: 3857, feesUsd: 105.58, varaChainExtrinsics: 584, growStreamsExtrinsics: 172, varaChainActiveAccounts: 116, growStreamsActiveWallets: 36, varaChainTransfers: 1767, varaChainFeesVara: 418.78 },
-      { date: '2026-11-15', volumeUsd: 9718, feesUsd: 259.76, varaChainExtrinsics: 698, growStreamsExtrinsics: 196, varaChainActiveAccounts: 121, growStreamsActiveWallets: 38, varaChainTransfers: 3308, varaChainFeesVara: 161.94 },
-      { date: '2026-11-16', volumeUsd: 8643, feesUsd: 202.58, varaChainExtrinsics: 835, growStreamsExtrinsics: 234, varaChainActiveAccounts: 120, growStreamsActiveWallets: 36, varaChainTransfers: 6854, varaChainFeesVara: 473.77 },
+      { date: '2026-11-11', volumeUsd: 2140, feesUsd: 53.5, varaChainExtrinsics: 542, FLOWSExtrinsics: 148, varaChainActiveAccounts: 95, FLOWSActiveWallets: 26, varaChainTransfers: 2295, varaChainFeesVara: 104.16 },
+      { date: '2026-11-12', volumeUsd: 4210, feesUsd: 105.25, varaChainExtrinsics: 752, FLOWSExtrinsics: 210, varaChainActiveAccounts: 153, FLOWSActiveWallets: 48, varaChainTransfers: 2660, varaChainFeesVara: 257.33 },
+      { date: '2026-11-13', volumeUsd: 2139, feesUsd: 60.44, varaChainExtrinsics: 538, FLOWSExtrinsics: 155, varaChainActiveAccounts: 103, FLOWSActiveWallets: 32, varaChainTransfers: 2120, varaChainFeesVara: 113.38 },
+      { date: '2026-11-14', volumeUsd: 3857, feesUsd: 105.58, varaChainExtrinsics: 584, FLOWSExtrinsics: 172, varaChainActiveAccounts: 116, FLOWSActiveWallets: 36, varaChainTransfers: 1767, varaChainFeesVara: 418.78 },
+      { date: '2026-11-15', volumeUsd: 9718, feesUsd: 259.76, varaChainExtrinsics: 698, FLOWSExtrinsics: 196, varaChainActiveAccounts: 121, FLOWSActiveWallets: 38, varaChainTransfers: 3308, varaChainFeesVara: 161.94 },
+      { date: '2026-11-16', volumeUsd: 8643, feesUsd: 202.58, varaChainExtrinsics: 835, FLOWSExtrinsics: 234, varaChainActiveAccounts: 120, FLOWSActiveWallets: 36, varaChainTransfers: 6854, varaChainFeesVara: 473.77 },
     ];
     if (!exp.dailySeries || exp.dailySeries.length === 0) return fallback;
     return exp.dailySeries.slice(-7).map((r: any, idx: number) => ({
@@ -788,7 +788,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
         transition: 'background-color 0.2s ease, color 0.2s ease',
       }}
     >
-      {/* ── Unified EuclidPrime Institutional Top Navigation Bar ── */}
+      {/* â”€â”€ Unified EuclidPrime Institutional Top Navigation Bar â”€â”€ */}
       <header
         style={{
           position: 'sticky',
@@ -842,7 +842,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
               </div>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span style={{ fontWeight: 700, fontSize: '16px', letterSpacing: '-0.02em' }}>GrowStreams</span>
+                  <span style={{ fontWeight: 700, fontSize: '16px', letterSpacing: '-0.02em' }}>Flows</span>
                   <span
                     style={{
                       fontSize: '10px',
@@ -865,7 +865,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
               {[
                 { label: 'Telemetry Dashboard', href: '/dashboard', active: true },
                 { label: 'Portfolio & Overview', href: '/protocol-overview', active: false },
-                { label: 'Perps Desk (1x–5x)', href: '/agents?tab=perps', active: false },
+                { label: 'Perps Desk (1xâ€“5x)', href: '/agents?tab=perps', active: false },
                 { label: 'Spot CLOB', href: '/agents?tab=spot', active: false },
                 { label: 'AI Squad Studio', href: '/agents?tab=squads', active: false },
                 { label: 'Money Streams', href: '/app/streams', active: false },
@@ -971,7 +971,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
       </header>
 
       <main style={{ maxWidth: '1400px', margin: '0 auto', padding: '28px 24px 64px' }}>
-        {/* ── Executive Hero Banner ── */}
+        {/* â”€â”€ Executive Hero Banner â”€â”€ */}
         <div
           style={{
             borderRadius: '20px',
@@ -1011,7 +1011,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                     boxShadow: `0 0 8px ${palette.accent}`,
                   }}
                 />
-                LIVE VARA MAINNET BLOCK #{(stats?.liveChain?.blockNumber || 37754300).toLocaleString()} · AUTO-SYNC ({nextSyncSec}s) · DEFILLAMA &amp; RPC VERIFIED
+                LIVE VARA MAINNET BLOCK #{(stats?.liveChain?.blockNumber || 37754300).toLocaleString()} Â· AUTO-SYNC ({nextSyncSec}s) Â· DEFILLAMA &amp; RPC VERIFIED
               </div>
               <h1
                 style={{
@@ -1022,7 +1022,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                   marginBottom: '10px',
                 }}
               >
-                GrowStreams &amp; StonkBase Product Telemetry Dashboard
+                Flows &amp; StonkBase Product Telemetry Dashboard
               </h1>
               <p style={{ fontSize: '14px', color: palette.textSecondary, lineHeight: 1.6, margin: 0 }}>
                 Live institutional telemetry across <strong style={{ color: palette.textPrimary }}>{ua.verifiedHumanUsers.toLocaleString()} verified human users</strong>,{' '}
@@ -1035,7 +1035,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               <a
-                href="https://defillama.com/protocol/growstreams"
+                href="https://defillama.com/protocol/FLOWS"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -1102,7 +1102,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
             </div>
           </div>
 
-          {/* ── 8 North-Star KPI Cards Grid ── */}
+          {/* â”€â”€ 8 North-Star KPI Cards Grid â”€â”€ */}
           <div
             style={{
               display: 'grid',
@@ -1167,7 +1167,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                 leftLabel: '24h Protocol Fees',
                 leftVal: `$${dl.totalFees24hUsd}`,
                 rightLabel: 'Fee Structure',
-                rightVal: '2.5% Stream · 10bps Perp',
+                rightVal: '2.5% Stream Â· 10bps Perp',
               },
               {
                 title: 'ONCHAIN CONTRACT TVL',
@@ -1181,7 +1181,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                 rightVal: `${(dl.gvaraVara || 49059).toLocaleString()} VARA`,
               },
               {
-                title: 'STREAMS · TRADES · BOUNTIES',
+                title: 'STREAMS Â· TRADES Â· BOUNTIES',
                 icon: Cpu,
                 iconColor: palette.cyan,
                 primary: `${oc.totalStreamsCreated.toLocaleString()} / ${oc.totalStonkBaseTrades} / ${oc.aiScoredBountiesSettled}`,
@@ -1284,7 +1284,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
           </div>
         </div>
 
-        {/* ── Section Switcher Pill Bar ── */}
+        {/* â”€â”€ Section Switcher Pill Bar â”€â”€ */}
         <div
           style={{
             display: 'flex',
@@ -1299,11 +1299,11 @@ export default function GrowStreamsProductAnalyticsDashboard() {
           }}
         >
           {[
-            { id: 'OVERVIEW', label: '01 · Executive Overview & Charts', icon: BarChart3 },
-            { id: 'USERS', label: `02 · Verified Human Users (${ua.verifiedHumanUsers})`, icon: Users },
-            { id: 'AGENTS', label: `03 · Autonomous AI Agents (${ua.registeredAutonomousAgents} · 11 Squads)`, icon: Cpu },
-            { id: 'GRANT_KPIS', label: '04 · Vara $15K Grant KPIs & Excluded Wallets', icon: CheckCircle2 },
-            { id: 'CONTRACTS', label: '05 · 16 Mainnet Sails Contracts', icon: Terminal },
+            { id: 'OVERVIEW', label: '01 Â· Executive Overview & Charts', icon: BarChart3 },
+            { id: 'USERS', label: `02 Â· Verified Human Users (${ua.verifiedHumanUsers})`, icon: Users },
+            { id: 'AGENTS', label: `03 Â· Autonomous AI Agents (${ua.registeredAutonomousAgents} Â· 11 Squads)`, icon: Cpu },
+            { id: 'GRANT_KPIS', label: '04 Â· Vara $15K Grant KPIs & Excluded Wallets', icon: CheckCircle2 },
+            { id: 'CONTRACTS', label: '05 Â· 16 Mainnet Sails Contracts', icon: Terminal },
           ].map((tab) => {
             const Icon = tab.icon;
             const active = activeTab === tab.id;
@@ -1334,7 +1334,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
           })}
         </div>
 
-        {/* ── TAB 1: EXECUTIVE OVERVIEW & INTERACTIVE CHARTS ── */}
+        {/* â”€â”€ TAB 1: EXECUTIVE OVERVIEW & INTERACTIVE CHARTS â”€â”€ */}
         {activeTab === 'OVERVIEW' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {/* Row 1: DeFiLlama Market Share Progress Bars + Cohort Distribution */}
@@ -1352,7 +1352,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', gap: '12px', flexWrap: 'wrap' }}>
                   <div>
                     <h2 style={{ fontSize: '18px', fontWeight: 700, margin: '0 0 4px' }}>
-                      Vara Network DeFiLlama Market Share (GrowStreams vs. Ecosystem)
+                      Vara Network DeFiLlama Market Share (Flows vs. Ecosystem)
                     </h2>
                     <p style={{ fontSize: '12px', color: palette.textSecondary, margin: 0 }}>
                       Live benchmark from api.llama.fi/overview/dexs/Vara, /overview/fees/Vara &amp; /open-interest
@@ -1402,7 +1402,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                     },
                     {
                       label: 'On-Chain Derivatives Volume & Live Open Interest on Vara',
-                      gsVal: `$${dl.perpsNotional7dUsd.toLocaleString()} Vol · $${dl.openInterestUsd.toLocaleString()} OI`,
+                      gsVal: `$${dl.perpsNotional7dUsd.toLocaleString()} Vol Â· $${dl.openInterestUsd.toLocaleString()} OI`,
                       otherVal: 'Other Protocols: $0.00',
                       pct: 100.0,
                     },
@@ -1424,7 +1424,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                         <span>
                           <strong style={{ color: palette.accent }}>{item.gsVal}</strong>{' '}
                           <span style={{ color: palette.textPrimary, fontWeight: 700 }}>({item.pct}%)</span>{' '}
-                          <span style={{ color: palette.textMuted }}>· {item.otherVal}</span>
+                          <span style={{ color: palette.textMuted }}>Â· {item.otherVal}</span>
                         </span>
                       </div>
                       <div
@@ -1744,7 +1744,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                               height: '32%',
                               backgroundColor: '#10B981',
                             }}
-                            title={`GrowStreams Share: ${d.growStreamsExtrinsics} extrinsics`}
+                            title={`Flows Share: ${d.FLOWSExtrinsics} extrinsics`}
                           />
                         </div>
                         <span
@@ -1778,7 +1778,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                     Daily On-Chain Telemetry: DeFiLlama Volume &amp; Vara Explorer Metrics
                   </h2>
                   <p style={{ fontSize: '12px', color: palette.textSecondary, margin: 0 }}>
-                    Showing how GrowStreams user &amp; agent protocol activity contributes to Vara Network&apos;s chain-wide Daily Signed Extrinsics, Active Accounts, Transfers, and Gas Fees
+                    Showing how Flows user &amp; agent protocol activity contributes to Vara Network&apos;s chain-wide Daily Signed Extrinsics, Active Accounts, Transfers, and Gas Fees
                   </p>
                 </div>
                 <a
@@ -1809,9 +1809,9 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                       <th style={{ padding: '12px' }}>DeFiLlama Daily Vol</th>
                       <th style={{ padding: '12px' }}>DeFiLlama Fees</th>
                       <th style={{ padding: '12px' }}>Vara Chain Extrinsics</th>
-                      <th style={{ padding: '12px' }}>GrowStreams Extrinsics</th>
+                      <th style={{ padding: '12px' }}>Flows Extrinsics</th>
                       <th style={{ padding: '12px' }}>Vara Active Accounts (DAA)</th>
-                      <th style={{ padding: '12px' }}>GrowStreams Active Cohort</th>
+                      <th style={{ padding: '12px' }}>Flows Active Cohort</th>
                       <th style={{ padding: '12px' }}>Vara Native Transfers</th>
                       <th style={{ padding: '12px' }}>Vara Recorded Gas</th>
                     </tr>
@@ -1828,11 +1828,11 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                         </td>
                         <td style={{ padding: '12px', color: palette.textPrimary }}>{row.varaChainExtrinsics.toLocaleString()}</td>
                         <td style={{ padding: '12px', color: palette.cyan, fontWeight: 600 }}>
-                          {row.growStreamsExtrinsics} ({Math.round((row.growStreamsExtrinsics / Math.max(1, row.varaChainExtrinsics)) * 100)}%)
+                          {row.FLOWSExtrinsics} ({Math.round((row.FLOWSExtrinsics / Math.max(1, row.varaChainExtrinsics)) * 100)}%)
                         </td>
                         <td style={{ padding: '12px', color: palette.textPrimary }}>{row.varaChainActiveAccounts}</td>
                         <td style={{ padding: '12px', color: palette.accent, fontWeight: 600 }}>
-                          {row.growStreamsActiveWallets} ({Math.round((row.growStreamsActiveWallets / Math.max(1, row.varaChainActiveAccounts)) * 100)}%)
+                          {row.FLOWSActiveWallets} ({Math.round((row.FLOWSActiveWallets / Math.max(1, row.varaChainActiveAccounts)) * 100)}%)
                         </td>
                         <td style={{ padding: '12px', color: palette.textSecondary }}>{row.varaChainTransfers.toLocaleString()}</td>
                         <td style={{ padding: '12px', color: palette.amber, fontWeight: 600 }}>{row.varaChainFeesVara} VARA</td>
@@ -1845,7 +1845,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
           </div>
         )}
 
-        {/* ── TAB 2: VERIFIED HUMAN USERS ── */}
+        {/* â”€â”€ TAB 2: VERIFIED HUMAN USERS â”€â”€ */}
         {activeTab === 'USERS' && (
           <div
             style={{
@@ -1861,7 +1861,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                   Verified Human Users &amp; Community Traders ({ua.verifiedHumanUsers} On-Chain Wallets)
                 </h2>
                 <p style={{ fontSize: '12px', color: palette.textSecondary, margin: 0 }}>
-                  Wallets bound in IdentityRegistry (0x6f41…7f29) across X/GitHub quests, StreamCore flows, and StonkBase Spot/Perps trading
+                  Wallets bound in IdentityRegistry (0x6f41â€¦7f29) across X/GitHub quests, StreamCore flows, and StonkBase Spot/Perps trading
                 </p>
               </div>
               <div style={{ position: 'relative', width: '280px' }}>
@@ -1911,7 +1911,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                       <td style={{ padding: '14px 12px', color: palette.textSecondary }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                           <span>
-                            {u.wallet.slice(0, 8)}…{u.wallet.slice(-6)}
+                            {u.wallet.slice(0, 8)}â€¦{u.wallet.slice(-6)}
                           </span>
                           <button
                             onClick={() => copyText(u.wallet, u.wallet)}
@@ -1938,7 +1938,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                       <td style={{ padding: '14px 12px', color: palette.textSecondary }}>{u.sourceChannel}</td>
                       <td style={{ padding: '14px 12px', fontWeight: 700 }}>{u.streamsCount}</td>
                       <td style={{ padding: '14px 12px', color: palette.cyan, fontWeight: 600 }}>
-                        {u.spotTrades} Spot · {u.perpsPositions} Perps
+                        {u.spotTrades} Spot Â· {u.perpsPositions} Perps
                       </td>
                       <td style={{ padding: '14px 12px', color: palette.amber, fontWeight: 700 }}>{u.aiBountyScore}/100</td>
                       <td style={{ padding: '14px 12px' }}>
@@ -1963,7 +1963,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
           </div>
         )}
 
-        {/* ── TAB 3: AUTONOMOUS AI AGENT SOCIETY ── */}
+        {/* â”€â”€ TAB 3: AUTONOMOUS AI AGENT SOCIETY â”€â”€ */}
         {activeTab === 'AGENTS' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -2016,7 +2016,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                     Registered Autonomous AI Agents on Vara Mainnet (50 Agents Across 11 Squads)
                   </h2>
                   <p style={{ fontSize: '12px', color: palette.textSecondary, margin: 0 }}>
-                    Spawned via PermissionManager (0x52f4…e581) &amp; IdentityRegistry (0x6f41…7f29). All agent wallets are reported separately from human grant KPIs.
+                    Spawned via PermissionManager (0x52f4â€¦e581) &amp; IdentityRegistry (0x6f41â€¦7f29). All agent wallets are reported separately from human grant KPIs.
                   </p>
                 </div>
 
@@ -2063,7 +2063,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                         <td style={{ padding: '14px 12px' }}>
                           <div style={{ fontWeight: 700, color: palette.textPrimary }}>{a.name}</div>
                           <div style={{ fontSize: '10px', color: palette.textSecondary }}>
-                            {a.squad} · Owner: <strong style={{ color: palette.accent }}>{a.ownerHandle}</strong>
+                            {a.squad} Â· Owner: <strong style={{ color: palette.accent }}>{a.ownerHandle}</strong>
                           </div>
                         </td>
                         <td style={{ padding: '14px 12px' }}>
@@ -2083,7 +2083,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                         <td style={{ padding: '14px 12px', color: palette.textSecondary }}>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                             <span>
-                              {a.agentWallet.slice(0, 8)}…{a.agentWallet.slice(-6)}
+                              {a.agentWallet.slice(0, 8)}â€¦{a.agentWallet.slice(-6)}
                             </span>
                             <button
                               onClick={() => copyText(a.agentWallet, a.id)}
@@ -2092,10 +2092,10 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                               {copiedKey === a.id ? <Check className="w-3.5 h-3.5" style={{ color: palette.accent }} /> : <Copy className="w-3.5 h-3.5" />}
                             </button>
                           </div>
-                          <div style={{ fontSize: '10px', color: palette.textMuted }}>{a.actorId.slice(0, 14)}…</div>
+                          <div style={{ fontSize: '10px', color: palette.textMuted }}>{a.actorId.slice(0, 14)}â€¦</div>
                         </td>
                         <td style={{ padding: '14px 12px' }}>
-                          <div style={{ color: palette.accent, fontSize: '11px' }}>Res: {a.reservationId.slice(0, 12)}…</div>
+                          <div style={{ color: palette.accent, fontSize: '11px' }}>Res: {a.reservationId.slice(0, 12)}â€¦</div>
                           <div style={{ color: palette.textMuted, fontSize: '10px' }}>Voucher: {a.voucherId}</div>
                         </td>
                         <td style={{ padding: '14px 12px', color: palette.textSecondary, fontSize: '11px' }}>{a.splitsShare}</td>
@@ -2105,7 +2105,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                           <div style={{ fontSize: '10px', color: palette.textMuted }}>Gas: {a.gasBurnedVara} VARA</div>
                         </td>
                         <td style={{ padding: '14px 12px', fontSize: '11px', color: palette.textSecondary }}>
-                          {a.primaryContracts.join(' · ')}
+                          {a.primaryContracts.join(' Â· ')}
                         </td>
                       </tr>
                     ))}
@@ -2116,7 +2116,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
           </div>
         )}
 
-        {/* ── TAB 4: VARA GRANT KPIS & EXCLUDED WALLETS ── */}
+        {/* â”€â”€ TAB 4: VARA GRANT KPIS & EXCLUDED WALLETS â”€â”€ */}
         {activeTab === 'GRANT_KPIS' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <div
@@ -2130,7 +2130,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px', marginBottom: '20px' }}>
                 <div>
                   <h2 style={{ fontSize: '18px', fontWeight: 700, margin: '0 0 4px' }}>
-                    Vara Grant Proposal V3: $15,000 in VARA ($0 Upfront · $6K Tranche 1 + $9K Tranche 2)
+                    Vara Grant Proposal V3: $15,000 in VARA ($0 Upfront Â· $6K Tranche 1 + $9K Tranche 2)
                   </h2>
                   <p style={{ fontSize: '12px', color: palette.textSecondary, margin: 0 }}>
                     Every tranche releases only after organic KPIs (excluding our published team, router, and AI-agent wallets below) are verified on DeFiLlama &amp; Subscan.
@@ -2165,8 +2165,8 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                       <th style={{ padding: '12px' }}>Area</th>
                       <th style={{ padding: '12px' }}>KPI Definition (Organic Only, From Signing)</th>
                       <th style={{ padding: '12px' }}>Pre-Grant Baseline (All Wallets, Nov 17)</th>
-                      <th style={{ padding: '12px' }}>Tranche 1 Target ($6K · ~D30)</th>
-                      <th style={{ padding: '12px' }}>Tranche 2 Target ($9K · ~D60)</th>
+                      <th style={{ padding: '12px' }}>Tranche 1 Target ($6K Â· ~D30)</th>
+                      <th style={{ padding: '12px' }}>Tranche 2 Target ($9K Â· ~D60)</th>
                       <th style={{ padding: '12px' }}>Verification Source</th>
                     </tr>
                   </thead>
@@ -2186,7 +2186,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                         baseline: `${ua.totalUniqueWalletsOnChain} wallets (${ua.verifiedHumanUsers} human)`,
                         t1: '500',
                         t2: '1,500',
-                        source: 'IdentityRegistry (0x6f41…7f29)',
+                        source: 'IdentityRegistry (0x6f41â€¦7f29)',
                       },
                       {
                         area: 'RETENTION',
@@ -2202,15 +2202,15 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                         baseline: `${ua.totalOnboardedFunnelWallets} funnel joins`,
                         t1: '1,000',
                         t2: '3,000',
-                        source: 'QuestSeeds (0xefbe…466d)',
+                        source: 'QuestSeeds (0xefbeâ€¦466d)',
                       },
                       {
                         area: 'SOCIALS',
-                        kpi: 'Verified #Vara posts (AI scorer ≥ 60) / Campaign impressions',
+                        kpi: 'Verified #Vara posts (AI scorer â‰¥ 60) / Campaign impressions',
                         baseline: '91 AI-scored bounties settled',
                         t1: '1,000 posts / 250K views',
                         t2: '3,000 posts / 1M views',
-                        source: 'BountyAdapter (0x7697…bd4f)',
+                        source: 'BountyAdapter (0x7697â€¦bd4f)',
                       },
                       {
                         area: 'EVENTS',
@@ -2305,10 +2305,10 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                           </span>
                         </td>
                         <td style={{ padding: '14px 12px', color: palette.textSecondary }}>
-                          {w.ss58.slice(0, 12)}…{w.ss58.slice(-6)}
+                          {w.ss58.slice(0, 12)}â€¦{w.ss58.slice(-6)}
                         </td>
                         <td style={{ padding: '14px 12px', color: palette.textMuted }}>
-                          {w.hex.slice(0, 14)}…{w.hex.slice(-6)}
+                          {w.hex.slice(0, 14)}â€¦{w.hex.slice(-6)}
                         </td>
                         <td style={{ padding: '14px 12px', color: palette.textSecondary, fontFamily: 'var(--font-space-grotesk), sans-serif' }}>
                           {w.reason}
@@ -2322,7 +2322,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
           </div>
         )}
 
-        {/* ── TAB 5: 16 MAINNET SAILS CONTRACTS ── */}
+        {/* â”€â”€ TAB 5: 16 MAINNET SAILS CONTRACTS â”€â”€ */}
         {activeTab === 'CONTRACTS' && (
           <div
             style={{
@@ -2374,7 +2374,7 @@ export default function GrowStreamsProductAnalyticsDashboard() {
                       <td style={{ padding: '14px 12px', color: palette.textSecondary }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                           <span>
-                            {c.id.slice(0, 10)}…{c.id.slice(-6)}
+                            {c.id.slice(0, 10)}â€¦{c.id.slice(-6)}
                           </span>
                           <button
                             onClick={() => copyText(c.id, c.id)}
@@ -2419,3 +2419,4 @@ export default function GrowStreamsProductAnalyticsDashboard() {
     </div>
   );
 }
+

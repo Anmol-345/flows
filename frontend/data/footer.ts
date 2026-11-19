@@ -1,4 +1,4 @@
-export interface FooterLink {
+﻿export interface FooterLink {
   label: string;
   href: string;
 }
@@ -24,7 +24,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "Documentation", href: "https://docs.vara.network/" },
       { label: "16 Sails Smart Contracts", href: "/agents" },
-      { label: "GitHub (GrowStreams V3)", href: "https://github.com/Satyam-10124/growstreams-v3" },
+      { label: "GitHub (Flows V3)", href: "https://github.com/Satyam-10124/FLOWS-v3" },
       { label: "SDKs & APIs", href: "/developers" },
     ],
   },
@@ -47,8 +47,9 @@ export const LEGAL_LINKS: FooterLink[] = [
 ];
 
 export const FOOTER_INFO = {
-  brandName: "GrowStreams",
+  brandName: "Flows",
   tagline: "Live programmable money streaming, AI agent squads & Stonk on Vara 24/7 Desk on Vara Network.",
   newsletterTitle: "Sign up to our newsletter",
-  copyright: "© 2026 GrowStreams Protocol. All rights reserved.",
+  copyright: "Â© 2026 Flows Protocol. All rights reserved.",
 };
+

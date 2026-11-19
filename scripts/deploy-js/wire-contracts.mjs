@@ -1,4 +1,4 @@
-import { GearApi, GearKeyring } from '@gear-js/api';
+﻿import { GearApi, GearKeyring } from '@gear-js/api';
 import { readFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -139,7 +139,7 @@ async function sendMessage(api, account, programId, payload, gasLimit) {
 }
 
 async function main() {
-  console.log('=== GrowStreams V2 — Wire Contracts ===');
+  console.log('=== FLOWS V2 â€” Wire Contracts ===');
   console.log(`Node: ${VARA_NODE}\n`);
   
   const state = loadDeployState();
@@ -180,9 +180,9 @@ async function main() {
   
   try {
     const result1 = await sendMessage(api, keyring, tokenVaultId, vaultPayload);
-    console.log(`  ✅ Success! Block: ${result1.blockHash}\n`);
+    console.log(`  âœ… Success! Block: ${result1.blockHash}\n`);
   } catch (err) {
-    console.error(`  ❌ Failed: ${err.message}\n`);
+    console.error(`  âŒ Failed: ${err.message}\n`);
   }
   
   // Step 2: StreamCore.set_token_vault(tokenVaultId)
@@ -195,9 +195,9 @@ async function main() {
   
   try {
     const result2 = await sendMessage(api, keyring, streamCoreId, corePayload);
-    console.log(`  ✅ Success! Block: ${result2.blockHash}\n`);
+    console.log(`  âœ… Success! Block: ${result2.blockHash}\n`);
   } catch (err) {
-    console.error(`  ❌ Failed: ${err.message}\n`);
+    console.error(`  âŒ Failed: ${err.message}\n`);
   }
   
   console.log('=== Wiring Complete ===');
@@ -212,3 +212,4 @@ main().catch((err) => {
   console.error('Fatal error:', err.message);
   process.exit(1);
 });
+

@@ -29,7 +29,7 @@ import { HomeMiddleSections } from "@/components/blume/HomeMiddleSections";
       >
         <div className={"floating-island__inner"} data-astro-cid-nghsr54r={""}>
           <span className={"floating-island__text"} data-astro-cid-nghsr54r={""}>
-            {"GrowStreams"}
+            {"Flows"}
           </span>
           <div className={"floating-island__cta"} data-astro-cid-nghsr54r={""} style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
             <a
@@ -140,12 +140,6 @@ import { HomeMiddleSections } from "@/components/blume/HomeMiddleSections";
         />
         <div className={"sidecar-hero-content"} data-astro-cid-sc5xoz2y={""}>
           <div className={"sidecar-hero-text"} data-astro-cid-sc5xoz2y={""}>
-            <div
-              className={"sidecar-hero-logo flex items-center"}
-              data-astro-cid-sc5xoz2y={""}
-            >
-              <img src={"/images/logo.png"} alt={"Blume Logo"} style={{ height: "64px", width: "auto" }} />
-            </div>
             <h1 className={"sidecar-hero-title"} data-astro-cid-sc5xoz2y={""}>
               {" Grow together, "}
               <br data-astro-cid-sc5xoz2y={""} />
@@ -153,7 +147,7 @@ import { HomeMiddleSections } from "@/components/blume/HomeMiddleSections";
             </h1>
             <p className={"sidecar-hero-subtitle"} data-astro-cid-sc5xoz2y={""}>
               {
-                " GrowStreams is the social growth engine where communities fund contributors, stream rewards in real time, and grow together as one network. "
+                " Flows is the money streaming protocol where communities fund contributors, stream rewards in real time, and grow together as one network. "
               }
             </p>
             <div className={"sidecar-hero-cta"} data-astro-cid-sc5xoz2y={""} style={{ display: 'flex', justifyContent: 'center' }}>
@@ -271,13 +265,6 @@ import { HomeMiddleSections } from "@/components/blume/HomeMiddleSections";
           className={"sidecar-conclusion__inner"}
           data-astro-cid-7mp4itxr={""}
         >
-          <div
-            className={"sidecar-conclusion__logo"}
-            aria-hidden={"true"}
-            data-astro-cid-7mp4itxr={""}
-          >
-            <img src={"/images/logo.png"} alt={"Blume Logo"} style={{ height: "80px", width: "auto" }} />
-          </div>
           <astro-island
             {...({
               uid: "1sl05O",
@@ -309,7 +296,7 @@ import { HomeMiddleSections } from "@/components/blume/HomeMiddleSections";
             data-astro-cid-7mp4itxr={""}
           >
             {
-              "\nJoin builders, DAOs, and contributors already growing together on GrowStreams. Start streaming value to your network in seconds.\n"
+              "\nJoin builders, DAOs, and contributors already growing together on Flows. Start streaming value to your network in seconds.\n"
             }
           </p>
           <div
@@ -390,7 +377,7 @@ import { HomeMiddleSections } from "@/components/blume/HomeMiddleSections";
               href="https://x.com/VaraNetwork"
               target={"_blank"}
               rel={"noopener noreferrer"}
-              aria-label={"Follow GrowStreams on X"}
+              aria-label={"Follow Flows on X"}
               className={"sidecar-conclusion__social"}
               data-astro-cid-7mp4itxr={""}
             >

@@ -1,4 +1,4 @@
-# GrowStreams V2 — Smart Contract API Reference
+﻿# FLOWS V2 â€” Smart Contract API Reference
 
 ## Contract Addresses
 
@@ -19,7 +19,7 @@
 
 ### Mutations
 
-#### `CreateStream(receiver, token, flow_rate, initial_deposit) → Result<StreamId, String>`
+#### `CreateStream(receiver, token, flow_rate, initial_deposit) â†’ Result<StreamId, String>`
 Create a new payment stream.
 
 | Param | Type | Description |
@@ -31,14 +31,14 @@ Create a new payment stream.
 
 **Requirements:**
 - `flow_rate > 0`
-- `sender ≠ receiver`
-- `initial_deposit ≥ flow_rate × min_buffer_seconds`
+- `sender â‰  receiver`
+- `initial_deposit â‰¥ flow_rate Ã— min_buffer_seconds`
 
 **Emits:** `StreamCreated`
 
 ---
 
-#### `UpdateStream(stream_id, new_flow_rate) → Result<(), String>`
+#### `UpdateStream(stream_id, new_flow_rate) â†’ Result<(), String>`
 Change the flow rate of an active or paused stream.
 
 **Requirements:** Caller must be sender. Stream must not be stopped.
@@ -47,42 +47,42 @@ Change the flow rate of an active or paused stream.
 
 ---
 
-#### `StopStream(stream_id) → Result<(), String>`
+#### `StopStream(stream_id) â†’ Result<(), String>`
 Permanently stop a stream. Remaining buffer is refunded to sender.
 
 **Emits:** `StreamStopped`
 
 ---
 
-#### `PauseStream(stream_id) → Result<(), String>`
+#### `PauseStream(stream_id) â†’ Result<(), String>`
 Temporarily pause an active stream.
 
 **Emits:** `StreamPaused`
 
 ---
 
-#### `ResumeStream(stream_id) → Result<(), String>`
+#### `ResumeStream(stream_id) â†’ Result<(), String>`
 Resume a paused stream.
 
 **Emits:** `StreamResumed`
 
 ---
 
-#### `Deposit(stream_id, amount) → Result<(), String>`
+#### `Deposit(stream_id, amount) â†’ Result<(), String>`
 Add more tokens to an existing stream's buffer.
 
 **Emits:** `Deposited`
 
 ---
 
-#### `Withdraw(stream_id) → Result<u128, String>`
+#### `Withdraw(stream_id) â†’ Result<u128, String>`
 Receiver withdraws all accrued tokens. Returns amount withdrawn.
 
 **Emits:** `Withdrawn`
 
 ---
 
-#### `Liquidate(stream_id) → Result<(), String>`
+#### `Liquidate(stream_id) â†’ Result<(), String>`
 Anyone can call this to pause a stream whose buffer is below the minimum threshold.
 
 **Emits:** `StreamLiquidated`
@@ -152,7 +152,7 @@ import { VaraEthApi, EthereumClient } from '@vara-eth/api';
 // 1. Deposit tokens to vault
 await vault.DepositTokens(USDC_PROGRAM_ID, 1_000_000); // 1 USDC
 
-// 2. Create a stream (100 USDC/month ≈ 38,580 micro-USDC/sec)
+// 2. Create a stream (100 USDC/month â‰ˆ 38,580 micro-USDC/sec)
 const streamId = await streamCore.CreateStream(
   receiverAddress,
   USDC_PROGRAM_ID,
@@ -169,3 +169,4 @@ const amount = await streamCore.Withdraw(streamId);
 // 5. Sender stops stream
 await streamCore.StopStream(streamId);
 ```
+

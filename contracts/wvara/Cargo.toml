@@ -1,9 +1,9 @@
-[package]
+﻿[package]
 name = "wvara"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "Wrapped VARA — VFT token that wraps native VARA 1:1 for use in GrowStreams streaming"
+description = "Wrapped VARA â€” VFT token that wraps native VARA 1:1 for use in FLOWS streaming"
 
 [dependencies]
 sails-rs.workspace = true
@@ -16,3 +16,4 @@ sails-rs = { workspace = true, features = ["wasm-builder"] }
 
 [lib]
 crate-type = ["cdylib", "rlib"]
+

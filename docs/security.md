@@ -1,4 +1,4 @@
-# GrowStreams V2 — Security Model
+﻿# FLOWS V2 â€” Security Model
 
 ## Threat Model
 
@@ -20,28 +20,28 @@
 ### 1. Solvency Guarantee
 ```
 For every active stream:
-  deposited ≥ streamed ≥ withdrawn
-  remaining_buffer = deposited - total_streamed ≥ 0
+  deposited â‰¥ streamed â‰¥ withdrawn
+  remaining_buffer = deposited - total_streamed â‰¥ 0
 ```
 
 **Enforcement:** 
-- Initial deposit must cover `flow_rate × min_buffer_seconds`
+- Initial deposit must cover `flow_rate Ã— min_buffer_seconds`
 - Liquidation mechanism pauses streams approaching insolvency
 - Withdrawal capped at `min(total_streamed, deposited) - withdrawn`
 
 ### 2. Authorization
 ```
-CreateStream, UpdateStream, StopStream, PauseStream, Deposit → sender only
-Withdraw → receiver only
-Liquidate → anyone (incentivized public good)
-EmergencyPause/Unpause → admin only
-AllocateToStream, ReleaseFromStream, TransferToReceiver → StreamCore only
+CreateStream, UpdateStream, StopStream, PauseStream, Deposit â†’ sender only
+Withdraw â†’ receiver only
+Liquidate â†’ anyone (incentivized public good)
+EmergencyPause/Unpause â†’ admin only
+AllocateToStream, ReleaseFromStream, TransferToReceiver â†’ StreamCore only
 ```
 
 ### 3. No Double-Spend
 - TokenVault tracks per-stream allocations separately
 - Release and transfer reduce allocation atomically
-- Total allocated across all streams ≤ total deposited per (owner, token)
+- Total allocated across all streams â‰¤ total deposited per (owner, token)
 
 ### 4. No Reentrancy
 - State updates happen before external calls (checks-effects-interactions)
@@ -61,7 +61,7 @@ AllocateToStream, ReleaseFromStream, TransferToReceiver → StreamCore only
 - Configurable by admin at deployment
 
 ### Liquidation Flow
-1. Stream buffer drops below `flow_rate × min_buffer_seconds`
+1. Stream buffer drops below `flow_rate Ã— min_buffer_seconds`
 2. Any actor calls `Liquidate(stream_id)`
 3. Contract settles accrual, pauses stream
 4. Sender can top up buffer and resume, or stop and claim refund
@@ -69,7 +69,7 @@ AllocateToStream, ReleaseFromStream, TransferToReceiver → StreamCore only
 ### Why This Works
 - Prevents "promise more than you have" scenarios
 - Receivers always receive tokens backed by real deposits
-- Liquidation is permissionless — no reliance on a single keeper
+- Liquidation is permissionless â€” no reliance on a single keeper
 
 ---
 
@@ -83,7 +83,7 @@ AllocateToStream, ReleaseFromStream, TransferToReceiver → StreamCore only
 
 ### Recovery
 - Admin unpause resumes normal operations
-- No funds are lost during pause — state is preserved
+- No funds are lost during pause â€” state is preserved
 - Consider timelock / multisig for admin key in production
 
 ---
@@ -115,3 +115,4 @@ AllocateToStream, ReleaseFromStream, TransferToReceiver → StreamCore only
 3. **No formal verification:** Invariants tested but not formally proved
 4. **Timestamp granularity:** Block timestamps have ~second granularity; micro-second precision not possible
 5. **Token whitelist:** No token whitelist in MVP; any ActorId accepted as token (validate externally)
+

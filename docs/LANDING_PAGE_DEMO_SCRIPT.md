@@ -1,36 +1,36 @@
-# GrowStreams Landing Page Walkthrough (Demo Script)
+﻿# FLOWS Landing Page Walkthrough (Demo Script)
 
 **Target Duration:** 2:30 minutes  
 **Audience:** First-time visitors, potential users, Web3 community  
-**Goal:** Show how easy it is to get started with GrowStreams and create your first stream
+**Goal:** Show how easy it is to get started with FLOWS and create your first stream
 
 ---
 
-## 🎬 SECTION 1: Landing Page Hero (0:00 - 0:30)
+## ðŸŽ¬ SECTION 1: Landing Page Hero (0:00 - 0:30)
 
 ### [0:00 - 0:30] **First Impressions & Value Prop**
 
 **VISUAL:**
-- Fade in to GrowStreams landing page
+- Fade in to FLOWS landing page
 - Hero section with animated streaming visualization
 - Smooth scroll to show full above-the-fold content
 
 **NARRATION:**
-> "This is GrowStreams - the first native VARA streaming protocol on Vara Network. Forget one-time payments. Forget manual transfers. With GrowStreams, you can stream tokens per second to anyone, anywhere."
+> "This is FLOWS - the first native VARA streaming protocol on Vara Network. Forget one-time payments. Forget manual transfers. With FLOWS, you can stream tokens per second to anyone, anywhere."
 
 **ON SCREEN - Hero Section:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        🌊 GrowStreams 🌊
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+        ðŸŒŠ FLOWS ðŸŒŠ
 
     Stream VARA in Real-Time
     Pay-as-you-go. Second-by-second.
 
-  [Connect Wallet] [Learn More ↓]
+  [Connect Wallet] [Learn More â†“]
 
-💧 Live Now: 127 Active Streams
-📊 Total Streamed: 15,234 VARA
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ðŸ’§ Live Now: 127 Active Streams
+ðŸ“Š Total Streamed: 15,234 VARA
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL HIGHLIGHT:**
@@ -40,7 +40,7 @@
 
 ---
 
-## 🔗 SECTION 2: Connect Wallet (0:30 - 1:00)
+## ðŸ”— SECTION 2: Connect Wallet (0:30 - 1:00)
 
 ### [0:30 - 1:00] **Wallet Connection Flow**
 
@@ -58,25 +58,25 @@
 
 **ON SCREEN - Wallet Modal:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
    Connect Your Wallet
 
-   [🦊 SubWallet]
-   [🔮 Talisman]  
-   [🔴 Polkadot.js]
+   [ðŸ¦Š SubWallet]
+   [ðŸ”® Talisman]  
+   [ðŸ”´ Polkadot.js]
 
-   New to Vara? [Get a Wallet →]
-━━━━━━━━━━━━━━━━━━━━━━━━
+   New to Vara? [Get a Wallet â†’]
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL AFTER CONNECTION:**
 - Green checkmark animation
 - Wallet address appears in top right
-- Button changes to: "0x1234...5678 ✓"
+- Button changes to: "0x1234...5678 âœ“"
 
 ---
 
-## 🆔 SECTION 3: Link Identity (1:00 - 1:40)
+## ðŸ†” SECTION 3: Link Identity (1:00 - 1:40)
 
 ### [1:00 - 1:20] **GitHub Integration**
 
@@ -84,8 +84,8 @@
 - Welcome modal appears after wallet connection
 - "Complete Your Profile" section
 - Highlight "Link GitHub" button
-- Click → GitHub OAuth flow
-- Authorize GrowStreams
+- Click â†’ GitHub OAuth flow
+- Authorize FLOWS
 - Return to site with green checkmark
 
 **NARRATION:**
@@ -93,22 +93,22 @@
 
 **ON SCREEN - Profile Setup:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
     Complete Your Profile
 
 Connected: 0x1234...5678
 Balance: 12.45 VARA
 
-━━ Link Your Identity ━━
+â”â” Link Your Identity â”â”
 
-[ ] GitHub    [Link Account →]
-[ ] Twitter   [Link Account →]
+[ ] GitHub    [Link Account â†’]
+[ ] Twitter   [Link Account â†’]
 
 Why link? Build reputation, get
 discovered, earn trust.
 
       [Skip for Now] [Continue]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 ---
@@ -120,26 +120,26 @@ discovered, earn trust.
 - Twitter OAuth popup
 - Authorize
 - Both checkmarks now green
-- Profile updates to show: "@alice_dev (GitHub) • @alice (Twitter)"
+- Profile updates to show: "@alice_dev (GitHub) â€¢ @alice (Twitter)"
 
 **NARRATION:**
 > "Same with Twitter. One click, authorize, done. Now your streaming activity can be showcased on your social profiles. Projects can find you. Your reputation is quantified."
 
 **ON SCREEN - After Linking:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    ✅ Profile Complete!
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+    âœ… Profile Complete!
 
-🆔 @alice_dev (GitHub)
-🐦 @alice (Twitter)  
-💳 0x1234...5678
+ðŸ†” @alice_dev (GitHub)
+ðŸ¦ @alice (Twitter)  
+ðŸ’³ 0x1234...5678
 
 Community Score: 0 (New)
 Streams Created: 0
 Streams Received: 0
 
-     [Go to Dashboard →]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     [Go to Dashboard â†’]
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL TRANSITION:**
@@ -147,7 +147,7 @@ Streams Received: 0
 
 ---
 
-## 📊 SECTION 4: Dashboard Preview (1:40 - 2:10)
+## ðŸ“Š SECTION 4: Dashboard Preview (1:40 - 2:10)
 
 ### [1:40 - 2:10] **User Dashboard Tour**
 
@@ -161,27 +161,27 @@ Streams Received: 0
 
 **ON SCREEN - Dashboard Layout:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GrowStreams Dashboard | @alice_dev ▼
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+FLOWS Dashboard | @alice_dev â–¼
 
-━━ Vault Balance ━━━━━━━━━━━━━━━━━━━
-  💰 12.45 VARA
+â”â” Vault Balance â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+  ðŸ’° 12.45 VARA
   [Deposit] [Withdraw]
 
-━━ Quick Actions ━━━━━━━━━━━━━━━━━━━
+â”â” Quick Actions â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
   [+ New Stream] [View All Streams]
 
-━━ Incoming Streams (0) ━━━━━━━━━━━━
+â”â” Incoming Streams (0) â”â”â”â”â”â”â”â”â”â”â”â”
   No incoming streams yet.
   Share your address to receive!
 
-━━ Outgoing Streams (0) ━━━━━━━━━━━━
+â”â” Outgoing Streams (0) â”â”â”â”â”â”â”â”â”â”â”â”
   No active streams.
-  [Create your first stream →]
+  [Create your first stream â†’]
 
-━━ Recent Activity ━━━━━━━━━━━━━━━━━
-  🎉 Account created 2 minutes ago
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â” Recent Activity â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+  ðŸŽ‰ Account created 2 minutes ago
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL HIGHLIGHTS:**
@@ -191,7 +191,7 @@ GrowStreams Dashboard | @alice_dev ▼
 
 ---
 
-## 🚀 SECTION 5: Call to Action (2:10 - 2:30)
+## ðŸš€ SECTION 5: Call to Action (2:10 - 2:30)
 
 ### [2:10 - 2:30] **Next Steps & Close**
 
@@ -202,39 +202,39 @@ GrowStreams Dashboard | @alice_dev ▼
   - Stream creation form preview (don't fill out)
   - Click "Deposit" button  
   - Deposit modal preview
-- Fade to GrowStreams logo
+- Fade to FLOWS logo
 
 **NARRATION:**
 > "That's it. You're ready. Deposit some VARA to your vault, create your first stream, and watch the magic happen. Real-time token streaming is here. Join the future of payments."
 
 **ON SCREEN - CTA:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
     Ready to Stream?
 
-✨ Deposit VARA to your vault
-🌊 Create your first stream
-💸 Get paid every second
+âœ¨ Deposit VARA to your vault
+ðŸŒŠ Create your first stream
+ðŸ’¸ Get paid every second
 
-   [Get Started Now →]
+   [Get Started Now â†’]
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **FINAL VISUAL:**
-- GrowStreams logo
+- FLOWS logo
 - Tagline: "Stream. Don't Send."
 - URLs fade in:
-  - app.growstreams.io
-  - docs.growstreams.io
-  - @GrowStreams
+  - app.FLOWS.io
+  - docs.FLOWS.io
+  - @FLOWS
 
 **NARRATION (VOICE FADE OUT):**
-> "GrowStreams. Stream. Don't send."
+> "FLOWS. Stream. Don't send."
 
 ---
 
-## 🎥 Production Notes
+## ðŸŽ¥ Production Notes
 
 ### Timing Breakdown
 - **Section 1:** Hero & Value Prop (0:30)
@@ -252,13 +252,13 @@ GrowStreams Dashboard | @alice_dev ▼
 - **Color Scheme:** Blues & greens (water/streaming theme)
 
 ### Key UI Elements to Show
-1. ✅ Hero section with live stats
-2. ✅ Wallet connection modal
-3. ✅ GitHub/Twitter OAuth flows
-4. ✅ Profile completion screen
-5. ✅ Clean dashboard layout
-6. ✅ Empty state messaging
-7. ✅ Quick action buttons
+1. âœ… Hero section with live stats
+2. âœ… Wallet connection modal
+3. âœ… GitHub/Twitter OAuth flows
+4. âœ… Profile completion screen
+5. âœ… Clean dashboard layout
+6. âœ… Empty state messaging
+7. âœ… Quick action buttons
 
 ### Recording Tips
 1. **Use a clean test account** - 0 streams, fresh profile
@@ -281,12 +281,12 @@ GrowStreams Dashboard | @alice_dev ▼
 - Minimal - let the UI speak for itself
 - Use only for:
   - Section transitions
-  - Key callouts (e.g., "✨ Link Identity = Build Trust")
+  - Key callouts (e.g., "âœ¨ Link Identity = Build Trust")
   - Final CTA
 
 ---
 
-## 📱 Mobile Version Notes
+## ðŸ“± Mobile Version Notes
 
 If creating a mobile-responsive version:
 
@@ -303,7 +303,7 @@ Replace wallet section narration:
 
 ---
 
-## 🎯 Variations for Different Platforms
+## ðŸŽ¯ Variations for Different Platforms
 
 ### For Twitter/X (60 seconds)
 Cut down to:
@@ -316,7 +316,7 @@ Cut down to:
 ### For YouTube Shorts / TikTok (30 seconds)
 Ultra-condensed:
 1. Problem hook: "Tired of delayed payments?" (5s)
-2. Solution: "GrowStreams = real-time streaming" (5s)
+2. Solution: "FLOWS = real-time streaming" (5s)
 3. Quick connect wallet (8s)
 4. Show dashboard (7s)
 5. CTA: "Try now, link in bio" (5s)
@@ -330,7 +330,7 @@ Make it interactive:
 
 ---
 
-## ✅ Pre-Production Checklist
+## âœ… Pre-Production Checklist
 
 ### Design
 - [ ] Finalize landing page UI design
@@ -361,7 +361,7 @@ Make it interactive:
 
 ---
 
-## 🎬 Shot List
+## ðŸŽ¬ Shot List
 
 ### Shot 1: Hero Section (0:00-0:15)
 - **Type:** Screen recording
@@ -413,7 +413,7 @@ Make it interactive:
 
 ---
 
-## 📊 Success Metrics
+## ðŸ“Š Success Metrics
 
 ### Primary Goals
 - **Landing page visits:** +50% after video launch
@@ -434,7 +434,7 @@ Make it interactive:
 
 ---
 
-## 🔄 Post-Launch Updates
+## ðŸ”„ Post-Launch Updates
 
 ### Plan for Version 2.0 (After Initial Feedback)
 1. Add captions/subtitles for accessibility
@@ -454,5 +454,6 @@ Make it interactive:
 **Script Version:** 1.0  
 **Duration:** 2:30 minutes  
 **Last Updated:** 2026-02-26  
-**Prepared By:** GrowStreams Team  
-**Status:** Ready for Production 🎬
+**Prepared By:** FLOWS Team  
+**Status:** Ready for Production ðŸŽ¬
+

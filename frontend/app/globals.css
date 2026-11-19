@@ -559,7 +559,7 @@
   }
 }
 
-/* GrowStream UI homepage animations */
+/* Flows UI homepage animations */
 @keyframes footer-svg-bob { 0% { transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0px); } }
 .footer-svg-float { animation: footer-svg-bob 3s ease-in-out infinite; }
 
@@ -571,7 +571,7 @@ div[style*="900/435"] { perspective: 1200px; }
 @media (prefers-reduced-motion: reduce) { .hero-mark-overlay { animation: none !important; } }
 
 /* ============================================================
-   GrowStreams App Design System (see DESIGN.md)
+   Flows App Design System (see DESIGN.md)
    ============================================================ */
 .gs-app {
   --gs-line: rgba(9, 15, 5, 0.14);
@@ -687,7 +687,7 @@ a.gs-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -14px rgb
 .gs-ruler-l { left: 0; } .gs-ruler-r { right: 0; align-items: flex-end; }
 
 /* ============================================================
-   GrowStreams App DARK Theme Overrides
+   Flows App DARK Theme Overrides
    Applied via .gs-app-dark (wraps the entire /app shell)
    Cascades to ALL gs-* components automatically.
    ============================================================ */

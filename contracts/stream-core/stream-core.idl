@@ -1,4 +1,4 @@
-// GrowStreams V2 — StreamCore IDL
+﻿// FLOWS V2 â€” StreamCore IDL
 // Core streaming state machine: create/update/stop streams with per-second accounting
 
 type Stream = struct {
@@ -114,3 +114,4 @@ service StreamService {
     };
   }
 };
+

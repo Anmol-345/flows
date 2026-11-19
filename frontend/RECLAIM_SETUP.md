@@ -1,4 +1,4 @@
-# Reclaim Protocol Integration Setup Guide
+﻿# Reclaim Protocol Integration Setup Guide
 
 ## Overview
 
@@ -7,12 +7,12 @@ Your campaign now includes **Reclaim Protocol** integration for verifying GitHub
 ## What Has Been Implemented
 
 ### 1. **Reclaim SDK Integration**
-- ✅ Added `@reclaimprotocol/js-sdk` to dependencies
-- ✅ Added `qrcode` library for QR code generation (React 19 compatible)
-- ✅ Created `useReclaimVerification` hook for proof generation
-- ✅ Created `ReclaimVerification` component with QR code UI
-- ✅ Created `useReclaimContract` hook for on-chain verification
-- ✅ Updated campaign page to use real Reclaim verification
+- âœ… Added `@reclaimprotocol/js-sdk` to dependencies
+- âœ… Added `qrcode` library for QR code generation (React 19 compatible)
+- âœ… Created `useReclaimVerification` hook for proof generation
+- âœ… Created `ReclaimVerification` component with QR code UI
+- âœ… Created `useReclaimContract` hook for on-chain verification
+- âœ… Updated campaign page to use real Reclaim verification
 
 ### 2. **Environment Variables Added**
 ```env
@@ -44,7 +44,7 @@ This will install:
 
 2. **Create a New Application:**
    - Click "Create New App"
-   - Name: "GrowStreams Campaign"
+   - Name: "FLOWS Campaign"
    - Description: "Web3 Contribution Challenge"
    - Save your `APP_ID` and `APP_SECRET`
 
@@ -123,12 +123,12 @@ const RECLAIM_ABI = reclaimMetadata; // Replace the empty {}
 
 ### User Flow:
 
-1. **User enters GitHub username** → Stored in state
-2. **ReclaimVerification component loads** → Generates QR code
-3. **User scans QR with Reclaim Wallet app** → Proves GitHub ownership
-4. **Proof received** → Stored in state
-5. **Optional: Submit proof on-chain** → Via `useReclaimContract()`
-6. **Continue to analysis** → With verified GitHub ID
+1. **User enters GitHub username** â†’ Stored in state
+2. **ReclaimVerification component loads** â†’ Generates QR code
+3. **User scans QR with Reclaim Wallet app** â†’ Proves GitHub ownership
+4. **Proof received** â†’ Stored in state
+5. **Optional: Submit proof on-chain** â†’ Via `useReclaimContract()`
+6. **Continue to analysis** â†’ With verified GitHub ID
 
 ### Technical Flow:
 
@@ -242,14 +242,15 @@ export async function POST(req: Request) {
 
 ## Next Steps
 
-1. ✅ Get Reclaim credentials from dev portal
-2. ✅ Deploy Reclaim contract to Vara
-3. ✅ Update environment variables
-4. ✅ Test QR code generation
-5. ✅ Download Reclaim Wallet app
-6. ✅ Test complete verification flow
-7. ✅ Integrate with GitHub analysis API
+1. âœ… Get Reclaim credentials from dev portal
+2. âœ… Deploy Reclaim contract to Vara
+3. âœ… Update environment variables
+4. âœ… Test QR code generation
+5. âœ… Download Reclaim Wallet app
+6. âœ… Test complete verification flow
+7. âœ… Integrate with GitHub analysis API
 
 ---
 
-**You're all set!** The Reclaim integration is now live in your campaign. Users can verify GitHub ownership with zero-knowledge proofs. 🎉
+**You're all set!** The Reclaim integration is now live in your campaign. Users can verify GitHub ownership with zero-knowledge proofs. ðŸŽ‰
+

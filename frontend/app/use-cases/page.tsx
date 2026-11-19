@@ -47,7 +47,7 @@ const useCases = [
     icon: Briefcase,
     title: "Bounties & Gigs",
     tagline: "AI-verified work triggers instant streams",
-    description: "Submit code, pass AI verification, and get paid per-second. GrowStreams' flagship use case combines quality verification with real-time streaming payouts for developer bounties.",
+    description: "Submit code, pass AI verification, and get paid per-second. Flows' flagship use case combines quality verification with real-time streaming payouts for developer bounties.",
     features: [
       "AI-powered code quality verification (~95% accuracy)",
       "Instant stream activation on approval",
@@ -235,7 +235,7 @@ export default function UseCasesPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             From payroll to gaming rewards — stream money for any use case.
-            Here are the apps you can build with GrowStreams.
+            Here are the apps you can build with Flows.
           </motion.p>
         </div>
       </AuroraBackground>
@@ -284,7 +284,7 @@ export default function UseCasesPage() {
                     <div className="relative z-10">
                       <Icon className={`w-12 h-12 ${uc.iconColor} mb-4`} />
                       <div className="text-4xl font-bold mb-2">{uc.title}</div>
-                      <div className="text-sm text-provn-muted">Powered by GrowStreams Protocol</div>
+                      <div className="text-sm text-provn-muted">Powered by Flows Protocol</div>
                       <div className="mt-6 flex items-center gap-2">
                         <div className="h-1 flex-1 rounded-full bg-provn-border overflow-hidden">
                           <motion.div
@@ -320,7 +320,7 @@ export default function UseCasesPage() {
               Have a use case in mind?
             </h2>
             <p className="text-lg text-provn-muted mb-8">
-              GrowStreams is composable. If you can define a flow rate, you can stream it.
+              Flows is composable. If you can define a flow rate, you can stream it.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

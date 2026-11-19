@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Growstream | The Leaders in Account-to-Account Payment Solutions",
-  description: "Growstream is unlocking the future of transactions with the next generation of real-time account-to-account and Direct Debit payment solutions.",
-  metadataBase: new URL("https://growstreams.xyz/"),
+  title: "Flows â€” The Leaders in Account-to-Account Payment Solutions",
+  description: "Flows is unlocking the future of transactions with the next generation of real-time account-to-account and Direct Debit payment solutions.",
+  metadataBase: new URL("https://FLOWS.xyz/"),
   alternates: {
-    canonical: new URL("https://growstreams.xyz/")
+    canonical: new URL("https://FLOWS.xyz/")
   },
   openGraph: {
     title: "The Leaders in Account-to-Account Payment Solutions",
-    description: "Growstream is unlocking the future of transactions with the next generation of real-time account-to-account and Direct Debit payment solutions.",
-    url: "https://growstreams.xyz/",
-    siteName: "Growstream",
+    description: "Flows is unlocking the future of transactions with the next generation of real-time account-to-account and Direct Debit payment solutions.",
+    url: "https://FLOWS.xyz/",
+    siteName: "Flows",
     type: "website",
     images: [{
-        url: "https://growstreams.xyz/uploads/Page-Backgrounds-and-Banners/_1200x630_crop_center-center_82_none/zeppy.jpg?v=1785481564",
+        url: "https://FLOWS.xyz/uploads/Page-Backgrounds-and-Banners/_1200x630_crop_center-center_82_none/zeppy.jpg?v=1785481564",
         width: 1200,
         height: 630
       }]
@@ -22,14 +22,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "The Leaders in Account-to-Account Payment Solutions",
-    description: "Growstream is unlocking the future of transactions with the next generation of real-time account-to-account and Direct Debit payment solutions.",
-    images: ["https://growstreams.xyz/uploads/Page-Backgrounds-and-Banners/_1200x630_crop_center-center_82_none/zeppy.jpg?v=1785481564"]
+    description: "Flows is unlocking the future of transactions with the next generation of real-time account-to-account and Direct Debit payment solutions.",
+    images: ["https://FLOWS.xyz/uploads/Page-Backgrounds-and-Banners/_1200x630_crop_center-center_82_none/zeppy.jpg?v=1785481564"]
   },
-  icons: {
-    icon: [{
-        url: "/logo-mark.png"
-      }]
-  }
 };
 
 import AgenticLoader from './components/AgenticLoader';
@@ -44,8 +39,7 @@ export default function Page() {
       <div className={"head-content-box container"}>
         <div className={"head-logo fixed top-6 left-6 z-50 mix-blend-difference"}>
           <a href={"/"}>
-            <img loading="lazy" src={"/logo.png"} {...{ alt: "Growstream" } as any} />
-<img loading="lazy" src={"/logo.png"} className={"black"} {...{ alt: "Growstream" } as any} />
+            {/* Logo removed */}
           </a>
         </div>
 <div className={"head-menu"}></div>
@@ -82,7 +76,7 @@ export default function Page() {
             </p>
 <div className={"links"}>
               <a className={"btn bg-green-font-black"} href="/agents" style={{ fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "8px" }}>
-                {"🤖 AI Agent Society & Protocol Dashboard →"}
+                {"ðŸ¤– AI Agent Society & Protocol Dashboard â†’"}
               </a>
 <a className={"btn btn-border"} href="/app">
                 {"dApp Workspace"}
@@ -110,7 +104,7 @@ export default function Page() {
   textShadow: "0 0 1em #0A1517"
 } as any} id={"hero-text-1"}>
               <h2>
-                {"Payments are "}
+                {"Payments areÂ "}
 <br />
 <span style={{
   color: "rgb(2,215,178)"
@@ -138,7 +132,7 @@ export default function Page() {
   textShadow: "0 0 1em #0A1517"
 } as any} id={"hero-text-2"}>
               <h2>
-                {"Growstream is leading"}
+                {"Flow is leading"}
 <br />
 <span style={{
   color: "rgb(2,215,178)"
@@ -162,7 +156,7 @@ export default function Page() {
         <div className={"content-item"}>
           <div className={"title-item"}>
             <p>
-              {"Growstream solutions enable real-time collections and refunds, loan disbursements and repayments, superannuation contributions, funding of digital wallets, and endless other scenarios."}
+              {"Flow solutions enable real-time collections and refunds, loan disbursements and repayments, superannuation contributions, funding of digital wallets, and endless other scenarios."}
             </p>
 <h2>
               {"MOVING MONEY "}
@@ -186,7 +180,7 @@ export default function Page() {
                 {"COLLECT IN REAL TIME"}
               </h3>
 <p>
-                {"PayTo® is a modern way for businesses to collect payments from their customers’ bank accounts and have them settle in real time, all the time—like an always-on, instant direct debit."}
+                {"PayToÂ® is a modern way for businesses to collect payments from their customersâ€™ bank accounts and have them settle in real time, all the timeâ€”like an always-on, instant direct debit."}
               </p>
             </a>
 <a href="#!" target={"_self"} className={"box"}>
@@ -198,7 +192,7 @@ export default function Page() {
                 {"RECEIVE IN REAL TIME"}
               </h3>
 <p>
-                {"Growstream’s flagship instant-funds transfer solution supercharges millions of transactions each day with the unique, industry-first capability to activate thousands of PayIDs instantaneously."}
+                {"Flowâ€™s flagship instant-funds transfer solution supercharges millions of transactions each day with the unique, industry-first capability to activate thousands of PayIDs instantaneously."}
               </p>
             </a>
 <a href="#!" target={"_self"} className={"box"}>
@@ -210,7 +204,7 @@ export default function Page() {
                 {"PAYOUT IN REAL TIME"}
               </h3>
 <p>
-                {"Payments on the New Payments Platform [NPP] can deliver your customers a seamless, real-time digital payments experience. With Growstream's clever API, you can disburse and receive funds in real time on the NPP."}
+                {"Payments on the New Payments Platform [NPP] can deliver your customers a seamless, real-time digital payments experience. With Flow's clever API, you can disburse and receive funds in real time on the NPP."}
               </p>
             </a>
 <a href="#!" target={"_self"} className={"box"}>
@@ -222,7 +216,7 @@ export default function Page() {
                 {"VERIFY IN REAL TIME"}
               </h3>
 <p>
-                {"Growstream Validate is an intelligent name-matching service that, when adopted, works behind the scenes to provide an additional robust layer of protection to your account-to-account payments."}
+                {"Flow Validate is an intelligent name-matching service that, when adopted, works behind the scenes to provide an additional robust layer of protection to your account-to-account payments."}
               </p>
             </a>
 <a href="#!" target={"_self"} className={"box"}>
@@ -234,7 +228,7 @@ export default function Page() {
                 {"Direct Debit"}
               </h3>
 <p>
-                {"Say goodbye to paper forms and manual handling. By hitting every exchange point with Growstream's API-powered, data-rich enterprise direct debit solution, you can reduce dishonours, and maximise one-off and recurring payment success."}
+                {"Say goodbye to paper forms and manual handling. By hitting every exchange point with Flow's API-powered, data-rich enterprise direct debit solution, you can reduce dishonours, and maximise one-off and recurring payment success."}
               </p>
             </a>
 <a href="#!" target={"_self"} className={"box"}>
@@ -246,7 +240,7 @@ export default function Page() {
                 {"Stored Value Solutions"}
               </h3>
 <p>
-                {"Store funds indefinitely. Move them flexibly. Transforming your customer experience and business operations is about more than just speed of payment. Fast is great — sure — but precision, security and flexibility is where the rubber really hits the road."}
+                {"Store funds indefinitely. Move them flexibly. Transforming your customer experience and business operations is about more than just speed of payment. Fast is great â€” sure â€” but precision, security and flexibility is where the rubber really hits the road."}
               </p>
             </a>
           </div>
@@ -312,7 +306,7 @@ export default function Page() {
                 </span>
               </h2>
 <p>
-                {"Growstream's elegant, simple-to-use API is engineered for great developer experience and ease of integration."}
+                {"Flow's elegant, simple-to-use API is engineered for great developer experience and ease of integration."}
               </p>
 <a className={"btn"} href="#!">
                 {"\t\tPlay in Our Sandbox\n\t\t"}
@@ -367,7 +361,7 @@ export default function Page() {
                       <span className={"active"}>
                         {"1"}
                       </span>
-{"–"}
+{"â€“"}
 <span className={"count"}>
                         {"4"}
                       </span>
@@ -383,7 +377,7 @@ export default function Page() {
                 <a href="#!" className={"box"}>
                   <div className={"img-and-text"}>
                     <div className={"img"}>
-                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/20502/Growstream-KenoGO-Blog-tile_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/20502/Growstream-KenoGO-Blog-tile_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/20502/Growstream-KenoGO-Blog-tile_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/20502/Growstream-KenoGO-Blog-tile_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
+                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/20502/Flow-KenoGO-Blog-tile_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/20502/Flow-KenoGO-Blog-tile_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/20502/Flow-KenoGO-Blog-tile_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/20502/Flow-KenoGO-Blog-tile_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
   alt: ""
 } as any} />
                     </div>
@@ -392,13 +386,13 @@ export default function Page() {
                         {"Why KenoGO Bet Big on Real-Time Payouts"}
                       </h2>
 <p>
-                        {"In the hyper-competitive landscape of Australian digital entertainment, the ‘win’ is only the first half of the customer journey. The second half — and arguably the most critical for long-term…"}
+                        {"In the hyper-competitive landscape of Australian digital entertainment, the â€˜winâ€™ is only the first half of the customer journey. The second half â€” and arguably the most critical for long-termâ€¦"}
                       </p>
                     </div>
                   </div>
 <div className={"cat-box"}>
                     <span className={"cat-item"}>
-                      {"Growstream News, Culture & Awards"}
+                      {"Flow News, Culture & Awards"}
                     </span>
 <span className={"cat-item"}>
                       {"Customers & Use Cases"}
@@ -422,13 +416,13 @@ export default function Page() {
                         {"Payday Super: Partnering with Employment Hero and OZEDI"}
                       </h2>
 <p>
-                        {"With the Payday Superannuation Bill clearing the House of Reps, businesses are one step closer to a landmark change in how super is paid, and three Australian technology leaders have mobilised at…"}
+                        {"With the Payday Superannuation Bill clearing the House of Reps, businesses are one step closer to a landmark change in how super is paid, and three Australian technology leaders have mobilised atâ€¦"}
                       </p>
                     </div>
                   </div>
 <div className={"cat-box"}>
                     <span className={"cat-item"}>
-                      {"Growstream News, Culture & Awards"}
+                      {"Flow News, Culture & Awards"}
                     </span>
 <span className={"cat-item"}>
                       {"PayTo"}
@@ -446,16 +440,16 @@ export default function Page() {
                 <a href="#!" className={"box"}>
                   <div className={"img-and-text"}>
                     <div className={"img"}>
-                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/18569/Growstream-x-Spaceship-post-tile-stacked_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/18569/Growstream-x-Spaceship-post-tile-stacked_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/18569/Growstream-x-Spaceship-post-tile-stacked_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/18569/Growstream-x-Spaceship-post-tile-stacked_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
+                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/18569/Flow-x-Spaceship-post-tile-stacked_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/18569/Flow-x-Spaceship-post-tile-stacked_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/18569/Flow-x-Spaceship-post-tile-stacked_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/18569/Flow-x-Spaceship-post-tile-stacked_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
   alt: ""
 } as any} />
                     </div>
 <div className={"text-box"}>
                       <h2>
-                        {"Spaceship Selects Growstream for PayTo"}
+                        {"Spaceship Selects Flow for PayTo"}
                       </h2>
 <p>
-                        {"PayTo powers real-time, pay-by-bank funds transfers and greater visibility and control for customers.Spaceship, the digital investment platform helping Australians invest in their future, has…"}
+                        {"PayTo powers real-time, pay-by-bank funds transfers and greater visibility and control for customers.Spaceship, the digital investment platform helping Australians invest in their future, hasâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -488,7 +482,7 @@ export default function Page() {
                         {"Investing with Speed & Precision: Superhero's Next-Gen Payments"}
                       </h2>
 <p>
-                        {"Superhero's mission is to empower individuals to build wealth simply and affordably. So its customer payment experience is everything.In the dynamic world of online investing, speed, reliability, and…"}
+                        {"Superhero's mission is to empower individuals to build wealth simply and affordably. So its customer payment experience is everything.In the dynamic world of online investing, speed, reliability, andâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -523,13 +517,13 @@ export default function Page() {
                         {"Big ideas, bold predictions and plenty to talk about: Reflections from Stripe Tour Sydney"}
                       </h2>
 <p>
-                        {"Members of the Growstream team and I joined more than 2,000 people at Stripe Tour Sydney 2026 for a packed day of big ideas, product inspiration and conversations about what’s coming next in technology,…"}
+                        {"Members of the Flow team and I joined more than 2,000 people at Stripe Tour Sydney 2026 for a packed day of big ideas, product inspiration and conversations about whatâ€™s coming next in technology,â€¦"}
                       </p>
                     </div>
                   </div>
 <div className={"cat-box"}>
                     <span className={"cat-item"}>
-                      {"Growstream News, Culture & Awards"}
+                      {"Flow News, Culture & Awards"}
                     </span>
 <span className={"cat-item"}>
                       {"Payments"}
@@ -556,13 +550,13 @@ export default function Page() {
                         {"Emily Curlewis appointed General Manager, Commercial"}
                       </h2>
 <p>
-                        {"Emily Curlewis has been appointed General Manager, Commercial, expanding her remit after more than four years at Growstream.In her new role, Canberra-based Emily will lead Growstream's Commercial function…"}
+                        {"Emily Curlewis has been appointed General Manager, Commercial, expanding her remit after more than four years at Flow.In her new role, Canberra-based Emily will lead Flow's Commercial functionâ€¦"}
                       </p>
                     </div>
                   </div>
 <div className={"cat-box"}>
                     <span className={"cat-item"}>
-                      {"Growstream News, Culture & Awards"}
+                      {"Flow News, Culture & Awards"}
                     </span>
                   </div>
 <span className={"arrow-link"}>
@@ -583,7 +577,7 @@ export default function Page() {
                         {"Business Resilience Lessons from CISO Melbourne 2026"}
                       </h2>
 <p>
-                        {"Business Resilience Lessons from CISO Melbourne 2026I attended CISO Melbourne this month, and I was invited to be part of two sessions. One had me on a panel talking about the tension between…"}
+                        {"Business Resilience Lessons from CISO Melbourne 2026I attended CISO Melbourne this month, and I was invited to be part of two sessions.Â One had me on a panel talking about the tension betweenâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -613,7 +607,7 @@ export default function Page() {
                         {"The A2A Roundtable Vision Is Clear"}
                       </h2>
 <p>
-                        {"Now Australia Has to Modernise the Account-to-Account System It Already Runs On, posits Chris JewellAustralia's payments system has reached an important moment.With the release of the final vision…"}
+                        {"Now Australia Has to Modernise the Account-to-Account System It Already Runs On, posits Chris JewellAustralia's payments system has reached an important moment.With the release of the final visionâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -648,7 +642,7 @@ export default function Page() {
                         {"AP+ Whitepaper: Unlocking business opportunities with real-time payments"}
                       </h2>
 <p>
-                        {"A white paper by Australian Payments Plus.If you're looking for a useful, accessible resource to inform your journey towards business payment modernisation, we encourage you to download the…"}
+                        {"A white paper by Australian Payments Plus.If you're looking for a useful, accessible resource to inform your journey towards business payment modernisation, we encourage you to download theâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -681,7 +675,7 @@ export default function Page() {
                         {"Download: Stored Value One-Pager"}
                       </h2>
 <p>
-                        {"Store funds indefinitely. Move them flexibly. Transforming your customer experience and business operations is about more than just speed of payment. Fast is great — sure — but precision, security…"}
+                        {"Store funds indefinitely. Move them flexibly.Â Transforming your customer experience and business operations is about more than just speed of payment.Â Fast is great â€” sure â€” but precision, securityâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -699,16 +693,16 @@ export default function Page() {
                 <a href="#!" className={"box"}>
                   <div className={"img-and-text"}>
                     <div className={"img"}>
-                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/16703/Growstream-one-pager-download-thumbnail_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/16703/Growstream-one-pager-download-thumbnail_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/16703/Growstream-one-pager-download-thumbnail_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/16703/Growstream-one-pager-download-thumbnail_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
+                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/16703/Flow-one-pager-download-thumbnail_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/16703/Flow-one-pager-download-thumbnail_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/16703/Flow-one-pager-download-thumbnail_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/16703/Flow-one-pager-download-thumbnail_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
   alt: ""
 } as any} />
                     </div>
 <div className={"text-box"}>
                       <h2>
-                        {"Download: Growstream One-Pager"}
+                        {"Download: Flow One-Pager"}
                       </h2>
 <p>
-                        {"Real-time account-to-account [A2A] payment solutions for large enterprises. Growstream's real-time payments and rich data strategically enable businesses to create seamless payment flows. Growstream creates…"}
+                        {"Real-time account-to-account [A2A] payment solutions for large enterprises.Â Flow's real-time payments and rich data strategically enable businesses to create seamless payment flows.Â Flow createsâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -741,7 +735,7 @@ export default function Page() {
                         {"Download: PayTo One-Pager"}
                       </h2>
 <p>
-                        {"PayTo® is a modern way for businesses to collect payments from their customers’ bank accounts and have them settle in real time, all the time—like an always-on, instant direct debit. PayTo® delivers…"}
+                        {"PayToÂ® is a modern way for businesses to collect payments from their customersâ€™ bank accounts and have them settle in real time, all the timeâ€”like an always-on, instant direct debit.Â PayToÂ® deliversâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -773,7 +767,7 @@ export default function Page() {
                         {"Payouts: A Real-Time Winner"}
                       </h2>
 <p>
-                        {"In a Growstream Connect webinar, Relationship Manager Kim Yan shone a light on merchants who are using real-time payouts to deliver great payment experiences. Here’s what went down.Real-time payouts are a…"}
+                        {"In a Flow Connect webinar, Relationship ManagerÂ Kim Yan shone a light on merchants who are using real-time payouts to deliver great payment experiences. Hereâ€™s what went down.Real-time payouts are aâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -797,16 +791,16 @@ export default function Page() {
                 <a href="#!" className={"box"}>
                   <div className={"img-and-text"}>
                     <div className={"img"}>
-                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/6794/Growstream-Connect-Tile-for-new-website_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/6794/Growstream-Connect-Tile-for-new-website_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/6794/Growstream-Connect-Tile-for-new-website_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/6794/Growstream-Connect-Tile-for-new-website_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
+                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/6794/Flow-Connect-Tile-for-new-website_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/6794/Flow-Connect-Tile-for-new-website_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/6794/Flow-Connect-Tile-for-new-website_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/6794/Flow-Connect-Tile-for-new-website_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
   alt: ""
 } as any} />
                     </div>
 <div className={"text-box"}>
                       <h2>
-                        {"GROWSTREAM CONNECT RECAP: Cash Flow Conundrums of RTP & Payday Super"}
+                        {"Flow CONNECT RECAP: Cash Flow Conundrums of RTP & Payday Super"}
                       </h2>
 <p>
-                        {"In March 2024, Growstream's Head of Sales & Relationships, Suzie Slingsby, moderated a Growstream Connect webinar entitled 'Exploring Real-Time Payments For Payroll & Super'. The conversation covered…"}
+                        {"In March 2024, Flow's Head of Sales & Relationships, Suzie Slingsby, moderated a Flow Connect webinar entitled 'Exploring Real-Time Payments For Payroll & Super'. The conversation coveredâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -830,16 +824,16 @@ export default function Page() {
                 <a href="#!" className={"box"}>
                   <div className={"img-and-text"}>
                     <div className={"img"}>
-                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/6797/Growstream-Connect-Tile-for-new-website_2024-10-11-051257_ulba_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/6797/Growstream-Connect-Tile-for-new-website_2024-10-11-051257_ulba_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/6797/Growstream-Connect-Tile-for-new-website_2024-10-11-051257_ulba_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/6797/Growstream-Connect-Tile-for-new-website_2024-10-11-051257_ulba_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
+                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/6797/Flow-Connect-Tile-for-new-website_2024-10-11-051257_ulba_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/6797/Flow-Connect-Tile-for-new-website_2024-10-11-051257_ulba_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/6797/Flow-Connect-Tile-for-new-website_2024-10-11-051257_ulba_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/6797/Flow-Connect-Tile-for-new-website_2024-10-11-051257_ulba_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
   alt: ""
 } as any} />
                     </div>
 <div className={"text-box"}>
                       <h2>
-                        {"Growstream Connect Recap: Global Payments Trends"}
+                        {"Flow Connect Recap: Global Payments Trends"}
                       </h2>
 <p>
-                        {"After hosting seven virtual fireside chats since May, the inaugural season of Growstream Connect events has wound up. In this article we review the final session in the series, and our most ambitious one…"}
+                        {"After hosting seven virtual fireside chats since May, the inaugural season of Flow Connect events has wound up. In this article we review the final session in the series, and our most ambitious oneâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -860,16 +854,16 @@ export default function Page() {
                 <a href="#!" className={"box"}>
                   <div className={"img-and-text"}>
                     <div className={"img"}>
-                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/6801/Growstream-Connect-Tile-for-new-website_2024-11-14-073236_pvhi_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/6801/Growstream-Connect-Tile-for-new-website_2024-11-14-073236_pvhi_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/6801/Growstream-Connect-Tile-for-new-website_2024-11-14-073236_pvhi_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/6801/Growstream-Connect-Tile-for-new-website_2024-11-14-073236_pvhi_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
+                      <img loading="lazy" src={"/imager/assetcontent/Blog-Thumbnail-Images/6801/Flow-Connect-Tile-for-new-website_2024-11-14-073236_pvhi_6d96468a19aa5d9f19fe51d435cd3e4d.png"} srcSet={"/imager/assetcontent/Blog-Thumbnail-Images/6801/Flow-Connect-Tile-for-new-website_2024-11-14-073236_pvhi_6d96468a19aa5d9f19fe51d435cd3e4d.png 164w, /imager/assetcontent/Blog-Thumbnail-Images/6801/Flow-Connect-Tile-for-new-website_2024-11-14-073236_pvhi_0e3b139665eb441cd77d06b97c7bdc54.png 246w, /imager/assetcontent/Blog-Thumbnail-Images/6801/Flow-Connect-Tile-for-new-website_2024-11-14-073236_pvhi_11cbda6f49c579a7577b126c1f824ca1.png 292w"} {...{
   alt: ""
 } as any} />
                     </div>
 <div className={"text-box"}>
                       <h2>
-                        {"Growstream Connect Recap: A Technical Tinker with PayTo"}
+                        {"Flow Connect Recap: A Technical Tinker with PayTo"}
                       </h2>
 <p>
-                        {"On 07 September 2023, we hosted our 5th Growstream Connect webinar. It took attendees under the PayTo hood, and answered some technical questions about this exciting real-time payment method. Here's what…"}
+                        {"On 07 September 2023, we hosted our 5th Flow Connect webinar. It took attendees under the PayTo hood, and answered some technical questions about this exciting real-time payment method. Here's whatâ€¦"}
                       </p>
                     </div>
                   </div>
@@ -921,14 +915,14 @@ export default function Page() {
 <div className={"bottom-text"}>
           <div className={"box-text"}>
             <p>
-              {"GrowStreams is a decentralized, generalized token streaming protocol built natively on the Vara Network. We empower DAOs, protocols, and individuals with per-second programmable cashflows."}
+              {"FLOWS is a decentralized, generalized token streaming protocol built natively on the Vara Network. We empower DAOs, protocols, and individuals with per-second programmable cashflows."}
             </p>
           </div>
 <div className={"box"}>
             <div className={"text-and-link"}>
               <div className={"text"}>
                 <p>
-                  {"© 2026 GrowStreams. Built with ❤️ on Vara Network. Decentralized and Open Source."}
+                  {"Â© 2026 FLOWS. Built with â¤ï¸ on Vara Network. Decentralized and Open Source."}
                 </p>
               </div>
 <div className={"links"}>
@@ -963,3 +957,4 @@ export default function Page() {
     </>
   );
 }
+

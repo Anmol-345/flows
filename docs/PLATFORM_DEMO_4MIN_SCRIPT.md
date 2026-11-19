@@ -1,28 +1,28 @@
-# GrowStreams Platform Demo (4-Minute Script)
+﻿# FLOWS Platform Demo (4-Minute Script)
 
 **Target Duration:** 4:00 minutes  
 **Audience:** Developers, Web3 Community, Potential Users  
-**Goal:** Demonstrate complete GrowStreams platform functionality - condensed version
+**Goal:** Demonstrate complete FLOWS platform functionality - condensed version
 
 ---
 
-## 🎬 SECTION 1: Wallet Connection & Dashboard (0:00 - 0:50)
+## ðŸŽ¬ SECTION 1: Wallet Connection & Dashboard (0:00 - 0:50)
 
 ### [0:00 - 0:25] **Connect Wallet & Introduction**
 
 **VISUAL:**
-- Fade in to GrowStreams app
+- Fade in to FLOWS app
 - "Connect Wallet" button visible
-- Click → Wallet selector appears
+- Click â†’ Wallet selector appears
 - Select "Sarthak" (admin account)
 - Approve connection
-- Success: "👤 Sarthak" appears in header
+- Success: "ðŸ‘¤ Sarthak" appears in header
 
 **NARRATION:**
-> "Welcome to GrowStreams - real-time token streaming on Vara. Let me show you the complete platform. First, I'll connect my admin wallet - Sarthak. Connected!"
+> "Welcome to FLOWS - real-time token streaming on Vara. Let me show you the complete platform. First, I'll connect my admin wallet - Sarthak. Connected!"
 
 **ON SCREEN TEXT:**
-- "🌊 GrowStreams Platform Demo"
+- "ðŸŒŠ FLOWS Platform Demo"
 - "Admin Account: Sarthak"
 
 ---
@@ -45,18 +45,18 @@
 
 ---
 
-## 🪙 SECTION 2: GROW Token Operations (0:50 - 2:30)
+## ðŸª™ SECTION 2: GROW Token Operations (0:50 - 2:30)
 
 ### [0:50 - 1:15] **Mint GROW Tokens**
 
 **VISUAL:**
 - GROW Token page loads
-- Wizard at top: ✅ Get GROW → Approve → Deposit → Stream
+- Wizard at top: âœ… Get GROW â†’ Approve â†’ Deposit â†’ Stream
 - "Faucet" tab active
 - Enter amount: "10000"
 - Click "Mint GROW"
 - Sign transaction
-- Success: "✅ Minted 10,000 GROW"
+- Success: "âœ… Minted 10,000 GROW"
 
 **NARRATION:**
 > "The GROW Token page guides us through setup. Step one: mint tokens from the faucet. I'll mint 10,000 GROW... transaction signed... done! 10,000 GROW tokens in my wallet."
@@ -69,11 +69,11 @@
 - Click "Approve" tab
 - Amount: "10000"
 - Click "Approve Vault"
-- Sign → Success: "✅ Vault approved"
+- Sign â†’ Success: "âœ… Vault approved"
 - Click "Vault" tab
 - Amount: "10000"
 - Click "Deposit"
-- Sign → Success: "✅ Deposited 10,000 GROW"
+- Sign â†’ Success: "âœ… Deposited 10,000 GROW"
 
 **NARRATION:**
 > "Step two: approve the vault to access my tokens. Approved. Step three: deposit to the vault. This vault holds all streamable funds. Depositing 10,000 GROW... done! My vault now has 10,000 GROW ready to stream."
@@ -88,12 +88,12 @@
 **VISUAL:**
 - Click "Admin" tab
 - Admin Panel appears
-- Faucet Mode toggle: "Whitelist Only" → "Public"
-- Success: "✅ Faucet set to Public"
+- Faucet Mode toggle: "Whitelist Only" â†’ "Public"
+- Success: "âœ… Faucet set to Public"
 - Whitelist section visible below
 - Add test wallet address: "0x1234...5678"
 - Click "Add"
-- Success: "✅ Address whitelisted"
+- Success: "âœ… Address whitelisted"
 
 **NARRATION:**
 > "As token admin, I can manage the faucet. I'll switch from Whitelist Only to Public mode - now anyone can mint test tokens. I can also whitelist specific addresses. Let me add my test wallet address... added."
@@ -117,7 +117,7 @@
 
 ---
 
-## 🌊 SECTION 3: Create Stream & Live Updates (2:30 - 3:30)
+## ðŸŒŠ SECTION 3: Create Stream & Live Updates (2:30 - 3:30)
 
 ### [2:30 - 3:00] **Create Stream**
 
@@ -132,7 +132,7 @@
   - Initial Deposit: "2400 GROW" (auto-calculated)
 - Click "Create Stream"
 - Sign transaction
-- Success: "✅ Stream #1 created!"
+- Success: "âœ… Stream #1 created!"
 
 **NARRATION:**
 > "I'll create a stream. Recipient: my test wallet. Flow rate: 100 GROW per hour. Duration: 24 hours. The platform calculates the deposit needed - 2,400 GROW. Creating stream... success! Stream ID number 1 is live."
@@ -160,7 +160,7 @@
 
 ---
 
-## 🔍 SECTION 4: On-Chain Verification (3:30 - 3:50)
+## ðŸ” SECTION 4: On-Chain Verification (3:30 - 3:50)
 
 ### [3:30 - 3:50] **Verify on Vara IDEA Explorer**
 
@@ -170,7 +170,7 @@
 - Paste: "0xabcd...ef12"
 - Program page loads
 - Recent messages show:
-  - CreateStream (2 minutes ago) ✅ Success
+  - CreateStream (2 minutes ago) âœ… Success
 - State shows:
   - Total Streams: 1
   - Active Streams: 1
@@ -180,7 +180,7 @@
 
 ---
 
-## 🎯 SECTION 5: Conclusion (3:50 - 4:00)
+## ðŸŽ¯ SECTION 5: Conclusion (3:50 - 4:00)
 
 ### [3:50 - 4:00] **Recap & CTA**
 
@@ -189,24 +189,24 @@
   - Dashboard with updated balances
   - Live streaming counter
   - Vara explorer confirmation
-- Fade to GrowStreams logo
+- Fade to FLOWS logo
 
 **NARRATION:**
-> "That's GrowStreams. We connected a wallet, minted and deposited tokens, configured the admin panel, created a live stream, watched real-time updates, and verified everything on-chain. Per-second token streaming on Vara - live now."
+> "That's FLOWS. We connected a wallet, minted and deposited tokens, configured the admin panel, created a live stream, watched real-time updates, and verified everything on-chain. Per-second token streaming on Vara - live now."
 
 **ON SCREEN:**
 ```
-✅ Wallet Connected
-✅ Tokens Minted & Deposited  
-✅ Admin Settings Configured
-✅ Stream Created & Live
-✅ On-Chain Verified
+âœ… Wallet Connected
+âœ… Tokens Minted & Deposited  
+âœ… Admin Settings Configured
+âœ… Stream Created & Live
+âœ… On-Chain Verified
 
-🌐 app.growstreams.xyz
-📚 docs.growstreams.io
-💻 github.com/growstreams
+ðŸŒ app.FLOWS.xyz
+ðŸ“š docs.FLOWS.io
+ðŸ’» github.com/FLOWS
 
-Built with 💙 on Vara
+Built with ðŸ’™ on Vara
 ```
 
 **VISUAL:**
@@ -215,7 +215,7 @@ Built with 💙 on Vara
 
 ---
 
-## 🎥 Production Notes
+## ðŸŽ¥ Production Notes
 
 ### Timing Breakdown (4:00 total)
 - **Section 1:** Wallet & Dashboard (0:50) - 21%
@@ -227,12 +227,12 @@ Built with 💙 on Vara
 ### Key Differences from 5:45 Version
 
 **Removed/Condensed:**
-- Extended dashboard tour → Quick overview
-- Separate approve/deposit steps → Combined narration
-- Detailed admin panel walkthrough → Quick toggle demo
-- Extended stream appearance → Focused on live counter
-- Detailed explorer navigation → Quick verification only
-- Long recap → Brief montage
+- Extended dashboard tour â†’ Quick overview
+- Separate approve/deposit steps â†’ Combined narration
+- Detailed admin panel walkthrough â†’ Quick toggle demo
+- Extended stream appearance â†’ Focused on live counter
+- Detailed explorer navigation â†’ Quick verification only
+- Long recap â†’ Brief montage
 
 **Time Savings:**
 - Dashboard: -20 seconds
@@ -277,53 +277,53 @@ Built with 💙 on Vara
 
 ---
 
-## 🎬 Condensed Shot List
+## ðŸŽ¬ Condensed Shot List
 
 ### Shot 1: Intro + Wallet (0:00-0:25)
-- Title card → Connect wallet → Success
+- Title card â†’ Connect wallet â†’ Success
 - **Duration:** 25 seconds
 
 ### Shot 2: Dashboard (0:25-0:50)
-- Full dashboard view → Navigate to GROW
+- Full dashboard view â†’ Navigate to GROW
 - **Duration:** 25 seconds
 
 ### Shot 3: Mint (0:50-1:15)
-- Faucet tab → Mint transaction → Success
+- Faucet tab â†’ Mint transaction â†’ Success
 - **Duration:** 25 seconds
 
 ### Shot 4: Approve & Deposit (1:15-1:35)
-- Approve tab → Deposit tab → Both done
+- Approve tab â†’ Deposit tab â†’ Both done
 - **Duration:** 20 seconds
 
 ### Shot 5: Admin Panel (1:35-2:00)
-- Admin tab → Toggle mode → Add whitelist
+- Admin tab â†’ Toggle mode â†’ Add whitelist
 - **Duration:** 25 seconds
 
 ### Shot 6: Empty Test Wallet (2:00-2:30)
-- Switch to test wallet → Show empty state
+- Switch to test wallet â†’ Show empty state
 - **Duration:** 30 seconds
 
 ### Shot 7: Create Stream (2:30-3:00)
-- Stream form → Fill details → Create
+- Stream form â†’ Fill details â†’ Create
 - **Duration:** 30 seconds
 
 ### Shot 8: Live Stream (3:00-3:30)
-- Test wallet updates → Live counter highlight
+- Test wallet updates â†’ Live counter highlight
 - **Duration:** 30 seconds
 
 ### Shot 9: Verify (3:30-3:50)
-- Explorer → Search → Show result
+- Explorer â†’ Search â†’ Show result
 - **Duration:** 20 seconds
 
 ### Shot 10: Outro (3:50-4:00)
-- Montage → Logo → URLs
+- Montage â†’ Logo â†’ URLs
 - **Duration:** 10 seconds
 
 **Total: 4:00 minutes (10 shots)**
 
 ---
 
-## ✅ Quick Pre-Production Checklist
+## âœ… Quick Pre-Production Checklist
 
 ### Must-Haves
 - [ ] Admin wallet (Sarthak) with VARA for gas
@@ -341,7 +341,7 @@ Built with 💙 on Vara
 
 ---
 
-## 📊 Success Metrics
+## ðŸ“Š Success Metrics
 
 **Video Performance:**
 - 1,500+ views in first week
@@ -357,7 +357,7 @@ Built with 💙 on Vara
 
 ---
 
-## 🎨 Visual Style
+## ðŸŽ¨ Visual Style
 
 **Pacing:** Fast but clear  
 **Transitions:** Quick fades (0.3s)  
@@ -367,7 +367,7 @@ Built with 💙 on Vara
 
 ---
 
-## 🔊 Audio Guide
+## ðŸ”Š Audio Guide
 
 **Voiceover:**
 - Tone: Energetic, professional
@@ -391,4 +391,5 @@ Built with 💙 on Vara
 **Duration:** 4:00 minutes  
 **Based On:** PLATFORM_DEMO_VIDEO_SCRIPT.md (5:45)  
 **Last Updated:** 2026-02-27  
-**Status:** Ready for Production 🎬
+**Status:** Ready for Production ðŸŽ¬
+

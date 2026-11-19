@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import Link from 'next/link';
-import { api } from '@/lib/growstreams-api';
+import { api } from '@/lib/flows-api';
 import VaraWalletButton from '@/components/VaraWalletButton';
 import {
   useVaraWallet,
@@ -69,11 +69,11 @@ export default function ProtocolOverviewDashboard() {
 
   useEffect(() => {
     syncLocalPortfolio();
-    window.addEventListener('growstreams-positions-changed', syncLocalPortfolio);
-    window.addEventListener('growstreams-squads-changed', syncLocalPortfolio);
+    window.addEventListener('flows-positions-changed', syncLocalPortfolio);
+    window.addEventListener('flows-squads-changed', syncLocalPortfolio);
     return () => {
-      window.removeEventListener('growstreams-positions-changed', syncLocalPortfolio);
-      window.removeEventListener('growstreams-squads-changed', syncLocalPortfolio);
+      window.removeEventListener('flows-positions-changed', syncLocalPortfolio);
+      window.removeEventListener('flows-squads-changed', syncLocalPortfolio);
     };
   }, [syncLocalPortfolio]);
 
@@ -299,7 +299,7 @@ export default function ProtocolOverviewDashboard() {
           <div className="flex items-center gap-6 h-full">
             <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-base">
               <Sparkles className="w-4 h-4 text-[#136F46]" />
-              <span>GrowStreams</span>
+              <span>Flows</span>
               <span className="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-[#136F46]/10 text-[#136F46]">
                 Prime
               </span>
@@ -776,7 +776,7 @@ export default function ProtocolOverviewDashboard() {
             <section className="space-y-3">
               <div className="flex items-center justify-between">
                 <h2 className="text-base font-semibold tracking-tight">
-                  GrowStreams Prime Modular Protocol Suite (live DeFiLlama 30d volume)
+                  Flows Prime Modular Protocol Suite (live DeFiLlama 30d volume)
                 </h2>
                 <span className={`text-xs font-mono ${textMuted}`}>
                   6 Core Modules · 16 Sails Contracts

@@ -1,25 +1,25 @@
-# GrowStreams Platform Demo Video Script
+﻿# FLOWS Platform Demo Video Script
 
 **Target Duration:** 5-6 minutes  
 **Audience:** Developers, Web3 Community, Potential Users  
-**Goal:** Demonstrate the complete GrowStreams platform functionality from wallet connection to live streaming
+**Goal:** Demonstrate the complete FLOWS platform functionality from wallet connection to live streaming
 
 ---
 
-## 🎬 SECTION 1: Introduction & Wallet Connection (0:00 - 0:45)
+## ðŸŽ¬ SECTION 1: Introduction & Wallet Connection (0:00 - 0:45)
 
 ### [0:00 - 0:15] **Opening & Platform Overview**
 
 **VISUAL:**
-- Fade in to GrowStreams application homepage/login screen
-- Show GrowStreams logo and branding
+- Fade in to FLOWS application homepage/login screen
+- Show FLOWS logo and branding
 - Clean, modern dark UI visible
 
 **NARRATION:**
-> "Welcome to GrowStreams - the first native VARA streaming protocol. Today I'll walk you through the complete platform, showing you how to mint tokens, manage your vault, create streams, and verify everything on-chain. Let's dive in."
+> "Welcome to FLOWS - the first native VARA streaming protocol. Today I'll walk you through the complete platform, showing you how to mint tokens, manage your vault, create streams, and verify everything on-chain. Let's dive in."
 
 **ON SCREEN TEXT:**
-- "🌊 GrowStreams Platform Demo"
+- "ðŸŒŠ FLOWS Platform Demo"
 - "Live on Vara Testnet"
 
 ---
@@ -40,30 +40,30 @@
 
 **ON SCREEN:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
    Connect Your Wallet
    
    Select Account:
    
-   ● Sarthak (Admin)
+   â— Sarthak (Admin)
      0x6774528...
      Balance: 15.234 VARA
    
    [Connect]
-━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL AFTER CONNECTION:**
-- Top right shows: "👤 Sarthak" with address
+- Top right shows: "ðŸ‘¤ Sarthak" with address
 - Green checkmark animation
-- "Vara Testnet ●" indicator
+- "Vara Testnet â—" indicator
 
 **NARRATION (CONTINUED):**
 > "Connected! You can see my wallet address in the top right, and we're on Vara Testnet. Now let's explore the dashboard."
 
 ---
 
-## 📊 SECTION 2: Dashboard Overview (0:45 - 1:30)
+## ðŸ“Š SECTION 2: Dashboard Overview (0:45 - 1:30)
 
 ### [0:45 - 1:30] **Dashboard Tour**
 
@@ -82,28 +82,28 @@
 
 **ON SCREEN - Dashboard Layout:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GrowStreams Dashboard | Sarthak (Admin)
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+FLOWS Dashboard | Sarthak (Admin)
 
-━━━ Balances ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â” Balances â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 
-┌─────────────┬─────────────┬─────────────┐
-│ GROW Balance│ Vault Balance│   Inflows   │
-│  0.00 GROW  │  0.00 GROW   │  0 streams  │
-│             │              │  +0 GROW/sec│
-└─────────────┴─────────────┴─────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ GROW Balanceâ”‚ Vault Balanceâ”‚   Inflows   â”‚
+â”‚  0.00 GROW  â”‚  0.00 GROW   â”‚  0 streams  â”‚
+â”‚             â”‚              â”‚  +0 GROW/secâ”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
-┌─────────────┬─────────────────────────────┐
-│  Outflows   │        Net Flow             │
-│  0 streams  │      0.00 GROW/sec          │
-│  -0 GROW/sec│    ━━━━━━━━━                │
-└─────────────┴─────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚  Outflows   â”‚        Net Flow             â”‚
+â”‚  0 streams  â”‚      0.00 GROW/sec          â”‚
+â”‚  -0 GROW/secâ”‚    â”â”â”â”â”â”â”â”â”                â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
-━━━ Active Streams (0) ━━━━━━━━━━━━━━━━━━━
+â”â”â” Active Streams (0) â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
   No active streams yet.
   
 [+ Create Stream]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL HIGHLIGHTS:**
@@ -120,17 +120,17 @@ GrowStreams Dashboard | Sarthak (Admin)
 
 ---
 
-## 🪙 SECTION 3: GROW Token - Minting & Approval (1:30 - 3:15)
+## ðŸª™ SECTION 3: GROW Token - Minting & Approval (1:30 - 3:15)
 
 ### [1:30 - 2:00] **Faucet - Mint GROW Tokens**
 
 **VISUAL:**
 - GROW Token page loads
 - "Getting Started" wizard visible at top:
-  - ✅ Get GROW (highlighted)
-  - ⭕ Approve
-  - ⭕ Deposit
-  - 🎯 Stream
+  - âœ… Get GROW (highlighted)
+  - â­• Approve
+  - â­• Deposit
+  - ðŸŽ¯ Stream
 - Tabs below: Faucet | Approve | Vault | Transfer | Admin
 - "Faucet" tab is active
 
@@ -139,20 +139,20 @@ GrowStreams Dashboard | Sarthak (Admin)
 
 **ON SCREEN - Faucet Tab:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚰 Faucet
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+ðŸš° Faucet
 
 Mint test GROW tokens to your wallet.
 
 Amount to Mint:
-┌─────────────────────────────────┐
-│ 10000                     GROW  │
-└─────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 10000                     GROW  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
 Faucet allows 10,000 GROW per request.
 
           [Mint GROW]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL ACTION:**
@@ -161,7 +161,7 @@ Faucet allows 10,000 GROW per request.
 - Transaction pending modal appears
 - Wallet extension popup for approval
 - Sign transaction
-- Success notification: "✅ Minted 10,000 GROW"
+- Success notification: "âœ… Minted 10,000 GROW"
 
 **NARRATION (CONTINUED):**
 > "I'll enter 10,000 and click 'Mint GROW'. The wallet asks me to sign the transaction... and done! 10,000 GROW tokens minted successfully."
@@ -183,20 +183,20 @@ Faucet allows 10,000 GROW per request.
 
 **ON SCREEN - Approve Tab:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Approve
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+âœ… Approve
 
 Allow the Vault to access your GROW tokens.
 
 Amount to Approve:
-┌─────────────────────────────────┐
-│ 10000                     GROW  │
-└─────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 10000                     GROW  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
 Current Allowance: 0 GROW
 
         [Approve Vault]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL ACTION:**
@@ -204,7 +204,7 @@ Current Allowance: 0 GROW
 - Click "Approve Vault" button
 - Transaction pending
 - Sign in wallet
-- Success: "✅ Vault approved for 10,000 GROW"
+- Success: "âœ… Vault approved for 10,000 GROW"
 
 **NARRATION (CONTINUED):**
 > "Approval granted. The vault can now access my tokens when I deposit them."
@@ -222,8 +222,8 @@ Current Allowance: 0 GROW
 
 **ON SCREEN - Vault Tab:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💰 Vault
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+ðŸ’° Vault
 
 Deposit GROW tokens to start streaming.
 
@@ -231,12 +231,12 @@ Your Vault Balance: 0 GROW
 Wallet Balance: 10,000 GROW
 
 Amount to Deposit:
-┌─────────────────────────────────┐
-│ 10000                     GROW  │
-└─────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 10000                     GROW  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
           [Deposit] [Withdraw]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL ACTION:**
@@ -244,7 +244,7 @@ Amount to Deposit:
 - Click "Deposit"
 - Transaction pending
 - Sign transaction
-- Success: "✅ Deposited 10,000 GROW to vault"
+- Success: "âœ… Deposited 10,000 GROW to vault"
 
 **VISUAL:**
 - Vault balance updates: "10,000 GROW"
@@ -267,34 +267,34 @@ Amount to Deposit:
 
 **ON SCREEN - Admin Tab:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚙️ Admin Panel
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+âš™ï¸ Admin Panel
 
 Manage faucet access and whitelist.
 Only visible to the token admin.
 
-━━━ Faucet Mode ━━━━━━━━━━━━━━━━
+â”â”â” Faucet Mode â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 Only whitelisted addresses can mint.
 
 [ Whitelist Only ] [  Public  ]
                      (toggle)
 
-━━━ Whitelist (0 addresses) ━━━━
+â”â”â” Whitelist (0 addresses) â”â”â”â”
 
 Add address to whitelist:
-┌─────────────────────────────────┐
-│ 0x... address to whitelist      │
-└─────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 0x... address to whitelist      â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
                      [+ Add]
 
 No addresses whitelisted yet.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL ACTION:**
 - Show current mode: "Whitelist Only"
 - Click toggle to switch to "Public"
-- Success notification: "✅ Faucet mode set to Public"
+- Success notification: "âœ… Faucet mode set to Public"
 
 **NARRATION (CONTINUED):**
 > "Right now it's on Whitelist Only. Let me switch it to Public mode so anyone can mint test tokens. There we go - faucet is now public."
@@ -305,20 +305,20 @@ No addresses whitelisted yet.
   - Paste test wallet address: "0x1234...5678"
   - Click "Add"
   - Address appears in whitelist
-  - Success: "✅ Address added to whitelist"
+  - Success: "âœ… Address added to whitelist"
 
 **NARRATION (CONTINUED):**
 > "I can also add specific addresses to the whitelist. Let me add my test wallet address here... added. Now this address can mint even in whitelist mode."
 
 ---
 
-## 🌊 SECTION 4: Create Stream (3:15 - 4:30)
+## ðŸŒŠ SECTION 4: Create Stream (3:15 - 4:30)
 
 ### [3:15 - 3:35] **Show Empty Test Wallet Dashboard**
 
 **VISUAL:**
 - Open new browser tab/window (or split screen)
-- Show GrowStreams app with different wallet connected
+- Show FLOWS app with different wallet connected
 - OR show test wallet address dashboard view
 
 **NARRATION:**
@@ -326,23 +326,23 @@ No addresses whitelisted yet.
 
 **ON SCREEN - Test Wallet Dashboard:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GrowStreams Dashboard | Test Wallet
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+FLOWS Dashboard | Test Wallet
 
-━━━ Balances ━━━━━━━━━━━━━━━━━━━
+â”â”â” Balances â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 
 GROW Balance: 0.00 GROW
 Vault Balance: 0.00 GROW
 
-━━━ Incoming Streams (0) ━━━━━━━
+â”â”â” Incoming Streams (0) â”â”â”â”â”â”â”
   
   No incoming streams yet.
   Share your address to receive!
 
-━━━ Outgoing Streams (0) ━━━━━━━
+â”â”â” Outgoing Streams (0) â”â”â”â”â”â”â”
 
   No active streams.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **NARRATION (CONTINUED):**
@@ -365,36 +365,36 @@ Vault Balance: 0.00 GROW
 
 **ON SCREEN - Create Stream Form:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌊 Create New Stream
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+ðŸŒŠ Create New Stream
 
 Recipient Address:
-┌─────────────────────────────────┐
-│ 0x1234...5678                   │
-└─────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 0x1234...5678                   â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
 Token: GROW (default)
 
 Flow Rate:
-┌─────────────────────────────────┐
-│ 100                       GROW/hr│
-└─────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 100                       GROW/hrâ”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
 Duration (optional):
-┌─────────────────────────────────┐
-│ 24                        hours  │
-└─────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 24                        hours  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
 Initial Deposit:
-┌─────────────────────────────────┐
-│ 2400                      GROW   │
-└─────────────────────────────────┘
-(Auto-calculated: 100 GROW/hr × 24hr)
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 2400                      GROW   â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+(Auto-calculated: 100 GROW/hr Ã— 24hr)
 
 Buffer: 1 hour (recommended)
 
        [Cancel] [Create Stream]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL ACTION:**
@@ -412,7 +412,7 @@ Buffer: 1 hour (recommended)
 - Transaction pending modal
 - Sign transaction in wallet
 - Transaction processing
-- Success animation: "✅ Stream created successfully!"
+- Success animation: "âœ… Stream created successfully!"
 - Stream ID shown: "Stream #1"
 
 **NARRATION (CONTINUED):**
@@ -432,26 +432,26 @@ Buffer: 1 hour (recommended)
 
 **ON SCREEN - Test Wallet Dashboard (Updated):**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GrowStreams Dashboard | Test Wallet
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+FLOWS Dashboard | Test Wallet
 
-━━━ Balances ━━━━━━━━━━━━━━━━━━━
+â”â”â” Balances â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 
 Inflows: 1 stream
 Rate: +100 GROW/hr (+0.0278 GROW/sec)
 
-━━━ Incoming Streams (1) ━━━━━━━
+â”â”â” Incoming Streams (1) â”â”â”â”â”â”â”
 
-┌──────────────────────────────────┐
-│ 🌊 Stream #1                     │
-│ From: Sarthak (0x6774528...)     │
-│ Rate: 100 GROW/hr                │
-│ Streamed: 0.156 GROW             │
-│ Started: 2 minutes ago           │
-│                                  │
-│ [Withdraw] [View Details]        │
-└──────────────────────────────────┘
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ ðŸŒŠ Stream #1                     â”‚
+â”‚ From: Sarthak (0x6774528...)     â”‚
+â”‚ Rate: 100 GROW/hr                â”‚
+â”‚ Streamed: 0.156 GROW             â”‚
+â”‚ Started: 2 minutes ago           â”‚
+â”‚                                  â”‚
+â”‚ [Withdraw] [View Details]        â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL HIGHLIGHT:**
@@ -470,7 +470,7 @@ Rate: +100 GROW/hr (+0.0278 GROW/sec)
 
 ---
 
-## 🔍 SECTION 5: On-Chain Verification (4:30 - 5:15)
+## ðŸ” SECTION 5: On-Chain Verification (4:30 - 5:15)
 
 ### [4:30 - 5:15] **Verify Stream on Vara IDEA Explorer**
 
@@ -491,24 +491,24 @@ Rate: +100 GROW/hr (+0.0278 GROW/sec)
 > "First, I need the StreamCore program ID. Let me get that from our platform..."
 
 **VISUAL:**
-- Switch back to GrowStreams app
+- Switch back to FLOWS app
 - Click on stream details OR go to footer/settings
 - Copy StreamCore program ID: "0xabcd...ef12..." (example)
 - Switch back to Vara IDEA
 
 **ON SCREEN:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
       Vara Network IDEA Explorer
 
 Search: Programs, Accounts, Messages
 
-┌─────────────────────────────────┐
-│ 0xabcd...ef12                   │🔍
-└─────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 0xabcd...ef12                   â”‚ðŸ”
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
-Network: [Vara Testnet ▼]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Network: [Vara Testnet â–¼]
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL ACTION:**
@@ -521,30 +521,30 @@ Network: [Vara Testnet ▼]
 
 **ON SCREEN - Program Page:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 Program: StreamCore
 
 Address: 0xabcd...ef12
 Type: Sails Smart Contract
-Status: ✅ Active
+Status: âœ… Active
 
-━━━ Recent Messages ━━━━━━━━━━━━
+â”â”â” Recent Messages â”â”â”â”â”â”â”â”â”â”â”â”
 
-📤 CreateStream
+ðŸ“¤ CreateStream
    From: 0x6774528... (Sarthak)
    Time: 2 minutes ago
-   Status: Success ✅
+   Status: Success âœ…
    
-📤 GetStream
+ðŸ“¤ GetStream
    From: 0x1234...5678 (Test Wallet)
    Time: 1 minute ago
-   Status: Success ✅
+   Status: Success âœ…
 
-━━━ State ━━━━━━━━━━━━━━━━━━━━━
+â”â”â” State â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 
 Total Streams: 1
 Active Streams: 1
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL HIGHLIGHT:**
@@ -566,7 +566,7 @@ Active Streams: 1
 
 ---
 
-## 🎯 SECTION 6: Conclusion & CTA (5:15 - 5:45)
+## ðŸŽ¯ SECTION 6: Conclusion & CTA (5:15 - 5:45)
 
 ### [5:15 - 5:45] **Recap & Call to Action**
 
@@ -576,47 +576,47 @@ Active Streams: 1
   - Live streaming counter
   - Vault balance
   - Stream on explorer
-- Fade to GrowStreams logo
+- Fade to FLOWS logo
 
 **NARRATION:**
 > "Let's recap what we just did. We connected our admin wallet, checked the dashboard, minted 10,000 GROW tokens from the faucet, approved and deposited them to our vault, managed the faucet settings in the admin panel, created a live stream to a test wallet, watched the balance update in real-time, and verified everything on-chain using the Vara explorer."
 
 **ON SCREEN TEXT:**
 ```
-✅ Wallet Connected
-✅ GROW Tokens Minted
-✅ Vault Deposited
-✅ Admin Panel Configured
-✅ Stream Created
-✅ Real-time Updates
-✅ On-Chain Verified
+âœ… Wallet Connected
+âœ… GROW Tokens Minted
+âœ… Vault Deposited
+âœ… Admin Panel Configured
+âœ… Stream Created
+âœ… Real-time Updates
+âœ… On-Chain Verified
 ```
 
 **NARRATION (CONTINUED):**
-> "This is GrowStreams - real-time, per-second token streaming on Vara Network. No more batch payments. No more manual transfers. Just continuous value flow."
+> "This is FLOWS - real-time, per-second token streaming on Vara Network. No more batch payments. No more manual transfers. Just continuous value flow."
 
 **VISUAL:**
-- GrowStreams logo
+- FLOWS logo
 - Website URLs fade in
 
 **ON SCREEN:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     🌊 GrowStreams 🌊
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+     ðŸŒŠ FLOWS ðŸŒŠ
 
    Try it now on Vara Testnet
 
-🌐 app.growstreams.xyz
-📚 docs.growstreams.io
-💻 github.com/growstreams
-🐦 @GrowStreams
+ðŸŒ app.FLOWS.xyz
+ðŸ“š docs.FLOWS.io
+ðŸ’» github.com/FLOWS
+ðŸ¦ @FLOWS
 
-  Built with 💙 on Vara Network
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Built with ðŸ’™ on Vara Network
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **NARRATION (FINAL):**
-> "Try it yourself at app.growstreams.xyz. Connect your wallet, mint some tokens, and start streaming. The future of payments is here."
+> "Try it yourself at app.FLOWS.xyz. Connect your wallet, mint some tokens, and start streaming. The future of payments is here."
 
 **VISUAL:**
 - Fade to black
@@ -624,7 +624,7 @@ Active Streams: 1
 
 ---
 
-## 🎥 Production Notes
+## ðŸŽ¥ Production Notes
 
 ### Total Duration
 - **Section 1:** Intro & Wallet (0:45)
@@ -638,8 +638,8 @@ Active Streams: 1
 ### Recording Setup
 
 **Required Screens/Tabs:**
-1. GrowStreams app (admin wallet - Sarthak)
-2. GrowStreams app (test wallet - separate window or tab)
+1. FLOWS app (admin wallet - Sarthak)
+2. FLOWS app (test wallet - separate window or tab)
 3. Vara IDEA Explorer
 
 **Screen Recording:**
@@ -671,7 +671,7 @@ Active Streams: 1
 - [ ] Address copied and ready to paste
 
 **Platform Setup:**
-- [ ] Latest version deployed to app.growstreams.xyz
+- [ ] Latest version deployed to app.FLOWS.xyz
 - [ ] All features working (faucet, approve, deposit, streaming)
 - [ ] Admin panel accessible
 - [ ] Real-time counters functioning
@@ -750,7 +750,7 @@ Active Streams: 1
 ### Text Overlays
 
 **When to Use:**
-- Transaction confirmations: "✅ Minted 10,000 GROW"
+- Transaction confirmations: "âœ… Minted 10,000 GROW"
 - Key metrics: "Flow Rate: 100 GROW/hr"
 - Addresses: "Recipient: 0x1234...5678"
 - Status updates: "Stream #1 Active"
@@ -777,7 +777,7 @@ Active Streams: 1
 
 ---
 
-## 📱 Alternative Versions
+## ðŸ“± Alternative Versions
 
 ### Short Version (2 minutes)
 **For social media:**
@@ -805,12 +805,12 @@ Active Streams: 1
 
 ---
 
-## 🎬 Detailed Shot List
+## ðŸŽ¬ Detailed Shot List
 
 ### Shot 1: Title Card (0:00-0:05)
-- **Visual:** GrowStreams logo on dark background
+- **Visual:** FLOWS logo on dark background
 - **Audio:** Music starts
-- **Text:** "GrowStreams Platform Demo"
+- **Text:** "FLOWS Platform Demo"
 
 ### Shot 2: Connect Wallet (0:05-0:25)
 - **Visual:** Click connect, select wallet, approve
@@ -898,7 +898,7 @@ Active Streams: 1
 - **Effect:** Fast-paced, energetic
 
 ### Shot 19: CTA & Logo (5:25-5:40)
-- **Visual:** GrowStreams logo, URLs
+- **Visual:** FLOWS logo, URLs
 - **Audio:** Voiceover final CTA
 - **Text:** All links and social handles
 
@@ -909,7 +909,7 @@ Active Streams: 1
 
 ---
 
-## ✅ Post-Production Checklist
+## âœ… Post-Production Checklist
 
 ### Video Editing
 - [ ] Trim dead space between actions
@@ -944,7 +944,7 @@ Active Streams: 1
 
 ---
 
-## 📊 Success Metrics
+## ðŸ“Š Success Metrics
 
 ### Video Performance
 - **Views:** 2,000+ in first week
@@ -963,5 +963,6 @@ Active Streams: 1
 **Script Version:** 1.0  
 **Duration:** 5:45 minutes  
 **Last Updated:** 2026-02-27  
-**Prepared By:** GrowStreams Team  
-**Status:** Ready for Production 🎬
+**Prepared By:** FLOWS Team  
+**Status:** Ready for Production ðŸŽ¬
+

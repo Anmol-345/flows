@@ -1,5 +1,5 @@
 {
-  "name": "growstreams-frontend",
+  "name": "flows-frontend",
   "version": "2.0.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,7 @@
     "@gear-js/ui": "^0.7.0",
     "@gear-js/vara-ui": "^0.3.1",
     "@gear-js/wallet-connect": "^0.4.1",
-    "@growstreams/sdk": "file:../sdk",
+    "@flows/sdk": "file:../sdk",
     "@polkadot/api": "15.3.1",
     "@polkadot/extension-dapp": "^0.58.8",
     "@polkadot/react-identicon": "3.12.1",

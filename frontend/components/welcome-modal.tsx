@@ -11,7 +11,7 @@ const CardItem = dynamic(() => import('@/components/ui/CardSwap').then(m => {
   return { default: C };
 }), { ssr: false });
 
-const WELCOME_SEEN_KEY = 'growstreams_welcome_seen';
+const WELCOME_SEEN_KEY = 'flows_welcome_seen';
 
 const steps = [
   {
@@ -94,7 +94,7 @@ export default function WelcomeModal() {
               <Waves className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="font-bold text-lg text-white" style={{ fontFamily: 'var(--font-space-grotesk)' }}>Welcome to GrowStreams</h2>
+              <h2 className="font-bold text-lg text-white" style={{ fontFamily: 'var(--font-space-grotesk)' }}>Welcome to Flows</h2>
               <p className="text-xs" style={{ color: '#6a8090' }}>Real-time per-second token streaming on Vara Network</p>
             </div>
           </div>

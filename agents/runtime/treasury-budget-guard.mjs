@@ -1,5 +1,5 @@
-/**
- * GrowStreams Vara Mainnet Treasury 20% Budget Guard
+﻿/**
+ * FLOWS Vara Mainnet Treasury 20% Budget Guard
  *
  * Enforces that all Mainnet deployments, gas fees, vouchers, and protocol test
  * operations combined NEVER spend more than 20% of the Treasury wallet's VARA
@@ -159,3 +159,4 @@ export async function assertWithinTreasuryBudget(
   cumulativeGvaraSpentPlancks += gvaraCost;
   return params;
 }
+

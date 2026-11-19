@@ -1,4 +1,4 @@
-const { Pool } = require('pg');
+﻿const { Pool } = require('pg');
 require('dotenv').config();
 
 const pool = new Pool({
@@ -45,11 +45,11 @@ const dummyBounties = [
   },
   {
     slug: 'content-creator-tutorial-series',
-    title: 'Video Tutorial Series: Getting Started with GrowStreams',
-    org_name: 'GrowStreams',
+    title: 'Video Tutorial Series: Getting Started with FLOWS',
+    org_name: 'FLOWS',
     logo_url: '/images/logo.png',
     track: 'Content',
-    short_desc: 'Produce a high-quality 5-part video tutorial series explaining how to set up, configure, and stream tokens using the GrowStreams SDK.',
+    short_desc: 'Produce a high-quality 5-part video tutorial series explaining how to set up, configure, and stream tokens using the FLOWS SDK.',
     prize_pool: 1500,
     status: 'Open',
     deliverables: JSON.stringify(['5 YouTube Videos (1080p+)', 'Thumbnail Assets', 'Video Transcripts']),
@@ -85,3 +85,4 @@ async function seed() {
 }
 
 seed();
+

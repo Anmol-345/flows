@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect, useCallback, FormEvent } from 'react';
-import { api, type SplitGroup } from '@/lib/growstreams-api';
-import { useSplitsActions, useUnifiedVaraAccount } from '@/hooks/useGrowStreams';
+import { api, type SplitGroup } from '@/lib/flows-api';
+import { useSplitsActions, useUnifiedVaraAccount } from '@/hooks/useFlows';
 import { toast } from 'sonner';
 import {
   GitFork, Plus, Trash2, Send, RefreshCw, ExternalLink, CheckCircle2, Coins,
@@ -165,7 +165,7 @@ export default function SplitsPage() {
               ACTIVE PROTOCOL FEE ROUTING (GROUP #1)
             </span>
             <h2 className="text-base font-semibold mt-0.5">
-              GrowStreams Prime 60 / 15 / 15 / 10 Revenue Architecture
+              Flows Prime 60 / 15 / 15 / 10 Revenue Architecture
             </h2>
           </div>
           <span className="px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#E6F4ED] text-[#136F46]">

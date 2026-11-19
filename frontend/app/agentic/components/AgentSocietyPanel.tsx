@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
-import { api } from '@/lib/growstreams-api';
+import { api } from '@/lib/flows-api';
 import { useAccount, useApi } from '@gear-js/react-hooks';
 
 const FALLBACK_WALLET = 'kGkLork3scX9ngz3vhFywax2uC3LUfp7m1PMxkQXdtdsnYiZA';
@@ -148,7 +148,7 @@ export default function AgentSocietyPanel() {
         throw new Error('Please connect your SubWallet first.');
       }
       const { web3Enable, web3FromSource, web3FromAddress } = await import('@polkadot/extension-dapp');
-      await web3Enable('GrowStreams V3 — Stonk on Vara');
+      await web3Enable('Flows V3 — Stonk on Vara');
       let injector;
       try {
         injector = await web3FromSource(account.meta.source);

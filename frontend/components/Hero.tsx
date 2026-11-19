@@ -137,7 +137,7 @@ export default function Hero() {
             >
               <div className="relative size-full">
                 <img
-                  alt="GrowStreams live preview"
+                  alt="Flows live preview"
                   loading="lazy"
                   decoding="async"
                   width={900}

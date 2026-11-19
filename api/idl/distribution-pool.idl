@@ -1,4 +1,4 @@
-// GrowStreams — Distribution Pool IDL
+﻿// FLOWS â€” Distribution Pool IDL
 // Superfluid-style GDA: instant + streaming one-to-many Super Token distributions
 
 type PoolState = struct {
@@ -65,3 +65,4 @@ service PoolService {
   query TotalPools : () -> u64;
   query GetConfig : () -> PoolConfig;
 };
+

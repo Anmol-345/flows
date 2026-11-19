@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
-import { api } from '@/lib/growstreams-api';
+import { api } from '@/lib/flows-api';
 import gsap from 'gsap';
 import { useAccount } from '@gear-js/react-hooks';
 import { Wallet } from '@gear-js/wallet-connect';
@@ -16,7 +16,7 @@ type Message = { role: 'system' | 'user' | 'agent'; content: string };
 export default function LearnTerminal({ bountyId, onMessageSent }: LearnTerminalProps) {
   const { account } = useAccount();
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'system', content: 'GROWSTREAMS MASTER TUTOR v1.0' },
+    { role: 'system', content: 'FLOWS MASTER TUTOR v1.0' },
     { role: 'system', content: 'Select a course below to initialize your session.' },
   ]);
   const [input, setInput] = useState('');
@@ -48,7 +48,7 @@ export default function LearnTerminal({ bountyId, onMessageSent }: LearnTerminal
     setSessionId(null);
     setInput('');
     setMessages([
-      { role: 'system', content: 'GROWSTREAMS MASTER TUTOR v1.0' },
+      { role: 'system', content: 'FLOWS MASTER TUTOR v1.0' },
       bountyId
         ? { role: 'system', content: `> Course loaded. Run connect_wallet --start-session to begin.` }
         : { role: 'system', content: 'Select a course below to initialize your session.' },

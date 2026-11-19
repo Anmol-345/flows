@@ -1,6 +1,6 @@
-# Web3 Contribution Challenge — Campaign System
+﻿# Web3 Contribution Challenge â€” Campaign System
 
-Part of the [GrowStreams](https://growstreams.xyz) platform. See the main [README.md](README.md) for the full project overview.
+Part of the [FLOWS](https://FLOWS.xyz) platform. See the main [README.md](README.md) for the full project overview.
 
 ---
 
@@ -10,7 +10,7 @@ The Web3 Contribution Challenge is a developer engagement campaign that analyzes
 
 ```
 User Flow:
-Connect Wallet → Verify GitHub (Reclaim) → AI Analysis → View Score → Mint NFT → Share → Leaderboard
+Connect Wallet â†’ Verify GitHub (Reclaim) â†’ AI Analysis â†’ View Score â†’ Mint NFT â†’ Share â†’ Leaderboard
 ```
 
 ---
@@ -19,7 +19,7 @@ Connect Wallet → Verify GitHub (Reclaim) → AI Analysis → View Score → Mi
 
 | Route | Purpose |
 |-------|---------|
-| `/campaign` | Main flow — step-by-step journey from wallet connect to NFT mint |
+| `/campaign` | Main flow â€” step-by-step journey from wallet connect to NFT mint |
 | `/campaign/leaderboard` | Live rankings with category filters (Overall, Impact, Quality, Collaboration, Security) |
 | `/campaign/rules` | Eligibility, anti-gaming rules, scoring breakdown, prize distribution, FAQ |
 
@@ -39,8 +39,8 @@ Connect Wallet → Verify GitHub (Reclaim) → AI Analysis → View Score → Mi
 
 | Hook | Purpose |
 |------|---------|
-| `useVaraNFT` | NFT minting on Vara — metadata generation, transaction management |
-| `useReclaimVerification` | Reclaim Protocol flow — QR code, proof generation, verification |
+| `useVaraNFT` | NFT minting on Vara â€” metadata generation, transaction management |
+| `useReclaimVerification` | Reclaim Protocol flow â€” QR code, proof generation, verification |
 | `useReclaimContract` | On-chain proof validation via Vara contract |
 
 ### API Routes
@@ -61,13 +61,13 @@ GET    /api/result/:actorId       # Shareable result page data
 - Campaign window date calculations
 - GitHub username validation
 - Leaderboard sorting helpers
-- Score → color mapping
+- Score â†’ color mapping
 
 ---
 
 ## Scoring System
 
-AI analyzes GitHub contributions across 4 dimensions (0–25 each, 100 total):
+AI analyzes GitHub contributions across 4 dimensions (0â€“25 each, 100 total):
 
 | Dimension | What it measures |
 |-----------|-----------------|
@@ -80,11 +80,11 @@ AI analyzes GitHub contributions across 4 dimensions (0–25 each, 100 total):
 
 | Tier | Score | Badge |
 |------|-------|-------|
-| Elite | 80–100 | Gold |
-| Expert | 60–79 | Silver |
-| Advanced | 40–59 | Bronze |
-| Intermediate | 20–39 | Blue |
-| Beginner | 0–19 | Gray |
+| Elite | 80â€“100 | Gold |
+| Expert | 60â€“79 | Silver |
+| Advanced | 40â€“59 | Bronze |
+| Intermediate | 20â€“39 | Blue |
+| Beginner | 0â€“19 | Gray |
 
 ### Web3 Ecosystem Detection
 
@@ -170,8 +170,8 @@ NEXT_PUBLIC_PINATA_JWT=<your-jwt>
 Add to any GitHub README:
 
 ```markdown
-![Web3 Score](https://growstreams.xyz/api/badge/your-username)
-![Web3 Tier](https://growstreams.xyz/api/badge/tier/your-username)
+![Web3 Score](https://FLOWS.xyz/api/badge/your-username)
+![Web3 Tier](https://FLOWS.xyz/api/badge/tier/your-username)
 ```
 
 ---
@@ -189,9 +189,9 @@ Add to any GitHub README:
 | Item | Cost |
 |------|------|
 | NFT mint | ~0.1 VARA per user |
-| Contract deploy | ~1–2 VARA (one-time) |
+| Contract deploy | ~1â€“2 VARA (one-time) |
 | IPFS storage | ~$0.0001 per scorecard (~1KB) |
-| **1,000 users total** | **~$10–20** |
+| **1,000 users total** | **~$10â€“20** |
 
 ---
 
@@ -200,4 +200,5 @@ Add to any GitHub README:
 - [Vara NFT Standards](https://wiki.gear.foundation/docs/examples/Standards/vnft)
 - [Gear Protocol Docs](https://wiki.gear.foundation/)
 - [Reclaim Protocol Docs](https://dev.reclaimprotocol.org/)
-- [GrowStreams Developers](https://growstreams.xyz/developers)
+- [FLOWS Developers](https://FLOWS.xyz/developers)
+

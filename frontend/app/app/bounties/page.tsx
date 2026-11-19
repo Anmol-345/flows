@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { useBountyActions, useUnifiedVaraAccount } from '@/hooks/useGrowStreams';
+import { useBountyActions, useUnifiedVaraAccount } from '@/hooks/useFlows';
 import { MAINNET_CONTRACTS } from '@/lib/vara-wallet';
 import { toast } from 'sonner';
 import {
@@ -36,7 +36,7 @@ const VERIFIED_MAINNET_BOUNTIES: OnChainBountyCard[] = [
   {
     id: 47,
     title: 'Build Autonomous Sails Delayed-Message Liquidation Keeper',
-    org: 'GrowStreams Core Protocol',
+    org: 'Flows Core Protocol',
     track: 'SAILS RUST',
     budgetGrow: 25000,
     maxFlowPerDay: 1200,
@@ -75,7 +75,7 @@ const VERIFIED_MAINNET_BOUNTIES: OnChainBountyCard[] = [
   {
     id: 44,
     title: 'DeFiLlama Custom SuperToken TVL & Yield Analytics Indexer',
-    org: 'GrowStreams Analytics',
+    org: 'Flows Analytics',
     track: 'DEFI',
     budgetGrow: 15000,
     maxFlowPerDay: 850,
@@ -189,7 +189,7 @@ export default function BountiesPage() {
       <PageHeader
         eyebrow="STREAMING CONTRIBUTOR GRANTS · BOUNTYADAPTER (47 LIVE)"
         title="On-Chain Bounties & Grants"
-        subtitle="Sponsor or claim verified engineering & AI agent bounties paid out via real-time GrowStreams"
+        subtitle="Sponsor or claim verified engineering & AI agent bounties paid out via real-time Flows"
         icon={<Briefcase className="w-6 h-6 text-[#136F46]" />}
         actions={
           <div className="flex items-center gap-2">

@@ -1,5 +1,5 @@
 function getApiBase(): string {
-  let env = (process.env.NEXT_PUBLIC_GROWSTREAMS_API || '').trim().replace(/^["']|["']$/g, '');
+  let env = (process.env.NEXT_PUBLIC_FLOWS_API || '').trim().replace(/^["']|["']$/g, '');
   if (!env) return '';
   if (!env.startsWith('http://') && !env.startsWith('https://')) {
     env = `https://${env}`;

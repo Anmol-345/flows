@@ -1,12 +1,12 @@
-# GrowStreams Landing Page Demonstration (Video Script)
+﻿# FLOWS Landing Page Demonstration (Video Script)
 
 **Target Duration:** 3:00 minutes  
 **Audience:** Developers, Projects, VCs, Web3 Community  
-**Goal:** Showcase the GrowStreams landing page design and core value propositions
+**Goal:** Showcase the FLOWS landing page design and core value propositions
 
 ---
 
-## 🎬 SECTION 1: Hero / Homepage (0:00 - 0:45)
+## ðŸŽ¬ SECTION 1: Hero / Homepage (0:00 - 0:45)
 
 ### [0:00 - 0:45] **First Impressions - Per-Second Money Streaming**
 
@@ -18,15 +18,15 @@
   - Withdrawable balance: `$1247.8118`
   - Buffer: `8h remaining`
   - Animated flow line with particles moving left to right
-- Green "🟢 LIVE ON VARA TESTNET" badge pulsing
+- Green "ðŸŸ¢ LIVE ON VARA TESTNET" badge pulsing
 - Background with subtle gradient and geometric patterns
 
 **NARRATION:**
-> "Welcome to GrowStreams - the future of payments on Vara Network. This is per-second money streaming. Not batch payments. Not manual transfers. Real-time, continuous value flow. Watch this live stream between company.vara and alice.vara. Every second, tokens move. The balance updates in real-time. This isn't a demo - this is happening right now on Vara testnet."
+> "Welcome to FLOWS - the future of payments on Vara Network. This is per-second money streaming. Not batch payments. Not manual transfers. Real-time, continuous value flow. Watch this live stream between company.vara and alice.vara. Every second, tokens move. The balance updates in real-time. This isn't a demo - this is happening right now on Vara testnet."
 
 **ON SCREEN ELEMENTS TO HIGHLIGHT:**
 - "Per-Second Money Streaming" headline
-- Live streaming animation (company → alice)
+- Live streaming animation (company â†’ alice)
 - Withdrawable balance counter
 - "8h remaining" buffer indicator
 - "LIVE ON VARA TESTNET" badge
@@ -49,7 +49,7 @@
 
 ---
 
-## 🔧 SECTION 2: Protocol - How Streams Work (0:45 - 1:30)
+## ðŸ”§ SECTION 2: Protocol - How Streams Work (0:45 - 1:30)
 
 ### [0:45 - 1:30] **Technical Overview**
 
@@ -68,7 +68,7 @@
 
 **ON SCREEN - Diagram Animation:**
 ```
-[S] alice.vara ━━━━━━━━→ [R] bob.vara
+[S] alice.vara â”â”â”â”â”â”â”â”â†’ [R] bob.vara
               USDC $8.48527/sec
 ```
 
@@ -84,18 +84,18 @@
 > "The protocol handles everything. Creation, deposits, withdrawals, pausing, liquidation. All on-chain. All composable. Other contracts can integrate streaming as a primitive. It's not just a payment app - it's infrastructure."
 
 **ON SCREEN TEXT APPEARS:**
-- ✅ Create streams
-- ✅ Deposit/Withdraw
-- ✅ Pause/Resume
-- ✅ Auto-liquidation
-- ✅ Cross-contract calls
+- âœ… Create streams
+- âœ… Deposit/Withdraw
+- âœ… Pause/Resume
+- âœ… Auto-liquidation
+- âœ… Cross-contract calls
 
 **VISUAL TRANSITION:**
 - Scroll to next section OR click "Use Cases" in nav
 
 ---
 
-## 💼 SECTION 3: Use Cases - Endless Possibilities (1:30 - 2:15)
+## ðŸ’¼ SECTION 3: Use Cases - Endless Possibilities (1:30 - 2:15)
 
 ### [1:30 - 2:15] **Real-World Applications**
 
@@ -103,7 +103,7 @@
 - "USE CASES" label appears
 - Main headline: "One protocol, endless possibilities"
 - Gradient text on "endless possibilities" (purple/pink)
-- Subtitle: "From payroll to gaming rewards — stream money for any use case. Here are the apps you can build with GrowStreams."
+- Subtitle: "From payroll to gaming rewards â€” stream money for any use case. Here are the apps you can build with FLOWS."
 
 **NARRATION:**
 > "So what can you build with streaming? Everything. Bounties and gigs - submit code, pass verification, get paid per second. No more waiting weeks for bounty payouts. Developers earn as they work."
@@ -112,13 +112,13 @@
 - Left side shows text description:
   - "Bounties & Gigs"
   - "Submit code, pass AI verification, and get paid per-second."
-  - "GrowStreams' flagship use case combines quality verification with real-time streaming payouts for developer bounties."
-  - Badge: "🔧 AI-verified work triggers instant streams"
+  - "FLOWS' flagship use case combines quality verification with real-time streaming payouts for developer bounties."
+  - Badge: "ðŸ”§ AI-verified work triggers instant streams"
 
 **VISUAL - Right side card (zoomed):**
 - Green briefcase icon
 - "Bounties & Gigs" heading
-- "Powered by GrowStreams Protocol"
+- "Powered by FLOWS Protocol"
 - Clean card design with dark background
 
 **SCROLL DOWN** (if more use cases are shown):
@@ -127,12 +127,12 @@
 > "But it doesn't stop there. Payroll - pay employees every second instead of every month. Subscriptions - users pay for exactly what they use. Grants - funding streams in real-time. Vesting schedules - token unlocks happen continuously. Revenue sharing - split income as it arrives. One protocol. Infinite possibilities."
 
 **ON SCREEN - Use Case Cards Appearing:**
-- 💼 Payroll & Salaries
-- 📺 Subscriptions & SaaS
-- 🎮 Gaming Rewards
-- 💰 Grants & Funding
-- 📊 Revenue Sharing
-- 🔒 Token Vesting
+- ðŸ’¼ Payroll & Salaries
+- ðŸ“º Subscriptions & SaaS
+- ðŸŽ® Gaming Rewards
+- ðŸ’° Grants & Funding
+- ðŸ“Š Revenue Sharing
+- ðŸ”’ Token Vesting
 
 **VISUAL CALLOUTS:**
 - Hover effect over each card
@@ -144,13 +144,13 @@
 
 ---
 
-## 👨‍💻 SECTION 4: Developers - Build with GrowStreams (2:15 - 2:45)
+## ðŸ‘¨â€ðŸ’» SECTION 4: Developers - Build with FLOWS (2:15 - 2:45)
 
 ### [2:15 - 2:45] **Developer Resources**
 
 **VISUAL:**
 - "DEVELOPERS" badge appears (green code symbol)
-- Headline: "Build with GrowStreams"
+- Headline: "Build with FLOWS"
 - Subtitle: "SDK, contract addresses, quickstart guides, and examples. Go from zero to first stream in under 10 minutes."
 
 **NARRATION:**
@@ -158,12 +158,12 @@
 
 **ON SCREEN - Three CTA Buttons:**
 ```
-[⚡ Quickstart]  [📘 SDK Reference]  [GitHub ↗]
+[âš¡ Quickstart]  [ðŸ“˜ SDK Reference]  [GitHub â†—]
 ```
 
 **VISUAL - Code Block Appears:**
 ```
-> npm install @growstreams/sdk
+> npm install @FLOWS/sdk
 ```
 
 **NARRATION (CONTINUED):**
@@ -171,7 +171,7 @@
 
 **VISUAL - Code Example Animation (optional, if showing code):**
 ```typescript
-import { GrowStreamsSDK } from '@growstreams/sdk';
+import { FLOWSSDK } from '@FLOWS/sdk';
 
 // Create stream
 const stream = await sdk.createStream({
@@ -182,18 +182,18 @@ const stream = await sdk.createStream({
 ```
 
 **ON SCREEN TEXT:**
-- ⚡ 10-minute quickstart
-- 📦 NPM package ready
-- 📚 Full documentation
-- 🔧 Example projects
-- 🌐 Testnet live now
+- âš¡ 10-minute quickstart
+- ðŸ“¦ NPM package ready
+- ðŸ“š Full documentation
+- ðŸ”§ Example projects
+- ðŸŒ Testnet live now
 
 **VISUAL TRANSITION:**
 - Click "Ecosystem" in navigation
 
 ---
 
-## 🌐 SECTION 5: Ecosystem - Join the Movement (2:45 - 3:00)
+## ðŸŒ SECTION 5: Ecosystem - Join the Movement (2:45 - 3:00)
 
 ### [2:45 - 3:00] **Ecosystem & CTA**
 
@@ -201,21 +201,21 @@ const stream = await sdk.createStream({
 - "ECOSYSTEM" badge appears
 - Headline: "Join the ecosystem"
 - Gradient text on "ecosystem" (orange/yellow)
-- Subtitle: "Partner with GrowStreams to bring real-time payments to your users. Integrate, co-build, and grow together."
+- Subtitle: "Partner with FLOWS to bring real-time payments to your users. Integrate, co-build, and grow together."
 
 **NARRATION:**
-> "GrowStreams isn't just a protocol - it's an ecosystem. We're partnering with DAOs, DeFi projects, developer platforms, and Web3 communities to bring real-time streaming everywhere."
+> "FLOWS isn't just a protocol - it's an ecosystem. We're partnering with DAOs, DeFi projects, developer platforms, and Web3 communities to bring real-time streaming everywhere."
 
 **VISUAL - Section appears:**
 - "Who we work with"
-- Subtitle: "GrowStreams is designed for composability. Here's how different partners integrate."
+- Subtitle: "FLOWS is designed for composability. Here's how different partners integrate."
 
 **VISUAL - Partner Category Cards (if visible):**
-- 🏦 DeFi Protocols
-- 🎯 DAO Tooling
-- 🎮 Gaming Platforms
-- 💼 Freelance Markets
-- 🔧 Dev Tools
+- ðŸ¦ DeFi Protocols
+- ðŸŽ¯ DAO Tooling
+- ðŸŽ® Gaming Platforms
+- ðŸ’¼ Freelance Markets
+- ðŸ”§ Dev Tools
 
 **NARRATION (CONTINUED):**
 > "If you're building on Vara - or planning to - streaming should be part of your stack. Join our pilot program. Integrate the SDK. Build the future of payments with us."
@@ -231,19 +231,19 @@ const stream = await sdk.createStream({
 - Footer with links visible at bottom
 
 **NARRATION (FINAL):**
-> "GrowStreams. Per-second money streaming on Vara. Live now. Build now. Stream now."
+> "FLOWS. Per-second money streaming on Vara. Live now. Build now. Stream now."
 
 **END SCREEN:**
-- Fade to GrowStreams logo
+- Fade to FLOWS logo
 - URLs appear:
-  - growstreams.io
-  - docs.growstreams.io
-  - github.com/growstreams
-  - @GrowStreams
+  - FLOWS.io
+  - docs.FLOWS.io
+  - github.com/FLOWS
+  - @FLOWS
 
 ---
 
-## 🎥 Production Notes
+## ðŸŽ¥ Production Notes
 
 ### Timing Breakdown
 - **Section 1:** Hero/Home (0:45)
@@ -263,9 +263,9 @@ const stream = await sdk.createStream({
 - More cinematic
 
 **Option B: Nav Bar Clicking**
-- Click "Protocol" → jump to section
-- Click "Use Cases" → jump to section
-- Click "Developers" → jump to section
+- Click "Protocol" â†’ jump to section
+- Click "Use Cases" â†’ jump to section
+- Click "Developers" â†’ jump to section
 - More explicit, shows navigation UX
 
 **Recommendation:** Use Option A (smooth scroll) for main sections, but show nav bar clicks for specific CTAs like "Quickstart" or "GitHub"
@@ -349,7 +349,7 @@ const stream = await sdk.createStream({
 **Energy:** High-medium, building excitement  
 **Pronunciation:**
 - "Vara" = VAH-rah
-- "GrowStreams" = Grow-Streams (two distinct words)
+- "FLOWS" = Grow-Streams (two distinct words)
 - "USDC" = U-S-D-C (spell it out)
 
 **Emphasis points:**
@@ -381,7 +381,7 @@ const stream = await sdk.createStream({
 
 ---
 
-## 📱 Responsive Considerations
+## ðŸ“± Responsive Considerations
 
 ### Desktop Version (Primary)
 - 1920x1080 recording
@@ -398,7 +398,7 @@ const stream = await sdk.createStream({
 
 ---
 
-## 🎯 Call-to-Action Strategy
+## ðŸŽ¯ Call-to-Action Strategy
 
 ### Primary CTA
 **"Launch App"** - appears in:
@@ -431,7 +431,7 @@ const stream = await sdk.createStream({
 
 ---
 
-## 🎬 Detailed Shot List
+## ðŸŽ¬ Detailed Shot List
 
 ### Shot 1: Hero Section Intro (0:00-0:20)
 - **Type:** Screen recording
@@ -547,7 +547,7 @@ const stream = await sdk.createStream({
 
 ---
 
-## ✅ Pre-Production Checklist
+## âœ… Pre-Production Checklist
 
 ### Design Finalization
 - [ ] Ensure all landing page sections are finalized
@@ -590,7 +590,7 @@ const stream = await sdk.createStream({
 
 ---
 
-## 🎨 Style & Branding Guide
+## ðŸŽ¨ Style & Branding Guide
 
 ### Color Palette (from screenshots)
 - **Primary:** Teal/Green `#00D9A3` (CTAs, accents)
@@ -614,13 +614,13 @@ const stream = await sdk.createStream({
 
 ### Visual Motifs
 - **Streaming:** Always present (flow lines, particles, counters)
-- **Network:** Nodes and connections (alice.vara ↔ bob.vara)
+- **Network:** Nodes and connections (alice.vara â†” bob.vara)
 - **Real-time:** Live badges, updating numbers
 - **Developer-focused:** Code blocks, terminal aesthetics
 
 ---
 
-## 📊 Success Metrics
+## ðŸ“Š Success Metrics
 
 ### Video Performance Goals
 - **Views:** 5,000+ in first month
@@ -643,7 +643,7 @@ const stream = await sdk.createStream({
 
 ---
 
-## 🔄 Alternative Versions
+## ðŸ”„ Alternative Versions
 
 ### Short Version (60 seconds)
 **For social media:**
@@ -674,5 +674,6 @@ const stream = await sdk.createStream({
 **Script Version:** 1.0  
 **Duration:** 3:00 minutes  
 **Last Updated:** 2026-02-26  
-**Prepared By:** GrowStreams Team  
-**Status:** Ready for Production 🎬
+**Prepared By:** FLOWS Team  
+**Status:** Ready for Production ðŸŽ¬
+

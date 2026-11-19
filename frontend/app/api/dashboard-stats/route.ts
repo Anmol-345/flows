@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+﻿import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -7,7 +7,7 @@ const VARA_RPC = 'https://rpc.vara.network';
 const ZERO_ACCOUNT = '0x' + '0'.repeat(64);
 const GAS_LIMIT = 750_000_000_000;
 
-// Precomputed System.Account Blake2_128Concat storage keys for GrowStreams V2/V3 custody contracts on Vara Mainnet
+// Precomputed System.Account Blake2_128Concat storage keys for FLOWS V2/V3 custody contracts on Vara Mainnet
 const CUSTODY_STORAGE_KEYS = {
   tokenVaultV3:
     '0x26aa394eea5630e07c48ae0c9558cef7b99d880ec681799c0cf30e8886371da90cb6f7ae937006b2be9df76ad3a2783a657cf9c4f929aeac97092037826c1117f9e6cd0e3c4edc44e49decc17b840aa9',
@@ -168,11 +168,11 @@ export async function GET() {
       perpsPositionsCount,
       splitsGroupsCount,
     ] = await Promise.all([
-      fetchJson('https://api.llama.fi/summary/dexs/growstreams?excludeTotalDataChart=false').catch(() => null),
-      fetchJson('https://api.llama.fi/summary/fees/growstreams?dataType=dailyFees').catch(() => null),
-      fetchJson('https://api.llama.fi/summary/fees/growstreams-perps?dataType=dailyFees').catch(() => null),
-      fetchJson('https://api.llama.fi/summary/open-interest/growstreams-perps').catch(() => null),
-      fetchJson('https://api.llama.fi/protocol/growstreams-payments').catch(() => null),
+      fetchJson('https://api.llama.fi/summary/dexs/FLOWS?excludeTotalDataChart=false').catch(() => null),
+      fetchJson('https://api.llama.fi/summary/fees/FLOWS?dataType=dailyFees').catch(() => null),
+      fetchJson('https://api.llama.fi/summary/fees/FLOWS-perps?dataType=dailyFees').catch(() => null),
+      fetchJson('https://api.llama.fi/summary/open-interest/FLOWS-perps').catch(() => null),
+      fetchJson('https://api.llama.fi/protocol/FLOWS-payments').catch(() => null),
       fetchJson('https://api.llama.fi/overview/dexs/Vara').catch(() => null),
       fetchJson('https://explorer.vara.network/api/v1/networks/vara/charts?days=30').catch(() => null),
       fetchJson('https://explorer.vara.network/api/v1/networks/vara/market/price').catch(() => null),
@@ -254,9 +254,9 @@ export async function GET() {
         volumeUsd: llamaVolMap.get(date) ?? 0,
         feesUsd: Number((llamaFeeMap.get(date) ?? 0).toFixed(2)),
         varaChainActiveAccounts: totalChainActive,
-        growStreamsActiveWallets: gsActiveWallets,
+        FLOWSActiveWallets: gsActiveWallets,
         varaChainExtrinsics: totalChainExtrinsics,
-        growStreamsExtrinsics: gsExtrinsics,
+        FLOWSExtrinsics: gsExtrinsics,
         varaChainTransfers: totalChainTransfers,
         varaChainFeesVara: totalChainFeesVara,
       };
@@ -268,9 +268,9 @@ export async function GET() {
       explorerDays[explorerDays.length - 1] || {
         date: '2026-11-16',
         varaChainActiveAccounts: 120,
-        growStreamsActiveWallets: 36,
+        FLOWSActiveWallets: 36,
         varaChainExtrinsics: 835,
-        growStreamsExtrinsics: 234,
+        FLOWSExtrinsics: 234,
         varaChainTransfers: 6854,
         varaChainFeesVara: 473.77,
       };
@@ -354,14 +354,14 @@ export async function GET() {
       explorerImpact: {
         latestDate: latestCompleteDay.date || '2026-11-16',
         varaDailySignedExtrinsics: latestCompleteDay.varaChainExtrinsics,
-        growStreamsDailyExtrinsics: latestCompleteDay.growStreamsExtrinsics,
+        FLOWSDailyExtrinsics: latestCompleteDay.FLOWSExtrinsics,
         extrinsicsSharePct: Number(
-          ((latestCompleteDay.growStreamsExtrinsics / Math.max(1, latestCompleteDay.varaChainExtrinsics)) * 100).toFixed(1)
+          ((latestCompleteDay.FLOWSExtrinsics / Math.max(1, latestCompleteDay.varaChainExtrinsics)) * 100).toFixed(1)
         ),
         varaDailyActiveAccounts: latestCompleteDay.varaChainActiveAccounts,
-        growStreamsDailyActiveWallets: latestCompleteDay.growStreamsActiveWallets,
+        FLOWSDailyActiveWallets: latestCompleteDay.FLOWSActiveWallets,
         activeAccountsSharePct: Number(
-          ((latestCompleteDay.growStreamsActiveWallets / Math.max(1, latestCompleteDay.varaChainActiveAccounts)) * 100).toFixed(1)
+          ((latestCompleteDay.FLOWSActiveWallets / Math.max(1, latestCompleteDay.varaChainActiveAccounts)) * 100).toFixed(1)
         ),
         varaDailyTransfers: latestCompleteDay.varaChainTransfers,
         varaDailyGasFeesVara: latestCompleteDay.varaChainFeesVara,
@@ -372,3 +372,4 @@ export async function GET() {
     return NextResponse.json({ error: e?.message || 'dashboard stats error' }, { status: 500 });
   }
 }
+

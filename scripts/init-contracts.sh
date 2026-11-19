@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
-# GrowStreams V2 — Initialize deployed contracts
+# FLOWS V2 â€” Initialize deployed contracts
 # Sends constructor messages to set up StreamCore and TokenVault
 #
 # Usage: ./scripts/init-contracts.sh
@@ -48,7 +48,7 @@ fi
 STREAM_CORE_ID=$(jq -r '.["stream-core"].programId // empty' "$DEPLOY_STATE")
 TOKEN_VAULT_ID=$(jq -r '.["token-vault"].programId // empty' "$DEPLOY_STATE")
 
-echo "=== GrowStreams V2 — Initialize Contracts ==="
+echo "=== FLOWS V2 â€” Initialize Contracts ==="
 echo "Node:         $VARA_NODE"
 echo "Admin:        $ADMIN_ADDRESS"
 echo "Min Buffer:   ${MIN_BUFFER}s"
@@ -91,3 +91,4 @@ echo ""
 echo "Contract addresses for docs/contracts-api.md:"
 echo "  StreamCore:  $STREAM_CORE_ID"
 echo "  TokenVault:  $TOKEN_VAULT_ID"
+

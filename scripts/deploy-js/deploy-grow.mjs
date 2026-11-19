@@ -1,4 +1,4 @@
-import { GearApi, GearKeyring } from '@gear-js/api';
+﻿import { GearApi, GearKeyring } from '@gear-js/api';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -151,7 +151,7 @@ async function sendMessage(api, keyring, programId, payload, value = 0) {
 async function main() {
   const mode = process.argv[2] || 'all'; // 'grow-token', 'token-vault', 'wire', 'mint', 'all'
 
-  console.log('=== GrowStreams — Deploy GROW Token + Updated TokenVault ===');
+  console.log('=== FLOWS â€” Deploy GROW Token + Updated TokenVault ===');
   console.log(`Node: ${VARA_NODE}`);
   console.log(`Mode: ${mode}\n`);
 
@@ -286,3 +286,4 @@ async function main() {
 }
 
 main().catch(err => { console.error('Fatal:', err.message); process.exit(1); });
+

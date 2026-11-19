@@ -1,4 +1,4 @@
-// StonkBase × GrowStreams on Vara — Spot CLOB Orderbook DEX & 1x–5x RWA Perps Desk Sails IDL
+﻿// StonkBase Ã— FLOWS on Vara â€” Spot CLOB Orderbook DEX & 1xâ€“5x RWA Perps Desk Sails IDL
 
 type OracleFeed = struct {
   ticker: str,
@@ -70,14 +70,14 @@ constructor {
 };
 
 service StonkBaseService {
-  // --- 24/7 Bounded Oracle (±8% / 800 bps maxMoveBps) ---
+  // --- 24/7 Bounded Oracle (Â±8% / 800 bps maxMoveBps) ---
   PushOraclePrices : (tickers: vec str, prices_e8: vec u64, confidences: vec u8) -> bool;
 
   // --- Spot CLOB Orderbook (DEXs Volume) ---
   PlaceSpotOrder : (pair: str, is_buy: bool, price_e8: u64, amount_vara: u128) -> u64;
   FillSpotOrder : (order_id: u64, fill_amount_vara: u128) -> u64;
 
-  // --- 1x–5x Stock & Perps Desk in gVARA (Perps Volume & Open Interest) ---
+  // --- 1xâ€“5x Stock & Perps Desk in gVARA (Perps Volume & Open Interest) ---
   OpenStockPosition : (
     ticker: str,
     is_long: bool,
@@ -98,3 +98,4 @@ service StonkBaseService {
   query GetPositionsCount : () -> u64;
   query GetVolumeStats : () -> VolumeStats;
 };
+

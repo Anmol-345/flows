@@ -1,4 +1,4 @@
-import { VARA_MAINNET_CONTRACTS } from './index.mjs';
+﻿import { VARA_MAINNET_CONTRACTS } from './index.mjs';
 
 /**
  * Agent #3: Autonomous SVG Badge, PnL Flex Card & Receipt Composer (ART)
@@ -36,7 +36,7 @@ export async function runArtAgent({
   <circle cx="90" cy="340" r="130" fill="#22c55e" fill-opacity="0.05"/>
 
   <text x="36" y="48" fill="#00ffc2" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="2">
-    GROWSTREAMS x VARA NETWORK // SOCIETY OF AI AGENTS (ACP)
+    FLOWS x VARA NETWORK // SOCIETY OF AI AGENTS (ACP)
   </text>
   <text x="36" y="84" fill="#ffffff" font-family="monospace" font-size="26" font-weight="bold">
     ${escapeXml(job?.title || '4-Agent Autonomous Execution Receipt')}
@@ -65,13 +65,13 @@ export async function runArtAgent({
     VERIFIED VARA MAINNET SAILS CONTRACTS (wss://rpc.vara.network)
   </text>
   <text x="54" y="300" fill="#d1fae5" font-family="monospace" font-size="11">
-    • StreamCore:   ${VARA_MAINNET_CONTRACTS.streamCore}
+    â€¢ StreamCore:   ${VARA_MAINNET_CONTRACTS.streamCore}
   </text>
   <text x="54" y="320" fill="#d1fae5" font-family="monospace" font-size="11">
-    • TokenVault:   ${VARA_MAINNET_CONTRACTS.tokenVault}
+    â€¢ TokenVault:   ${VARA_MAINNET_CONTRACTS.tokenVault}
   </text>
   <text x="54" y="340" fill="#d1fae5" font-family="monospace" font-size="11">
-    • SplitsRouter: ${VARA_MAINNET_CONTRACTS.splitsRouter}
+    â€¢ SplitsRouter: ${VARA_MAINNET_CONTRACTS.splitsRouter}
   </text>
 </svg>`;
 
@@ -81,7 +81,7 @@ export async function runArtAgent({
     agentType: 'ART',
     agentName: agent?.name || 'Art_Agent',
     agentWallet: agent?.agent_wallet,
-    cardTitle: `${job?.title || 'ACP Execution'} — On-Chain Flex Card`,
+    cardTitle: `${job?.title || 'ACP Execution'} â€” On-Chain Flex Card`,
     svgMarkup: svg,
     svgDataUri,
     badgeMetadata: {
@@ -104,3 +104,4 @@ function escapeXml(str) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;');
 }
+

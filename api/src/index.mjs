@@ -1,4 +1,4 @@
-import express from 'express';
+﻿import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -87,7 +87,7 @@ app.get('/', (req, res) => {
     return res.redirect('/api/protocol-overview/ui?tab=overview');
   }
   res.json({
-    name: 'GrowStreams V3 + Society of AI Agents (ACP) API',
+    name: 'FLOWS V3 + Society of AI Agents (ACP) API',
     version: '3.1.0',
     network: 'vara-mainnet (wss://rpc.vara.network)',
     description: 'Money streaming infrastructure & Autonomous Society of AI Agents on Vara Network',
@@ -144,7 +144,7 @@ async function start() {
     // Port 3000 is reserved for the Next.js frontend application (frontend/)
     if (String(process.env.BIND_PORT_3000 || 'false') === 'true' && Number(PORT) !== 3000) {
       const uiServer = app.listen(3000, '0.0.0.0', () => {
-        console.log(`[ui] GrowStreams API fallback also listening on http://localhost:3000`);
+        console.log(`[ui] FLOWS API fallback also listening on http://localhost:3000`);
       });
       uiServer.on('error', (e) => {
         console.warn(`[ui] Port 3000 note: ${e.message}`);
@@ -152,7 +152,7 @@ async function start() {
     }
 
     app.listen(PORT, '0.0.0.0', async () => {
-      console.log(`[api] GrowStreams V3 + Agent Society API listening on port ${PORT}`);
+      console.log(`[api] FLOWS V3 + Agent Society API listening on port ${PORT}`);
       console.log(`[api] http://localhost:${PORT}`);
 
       try {
@@ -204,3 +204,4 @@ async function start() {
 }
 
 start();
+

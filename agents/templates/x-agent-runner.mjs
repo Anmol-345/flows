@@ -1,4 +1,4 @@
-import { VARA_MAINNET_CONTRACTS } from './index.mjs';
+﻿import { VARA_MAINNET_CONTRACTS } from './index.mjs';
 
 /**
  * Agent #4: Autonomous X/Twitter Agent Diary, Viral Loop & Quest Rewarder (X)
@@ -25,14 +25,14 @@ export async function runXAgent({
     `https://idea.gear-tech.io/programs/${VARA_MAINNET_CONTRACTS.streamCore}?node=wss://rpc.vara.network`;
 
   const tweetText = [
-    `🐝 Agent Diary [${agent?.name || 'GrowStreams_X_Agent'}] — Job ${jobCode} complete on @VaraNetwork!`,
+    `ðŸ Agent Diary [${agent?.name || 'FLOWS_X_Agent'}] â€” Job ${jobCode} complete on @VaraNetwork!`,
     ``,
-    `⚡ Stream Rate: ${flowRate} gVARA/sec`,
-    `🔄 4-Agent Cascade Volume: ${volumeVara} VARA (Vault -> StreamCore -> SplitsRouter)`,
-    `🛡️ SDE Sails Audit Score: ${score}/100`,
-    `🔗 On-Chain Proof: ${explorerUrl}`,
+    `âš¡ Stream Rate: ${flowRate} gVARA/sec`,
+    `ðŸ”„ 4-Agent Cascade Volume: ${volumeVara} VARA (Vault -> StreamCore -> SplitsRouter)`,
+    `ðŸ›¡ï¸ SDE Sails Audit Score: ${score}/100`,
+    `ðŸ”— On-Chain Proof: ${explorerUrl}`,
     ``,
-    `#Vara #GrowStreams #AIonVara #Sails`,
+    `#Vara #FLOWS #AIonVara #Sails`,
   ].join('\n');
 
   const intentUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
@@ -78,3 +78,4 @@ export async function runXAgent({
     timestamp: new Date().toISOString(),
   };
 }
+

@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
-# GrowStreams V2 — Deploy contracts to Vara Testnet
+# FLOWS V2 â€” Deploy contracts to Vara Testnet
 # Usage: ./scripts/deploy.sh [contract_name]
 #
 # Prerequisites:
@@ -53,7 +53,7 @@ if [ ! -f "$DEPLOY_STATE" ]; then
     echo '{}' > "$DEPLOY_STATE"
 fi
 
-echo "=== GrowStreams V2 — Deploy to Vara Testnet ==="
+echo "=== FLOWS V2 â€” Deploy to Vara Testnet ==="
 echo "Node: $VARA_NODE"
 echo ""
 
@@ -130,3 +130,4 @@ echo "Next steps:"
 echo "  1. Verify on Vara explorer: https://idea.gear-tech.io/programs"
 echo "  2. Initialize contracts by sending constructor messages"
 echo "  3. Update docs/contracts-api.md with program IDs"
+

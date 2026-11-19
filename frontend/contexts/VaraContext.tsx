@@ -11,7 +11,7 @@ import { ReactNode } from 'react';
 const VARA_NODE_ENDPOINT = process.env.NEXT_PUBLIC_VARA_NODE_ADDRESS || 'wss://rpc.vara.network';
 // Override testnet for stability
 const ACTIVE_ENDPOINT = 'wss://rpc.vara.network';
-const APP_NAME = 'GrowStreams';
+const APP_NAME = 'Flows';
 
 function SimpleAlert({ alert, close }: AlertTemplateProps) {
   const colors: Record<string, string> = {

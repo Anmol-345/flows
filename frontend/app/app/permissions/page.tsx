@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { usePermissionActions, useUnifiedVaraAccount } from '@/hooks/useGrowStreams';
+import { usePermissionActions, useUnifiedVaraAccount } from '@/hooks/useFlows';
 import { toast } from 'sonner';
 import {
   Shield, KeyRound, ExternalLink, CheckCircle2, XCircle, Lock,

@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import { api, type StreamData } from '@/lib/growstreams-api';
-import { useUnifiedVaraAccount } from '@/hooks/useGrowStreams';
+import { api, type StreamData } from '@/lib/flows-api';
+import { useUnifiedVaraAccount } from '@/hooks/useFlows';
 import { fetchUserOnChainBalances } from '@/lib/vara-wallet';
 import {
   Waves, Vault, Coins, Activity, ArrowRight, RefreshCw,
@@ -107,7 +107,7 @@ export default function DashboardPage() {
 
       let localStreams: StreamData[] = [];
       try {
-        const raw = localStorage.getItem('growstreams_user_streams_v3');
+        const raw = localStorage.getItem('flows_user_streams_v3');
         if (raw) localStreams = JSON.parse(raw);
       } catch {}
 
@@ -516,7 +516,7 @@ export default function DashboardPage() {
                 <Trophy className="w-5 h-5" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold">Join the GrowStreams Builder & Trader Campaign</p>
+                <p className="text-sm font-semibold">Join the Flows Builder & Trader Campaign</p>
                 <p className="text-xs text-[#6B7280] mt-0.5">
                   Earn on-chain XP and USDC rewards for streaming, trading on Stonk CLOB, or contributing code
                 </p>

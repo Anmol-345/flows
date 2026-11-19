@@ -1,22 +1,22 @@
-# GrowStreams
+﻿# FLOWS
 
-**Vara-native Money Streaming Protocol — per-second token payments for payroll, subscriptions, bounties, grants, and revenue sharing.**
+**Vara-native Money Streaming Protocol â€” per-second token payments for payroll, subscriptions, bounties, grants, and revenue sharing.**
 
-[![Build](https://img.shields.io/badge/build-passing-10b981.svg)](https://growstreams.xyz)
+[![Build](https://img.shields.io/badge/build-passing-10b981.svg)](https://FLOWS.xyz)
 [![Vara Network](https://img.shields.io/badge/built%20on-Vara%20Network-00D4AA.svg)](https://vara.network)
 [![Next.js 15](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**Live**: [growstreams.xyz](https://growstreams.xyz) · **Docs**: [/developers](https://growstreams.xyz/developers) · **Testnet**: Vara Testnet
+**Live**: [FLOWS.xyz](https://FLOWS.xyz) Â· **Docs**: [/developers](https://FLOWS.xyz/developers) Â· **Testnet**: Vara Testnet
 
 ---
 
-## What is GrowStreams?
+## What is FLOWS?
 
-GrowStreams is a **generalized token streaming protocol** on Vara Network. It enables real-time, per-second movement of tokens between addresses — composable, token-agnostic, and production-ready.
+FLOWS is a **generalized token streaming protocol** on Vara Network. It enables real-time, per-second movement of tokens between addresses â€” composable, token-agnostic, and production-ready.
 
 ```
-Sender ──► StreamCore Contract ──► Receiver
+Sender â”€â”€â–º StreamCore Contract â”€â”€â–º Receiver
            (per-second flow)
            Buffer-secured
            Pause / Resume / Cancel
@@ -33,11 +33,11 @@ Sender ──► StreamCore Contract ──► Receiver
 
 ### Use Cases
 
-- **Streaming Payroll** — pay teams every second, not every month
-- **Subscriptions** — per-second SaaS billing with auto-cancel on insufficient buffer
-- **Bounties & Gigs** — time-locked streams released on completion
-- **Revenue Sharing** — automatic splits to contributors
-- **Vesting Streams** — token vesting that flows continuously
+- **Streaming Payroll** â€” pay teams every second, not every month
+- **Subscriptions** â€” per-second SaaS billing with auto-cancel on insufficient buffer
+- **Bounties & Gigs** â€” time-locked streams released on completion
+- **Revenue Sharing** â€” automatic splits to contributors
+- **Vesting Streams** â€” token vesting that flows continuously
 
 ---
 
@@ -60,46 +60,46 @@ Sender ──► StreamCore Contract ──► Receiver
 ## Project Structure
 
 ```
-growstreams/
-├── app/
-│   ├── page.tsx              # Landing page (hero, protocol, use cases, demo, CTA)
-│   ├── developers/           # SDK docs, contract addresses, quickstart
-│   ├── protocol/             # Stream lifecycle, security model, architecture
-│   ├── use-cases/            # Detailed use case breakdowns
-│   ├── ecosystem/            # Partner integrations + contact form
-│   ├── campaign/             # Web3 Contribution Challenge (leaderboard, rules)
-│   ├── dashboard/            # User dashboard
-│   ├── explore/              # Content discovery
-│   ├── upload/               # Content upload + derivative works
-│   └── api/                  # 40+ API routes
-│
-├── components/
-│   ├── v2/                   # 30+ custom UI components (see below)
-│   ├── campaign/             # Campaign-specific components
-│   ├── explore/              # Discovery UI
-│   ├── provn/                # Legacy Provn components
-│   └── ui/                   # shadcn/ui base components
-│
-├── hooks/                    # 13 custom React hooks
-├── contexts/                 # Vara wallet, follow state, video modal
-├── lib/                      # Utilities, API clients, campaign helpers
-├── contracts/                # Smart contract ABIs
-├── services/                 # Backend service layers
-└── utils/                    # Shared utility functions
+FLOWS/
+â”œâ”€â”€ app/
+â”‚   â”œâ”€â”€ page.tsx              # Landing page (hero, protocol, use cases, demo, CTA)
+â”‚   â”œâ”€â”€ developers/           # SDK docs, contract addresses, quickstart
+â”‚   â”œâ”€â”€ protocol/             # Stream lifecycle, security model, architecture
+â”‚   â”œâ”€â”€ use-cases/            # Detailed use case breakdowns
+â”‚   â”œâ”€â”€ ecosystem/            # Partner integrations + contact form
+â”‚   â”œâ”€â”€ campaign/             # Web3 Contribution Challenge (leaderboard, rules)
+â”‚   â”œâ”€â”€ dashboard/            # User dashboard
+â”‚   â”œâ”€â”€ explore/              # Content discovery
+â”‚   â”œâ”€â”€ upload/               # Content upload + derivative works
+â”‚   â””â”€â”€ api/                  # 40+ API routes
+â”‚
+â”œâ”€â”€ components/
+â”‚   â”œâ”€â”€ v2/                   # 30+ custom UI components (see below)
+â”‚   â”œâ”€â”€ campaign/             # Campaign-specific components
+â”‚   â”œâ”€â”€ explore/              # Discovery UI
+â”‚   â”œâ”€â”€ provn/                # Legacy Provn components
+â”‚   â””â”€â”€ ui/                   # shadcn/ui base components
+â”‚
+â”œâ”€â”€ hooks/                    # 13 custom React hooks
+â”œâ”€â”€ contexts/                 # Vara wallet, follow state, video modal
+â”œâ”€â”€ lib/                      # Utilities, API clients, campaign helpers
+â”œâ”€â”€ contracts/                # Smart contract ABIs
+â”œâ”€â”€ services/                 # Backend service layers
+â””â”€â”€ utils/                    # Shared utility functions
 ```
 
 ---
 
 ## UI Component Library (`components/v2/`)
 
-GrowStreams ships with **31 custom components** — each designed for the dark, protocol-grade aesthetic.
+FLOWS ships with **31 custom components** â€” each designed for the dark, protocol-grade aesthetic.
 
 ### Backgrounds & Effects
 
 | Component | Description |
 |-----------|-------------|
 | `aurora-background` | Animated radial gradient blobs with themed color variants (default/cyan/amber/purple) |
-| `gradient-blinds` | WebGL shader background using OGL — diagonal animated blinds |
+| `gradient-blinds` | WebGL shader background using OGL â€” diagonal animated blinds |
 | `animated-grid` | Subtle grid pattern background |
 | `dot-matrix` | Dot grid pattern with configurable color and density |
 | `flowing-particles` | Canvas particle system with velocity and proximity connections |
@@ -134,7 +134,7 @@ GrowStreams ships with **31 custom components** — each designed for the dark, 
 
 | Component | Description |
 |-----------|-------------|
-| `stream-visualizer` | Live stream card with animated dots flowing sender → receiver |
+| `stream-visualizer` | Live stream card with animated dots flowing sender â†’ receiver |
 | `streaming-counter` | Real-time ticking counter for streamed amounts |
 | `number-ticker` | Animated number counting up |
 | `count-up` | Simple count-up animation |
@@ -154,7 +154,7 @@ GrowStreams ships with **31 custom components** — each designed for the dark, 
 
 ### Landing Page (`/`)
 
-The landing page is built as a **content factory** — every section is designed to be screenshot/screen-recorded independently for social content.
+The landing page is built as a **content factory** â€” every section is designed to be screenshot/screen-recorded independently for social content.
 
 | Section | Key Elements |
 |---------|-------------|
@@ -171,10 +171,10 @@ The landing page is built as a **content factory** — every section is designed
 | Page | Purpose |
 |------|---------|
 | `/developers` | SDK reference, tab-based code switcher (TypeScript/Rust/CLI), contract addresses, quickstart guide |
-| `/protocol` | Stream lifecycle, contract architecture, security model — cyan aurora theme |
-| `/use-cases` | Detailed breakdowns per use case with alternating layouts — purple aurora theme |
-| `/ecosystem` | Partner types, current integrations, contact form — amber aurora theme |
-| `/campaign` | Web3 Contribution Challenge: wallet connect → GitHub verify → AI scoring → NFT mint |
+| `/protocol` | Stream lifecycle, contract architecture, security model â€” cyan aurora theme |
+| `/use-cases` | Detailed breakdowns per use case with alternating layouts â€” purple aurora theme |
+| `/ecosystem` | Partner types, current integrations, contact form â€” amber aurora theme |
+| `/campaign` | Web3 Contribution Challenge: wallet connect â†’ GitHub verify â†’ AI scoring â†’ NFT mint |
 | `/campaign/leaderboard` | Real-time rankings with category filters and prize breakdown |
 | `/campaign/rules` | Eligibility, anti-gaming rules, scoring system, FAQ |
 
@@ -192,11 +192,11 @@ npm >= 9.8
 ### Install & Run
 
 ```bash
-git clone https://github.com/growstreams/growstreams.git
-cd growstreams
+git clone https://github.com/FLOWS/FLOWS.git
+cd FLOWS
 npm install
 cp env.example .env.local   # fill in your credentials
-npm run dev                  # → http://localhost:3000
+npm run dev                  # â†’ http://localhost:3000
 ```
 
 ### Environment Variables
@@ -242,7 +242,7 @@ vercel --prod
 
 ## API Routes
 
-### Streaming Protocol (placeholder — contracts on Vara)
+### Streaming Protocol (placeholder â€” contracts on Vara)
 
 The streaming protocol lives on-chain via Vara smart contracts. The frontend interacts directly through `@gear-js/api` and `sails-js`.
 
@@ -277,15 +277,15 @@ Every frontend section is designed as a **standalone visual asset** for marketin
 
 | Asset Type | Source | Content Angle |
 |------------|--------|---------------|
-| **GIF / short clip** | TrueFocus hero headline | Hook — "What if you got paid every second?" |
-| **GIF** | Live stream preview with ticking counter | Product demo — "Watch tokens flow in real-time" |
-| **Screenshot** | Protocol status bento cards | Credibility — "Here's exactly where we stand" |
-| **Screen recording** | Demo tab switching (4 scenarios) | Walkthrough — "One protocol, four use cases" |
+| **GIF / short clip** | TrueFocus hero headline | Hook â€” "What if you got paid every second?" |
+| **GIF** | Live stream preview with ticking counter | Product demo â€” "Watch tokens flow in real-time" |
+| **Screenshot** | Protocol status bento cards | Credibility â€” "Here's exactly where we stand" |
+| **Screen recording** | Demo tab switching (4 scenarios) | Walkthrough â€” "One protocol, four use cases" |
 | **Screenshot per card** | Use case cards with micro-tags | Explainer series (5 posts) |
 | **Scrolling capture** | How It Works timeline + CodeTyping | Dev education thread |
-| **Screenshot** | Contract address sidebar | Technical trust — "Verify on-chain" |
+| **Screenshot** | Contract address sidebar | Technical trust â€” "Verify on-chain" |
 | **GIF** | SpotlightCard mouse-follow glow | Aesthetic / design community content |
-| **Screenshot** | Footer trust strip | Trust — "Open source. Audit-ready. 3 pilot slots left." |
+| **Screenshot** | Footer trust strip | Trust â€” "Open source. Audit-ready. 3 pilot slots left." |
 | **Full scroll recording** | Entire landing page | Brand video with voiceover |
 
 ---
@@ -296,10 +296,10 @@ The platform includes a **Web3 Contribution Challenge** for developer engagement
 
 1. **Connect** Vara wallet (Polkadot.js / SubWallet)
 2. **Verify** GitHub ownership via Reclaim Protocol (zero-knowledge proof)
-3. **Analyze** — AI scores contributions across impact, quality, collaboration, security (0–100)
-4. **Mint** — score becomes an NFT badge on Vara Network
-5. **Share** — one-click share to X/Twitter with pre-filled template
-6. **Compete** — live leaderboard with prize pool
+3. **Analyze** â€” AI scores contributions across impact, quality, collaboration, security (0â€“100)
+4. **Mint** â€” score becomes an NFT badge on Vara Network
+5. **Share** â€” one-click share to X/Twitter with pre-filled template
+6. **Compete** â€” live leaderboard with prize pool
 
 See `CAMPAIGN_README.md` for implementation details and `RECLAIM_SETUP.md` for Reclaim Protocol configuration.
 
@@ -317,6 +317,7 @@ See `CAMPAIGN_README.md` for implementation details and `RECLAIM_SETUP.md` for R
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT â€” see [LICENSE](LICENSE).
 
 **Built on [Vara Network](https://vara.network).**
+

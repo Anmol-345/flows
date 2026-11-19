@@ -1,5 +1,5 @@
 import type {
-  GrowStreamsConfig,
+  FlowsConfig,
   HealthResponse,
   StreamConfig,
   Stream,
@@ -14,11 +14,11 @@ import type {
   PayloadResult,
 } from './types.js';
 
-export class GrowStreams {
+export class Flows {
   private baseUrl: string;
   private timeout: number;
 
-  constructor(config: GrowStreamsConfig) {
+  constructor(config: FlowsConfig) {
     this.baseUrl = config.baseUrl.replace(/\/$/, '');
     this.timeout = config.timeout || 30000;
   }

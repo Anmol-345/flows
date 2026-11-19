@@ -713,7 +713,7 @@ export default function HomePage() {
                   <div className="relative bg-gradient-to-br from-provn-surface to-provn-surface-2 border-2 border-provn-accent/50 rounded-2xl p-8 backdrop-blur-sm">
                     <div className="text-center mb-8">
                       <div className="flex items-center justify-center mb-6">
-                        <Image src="/logo.png" alt="Logo" width={64} height={64} className="rounded-xl" />
+                        {/* Logo removed */}
                       </div>
                       <div className="text-provn-success font-semibold text-lg">Zero Platform Fees</div>
                       <div className="text-xs text-provn-muted mt-1">First usage free, then {(ourRateStandard*100).toFixed(2).replace(/\.00$/,'')}% thereafter ({formatCurrency(baseRevenue*ourRateStandard)} on ${baseRevenue})</div>
@@ -1188,14 +1188,7 @@ export default function HomePage() {
           >
             {/* Dominant Logo */}
             <div className="flex items-center justify-center">
-              <Image
-                src="/logo.png"
-                alt="Logo"
-                width={200}
-                height={200}
-                className="h-24 w-auto md:h-28 lg:h-32"
-                priority
-              />
+              {/* Logo removed */}
             </div>
 
             {/* Bold Statement */}
@@ -1222,7 +1215,7 @@ export default function HomePage() {
 
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8 text-provn-muted">
                 <div className="text-sm">
-                  2024 Growstreams — All rights reserved
+                  2024 Flows — All rights reserved
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <span>Crafted for</span>
@@ -1232,7 +1225,7 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     className="text-provn-accent font-semibold hover:text-provn-accent/80 transition-colors cursor-pointer"
                   >
-                    GrowStreams
+                    Flows
                   </a>
                   
                 </div>

@@ -1,4 +1,4 @@
-import { PromisePool } from "@supercharge/promise-pool";
+﻿import { PromisePool } from "@supercharge/promise-pool";
 import type { FetchOptions, SimpleAdapter } from "../../adapters/types";
 import { CHAIN } from "../../helpers/chains";
 import { METRIC } from "../../helpers/metrics";
@@ -6,11 +6,11 @@ import { postURL } from "../../utils/fetchURL";
 
 const VARA_RPC = "https://rpc.vara.network";
 
-// Vara Mainnet program IDs from `deploy-state.json` in https://github.com/Satyam-10124/growstreams-v3
-// GrowStreams Spot CLOB Orderbook (`GROWSTREAMS_ORDERBOOK`): On-chain Central Limit Order Book DEX (`PlaceSpotOrder`, `FillSpotOrder`, `GetSpotTrade`)
-const GROWSTREAMS_ORDERBOOK = "0x2c1dd07810480a34b7369fbf0ff0c97651c6db1f26ffc5eaff6490d6b20263cf";
-// GrowStreams 5x RWA Perps Desk (`GROWSTREAMS_PERPS_DESK`): On-chain 1x–5x Leveraged RWA Perpetuals & Stock Desk (`OpenStockPosition`, `CloseStockPosition`, `GetPosition`)
-const GROWSTREAMS_PERPS_DESK = "0x8073da7aa8e51624ef4c1d41a8e22065cfe8b9ff9e6d5b7f969158397465da81";
+// Vara Mainnet program IDs from `deploy-state.json` in https://github.com/Satyam-10124/FLOWS-v3
+// FLOWS Spot CLOB Orderbook (`FLOWS_ORDERBOOK`): On-chain Central Limit Order Book DEX (`PlaceSpotOrder`, `FillSpotOrder`, `GetSpotTrade`)
+const FLOWS_ORDERBOOK = "0x2c1dd07810480a34b7369fbf0ff0c97651c6db1f26ffc5eaff6490d6b20263cf";
+// FLOWS 5x RWA Perps Desk (`FLOWS_PERPS_DESK`): On-chain 1xâ€“5x Leveraged RWA Perpetuals & Stock Desk (`OpenStockPosition`, `CloseStockPosition`, `GetPosition`)
+const FLOWS_PERPS_DESK = "0x8073da7aa8e51624ef4c1d41a8e22065cfe8b9ff9e6d5b7f969158397465da81";
 
 const ZERO_ACCOUNT = "0x" + "0".repeat(64);
 // 750B gas units: Vara Mainnet read-only block gas allowance for `gear_calculateReplyForHandle` state queries (from `api/deploy-stonkbase-vara-dex-and-perps.mjs`).
@@ -180,14 +180,14 @@ function decodeSpotTrade(raw: Buffer): SpotTradeRecord | null {
 }
 
 /**
- * Fetches and caches an immutable `SpotTradeRecord` by `id` from `GROWSTREAMS_ORDERBOOK`, evicting failed reads.
+ * Fetches and caches an immutable `SpotTradeRecord` by `id` from `FLOWS_ORDERBOOK`, evicting failed reads.
  */
 function getSpotTrade(id: number): Promise<SpotTradeRecord | null> {
   let p = spotTradeCache.get(id);
   if (!p) {
     const idBuf = Buffer.alloc(8);
     idBuf.writeBigUInt64LE(BigInt(id), 0);
-    p = rpcCall(GROWSTREAMS_ORDERBOOK, "0x" + Buffer.concat([ROUTE_GET_SPOT_TRADE, idBuf]).toString("hex"))
+    p = rpcCall(FLOWS_ORDERBOOK, "0x" + Buffer.concat([ROUTE_GET_SPOT_TRADE, idBuf]).toString("hex"))
       .then(decodeSpotTrade)
       .catch((e) => {
         spotTradeCache.delete(id);
@@ -267,14 +267,14 @@ function decodePosition(raw: Buffer): StockPositionRecord | null {
 }
 
 /**
- * Fetches a `StockPositionRecord` by `id` from `GROWSTREAMS_PERPS_DESK`, retaining only terminal closed positions (`!isOpen`) in cache.
+ * Fetches a `StockPositionRecord` by `id` from `FLOWS_PERPS_DESK`, retaining only terminal closed positions (`!isOpen`) in cache.
  */
 function getPosition(id: number): Promise<StockPositionRecord | null> {
   let p = closedPositionCache.get(id);
   if (!p) {
     const idBuf = Buffer.alloc(8);
     idBuf.writeBigUInt64LE(BigInt(id), 0);
-    p = rpcCall(GROWSTREAMS_PERPS_DESK, "0x" + Buffer.concat([ROUTE_GET_POSITION, idBuf]).toString("hex"))
+    p = rpcCall(FLOWS_PERPS_DESK, "0x" + Buffer.concat([ROUTE_GET_POSITION, idBuf]).toString("hex"))
       .then((raw) => {
         const decoded = decodePosition(raw);
         if (!decoded || decoded.isOpen) {
@@ -325,7 +325,7 @@ async function firstPositionOpenedAtOrAfter(ts: number, lastId: number): Promise
 }
 
 /**
- * Computes GrowStreams daily DEX & Perps volume, open interest, swap fees, protocol revenue, and maker/LP supply-side revenue across `GROWSTREAMS_ORDERBOOK` and `GROWSTREAMS_PERPS_DESK`.
+ * Computes FLOWS daily DEX & Perps volume, open interest, swap fees, protocol revenue, and maker/LP supply-side revenue across `FLOWS_ORDERBOOK` and `FLOWS_PERPS_DESK`.
  */
 const fetch = async (options: FetchOptions) => {
   const dailyVolume = options.createBalances();
@@ -335,8 +335,8 @@ const fetch = async (options: FetchOptions) => {
   const openInterestAtEnd = options.createBalances();
 
   const [rawTradesCount, rawPositionsCount] = await Promise.all([
-    rpcCall(GROWSTREAMS_ORDERBOOK, "0x" + ROUTE_SPOT_TRADES_COUNT.toString("hex")),
-    rpcCall(GROWSTREAMS_PERPS_DESK, "0x" + ROUTE_POSITIONS_COUNT.toString("hex")),
+    rpcCall(FLOWS_ORDERBOOK, "0x" + ROUTE_SPOT_TRADES_COUNT.toString("hex")),
+    rpcCall(FLOWS_PERPS_DESK, "0x" + ROUTE_POSITIONS_COUNT.toString("hex")),
   ]);
   const totalTrades = u64LE(rawTradesCount, ROUTE_SPOT_TRADES_COUNT.length);
   const totalPositions = u64LE(rawPositionsCount, ROUTE_POSITIONS_COUNT.length);
@@ -453,9 +453,9 @@ const fetch = async (options: FetchOptions) => {
 
 const methodology = {
   Volume:
-    "Sum of matched maker/taker Spot CLOB Orderbook fills on GrowStreams Orderbook (0x2c1dd078...) and 1x-5x leveraged RWA perpetuals positions opened/closed on GrowStreams Perps Desk (0x8073da7a...) on Vara Mainnet.",
+    "Sum of matched maker/taker Spot CLOB Orderbook fills on FLOWS Orderbook (0x2c1dd078...) and 1x-5x leveraged RWA perpetuals positions opened/closed on FLOWS Perps Desk (0x8073da7a...) on Vara Mainnet.",
   OpenInterest:
-    "Sum of active VARA-denominated notional across leveraged RWA perpetual positions on GrowStreams Perps Desk (0x8073da7a...) that remain open at the end of the window.",
+    "Sum of active VARA-denominated notional across leveraged RWA perpetual positions on FLOWS Perps Desk (0x8073da7a...) that remain open at the end of the window.",
   Fees: "0.30% (30 bps) fee paid by takers on Spot CLOB Orderbook fills (0.25% maker/LP rebate + 0.05% protocol fee) and 0.10% (10 bps) execution fee paid by traders on RWA perpetual opens and closes.",
   Revenue:
     "0.05% protocol share of Spot CLOB Orderbook fills plus 0.10% execution fee on RWA perpetual positions.",
@@ -498,3 +498,4 @@ const adapter: SimpleAdapter = {
 };
 
 export default adapter;
+

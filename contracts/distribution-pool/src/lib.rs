@@ -1,6 +1,6 @@
-#![no_std]
+﻿#![no_std]
 
-//! Distribution Pool — Superfluid-style GDA (General Distribution Agreement) for GrowStreams.
+//! Distribution Pool â€” Superfluid-style GDA (General Distribution Agreement) for FLOWS.
 //!
 //! A pool holds Super Token units assigned to members. Two distribution modes:
 //!
@@ -9,7 +9,7 @@
 //! `amount / total_units`. Each member can `claim()` their owed share at any time:
 //!   owed = (settled_value_per_unit - member_settled_snapshot) * member_units
 //!
-//! This is O(1) gas regardless of member count — identical to Superfluid's IDA.
+//! This is O(1) gas regardless of member count â€” identical to Superfluid's IDA.
 //!
 //! ## Streaming Distribution
 //! Admin opens a stream TO the pool via stream-core. The pool contract is registered
@@ -25,7 +25,7 @@
 //!   - `set_inflow_rate` calls `UpdateFlow` on the super token to register the pool's stream
 //!
 //! ## Design choices matching Superfluid GDA
-//! - Units are unsigned integers (not percentages) — proportional shares
+//! - Units are unsigned integers (not percentages) â€” proportional shares
 //! - Admin manages unit allocation; members cannot self-assign units
 //! - A member with 0 units receives nothing
 //! - Precision: values are scaled by PRECISION (1e18) to avoid integer truncation
@@ -40,7 +40,7 @@ use gstd::msg as gstd_msg;
 use parity_scale_codec::Decode as ScaleDecode;
 
 // ---------------------------------------------------------------------------
-// Precision scalar — prevents truncation in per-unit index arithmetic
+// Precision scalar â€” prevents truncation in per-unit index arithmetic
 // ---------------------------------------------------------------------------
 const PRECISION: u128 = 1_000_000_000_000_000_000u128; // 1e18
 
@@ -89,7 +89,7 @@ fn decode_result_ok(reply_bytes: &[u8]) -> bool {
     false
 }
 
-/// Call super-token Transfer (pool → member).
+/// Call super-token Transfer (pool â†’ member).
 async fn super_token_transfer(super_token: ActorId, to: ActorId, amount: u128) -> bool {
     let payload = encode_call("SuperTokenService", "Transfer", (to, amount));
     let reply = match gstd_msg::send_bytes_for_reply(super_token, payload, 0, 0) {
@@ -99,7 +99,7 @@ async fn super_token_transfer(super_token: ActorId, to: ActorId, amount: u128) -
     decode_bool_reply(reply.as_slice())
 }
 
-/// Call super-token TransferFrom (admin → pool).
+/// Call super-token TransferFrom (admin â†’ pool).
 async fn super_token_transfer_from(
     super_token: ActorId,
     from: ActorId,
@@ -114,7 +114,7 @@ async fn super_token_transfer_from(
     decode_bool_reply(reply.as_slice())
 }
 
-/// Call super-token UpdateFlow — used by set_inflow_rate to register pool's stream.
+/// Call super-token UpdateFlow â€” used by set_inflow_rate to register pool's stream.
 async fn super_token_update_flow(
     super_token: ActorId,
     sender: ActorId,
@@ -164,7 +164,7 @@ pub struct PoolState {
     pub super_token: ActorId,
     /// Total units across all members.
     pub total_units: u128,
-    /// Scaled index: total tokens distributed per unit × PRECISION.
+    /// Scaled index: total tokens distributed per unit Ã— PRECISION.
     /// Advances with every instant distribution and every streaming tick.
     pub settled_value_per_unit: u128,
     /// Per-second inflow rate (from an active stream into this pool).
@@ -501,7 +501,7 @@ impl PoolService {
         Ok(claimable)
     }
 
-    /// Claim on behalf of a member (permissionless — anyone can trigger).
+    /// Claim on behalf of a member (permissionless â€” anyone can trigger).
     /// Useful for keepers to push distributions to inactive members.
     #[export]
     pub async fn claim_for(
@@ -612,3 +612,4 @@ impl PoolService {
         }
     }
 }
+

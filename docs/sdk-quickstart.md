@@ -1,11 +1,11 @@
-# GrowStreams SDK — Quick Start Guide
+﻿# FLOWS SDK â€” Quick Start Guide
 
 > **Status: SDK is under development. This document describes the target API.**
 
 ## Installation
 
 ```bash
-npm install @growstreams/sdk
+npm install @FLOWS/sdk
 ```
 
 ## Prerequisites
@@ -17,9 +17,9 @@ npm install @growstreams/sdk
 ## Setup
 
 ```typescript
-import { GrowStreams } from '@growstreams/sdk';
+import { FLOWS } from '@FLOWS/sdk';
 
-const gs = new GrowStreams({
+const gs = new FLOWS({
   network: 'vara-testnet',  // or 'vara-mainnet', 'vara-eth-testnet'
   wallet: walletProvider,    // MetaMask, Polkadot.js, etc.
 });
@@ -104,7 +104,7 @@ console.log('Incoming streams:', received.length);
 ## Real-Time Balance (Frontend)
 
 ```typescript
-import { useStreamBalance } from '@growstreams/sdk/react';
+import { useStreamBalance } from '@FLOWS/sdk/react';
 
 function StreamBalance({ streamId }) {
   const { balance, flowRate, status } = useStreamBalance(streamId);
@@ -122,7 +122,7 @@ function StreamBalance({ streamId }) {
 ## Flow Rate Calculator
 
 ```typescript
-import { calculateFlowRate } from '@growstreams/sdk';
+import { calculateFlowRate } from '@FLOWS/sdk';
 
 // Convert human-readable amounts to flow rates
 const rate = calculateFlowRate({
@@ -159,6 +159,7 @@ try {
 
 ## Next Steps
 
-- [Protocol Spec](./protocol.md) — understand how streams work under the hood
-- [Contract API](./contracts-api.md) — direct contract interaction reference
-- [Security Model](./security.md) — buffer/solvency model explained
+- [Protocol Spec](./protocol.md) â€” understand how streams work under the hood
+- [Contract API](./contracts-api.md) â€” direct contract interaction reference
+- [Security Model](./security.md) â€” buffer/solvency model explained
+

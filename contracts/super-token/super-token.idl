@@ -1,7 +1,7 @@
-// GrowStreams — Super Token IDL
+﻿// FLOWS â€” Super Token IDL
 // Superfluid-style streaming VFT with buffered, flow-aware accrual:
-// receiver gains min(rate × elapsed, buffer); buffer is escrowed from the sender
-// so Σ balance_of ≤ total_supply (no phantom minting).
+// receiver gains min(rate Ã— elapsed, buffer); buffer is escrowed from the sender
+// so Î£ balance_of â‰¤ total_supply (no phantom minting).
 
 type AccountState = struct {
   static_balance: u128,
@@ -87,3 +87,4 @@ service SuperTokenService {
     };
   }
 };
+

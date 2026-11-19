@@ -7,7 +7,7 @@ import {
   useWrapperActions,
   useGrowTokenActions,
   useUnifiedVaraAccount,
-} from '@/hooks/useGrowStreams';
+} from '@/hooks/useFlows';
 import {
   MAINNET_CONTRACTS,
   fetchUserOnChainBalances,

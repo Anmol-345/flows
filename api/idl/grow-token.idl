@@ -1,5 +1,5 @@
-// GrowStreams — GROW Fungible Token IDL
-// Standard VFT (Vara Fungible Token) for the GrowStreams protocol
+﻿// FLOWS â€” GROW Fungible Token IDL
+// Standard VFT (Vara Fungible Token) for the FLOWS protocol
 
 type TokenMeta = struct {
   name: str,
@@ -30,3 +30,4 @@ service VftService {
   query Decimals : () -> u8;
   query GetMeta : () -> TokenMeta;
 };
+

@@ -1,7 +1,6 @@
-"use client"
+﻿"use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Github, Twitter, ArrowUpRight, Mail, MessageCircle, Shield, Zap } from "lucide-react"
 import { MagnetButton } from "@/components/v2/magnet-button"
 
@@ -26,9 +25,9 @@ const footerLinks: Record<string, { label: string; href: string; external?: bool
   ],
   Community: [
     { label: "Twitter / X", href: "https://x.com/GrowwStreams", external: true },
-    { label: "GitHub", href: "https://github.com/BlockXAI/GrowStreams_Backend/blob/main/PLAN.md", external: true },
+    { label: "GitHub", href: "https://github.com/BlockXAI/FLOWS_Backend/blob/main/PLAN.md", external: true },
     { label: "Telegram", href: "https://t.me/hypervara", external: true },
-    { label: "Contact Us", href: "mailto:hello@growstreams.xyz", external: true },
+    { label: "Contact Us", href: "mailto:hello@FLOWS.xyz", external: true },
   ],
 }
 
@@ -63,7 +62,9 @@ export function FooterV2() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Image src="/logo.png" alt="GrowStreams" width={140} height={32} className="h-8 w-auto mb-4" />
+            <div className="flex items-center gap-2 mb-4">
+              <span className="font-bold text-xl tracking-tight">Flows</span>
+            </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               The money streaming protocol on Vara. Stream tokens by the second.
             </p>
@@ -80,7 +81,7 @@ export function FooterV2() {
               </MagnetButton>
               <MagnetButton strength={0.2} radius={100}>
                 <a
-                  href="https://github.com/BlockXAI/GrowStreams_Backend"
+                  href="https://github.com/BlockXAI/FLOWS_Backend"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2.5 rounded-lg bg-provn-surface hover:bg-provn-surface-2 text-provn-muted hover:text-provn-text transition-colors block"
@@ -90,7 +91,7 @@ export function FooterV2() {
               </MagnetButton>
               <MagnetButton strength={0.2} radius={100}>
                 <a
-                  href="mailto:hello@growstreams.xyz"
+                  href="mailto:hello@FLOWS.xyz"
                   className="p-2.5 rounded-lg bg-provn-surface hover:bg-provn-surface-2 text-provn-muted hover:text-provn-text transition-colors block"
                 >
                   <Mail className="w-4 h-4" />
@@ -134,12 +135,12 @@ export function FooterV2() {
         <div className="mt-12 pt-8 border-t border-provn-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
             <p className="text-xs text-provn-muted">
-              &copy; {new Date().getFullYear()} GrowStreams. Built on Vara Network.
+              &copy; {new Date().getFullYear()} Flows. Built on Vara Network.
             </p>
             <div className="flex items-center gap-4 text-xs text-provn-muted">
               <Link href="/protocol#security" className="hover:text-provn-text transition-colors">Security</Link>
-              <span className="text-provn-border">·</span>
-              <a href="mailto:hello@growstreams.xyz" className="hover:text-provn-text transition-colors">Contact</a>
+              <span className="text-provn-border">Â·</span>
+              <a href="mailto:hello@FLOWS.xyz" className="hover:text-provn-text transition-colors">Contact</a>
             </div>
           </div>
           <div className="flex items-center gap-2 text-xs text-provn-muted">
@@ -154,3 +155,4 @@ export function FooterV2() {
     </footer>
   )
 }
+

@@ -1,4 +1,4 @@
-const WebSocket = require('ws');
+﻿const WebSocket = require('ws');
 
 const VARA_RPC = 'wss://rpc.vara.network';
 const ORIGIN = '0xd4a5fb8326bb9d4dd6fa34e60fc5c2f18e8b677b39908e78907df89b0948bd67';
@@ -177,7 +177,7 @@ module.exports = async (req, res) => {
     const tvlUsd = Number((tvlVara * VARA_USD).toFixed(2));
 
     res.status(200).json({
-      protocol: 'growstreams-v3',
+      protocol: 'FLOWS-v3',
       chain: 'vara',
       rpcSource: 'wss://rpc.vara.network (100% Direct Sails Smart Contract Queries)',
       timestamp: Math.floor(Date.now() / 1000),
@@ -216,3 +216,4 @@ module.exports = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+

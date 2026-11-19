@@ -1,4 +1,4 @@
-// GrowStreams V3 — AgentRegistry & ACP (Agent Commerce Protocol) Sails IDL
+﻿// FLOWS V3 â€” AgentRegistry & ACP (Agent Commerce Protocol) Sails IDL
 // Built with gear-foundation/vara-skills patterns:
 // 1. Actor-Model 4-Agent Suite Spawner (TRADER, SDE, ART, X)
 // 2. Inter-Agent ACP Job Escrow & Multi-Hop Revenue Routing
@@ -171,3 +171,4 @@ service AgentSocietyService {
     };
   }
 };
+

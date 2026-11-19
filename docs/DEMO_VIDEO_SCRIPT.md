@@ -1,12 +1,12 @@
-# GrowStreams Demo Video Script (7 Minutes)
+﻿# FLOWS Demo Video Script (7 Minutes)
 
 **Target Duration:** 7:00 minutes  
 **Audience:** Developers, Crypto Communities, VCs, Web3 Projects  
-**Goal:** Demonstrate GrowStreams as the first real-time native VARA streaming protocol on Vara Network
+**Goal:** Demonstrate FLOWS as the first real-time native VARA streaming protocol on Vara Network
 
 ---
 
-## 🎬 SECTION 1: Problem & Solution (0:00 - 1:15)
+## ðŸŽ¬ SECTION 1: Problem & Solution (0:00 - 1:15)
 
 ### [0:00 - 0:30] **Opening Hook & Problem Statement**
 
@@ -19,33 +19,33 @@
 > "In Web3, we talk about instant payments and permissionless finance. But look at reality. Developers wait weeks for bounties. Contributors chase down payments. Projects manually distribute rewards. Every single transaction requires someone to click 'send'."
 
 **ON SCREEN TEXT:**
-- "⏳ Bounties: 2-4 weeks to pay"
-- "💸 Manual distribution = costly"
-- "🔒 No streaming = no real-time value flow"
+- "â³ Bounties: 2-4 weeks to pay"
+- "ðŸ’¸ Manual distribution = costly"
+- "ðŸ”’ No streaming = no real-time value flow"
 
 ---
 
 ### [0:30 - 1:15] **Solution Introduction**
 
 **VISUAL:**
-- GrowStreams logo animation
+- FLOWS logo animation
 - Show money flowing continuously like a stream
 - Live counter showing VARA streaming per second
 
 **NARRATION:**
-> "GrowStreams changes this. We've built the first native VARA streaming protocol on Vara Network. Instead of one-time payments, we enable continuous, per-second token streams. You contribute? You get paid. In real-time. Every second."
+> "FLOWS changes this. We've built the first native VARA streaming protocol on Vara Network. Instead of one-time payments, we enable continuous, per-second token streams. You contribute? You get paid. In real-time. Every second."
 
 **ON SCREEN TEXT:**
-- "✨ GrowStreams: Real-Time Token Streaming"
-- "🌊 Stream VARA per second"
-- "⚡ No delays. No manual sends. Just flow."
+- "âœ¨ FLOWS: Real-Time Token Streaming"
+- "ðŸŒŠ Stream VARA per second"
+- "âš¡ No delays. No manual sends. Just flow."
 
 **CALL OUT:**
 > "This isn't just theory. It's live. Let me show you what we've built."
 
 ---
 
-## 🏗️ SECTION 2: What We've Built - Brief Progress (1:15 - 2:00)
+## ðŸ—ï¸ SECTION 2: What We've Built - Brief Progress (1:15 - 2:00)
 
 ### [1:15 - 2:00] **Technical Achievement Overview**
 
@@ -61,11 +61,11 @@
 > "In the past weeks, we've completed full native VARA integration. Here's what's live: TokenVault contract - holds real VARA, not IOUs. StreamCore contract - manages streams with per-second precision. Cross-contract messaging - these contracts talk to each other seamlessly. We've deployed, wired, and tested everything on Vara testnet."
 
 **ON SCREEN TEXT:**
-- ✅ TokenVault (Real VARA Escrow)
-- ✅ StreamCore (Per-Second Streaming)
-- ✅ Cross-Contract Calls (SCALE encoded)
-- ✅ Native VARA Deposits & Withdrawals
-- ✅ E2E Tests Passing
+- âœ… TokenVault (Real VARA Escrow)
+- âœ… StreamCore (Per-Second Streaming)
+- âœ… Cross-Contract Calls (SCALE encoded)
+- âœ… Native VARA Deposits & Withdrawals
+- âœ… E2E Tests Passing
 
 **VISUAL TRANSITION:**
 - Architecture diagram zooms out
@@ -73,32 +73,32 @@
 
 ---
 
-## 📊 SECTION 3: Tokenomics & Flow (2:00 - 3:30)
+## ðŸ“Š SECTION 3: Tokenomics & Flow (2:00 - 3:30)
 
 ### [2:00 - 2:30] **The Flow Architecture**
 
 **VISUAL:**
 - Animated flow diagram:
   1. User deposits USDC
-  2. DEX swap → VARA
+  2. DEX swap â†’ VARA
   3. VARA locked in vault
   4. Stream created
   5. Per-second accrual
-  6. Withdraw → back to USDC if needed
+  6. Withdraw â†’ back to USDC if needed
 
 **NARRATION:**
 > "Here's how the full flow works. A project wants to stream payments to contributors. They can deposit USDC - we handle the swap to VARA using DEX integration. The VARA gets locked in our TokenVault. Now they create a stream: set the recipient, set the flow rate - let's say 10 VARA per hour. From that moment, the stream is live."
 
 **ON SCREEN TEXT:**
-- "1️⃣ Deposit: Any token (USDC, ETH, VARA)"
-- "2️⃣ Convert: Auto-swap to VARA"
-- "3️⃣ Lock: Secured in TokenVault"
-- "4️⃣ Stream: Per-second distribution"
-- "5️⃣ Withdraw: Real-time, anytime"
+- "1ï¸âƒ£ Deposit: Any token (USDC, ETH, VARA)"
+- "2ï¸âƒ£ Convert: Auto-swap to VARA"
+- "3ï¸âƒ£ Lock: Secured in TokenVault"
+- "4ï¸âƒ£ Stream: Per-second distribution"
+- "5ï¸âƒ£ Withdraw: Real-time, anytime"
 
 ---
 
-### [2:30 - 3:30] **Live Example: USDC → VARA → Streaming**
+### [2:30 - 3:30] **Live Example: USDC â†’ VARA â†’ Streaming**
 
 **VISUAL:**
 - Split screen:
@@ -130,7 +130,7 @@
 
 ---
 
-## 🔧 SECTION 4: SDK & On-Chain Identity (3:30 - 4:45)
+## ðŸ”§ SECTION 4: SDK & On-Chain Identity (3:30 - 4:45)
 
 ### [3:30 - 4:15] **Developer Experience: SDK Integration**
 
@@ -144,10 +144,10 @@
 
 **ON SCREEN CODE:**
 ```javascript
-import { GrowStreamsSDK } from '@growstreams/sdk';
+import { FLOWSSDK } from '@FLOWS/sdk';
 
 // Initialize with your account
-const sdk = new GrowStreamsSDK({
+const sdk = new FLOWSSDK({
   account: YOUR_VARA_ACCOUNT,
   network: 'vara-testnet'
 });
@@ -174,7 +174,7 @@ await sdk.streams.withdraw(streamId);
 ### [4:15 - 4:45] **On-Chain Identity & Landing Page**
 
 **VISUAL:**
-- Show GrowStreams landing page mockup
+- Show FLOWS landing page mockup
 - User connects wallet
 - Identity verification flow
 - Shows "Connected: @alice_dev"
@@ -187,19 +187,19 @@ await sdk.streams.withdraw(streamId);
   - "Connect Wallet" button
   - "Link Twitter" button
   - "Link GitHub" button
-  - After linking: "✅ @alice_dev (0x1234...5678)"
+  - After linking: "âœ… @alice_dev (0x1234...5678)"
 
 **VISUAL TRANSITION:**
 - Identity card zooms into social handle icon
 
 ---
 
-## 🌐 SECTION 5: Social Handles & Community Control (4:45 - 5:30)
+## ðŸŒ SECTION 5: Social Handles & Community Control (4:45 - 5:30)
 
 ### [4:45 - 5:30] **Social Integration: X (Twitter) & Community**
 
 **VISUAL:**
-- Twitter profile with GrowStreams badge
+- Twitter profile with FLOWS badge
 - Community dashboard showing active streams
 - Real-time feed of "X started streaming to Y"
 
@@ -210,9 +210,9 @@ await sdk.streams.withdraw(streamId);
 - Twitter profile mockup:
   ```
   @alice_dev
-  💧 Streaming: 15 VARA/day to 5 contributors
-  📊 Total Streamed: 1,250 VARA
-  ⭐ Community Score: 87/100
+  ðŸ’§ Streaming: 15 VARA/day to 5 contributors
+  ðŸ“Š Total Streamed: 1,250 VARA
+  â­ Community Score: 87/100
   ```
 
 **NARRATION (CONTINUED):**
@@ -227,7 +227,7 @@ await sdk.streams.withdraw(streamId);
 
 ---
 
-## 🎯 SECTION 6: Main Workflow Demo - End to End (5:30 - 6:30)
+## ðŸŽ¯ SECTION 6: Main Workflow Demo - End to End (5:30 - 6:30)
 
 ### [5:30 - 6:30] **Full User Journey: Alice Pays Bob**
 
@@ -250,7 +250,7 @@ await sdk.streams.withdraw(streamId);
 
 **ON SCREEN FORM:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 Create Stream
 
 Recipient: @bob_dev (0xabcd...ef12)
@@ -261,10 +261,10 @@ Flow Rate: 0.0000386 VARA/sec
 Buffer: 1 hour (recommended)
 
 [Cancel] [Create Stream]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
-**VISUAL:** Click "Create Stream" → Transaction pending → Success!
+**VISUAL:** Click "Create Stream" â†’ Transaction pending â†’ Success!
 
 ---
 
@@ -280,16 +280,16 @@ Buffer: 1 hour (recommended)
 
 **ON SCREEN - Bob's View:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 Incoming Streams
 
-🌊 From: @alice_dev
-   💰 Rate: 100 VARA / 30 days
-   📈 Streamed: 0.0123 VARA
-   ⏱️ Started: 5 minutes ago
+ðŸŒŠ From: @alice_dev
+   ðŸ’° Rate: 100 VARA / 30 days
+   ðŸ“ˆ Streamed: 0.0123 VARA
+   â±ï¸ Started: 5 minutes ago
    
    [Withdraw] [View Details]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 **VISUAL:** Balance counter animating upward in real-time
@@ -309,24 +309,24 @@ Incoming Streams
 
 **ON SCREEN:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 Withdraw Confirmation
 
 Withdrawable: 0.0116 VARA
 Gas Fee: ~0.0001 VARA
 Net Amount: 0.0115 VARA
 
-⚠️ Stream continues after withdrawal
+âš ï¸ Stream continues after withdrawal
 
 [Cancel] [Confirm Withdraw]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
-**VISUAL:** Transaction success animation → wallet balance +0.0115 VARA
+**VISUAL:** Transaction success animation â†’ wallet balance +0.0115 VARA
 
 ---
 
-## 🚀 SECTION 7: Closing & Call to Action (6:30 - 7:00)
+## ðŸš€ SECTION 7: Closing & Call to Action (6:30 - 7:00)
 
 ### [6:30 - 7:00] **What's Next & CTA**
 
@@ -336,46 +336,46 @@ Net Amount: 0.0115 VARA
   - SDK code
   - Community dashboard
   - Identity verification
-- Fade to GrowStreams logo
+- Fade to FLOWS logo
 
 **NARRATION:**
-> "This is GrowStreams. Real-time. Real VARA. Real streaming. We're live on Vara testnet today. Mainnet launch coming soon. For developers: our SDK is open source. Integrate streaming into your dApp in minutes. For projects: stop batch payments. Start streaming. For contributors: get paid as you work. Not after."
+> "This is FLOWS. Real-time. Real VARA. Real streaming. We're live on Vara testnet today. Mainnet launch coming soon. For developers: our SDK is open source. Integrate streaming into your dApp in minutes. For projects: stop batch payments. Start streaming. For contributors: get paid as you work. Not after."
 
 **ON SCREEN TEXT:**
-- "🔗 Try it: app.growstreams.io"
-- "📦 SDK: npm install @growstreams/sdk"
-- "📄 Docs: docs.growstreams.io"
-- "🐦 Follow: @GrowStreams"
+- "ðŸ”— Try it: app.FLOWS.io"
+- "ðŸ“¦ SDK: npm install @FLOWS/sdk"
+- "ðŸ“„ Docs: docs.FLOWS.io"
+- "ðŸ¦ Follow: @FLOWS"
 
 **NARRATION (FINAL):**
 > "The future of payments isn't transactions. It's streams. Join us. Let's build the streaming economy."
 
 **VISUAL:** 
-- GrowStreams logo
-- Website URL: growstreams.io
+- FLOWS logo
+- Website URL: FLOWS.io
 - Social handles fade in
 - Music swell
 - Fade to black
 
 **END SCREEN TEXT:**
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     🌊 GrowStreams 🌊
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+     ðŸŒŠ FLOWS ðŸŒŠ
   Real-Time Value Streaming
        on Vara Network
 
-🌐 growstreams.io
-🐦 @GrowStreams
-💬 t.me/growstreams
-📧 hello@growstreams.io
+ðŸŒ FLOWS.io
+ðŸ¦ @FLOWS
+ðŸ’¬ t.me/FLOWS
+ðŸ“§ hello@FLOWS.io
 
-   Built with 💙 on Vara
-━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Built with ðŸ’™ on Vara
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 ```
 
 ---
 
-## 🎥 Production Notes
+## ðŸŽ¥ Production Notes
 
 ### Timing Breakdown
 - **Section 1:** Problem/Solution (1:15)
@@ -429,7 +429,7 @@ Net Amount: 0.0115 VARA
 
 ---
 
-## 📝 Script Variations
+## ðŸ“ Script Variations
 
 ### For Technical Audience (Add)
 > "Under the hood, we're using SCALE-encoded cross-contract calls. StreamCore sends asynchronous messages to TokenVault using Vara's message-passing primitives. All transactions are atomic and gas-optimized."
@@ -442,7 +442,7 @@ Net Amount: 0.0115 VARA
 
 ---
 
-## ✅ Pre-Production Checklist
+## âœ… Pre-Production Checklist
 
 - [ ] Deploy latest contracts to testnet
 - [ ] Record actual SDK demo with real transactions
@@ -457,7 +457,7 @@ Net Amount: 0.0115 VARA
 
 ---
 
-## 🎯 Success Metrics
+## ðŸŽ¯ Success Metrics
 
 **Video Goals:**
 - 10,000+ views in first month
@@ -475,4 +475,5 @@ Net Amount: 0.0115 VARA
 
 **Script Version:** 1.0  
 **Last Updated:** 2026-02-26  
-**Prepared By:** GrowStreams Team
+**Prepared By:** FLOWS Team
+

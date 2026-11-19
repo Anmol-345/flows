@@ -1,5 +1,5 @@
-/**
- * GrowStreams GitHub AI On-Chain Engine
+﻿/**
+ * FLOWS GitHub AI On-Chain Engine
  * Phase 2: Enhanced Web3 Scoring System
  */
 
@@ -273,3 +273,4 @@ export async function analyzeGitHubUser(
     throw new Error(`Failed to analyze GitHub user: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 }
+

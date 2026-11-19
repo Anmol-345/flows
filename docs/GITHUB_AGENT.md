@@ -1,4 +1,4 @@
-# GitHub Agent - Automated PR Scoring System
+﻿# GitHub Agent - Automated PR Scoring System
 
 ## Overview
 
@@ -36,9 +36,9 @@
 ## GitHub Comment Template
 
 ```
-🤖 GrowStreams AI Review
+ðŸ¤– FLOWS AI Review
 
-Score: 82/100 ✅
+Score: 82/100 âœ…
 
   Correctness:     24/30
   Test Coverage:   20/25
@@ -49,8 +49,8 @@ Score: 82/100 ✅
 Feedback: The fix correctly handles the race condition.
 Consider adding a test for the concurrent access scenario.
 
-XP Awarded: 1,200 XP → 0x1234...abcd
-📊 Leaderboard: growstreams.app/leaderboard
+XP Awarded: 1,200 XP â†’ 0x1234...abcd
+ðŸ“Š Leaderboard: FLOWS.app/leaderboard
 ```
 
 ## Anti-Gaming Features
@@ -69,7 +69,7 @@ XP Awarded: 1,200 XP → 0x1234...abcd
 
 ## Purpose
 
-Enables the **OSS track** of the 21-day campaign where contributors earn XP → USDC payouts based on **code quality**, not just quantity.
+Enables the **OSS track** of the 21-day campaign where contributors earn XP â†’ USDC payouts based on **code quality**, not just quantity.
 
 ## Integration Points
 
@@ -77,3 +77,4 @@ Enables the **OSS track** of the 21-day campaign where contributors earn XP → 
 - `api/src/services/llm-scorer.mjs` - LLM wrapper
 - `api/src/routes/webhooks.mjs` - Webhook handler
 - `api/src/services/xp-service.mjs` - XP management
+

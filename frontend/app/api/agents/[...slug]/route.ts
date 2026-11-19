@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_GROWSTREAMS_API || 'http://localhost:3001';
+const BACKEND_URL = process.env.NEXT_PUBLIC_FLOWS_API || 'http://localhost:3001';
 const VARA_HTTP_RPC = 'https://rpc.vara.network';
 const ZERO_CALLER = '0xd4a5fb8326bb9d4dd6fa34e60fc5c2f18e8b677b39908e78907df89b0948bd67';
 

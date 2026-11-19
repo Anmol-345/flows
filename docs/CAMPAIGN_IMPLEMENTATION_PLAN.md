@@ -1,4 +1,4 @@
-# GrowStreams 21-Day Launch Campaign — Architecture Analysis & Implementation Plan
+﻿# FLOWS 21-Day Launch Campaign â€” Architecture Analysis & Implementation Plan
 
 ---
 
@@ -7,35 +7,35 @@
 ### Top-Level Folder Structure
 
 ```
-GrowStreams_Backend/
-├── api/                    # Express.js REST API (deployed on Railway)
-│   ├── idl/                # Sails IDL files for all 7 contracts
-│   ├── src/
-│   │   ├── index.mjs       # Express app entry point
-│   │   ├── sails-client.mjs # Gear/Sails connection layer
-│   │   └── routes/          # 8 route modules
-│   ├── package.json         # express, @gear-js/api, sails-js
-│   └── railway.json         # Railway deployment config
-│
-├── contracts/              # Rust smart contracts (Vara/Gear)
-│   ├── stream-core/        # Per-second streaming engine
-│   ├── token-vault/        # Token deposit/withdraw/solvency
-│   ├── splits-router/      # Revenue splitting
-│   ├── permission-manager/ # Delegated permissions
-│   ├── adapters/           # Bounty adapter
-│   ├── identity-registry/  # Wallet-GitHub identity binding
-│   └── grow-token/         # GROW ERC-20 token
-│
-├── frontend/               # Next.js 15 app (Vercel)
-│   ├── app/                # App router pages
-│   ├── components/         # campaign/, v2/, ui/, provn/
-│   ├── lib/                # API client, github-analyzer, supabase, utils
-│   ├── hooks/              # useGrowStreams, useVaraNFT, useProfile, etc.
-│   └── contexts/           # VaraContext (Gear API providers)
-│
-├── sdk/                    # @growstreams/sdk TypeScript package
-├── scripts/deploy-js/      # Deployment & E2E test scripts
-└── deploy-state.json       # 7 deployed contract program IDs
+FLOWS_Backend/
+â”œâ”€â”€ api/                    # Express.js REST API (deployed on Railway)
+â”‚   â”œâ”€â”€ idl/                # Sails IDL files for all 7 contracts
+â”‚   â”œâ”€â”€ src/
+â”‚   â”‚   â”œâ”€â”€ index.mjs       # Express app entry point
+â”‚   â”‚   â”œâ”€â”€ sails-client.mjs # Gear/Sails connection layer
+â”‚   â”‚   â””â”€â”€ routes/          # 8 route modules
+â”‚   â”œâ”€â”€ package.json         # express, @gear-js/api, sails-js
+â”‚   â””â”€â”€ railway.json         # Railway deployment config
+â”‚
+â”œâ”€â”€ contracts/              # Rust smart contracts (Vara/Gear)
+â”‚   â”œâ”€â”€ stream-core/        # Per-second streaming engine
+â”‚   â”œâ”€â”€ token-vault/        # Token deposit/withdraw/solvency
+â”‚   â”œâ”€â”€ splits-router/      # Revenue splitting
+â”‚   â”œâ”€â”€ permission-manager/ # Delegated permissions
+â”‚   â”œâ”€â”€ adapters/           # Bounty adapter
+â”‚   â”œâ”€â”€ identity-registry/  # Wallet-GitHub identity binding
+â”‚   â””â”€â”€ grow-token/         # GROW ERC-20 token
+â”‚
+â”œâ”€â”€ frontend/               # Next.js 15 app (Vercel)
+â”‚   â”œâ”€â”€ app/                # App router pages
+â”‚   â”œâ”€â”€ components/         # campaign/, v2/, ui/, provn/
+â”‚   â”œâ”€â”€ lib/                # API client, github-analyzer, supabase, utils
+â”‚   â”œâ”€â”€ hooks/              # useFLOWS, useVaraNFT, useProfile, etc.
+â”‚   â””â”€â”€ contexts/           # VaraContext (Gear API providers)
+â”‚
+â”œâ”€â”€ sdk/                    # @FLOWS/sdk TypeScript package
+â”œâ”€â”€ scripts/deploy-js/      # Deployment & E2E test scripts
+â””â”€â”€ deploy-state.json       # 7 deployed contract program IDs
 ```
 
 ### Services Architecture
@@ -55,9 +55,9 @@ GrowStreams_Backend/
 | **Supabase** | PostgreSQL | User profiles (wallet, handle, display_name, bio, avatar) |
 | **IPFS** | Pinata | Scorecard reports, NFT metadata |
 
-**Key finding: The Express API is completely stateless.** It has NO database connection — it proxies all reads/writes directly to Vara contracts via Sails. Supabase is only used by the frontend for profiles. There is no PostgreSQL or Redis in the API layer.
+**Key finding: The Express API is completely stateless.** It has NO database connection â€” it proxies all reads/writes directly to Vara contracts via Sails. Supabase is only used by the frontend for profiles. There is no PostgreSQL or Redis in the API layer.
 
-### API Layer — 8 Route Modules
+### API Layer â€” 8 Route Modules
 
 | Route File | Base Path | Contract |
 |------------|-----------|----------|
@@ -102,13 +102,13 @@ Every POST route supports `{ mode: "payload" }` to return encoded payload for cl
 
 ```
 User Browser (Next.js)
-  │
-  ├─ Payload mode: API returns SCALE-encoded payload
-  │  → Frontend signs with SubWallet → submits tx to Vara
-  │
-  └─ Server mode: API signs with VARA_SEED keyring
-     → sails-client builds tx, calculates gas, signs, sends
-     → Returns { result, blockHash }
+  â”‚
+  â”œâ”€ Payload mode: API returns SCALE-encoded payload
+  â”‚  â†’ Frontend signs with SubWallet â†’ submits tx to Vara
+  â”‚
+  â””â”€ Server mode: API signs with VARA_SEED keyring
+     â†’ sails-client builds tx, calculates gas, signs, sends
+     â†’ Returns { result, blockHash }
 ```
 
 ### Sails Client Layer (api/src/sails-client.mjs)
@@ -117,14 +117,14 @@ On startup:
 1. Connects to Vara testnet via WebSocket
 2. Loads keyring from `VARA_SEED`
 3. Parses all 7 IDL files into Sails instances
-4. Maps contract names → program IDs from deploy-state.json
+4. Maps contract names â†’ program IDs from deploy-state.json
 5. Exposes `query()`, `command()`, `encodePayload()`
 
 ### Frontend Architecture
 
 - Next.js 15 App Router with React 19
 - VaraContext wraps app with Gear ApiProvider + AccountProvider
-- `growstreams-api.ts` is the typed API client mirroring all backend endpoints
+- `FLOWS-api.ts` is the typed API client mirroring all backend endpoints
 - Existing campaign system: ScoreCard, Leaderboard, TierBadge, PrizeBanner components
 - `github-analyzer.ts` scores GitHub **users** (not individual PRs)
 - `campaignUtils.ts` has tweet generation, score sorting, eligibility checks
@@ -158,7 +158,7 @@ On startup:
 | **Campaign components** | Extend for XP-based leaderboard |
 | **Supabase** | Add new tables (already configured) |
 | **Express API** | Add new route modules following same pattern |
-| **growstreams-api.ts** | Add campaign/leaderboard methods |
+| **FLOWS-api.ts** | Add campaign/leaderboard methods |
 
 ### Database Decision
 
@@ -172,21 +172,21 @@ On startup:
 
 ```
 api/src/
-├── routes/
-│   ├── (existing 8 routes unchanged)
-│   ├── campaign.mjs          ← NEW: registration, config
-│   ├── leaderboard.mjs       ← NEW: leaderboard endpoints
-│   └── webhooks.mjs          ← NEW: GitHub webhook handler
-├── services/                  ← NEW FOLDER
-│   ├── supabase.mjs          # Supabase client for API
-│   ├── github-agent.mjs      # GitHub PR scoring pipeline
-│   ├── x-agent.mjs           # X/Twitter content scoring
-│   ├── xp-service.mjs        # XP award/query logic
-│   └── llm-scorer.mjs        # LLM wrapper (OpenAI/Anthropic)
-└── cron/                      ← NEW FOLDER
-    ├── daily-xp.mjs          # Daily XP accumulation
-    ├── leaderboard-snapshot.mjs # Nightly rank snapshots
-    └── x-reevaluate.mjs      # Re-score X posts at 6h/24h
+â”œâ”€â”€ routes/
+â”‚   â”œâ”€â”€ (existing 8 routes unchanged)
+â”‚   â”œâ”€â”€ campaign.mjs          â† NEW: registration, config
+â”‚   â”œâ”€â”€ leaderboard.mjs       â† NEW: leaderboard endpoints
+â”‚   â””â”€â”€ webhooks.mjs          â† NEW: GitHub webhook handler
+â”œâ”€â”€ services/                  â† NEW FOLDER
+â”‚   â”œâ”€â”€ supabase.mjs          # Supabase client for API
+â”‚   â”œâ”€â”€ github-agent.mjs      # GitHub PR scoring pipeline
+â”‚   â”œâ”€â”€ x-agent.mjs           # X/Twitter content scoring
+â”‚   â”œâ”€â”€ xp-service.mjs        # XP award/query logic
+â”‚   â””â”€â”€ llm-scorer.mjs        # LLM wrapper (OpenAI/Anthropic)
+â””â”€â”€ cron/                      â† NEW FOLDER
+    â”œâ”€â”€ daily-xp.mjs          # Daily XP accumulation
+    â”œâ”€â”€ leaderboard-snapshot.mjs # Nightly rank snapshots
+    â””â”€â”€ x-reevaluate.mjs      # Re-score X posts at 6h/24h
 ```
 
 ### Database Schema (Supabase)
@@ -276,18 +276,18 @@ CREATE TABLE daily_snapshots (
 ```
 POST /api/campaign/register
   Body: { wallet, github_handle?, x_handle?, track }
-  → Validates inputs
-  → INSERT INTO participants
-  → Returns participant record
+  â†’ Validates inputs
+  â†’ INSERT INTO participants
+  â†’ Returns participant record
 
 GET /api/campaign/participant/:wallet
-  → Returns participant + contributions + XP history
+  â†’ Returns participant + contributions + XP history
 
 GET /api/campaign/config
-  → Returns campaign dates, pool size, XP tables, rules
+  â†’ Returns campaign dates, pool size, XP tables, rules
 
 POST /api/campaign/payout-snapshot   (admin only)
-  → Locks final XP, calculates payouts for all participants
+  â†’ Locks final XP, calculates payouts for all participants
 ```
 
 #### Leaderboard
@@ -319,11 +319,11 @@ GET /api/leaderboard/stats
 
 ```
 POST /api/webhooks/github
-  → Verify HMAC-SHA256 signature (GITHUB_WEBHOOK_SECRET)
-  → Parse event type from X-GitHub-Event header
-  → PR opened / synchronized → queue for LLM scoring
-  → PR merged → award +500 XP merge bonus
-  → PR closed (not merged) → update status to CLOSED
+  â†’ Verify HMAC-SHA256 signature (GITHUB_WEBHOOK_SECRET)
+  â†’ Parse event type from X-GitHub-Event header
+  â†’ PR opened / synchronized â†’ queue for LLM scoring
+  â†’ PR merged â†’ award +500 XP merge bonus
+  â†’ PR closed (not merged) â†’ update status to CLOSED
 ```
 
 ### Service Specifications
@@ -340,11 +340,11 @@ POST /api/webhooks/github
 Two scoring functions with structured JSON output:
 
 ```javascript
-// scorePR(diff, issueBody, ciStatus) → { score, factors, feedback }
+// scorePR(diff, issueBody, ciStatus) â†’ { score, factors, feedback }
 //   factors: { correctness: 0-30, testCoverage: 0-25, codeQuality: 0-20,
 //              issueRelevance: 0-15, completeness: 0-10 }
 
-// scoreContent(text, isThread, hasMedia, engagementData) → { score, factors, feedback }
+// scoreContent(text, isThread, hasMedia, engagementData) â†’ { score, factors, feedback }
 //   factors: { quality: 0-30, relevance: 0-15, originality: 0-10,
 //              educationalValue: 0-20, engagement: 0-25 }
 ```
@@ -359,25 +359,25 @@ Full PR scoring pipeline:
 3. Fetch CI status (GET /repos/{owner}/{repo}/commits/{sha}/check-runs)
 4. Call llm-scorer.scorePR(diff, issue, ci)
 5. If score >= 70:
-     → Calculate XP from score tier
-     → Insert contribution record
-     → Insert xp_event (INITIAL_AWARD)
-     → Update participant.total_xp
-     → Post GitHub comment with score breakdown
+     â†’ Calculate XP from score tier
+     â†’ Insert contribution record
+     â†’ Insert xp_event (INITIAL_AWARD)
+     â†’ Update participant.total_xp
+     â†’ Post GitHub comment with score breakdown
 6. If score < 70:
-     → Insert contribution with status=REJECTED
-     → Post GitHub comment with feedback only
+     â†’ Insert contribution with status=REJECTED
+     â†’ Post GitHub comment with feedback only
 7. On merge event:
-     → Insert xp_event (MERGE_BONUS, +500 XP)
-     → Update contribution status=MERGED
-     → Post follow-up comment
+     â†’ Insert xp_event (MERGE_BONUS, +500 XP)
+     â†’ Update contribution status=MERGED
+     â†’ Post follow-up comment
 ```
 
 **GitHub comment template:**
 ```
-🤖 GrowStreams AI Review
+ðŸ¤– FLOWS AI Review
 
-Score: 82/100 ✅
+Score: 82/100 âœ…
 
   Correctness:     24/30
   Test Coverage:   20/25
@@ -388,57 +388,57 @@ Score: 82/100 ✅
 Feedback: The fix correctly handles the race condition.
 Consider adding a test for the concurrent access scenario.
 
-XP Awarded: 1,200 XP → 0x1234...abcd
-📊 Leaderboard: growstreams.app/leaderboard
+XP Awarded: 1,200 XP â†’ 0x1234...abcd
+ðŸ“Š Leaderboard: FLOWS.app/leaderboard
 ```
 
 **OSS XP Table:**
 
 | Score | Initial XP | Daily Accumulation | Merge Bonus |
 |-------|-----------|-------------------|-------------|
-| 70–79 | 700 XP | +100 XP/day | +500 XP |
-| 80–89 | 1,200 XP | +150 XP/day | +500 XP |
-| 90–100 | 2,000 XP | +200 XP/day | +500 XP |
+| 70â€“79 | 700 XP | +100 XP/day | +500 XP |
+| 80â€“89 | 1,200 XP | +150 XP/day | +500 XP |
+| 90â€“100 | 2,000 XP | +200 XP/day | +500 XP |
 
 #### services/x-agent.mjs
 
 X/Twitter content scoring pipeline:
 
 ```
-1. Connect to X Filtered Stream: @GrowStreams OR #GrowStreams -is:retweet lang:en
+1. Connect to X Filtered Stream: @FLOWS OR #FLOWS -is:retweet lang:en
 2. On new tweet:
-     → Look up author X handle in participants table
-     → If not registered: skip
-     → Fetch tweet fields + author metrics
-     → Calculate engagement velocity:
+     â†’ Look up author X handle in participants table
+     â†’ If not registered: skip
+     â†’ Fetch tweet fields + author metrics
+     â†’ Calculate engagement velocity:
        velocity = (likes + retweets*2 + replies*1.5) / followerCount
-     → Call llm-scorer.scoreContent()
-     → Combined score = (llmScore * 0.65) + (engagementScore * 0.35)
-     → If score >= 70: award XP, insert records, reply to tweet
-     → Schedule re-evaluation at T+6h and T+24h
+     â†’ Call llm-scorer.scoreContent()
+     â†’ Combined score = (llmScore * 0.65) + (engagementScore * 0.35)
+     â†’ If score >= 70: award XP, insert records, reply to tweet
+     â†’ Schedule re-evaluation at T+6h and T+24h
 3. Re-evaluation:
-     → Fetch updated engagement metrics
-     → If score delta > 10: award bonus XP
-     → If post deleted: update status=DELETED
+     â†’ Fetch updated engagement metrics
+     â†’ If score delta > 10: award bonus XP
+     â†’ If post deleted: update status=DELETED
 ```
 
 **X agent reply template:**
 ```
-🤖 GrowStreams verified your post!
-Score: 76/100 ✅ | XP: 760
+ðŸ¤– FLOWS verified your post!
+Score: 76/100 âœ… | XP: 760
 Rank: #23 (2,840 XP total)
 Est. payout: ~$8.40 USDC
-📊 growstreams.app/leaderboard
+ðŸ“Š FLOWS.app/leaderboard
 ```
 
 **Content XP Table:**
 
 | Score | Base XP | Bonuses |
 |-------|---------|---------|
-| 70–79 | 500 XP | — |
-| 80–89 | 800 XP | — |
-| 90–100 | 1,200 XP | — |
-| Thread (5+ tweets) | +30% on base | — |
+| 70â€“79 | 500 XP | â€” |
+| 80â€“89 | 800 XP | â€” |
+| 90â€“100 | 1,200 XP | â€” |
+| Thread (5+ tweets) | +30% on base | â€” |
 | 500+ engagements | +800 XP | one-time |
 | @VaraNetwork reshare | +500 XP | one-time |
 
@@ -448,16 +448,16 @@ Centralized XP logic:
 
 ```javascript
 awardXP(wallet, xpDelta, reason, contributionId)
-  → INSERT INTO xp_events
-  → UPDATE participants SET total_xp = total_xp + xpDelta
+  â†’ INSERT INTO xp_events
+  â†’ UPDATE participants SET total_xp = total_xp + xpDelta
 
-getXP(wallet) → current total_xp
+getXP(wallet) â†’ current total_xp
 
-getLeaderboard(page, limit, track) → sorted entries with rank + estimatedUSDC
+getLeaderboard(page, limit, track) â†’ sorted entries with rank + estimatedUSDC
 
-getParticipantStats(wallet) → contributions + xpHistory + rank
+getParticipantStats(wallet) â†’ contributions + xpHistory + rank
 
-calculatePayout(wallet) → (walletXP / totalXP) * 500
+calculatePayout(wallet) â†’ (walletXP / totalXP) * 500
 ```
 
 ### Cron Jobs
@@ -492,7 +492,7 @@ GITHUB_APP_ID=
 GITHUB_APP_PRIVATE_KEY=       # base64-encoded PEM
 GITHUB_WEBHOOK_SECRET=
 GITHUB_REPO_OWNER=BlockXAI
-GITHUB_REPO_NAME=GrowStreams_Backend
+GITHUB_REPO_NAME=FLOWS_Backend
 GITHUB_CAMPAIGN_LABEL=stream-bounty
 
 # X Agent
@@ -527,9 +527,9 @@ CONTENT_XP_90=1200
 
 ## Step 5: Phased Implementation Roadmap
 
-### Phase 1 — Database + XP System (Days 1–3)
+### Phase 1 â€” Database + XP System (Days 1â€“3)
 
-**Goal:** Foundation — database, Supabase integration, XP service.
+**Goal:** Foundation â€” database, Supabase integration, XP service.
 
 | # | Task | File | Est. |
 |---|------|------|------|
@@ -540,13 +540,13 @@ CONTENT_XP_90=1200
 | 1.5 | Wire campaign router into Express app | `api/src/index.mjs` | 15m |
 | 1.6 | Add @supabase/supabase-js dependency | `api/package.json` | 5m |
 | 1.7 | Add env vars | `.env` + `.env.example` | 15m |
-| 1.8 | Test: register → query → verify in Supabase | Manual | 1h |
+| 1.8 | Test: register â†’ query â†’ verify in Supabase | Manual | 1h |
 
 **Deliverable:** Participants can register. XP can be awarded and queried.
 
 ---
 
-### Phase 2 — GitHub AI Agent (Days 3–6)
+### Phase 2 â€” GitHub AI Agent (Days 3â€“6)
 
 **Goal:** Automated PR scoring via GitHub webhooks + LLM.
 
@@ -559,13 +559,13 @@ CONTENT_XP_90=1200
 | 2.5 | Wire webhooks router | `api/src/index.mjs` | 15m |
 | 2.6 | Add openai + octokit dependencies | `api/package.json` | 5m |
 | 2.7 | Tag 10 issues with `stream-bounty` label | GitHub Repo | 1h |
-| 2.8 | Test: submit PR → score → GitHub comment → XP in DB | Manual | 2h |
+| 2.8 | Test: submit PR â†’ score â†’ GitHub comment â†’ XP in DB | Manual | 2h |
 
-**Deliverable:** PRs get auto-scored. Score + feedback posted as comment. XP awarded if ≥ 70.
+**Deliverable:** PRs get auto-scored. Score + feedback posted as comment. XP awarded if â‰¥ 70.
 
 ---
 
-### Phase 3 — X/Twitter Agent (Days 6–9)
+### Phase 3 â€” X/Twitter Agent (Days 6â€“9)
 
 **Goal:** Automated content scoring for X posts.
 
@@ -578,15 +578,15 @@ CONTENT_XP_90=1200
 | 3.5 | Tweet reply with score + XP | `api/src/services/x-agent.mjs` | 1h |
 | 3.6 | Re-evaluation scheduler (T+6h, T+24h) | `api/src/services/x-agent.mjs` | 2h |
 | 3.7 | Add twitter-api-v2 dependency | `api/package.json` | 5m |
-| 3.8 | Test: post tweet → detect → score → reply → XP | Manual | 2h |
+| 3.8 | Test: post tweet â†’ detect â†’ score â†’ reply â†’ XP | Manual | 2h |
 
 **Deliverable:** X posts auto-scored. Reply posted. Re-evaluated at 6h/24h.
 
-**⚠️ X API approval can take 1–5 days. Apply on Day 1.**
+**âš ï¸ X API approval can take 1â€“5 days. Apply on Day 1.**
 
 ---
 
-### Phase 4 — Leaderboard System (Days 7–9)
+### Phase 4 â€” Leaderboard System (Days 7â€“9)
 
 **Goal:** Public leaderboard API + frontend.
 
@@ -596,17 +596,17 @@ CONTENT_XP_90=1200
 | 4.2 | Individual stats endpoint | `api/src/routes/leaderboard.mjs` | 2h |
 | 4.3 | Aggregate stats endpoint | `api/src/routes/leaderboard.mjs` | 1h |
 | 4.4 | Wire leaderboard router | `api/src/index.mjs` | 15m |
-| 4.5 | Add campaign + leaderboard to API client | `frontend/lib/growstreams-api.ts` | 2h |
+| 4.5 | Add campaign + leaderboard to API client | `frontend/lib/FLOWS-api.ts` | 2h |
 | 4.6 | Update leaderboard component for XP | `frontend/components/campaign/` | 3h |
 | 4.7 | Add leaderboard page route | `frontend/app/` | 2h |
 | 4.8 | "Your Position" sticky card | `frontend/components/campaign/` | 2h |
-| 4.9 | Test: register → contribute → verify rank | Manual | 1h |
+| 4.9 | Test: register â†’ contribute â†’ verify rank | Manual | 1h |
 
 **Deliverable:** Live leaderboard with rank, XP, estimated USDC payout.
 
 ---
 
-### Phase 5 — Cron Jobs + Automation (Days 9–11)
+### Phase 5 â€” Cron Jobs + Automation (Days 9â€“11)
 
 **Goal:** Automated daily XP, snapshots, re-evaluation.
 
@@ -624,7 +624,7 @@ CONTENT_XP_90=1200
 
 ---
 
-### Phase 6 — Anti-Gaming + Polish + Launch (Days 11–14)
+### Phase 6 â€” Anti-Gaming + Polish + Launch (Days 11â€“14)
 
 **Goal:** Security, edge cases, final testing.
 
@@ -669,17 +669,17 @@ CONTENT_XP_90=1200
 | `api/src/index.mjs` | Add 3 route mounts + cron init |
 | `api/package.json` | Add 5 dependencies |
 | `.env` / `.env.example` | Add ~25 env vars |
-| `frontend/lib/growstreams-api.ts` | Add campaign + leaderboard methods |
+| `frontend/lib/FLOWS-api.ts` | Add campaign + leaderboard methods |
 | `frontend/lib/campaignUtils.ts` | Add XP calc + payout helpers |
 
 ### 4 Database Tables
 
 | Table | Rows (est.) | Primary Key |
 |-------|------------|-------------|
-| `participants` | ~200–2000 | wallet |
-| `contributions` | ~500–5000 | uuid |
-| `xp_events` | ~2000–20000 | uuid |
-| `daily_snapshots` | ~4000–40000 | (date, wallet) |
+| `participants` | ~200â€“2000 | wallet |
+| `contributions` | ~500â€“5000 | uuid |
+| `xp_events` | ~2000â€“20000 | uuid |
+| `daily_snapshots` | ~4000â€“40000 | (date, wallet) |
 
 ### 0 Contract Changes
 
@@ -710,9 +710,9 @@ Send USDC manually or via batch script. Post every tx hash publicly.
 
 ## Immediate Action Items (Start Today)
 
-1. **Apply for X API Basic tier** — this is externally gated (1–5 day approval)
-2. **Register GitHub App** on BlockXAI org — takes 15 minutes
-3. **Create Supabase tables** — copy-paste the SQL above
+1. **Apply for X API Basic tier** â€” this is externally gated (1â€“5 day approval)
+2. **Register GitHub App** on BlockXAI org â€” takes 15 minutes
+3. **Create Supabase tables** â€” copy-paste the SQL above
 4. **Add `@supabase/supabase-js`** to `api/package.json`
 5. **Tag 10 GitHub issues** with `stream-bounty` label
 
@@ -721,3 +721,4 @@ Send USDC manually or via batch script. Post every tx hash publicly.
 **Document Version:** 1.0
 **Last Updated:** 2026-03-16
 **Status:** Ready for Development
+

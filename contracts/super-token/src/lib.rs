@@ -1,6 +1,6 @@
-#![cfg_attr(not(test), no_std)]
+﻿#![cfg_attr(not(test), no_std)]
 
-//! Super Token — Superfluid-style streaming VFT for GrowStreams on Vara.
+//! Super Token â€” Superfluid-style streaming VFT for FLOWS on Vara.
 //!
 //! A Super Token wraps any existing VFT (or acts as a pure/native token) and
 //! adds real-time balance accounting so that `balance_of(account)` reflects
@@ -9,28 +9,28 @@
 //! ## Conservation model (buffered, flow-aware)
 //!
 //! Earlier versions tracked only a per-account signed `net_flow_rate`, which
-//! let a receiver's balance grow **without bound** — it ignored whether the
+//! let a receiver's balance grow **without bound** â€” it ignored whether the
 //! sender had any funds left. That minted tokens out of nothing
-//! (`Σ balance_of > total_supply`).
+//! (`Î£ balance_of > total_supply`).
 //!
 //! This version is **flow-aware**. Every stream is an explicit
 //! `Flow { rate, buffer, last_update }` keyed by `(sender, receiver)`:
 //!
 //!  * On `start_flow`, the stream's full `buffer` (== stream-core `deposited`)
 //!    is **escrowed out of the sender's settled balance** into the flow.
-//!  * As time passes, the receiver accrues `min(rate × elapsed, buffer)` — the
+//!  * As time passes, the receiver accrues `min(rate Ã— elapsed, buffer)` â€” the
 //!    buffer is a **hard ceiling**. Once it is drained the flow stops paying.
 //!  * On `stop_flow`, any unspent buffer is refunded to the sender.
 //!
 //! This gives the exact invariant, preserved by every mutation:
 //!
-//!   total_supply == Σ static_balance(account) + Σ flow.buffer
-//!   Σ balance_of(account) ≤ total_supply        (never mints phantom tokens)
+//!   total_supply == Î£ static_balance(account) + Î£ flow.buffer
+//!   Î£ balance_of(account) â‰¤ total_supply        (never mints phantom tokens)
 //!
 //! ## Token modes
-//! - Wrapper: underlying_token != zero  → wrap/unwrap pull/push a VFT
-//! - Pure:    underlying_token == zero, native == false → admin-mintable
-//! - Native:  underlying_token == zero, native == true  → wrap/unwrap VARA
+//! - Wrapper: underlying_token != zero  â†’ wrap/unwrap pull/push a VFT
+//! - Pure:    underlying_token == zero, native == false â†’ admin-mintable
+//! - Native:  underlying_token == zero, native == true  â†’ wrap/unwrap VARA
 //!
 //! ## Authorization
 //! The flow methods (`start_flow`, `set_flow_rate`, `add_flow_buffer`,
@@ -48,7 +48,7 @@ use gstd::msg as gstd_msg;
 use parity_scale_codec::Decode as ScaleDecode;
 
 // ---------------------------------------------------------------------------
-// VFT U256 helper — same pattern as token-vault / wvara
+// VFT U256 helper â€” same pattern as token-vault / wvara
 // ---------------------------------------------------------------------------
 
 #[derive(Clone, Copy)]
@@ -102,7 +102,7 @@ fn decode_vft_bool_reply(reply_bytes: &[u8]) -> bool {
 /// `buffer` is the remaining escrowed balance backing this flow. It is debited
 /// from the sender's settled balance when the flow is opened (or topped up) and
 /// it is the hard ceiling on how much the receiver can ever accrue: the
-/// receiver gains `min(rate × elapsed, buffer)`.
+/// receiver gains `min(rate Ã— elapsed, buffer)`.
 #[derive(Debug, Clone, Encode, Decode, TypeInfo)]
 pub struct Flow {
     /// Streaming rate in base units per second.
@@ -117,9 +117,9 @@ pub struct Flow {
 /// consumers keep working. `net_flow_rate` is *derived* from active flows.
 #[derive(Debug, Clone, Encode, Decode, TypeInfo)]
 pub struct AccountState {
-    /// Settled (static) balance — escrowed flow buffers are NOT included.
+    /// Settled (static) balance â€” escrowed flow buffers are NOT included.
     pub static_balance: u128,
-    /// Derived net flow rate in base units per second (incoming − outgoing,
+    /// Derived net flow rate in base units per second (incoming âˆ’ outgoing,
     /// counting only flows that still have buffer remaining).
     pub net_flow_rate: i128,
     /// Block timestamp (seconds) of this view.
@@ -141,7 +141,7 @@ pub struct SuperTokenMeta {
 // ---------------------------------------------------------------------------
 // Events
 // ---------------------------------------------------------------------------
-// Variant order AND per-field order must mirror super-token.idl exactly — the
+// Variant order AND per-field order must mirror super-token.idl exactly â€” the
 // off-chain indexer decodes by SCALE variant index and positional fields.
 // There is no `token` field: the super-token IS the token (gVARA), so the
 // indexer resolves the token contextually from the emitting program id.
@@ -171,7 +171,7 @@ pub struct SuperTokenState {
     pub is_native_wrapper: bool,
     pub admin: ActorId,
     pub paused: bool,
-    /// Total wrapped/minted supply. Equals `Σ balances + Σ flow.buffer`.
+    /// Total wrapped/minted supply. Equals `Î£ balances + Î£ flow.buffer`.
     pub total_supply: u128,
     /// Per-account settled balance (escrowed buffers held separately in `flows`).
     pub balances: BTreeMap<ActorId, u128>,
@@ -287,7 +287,7 @@ impl SuperTokenState {
         bal
     }
 
-    /// Derived net flow rate (incoming − outgoing) counting only flows that
+    /// Derived net flow rate (incoming âˆ’ outgoing) counting only flows that
     /// still have buffer left to pay out.
     fn net_flow_rate(&self, id: &ActorId) -> i128 {
         let mut net: i128 = 0;
@@ -317,9 +317,9 @@ impl SuperTokenProgram {
     /// Constructor.
     ///
     /// Arguments:
-    /// - `name`, `symbol`, `decimals` — token metadata.
-    /// - `underlying_token` — VFT to wrap. Pass `ActorId::zero()` for Pure/Native.
-    /// - `is_native_wrapper` — set true to enable VARA wrap/unwrap.
+    /// - `name`, `symbol`, `decimals` â€” token metadata.
+    /// - `underlying_token` â€” VFT to wrap. Pass `ActorId::zero()` for Pure/Native.
+    /// - `is_native_wrapper` â€” set true to enable VARA wrap/unwrap.
     pub fn new(
         name: String,
         symbol: String,
@@ -486,7 +486,7 @@ impl<'a> SuperTokenService<'a> {
     // VFT-compatible instant transfers
     // -----------------------------------------------------------------------
 
-    /// Instant transfer — settles the sender's incoming flows, then moves
+    /// Instant transfer â€” settles the sender's incoming flows, then moves
     /// `amount` from sender's settled balance to receiver's settled balance.
     #[export]
     pub fn transfer(&mut self, to: ActorId, amount: u128) -> bool {
@@ -671,7 +671,7 @@ impl<'a> SuperTokenService<'a> {
 
     /// Move a protocol fee from `from`'s settled balance to `treasury`'s settled
     /// balance, as an internal ledger transfer (no mint/burn, so the
-    /// conservation invariant `Σ balances + Σ buffers == total_supply` holds).
+    /// conservation invariant `Î£ balances + Î£ buffers == total_supply` holds).
     ///
     /// Mirrors `token-vault::collect_fee`: stream-core skims the fee entry-side
     /// and calls this so gVARA streams become fee-bearing. Incoming flows are
@@ -781,7 +781,7 @@ impl<'a> SuperTokenService<'a> {
     // Queries
     // -----------------------------------------------------------------------
 
-    /// Real-time balance — settled balance plus capped accrual from all
+    /// Real-time balance â€” settled balance plus capped accrual from all
     /// incoming flows at the current timestamp. Never exceeds what senders
     /// have actually escrowed.
     #[export]
@@ -791,7 +791,7 @@ impl<'a> SuperTokenService<'a> {
         state.realtime_balance(&account, now)
     }
 
-    /// Static (settled) balance only — does NOT include unsettled flow accrual.
+    /// Static (settled) balance only â€” does NOT include unsettled flow accrual.
     #[export]
     pub fn static_balance_of(&self, account: ActorId) -> u128 {
         let state = self.state.borrow();
@@ -890,7 +890,7 @@ impl<'a> SuperTokenService<'a> {
 }
 
 // ---------------------------------------------------------------------------
-// Tests — pure accounting invariants (host-runnable, no gstd runtime)
+// Tests â€” pure accounting invariants (host-runnable, no gstd runtime)
 // ---------------------------------------------------------------------------
 #[cfg(test)]
 mod tests {
@@ -903,7 +903,7 @@ mod tests {
     }
 
     /// Conservation invariant: settled balances plus all escrowed flow buffers
-    /// must always equal total_supply. If this holds, Σ balance_of ≤ supply and
+    /// must always equal total_supply. If this holds, Î£ balance_of â‰¤ supply and
     /// no phantom tokens can be minted.
     fn assert_conserved(s: &SuperTokenState) {
         let bal_sum: u128 = s.balances.values().copied().sum();
@@ -948,7 +948,7 @@ mod tests {
     #[test]
     fn receiver_accrual_is_capped_at_buffer() {
         // 50 gVARA buffer, rate 1/sec. After 1_000_000 seconds the receiver must
-        // NOT exceed the 50-unit buffer — this is the exact bug from the report
+        // NOT exceed the 50-unit buffer â€” this is the exact bug from the report
         // (deposit 50, balance ran to 736+ and rising).
         let sender = actor(1);
         let receiver = actor(2);
@@ -976,12 +976,12 @@ mod tests {
         assert_conserved(&s);
         assert_eq!(s.balance(&sender), 40); // 100 - 60 escrowed
 
-        // Settle the receiver at t=10s → 20 units streamed (2/sec × 10).
+        // Settle the receiver at t=10s â†’ 20 units streamed (2/sec Ã— 10).
         s.settle_incoming(receiver, 10);
         assert_conserved(&s);
         assert_eq!(s.balance(&receiver), 20);
 
-        // Stop at t=15s → another 10 streamed (total 30), refund 30 to sender.
+        // Stop at t=15s â†’ another 10 streamed (total 30), refund 30 to sender.
         close_flow(&mut s, sender, receiver, 15);
         assert_conserved(&s);
         assert_eq!(s.balance(&receiver), 30);
@@ -995,7 +995,7 @@ mod tests {
         let receiver = actor(2);
         let mut s = fresh(sender, 10);
 
-        // rate 5/sec, buffer 10 → fully drained after 2 seconds.
+        // rate 5/sec, buffer 10 â†’ fully drained after 2 seconds.
         assert!(open_flow(&mut s, sender, receiver, 5, 10, 0));
 
         assert_eq!(s.realtime_balance(&receiver, 1), 5);
@@ -1042,7 +1042,7 @@ mod tests {
     }
 
     /// collect_fee moves the fee from payer to treasury as a pure internal
-    /// transfer — total_supply is unchanged and conservation still holds.
+    /// transfer â€” total_supply is unchanged and conservation still holds.
     #[test]
     fn collect_fee_moves_fee_and_conserves() {
         let payer = actor(1);
@@ -1060,3 +1060,4 @@ mod tests {
         assert_conserved(&s);
     }
 }
+

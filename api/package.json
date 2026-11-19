@@ -1,5 +1,5 @@
-{
-  "name": "growstreams-api",
+﻿{
+  "name": "FLOWS-api",
   "version": "2.0.0",
   "private": true,
   "type": "module",
@@ -29,3 +29,4 @@
     "node": "20.x"
   }
 }
+
