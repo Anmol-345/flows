@@ -689,7 +689,7 @@ const DEFAULT_USER_POSITIONS: UserPortfolioPosition[] = [
   {
     id: 'pos-vara-spot',
     type: 'SPOT',
-    market: 'GROW / VARA',
+    market: 'FLOW / VARA',
     side: 'LIMIT BUY',
     sizeVara: 420,
     leverage: 1,
@@ -793,7 +793,7 @@ const DEFAULT_CUSTOM_SQUADS: CustomSquadConfig[] = [
     totalCollateralVara: 100,
     agents: [
       { slot: 1, roleCode: 'PERP_TRADER', roleTitle: 'Momentum Perps Trader', market: 'NVDA', maxLeverage: 5, sharePct: 15 },
-      { slot: 2, roleCode: 'CLOB_MM', roleTitle: 'Spot CLOB Market Maker', market: 'GROW/VARA', maxLeverage: 1, sharePct: 10 },
+      { slot: 2, roleCode: 'CLOB_MM', roleTitle: 'Spot CLOB Market Maker', market: 'FLOW/VARA', maxLeverage: 1, sharePct: 10 },
       { slot: 3, roleCode: 'RISK_GUARD', roleTitle: 'Solvency & Liquidation Guard', market: 'TSLA', maxLeverage: 3, sharePct: 10 },
       { slot: 4, roleCode: 'X_SENTINEL', roleTitle: 'Opening Bell Signal Sentinel', market: 'SPY', maxLeverage: 5, sharePct: 5 },
     ],

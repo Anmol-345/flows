@@ -60,6 +60,7 @@ app.use('/api/bounty', bountyRouter);
 app.use('/api/bounties', bountiesDbRouter);
 app.use('/api/identity', identityRouter);
 app.use('/api/grow-token', growTokenRouter);
+app.use('/api/flow-token', growTokenRouter);
 app.use('/api/campaign', campaignRouter);
 app.use('/api/webhooks', webhooksRouter);
 app.use('/api/leaderboard', leaderboardRouter);

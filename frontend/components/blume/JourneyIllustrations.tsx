@@ -130,7 +130,7 @@ export function GrowthSVG(props: React.SVGProps<SVGSVGElement>) {
       {/* Central Node */}
       <circle cx="200" cy="140" r="32" fill="#ffffff" stroke="#0d1b19" strokeWidth="2" />
       <circle cx="200" cy="140" r="22" fill="#e7efe6" />
-      <text x="200" y="144" fill="#0d1b19" fontSize="11" fontWeight="700" fontFamily="system-ui" textAnchor="middle">GROW</text>
+      <text x="200" y="144" fill="#0d1b19" fontSize="11" fontWeight="700" fontFamily="system-ui" textAnchor="middle">FLOW</text>
       
       {/* XP Ring around center */}
       <circle cx="200" cy="140" r="40" fill="none" stroke="#e7efe6" strokeWidth="2" />

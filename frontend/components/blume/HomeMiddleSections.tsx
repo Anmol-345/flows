@@ -255,7 +255,7 @@ export function HomeMiddleSections() {
       <section className="journey" id="how">
         <div className="wrap" id="wrap">
           <svg id="vine" aria-hidden="true"></svg>
-          <div className="head"><h2>How the growth network works</h2></div>
+          <div className="head"><h2>How the flow network works</h2></div>
 
           <article className="ch">
             <div className="txt"><h3>Stream value to people you trust</h3><p>Fund contributors and reward builders every second. Value flows to the people driving your community forward.</p></div>
@@ -282,7 +282,7 @@ export function HomeMiddleSections() {
           </article>
 
           <article className="ch">
-            <div className="txt"><h3>Grow your network, grow your impact</h3><p>Connect with DAOs, open source projects and communities. Your contributions earn rewards automatically.</p></div>
+            <div className="txt"><h3>Flow your network, flow your impact</h3><p>Connect with DAOs, open source projects and communities. Your contributions earn rewards automatically.</p></div>
             <div className="art">
               <svg viewBox="0 0 360 260" role="img" aria-label="A plant whose branches end in people and DAOs">
                 <ellipse className="sg" cx="180" cy="240" rx="120" ry="12" opacity=".7" />
@@ -309,7 +309,7 @@ export function HomeMiddleSections() {
       </section>
 
       <section className="num">
-        <p>Right now <b id="n1">4,482</b> connections are growing at <b>12.4 GROW</b> a second. <b id="n2">125,121,032</b> GROW grown so far, with <b>0&nbsp;ms</b> of friction.</p>
+        <p>Right now <b id="n1">4,482</b> connections are flowing at <b>12.4 FLOW</b> a second. <b id="n2">125,121,032</b> FLOWS flown so far, with <b>0&nbsp;ms</b> of friction.</p>
         <small>Rewards settle block by block, with no middlemen and no delays.</small>
       </section>
       

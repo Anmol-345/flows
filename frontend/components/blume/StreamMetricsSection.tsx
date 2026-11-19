@@ -3,16 +3,16 @@
 import React, { useState, useEffect } from "react";
 
 const initialLogs = [
-  { id: 1, user: "alice.eth", action: "received a grant stream", amount: "+246 GROW", time: "just now", color: "#10b981" },
-  { id: 2, user: "dev-dao.eth", action: "funded an open source bounty", amount: "1,250 GROW", time: "1s ago", color: "#34d399" },
-  { id: 3, user: "core-team.eth", action: "unlocked a milestone reward", amount: "4,500 GROW", time: "3s ago", color: "#0d1b19" },
-  { id: 4, user: "protocol.eth", action: "distributed treasury funds", amount: "0.05 GROW/s", time: "5s ago", color: "#10b981" },
-  { id: 5, user: "builder.eth", action: "started earning from community", amount: "+12 GROW/s", time: "12s ago", color: "#34d399" },
+  { id: 1, user: "alice.eth", action: "received a grant stream", amount: "+246 FLOW", time: "just now", color: "#10b981" },
+  { id: 2, user: "dev-dao.eth", action: "funded an open source bounty", amount: "1,250 FLOW", time: "1s ago", color: "#34d399" },
+  { id: 3, user: "core-team.eth", action: "unlocked a milestone reward", amount: "4,500 FLOW", time: "3s ago", color: "#0d1b19" },
+  { id: 4, user: "protocol.eth", action: "distributed treasury funds", amount: "0.05 FLOW/s", time: "5s ago", color: "#10b981" },
+  { id: 5, user: "builder.eth", action: "started earning from community", amount: "+12 FLOW/s", time: "12s ago", color: "#34d399" },
 ];
 
 export function NetworkSection() {
   const [logs, setLogs] = useState(initialLogs);
-  const [valueGrown, setValueGrown] = useState(125121032);
+  const [valueFlown, setValueFlown] = useState(125121032);
 
   // Activity Feed loop simulation
   useEffect(() => {
@@ -36,7 +36,7 @@ export function NetworkSection() {
   // Ticker simulation
   useEffect(() => {
     const interval = setInterval(() => {
-      setValueGrown((prev) => prev + Math.floor(Math.random() * 5));
+      setValueFlown((prev) => prev + Math.floor(Math.random() * 5));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -51,7 +51,7 @@ export function NetworkSection() {
             THE NETWORK
           </div>
           <h2 style={{ fontSize: "clamp(32px, 5vw, 48px)", fontWeight: 800, letterSpacing: "-0.02em", margin: "0 0 16px" }}>
-            Value that grows at the speed of a block.
+            Value that flows at the speed of a block.
           </h2>
           <p style={{ fontSize: "18px", color: "#475569", maxWidth: "600px", margin: "0 auto", lineHeight: 1.6 }}>
             Flows streams rewards to contributors continuously on-chain. No middlemen, no delays.
@@ -61,19 +61,19 @@ export function NetworkSection() {
         {/* 4 Stat Tiles */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "24px", marginBottom: "80px" }}>
           <StatTile 
-            label="Growth Rate" 
-            value="12.4 GROW/s" 
+            label="Flow Rate" 
+            value="12.4 FLOW/s" 
             caption="Streaming continuously" 
             pulse={true} 
           />
           <StatTile 
             label="Active Connections" 
             value="4,482" 
-            caption="Nodes growing together" 
+            caption="Nodes flowing together" 
           />
           <StatTile 
-            label="Total Value Grown" 
-            value={valueGrown.toLocaleString()} 
+            label="Total Value Flown" 
+            value={valueFlown.toLocaleString()} 
             caption="All-time distributed volume" 
           />
           <StatTile 
@@ -133,7 +133,7 @@ export function NetworkSection() {
               <FeatureChip icon="🏛️" label="DAO Grants" />
               <FeatureChip icon="🎯" label="Community Bounties" />
               <FeatureChip icon="🛠️" label="Builder Incentives" />
-              <FeatureChip icon="🌐" label="Network Growth" />
+              <FeatureChip icon="🌐" label="Network Flow" />
               <FeatureChip icon="💻" label="Open Source Funding" />
             </div>
           </div>

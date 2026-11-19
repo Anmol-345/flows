@@ -5,7 +5,7 @@ import { ArrowUpRight, Coins, Waves, Vault } from 'lucide-react';
 import Link from 'next/link';
 
 const quickLinks = [
-  { title: 'GROW Token', desc: 'Mint & manage tokens', href: '/app/grow', icon: Coins, color: 'text-moss', tile: 'bg-lemon/40' },
+  { title: 'FLOW Token', desc: 'Mint & manage tokens', href: '/app/grow', icon: Coins, color: 'text-moss', tile: 'bg-lemon/40' },
   { title: 'Streams', desc: 'Create per-second streams', href: '/app/streams', icon: Waves, color: 'text-forest', tile: 'bg-sage-3/60' },
   { title: 'Vault', desc: 'Deposit & withdraw', href: '/app/vault', icon: Vault, color: 'text-clay-dark', tile: 'bg-clay/15' },
 ];

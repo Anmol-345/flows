@@ -262,7 +262,7 @@ router.get('/ui', async (req, res) => {
         <div class="sub">${Math.round(p.bounties.bountiesVolumeVara).toLocaleString()} VARA Â· ${p.bounties.bountiesCompletedByAgentsAndUsers} Bounties Fulfilled (${p.bounties.onChainTotalBounties} On-Chain)</div>
       </div>
       <div class="card">
-        <b style="color:#34d399;">6. AI-Scored X & GitHub Campaigns (QuestSeeds & GROW)</b>
+        <b style="color:#34d399;">6. AI-Scored X & GitHub Campaigns (QuestSeeds & FLOW)</b>
         <div class="val">$${Number(p.campaigns.campaignsVolumeUsd).toLocaleString()} USD</div>
         <div class="sub">${Math.round(p.campaigns.campaignsVolumeVara).toLocaleString()} VARA Â· ${p.campaigns.verifiedXPostsAndDiaries} #Vara Posts Â· ${p.campaigns.verifiedGithubPrsScored} PRs Â· ${p.campaigns.questSeedsMinted} SEEDS</div>
       </div>

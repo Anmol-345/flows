@@ -374,7 +374,7 @@ export function useWrapperActions() {
     });
   };
 
-  // Approve GROW + Wrap GROW -> gGROW SuperToken
+  // Approve FLOW + Wrap FLOW -> gFLOW SuperToken
   const wrapGrowSuperToken = async (amountUnits: string) => {
     await signAndSend(
       'growToken',
@@ -383,18 +383,18 @@ export function useWrapperActions() {
     );
     return signAndSend('superTokenGrow', encodeSuperTokenWrapPayload(amountUnits), 0, {
       type: 'SPOT',
-      market: 'gGROW SuperToken',
-      side: `WRAP ${(Number(amountUnits) / 1e12).toFixed(2)} GROW → gGROW`,
+      market: 'gFLOW SuperToken',
+      side: `WRAP ${(Number(amountUnits) / 1e12).toFixed(2)} FLOW → gFLOW`,
       sizeVara: Number(amountUnits) / 1e12,
     });
   };
 
-  // Unwrap gGROW SuperToken -> GROW
+  // Unwrap gFLOW SuperToken -> FLOW
   const unwrapGrowSuperToken = async (amountUnits: string) => {
     return signAndSend('superTokenGrow', encodeSuperTokenUnwrapPayload(amountUnits), 0, {
       type: 'SPOT',
-      market: 'gGROW SuperToken',
-      side: `UNWRAP ${(Number(amountUnits) / 1e12).toFixed(2)} gGROW → GROW`,
+      market: 'gFLOW SuperToken',
+      side: `UNWRAP ${(Number(amountUnits) / 1e12).toFixed(2)} gFLOW → FLOW`,
       sizeVara: Number(amountUnits) / 1e12,
     });
   };

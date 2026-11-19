@@ -420,9 +420,9 @@ export async function getProtocolOverviewMetrics() {
         bountiesVolumeVara: Number(bountiesVolumeVara.toFixed(2)),
         bountiesVolumeUsd: Number((bountiesVolumeVara * VARA_USD_PRICE).toFixed(2)),
       },
-      // 6. Campaigns (AI-Scored X/Twitter & GitHub Quests + QuestSeeds + GROW)
+      // 6. Campaigns (AI-Scored X/Twitter & GitHub Quests + QuestSeeds + FLOW)
       campaigns: {
-        title: 'AI-Scored X & GitHub Campaigns (QuestSeeds, IdentityRegistry & GROW)',
+        title: 'AI-Scored X & GitHub Campaigns (QuestSeeds, IdentityRegistry & FLOW)',
         identityRegistryAddress: VARA_MAINNET_CONTRACTS.identityRegistry,
         questSeedsAddress: VARA_MAINNET_CONTRACTS.questSeeds,
         growTokenAddress: VARA_MAINNET_CONTRACTS.growToken,

@@ -128,7 +128,7 @@ export default function VaultPage() {
   }, [loadData]);
 
   // --- ESCROW HANDLER ---
-  const sym = tokenMode === 'vara' ? 'VARA' : 'GROW';
+  const sym = tokenMode === 'vara' ? 'VARA' : 'FLOW';
   const bal = tokenMode === 'vara' ? balances.vaultVara : balances.vaultGrow;
   const available = Number(bal?.available || '0');
   const allocated = Number(bal?.total_allocated || '0');
@@ -162,10 +162,10 @@ export default function VaultPage() {
         if (mode === 'deposit') {
           await approve(MAINNET_CONTRACTS.tokenVault, planckStr);
           txRes = await depositTokens(GROW_TOKEN, planckStr);
-          toast.success(`Approved & Deposited ${raw} GROW into TokenVault!`);
+          toast.success(`Approved & Deposited ${raw} FLOW into TokenVault!`);
         } else {
           txRes = await withdrawTokens(GROW_TOKEN, planckStr);
-          toast.success(`Withdrew ${raw} GROW from TokenVault!`);
+          toast.success(`Withdrew ${raw} FLOW from TokenVault!`);
         }
       }
       if (txRes?.blockHash) setLastTxHash(txRes.blockHash);
@@ -201,13 +201,13 @@ export default function VaultPage() {
           desc: 'Standard VFT-compatible 1:1 wrapped VARA for Spot CLOB liquidity and cross-contract transfers.',
         }
       : {
-          fromSym: wrapDirection === 'wrap' ? 'GROW' : 'gGROW',
-          toSym: wrapDirection === 'wrap' ? 'gGROW' : 'GROW',
+          fromSym: wrapDirection === 'wrap' ? 'FLOW' : 'gFLOW',
+          toSym: wrapDirection === 'wrap' ? 'gFLOW' : 'FLOW',
           fromBal: wrapDirection === 'wrap' ? balances.grow : balances.ggrow,
           toBal: wrapDirection === 'wrap' ? balances.ggrow : balances.grow,
           contract: MAINNET_CONTRACTS.superTokenGrow,
-          title: 'gGROW SuperToken (Streamable GROW)',
-          desc: '1:1 streamable SuperToken backed by GROW for real-time contributor grants and revenue splits.',
+          title: 'gFLOW SuperToken (Streamable FLOW)',
+          desc: '1:1 streamable SuperToken backed by FLOW for real-time contributor grants and revenue splits.',
         };
 
   const handleWrapSubmit = async (e: FormEvent) => {
@@ -253,7 +253,7 @@ export default function VaultPage() {
       <PageHeader
         eyebrow="ESCROW & 1:1 SUPERTOKEN WRAPPING"
         title="Token Vault & SuperToken Wrapper"
-        subtitle="Deposit VARA/GROW into escrow or wrap 1:1 into gVARA, wVARA & gGROW for real-time streaming"
+        subtitle="Deposit VARA/FLOW into escrow or wrap 1:1 into gVARA, wVARA & gFLOW for real-time streaming"
         icon={<Vault className="w-6 h-6 text-[#136F46]" />}
         actions={
           <div className="flex items-center gap-2">
@@ -288,7 +288,7 @@ export default function VaultPage() {
             }`}
           >
             <Vault className="w-3.5 h-3.5" />
-            <span>1. TokenVault Escrow (VARA & GROW)</span>
+            <span>1. TokenVault Escrow (VARA & FLOW)</span>
           </button>
           <button
             type="button"
@@ -300,7 +300,7 @@ export default function VaultPage() {
             }`}
           >
             <ArrowLeftRight className="w-3.5 h-3.5" />
-            <span>2. Wrap & Unwrap (gVARA · wVARA · gGROW)</span>
+            <span>2. Wrap & Unwrap (gVARA · wVARA · gFLOW)</span>
           </button>
         </div>
 
@@ -386,16 +386,16 @@ export default function VaultPage() {
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="font-semibold text-sm block">GROW Token Vault</span>
+                    <span className="font-semibold text-sm block">FLOW Token Vault</span>
                     <span className="text-[10px] font-mono text-[#6B7280]">0x728d…7163</span>
                   </div>
                 </div>
                 <span className="px-2 py-0.5 rounded bg-[#F4F5F2] text-[#111827] text-[10px] font-mono font-semibold">
-                  Wallet: {fmtShort(balances.grow)} GROW
+                  Wallet: {fmtShort(balances.grow)} FLOW
                 </span>
               </div>
               <p className="gs-mono text-2xl font-bold text-[#111827] tabular-nums">
-                {fmtShort(Number(balances.vaultGrow.total_allocated) + Number(balances.vaultGrow.available))} GROW
+                {fmtShort(Number(balances.vaultGrow.total_allocated) + Number(balances.vaultGrow.available))} FLOW
               </p>
               <p className="text-xs text-[#6B7280] mt-1">
                 {fmtShort(balances.vaultGrow.available)} withdrawable · {fmtShort(balances.vaultGrow.total_allocated)} allocated in streams
@@ -517,7 +517,7 @@ export default function VaultPage() {
         </>
       ) : (
         /* =====================================================================
-           TAB 2: 1:1 SUPERTOKEN WRAPPING & UNWRAPPING (gVARA, wVARA, gGROW)
+           TAB 2: 1:1 SUPERTOKEN WRAPPING & UNWRAPPING (gVARA, wVARA, gFLOW)
            ===================================================================== */
         <Reveal>
           <div className="space-y-5">
@@ -543,9 +543,9 @@ export default function VaultPage() {
                 {
                   id: 'ggrow' as const,
                   badge: 'ECOSYSTEM SUPERTOKEN',
-                  title: 'GROW ↔ gGROW',
-                  sub: 'Streamable GROW Wrapper',
-                  balLabel: `${fmtShort(balances.ggrow)} gGROW`,
+                  title: 'FLOW ↔ gFLOW',
+                  sub: 'Streamable FLOW Wrapper',
+                  balLabel: `${fmtShort(balances.ggrow)} gFLOW`,
                   addr: '0x4a97…f347',
                 },
               ].map((item) => (
@@ -601,7 +601,7 @@ export default function VaultPage() {
                   }`}
                 >
                   <ArrowUpFromLine className="w-3.5 h-3.5" />
-                  Wrap ({wrapPair === 'ggrow' ? 'GROW → gGROW' : wrapPair === 'gvara' ? 'VARA → gVARA' : 'VARA → wVARA'})
+                  Wrap ({wrapPair === 'ggrow' ? 'FLOW → gFLOW' : wrapPair === 'gvara' ? 'VARA → gVARA' : 'VARA → wVARA'})
                 </button>
                 <button
                   type="button"
@@ -613,7 +613,7 @@ export default function VaultPage() {
                   }`}
                 >
                   <ArrowDownToLine className="w-3.5 h-3.5" />
-                  Unwrap ({wrapPair === 'ggrow' ? 'gGROW → GROW' : wrapPair === 'gvara' ? 'gVARA → VARA' : 'wVARA → VARA'})
+                  Unwrap ({wrapPair === 'ggrow' ? 'gFLOW → FLOW' : wrapPair === 'gvara' ? 'gVARA → VARA' : 'wVARA → VARA'})
                 </button>
               </div>
 

@@ -18,31 +18,31 @@ import { StatGridSkeleton, PanelSkeleton } from '@/components/gsui/Skeleton';
 const GROW_TOKEN_ID = '0x728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163';
 const VAULT_ID = '0x657cf9c4f929aeac97092037826c1117f9e6cd0e3c4edc44e49decc17b840aa9';
 const DECIMALS = 12;
-const ONE_GROW = 1_000_000_000_000;
+const ONE_FLOW = 1_000_000_000_000;
 
-function toBaseUnits(growAmount: string): string {
-  const num = parseFloat(growAmount);
+function toBaseUnits(flowAmount: string): string {
+  const num = parseFloat(flowAmount);
   if (isNaN(num) || num <= 0) return '0';
-  return BigInt(Math.round(num * ONE_GROW)).toString();
+  return BigInt(Math.round(num * ONE_FLOW)).toString();
 }
 
-function toGrow(raw: string | number): number {
+function toFlow(raw: string | number): number {
   const n = Number(raw);
   if (isNaN(n)) return 0;
-  return n / ONE_GROW;
+  return n / ONE_FLOW;
 }
 
-function formatGrow(raw: string | number): string {
-  const g = toGrow(raw);
-  if (g === 0) return '0 GROW';
-  if (g >= 1_000_000) return g.toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' GROW';
-  if (g >= 1) return g.toLocaleString(undefined, { maximumFractionDigits: 4 }) + ' GROW';
-  if (g >= 0.0001) return g.toFixed(6) + ' GROW';
-  return '< 0.0001 GROW';
+function formatFlow(raw: string | number): string {
+  const g = toFlow(raw);
+  if (g === 0) return '0 FLOW';
+  if (g >= 1_000_000) return g.toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' FLOW';
+  if (g >= 1) return g.toLocaleString(undefined, { maximumFractionDigits: 4 }) + ' FLOW';
+  if (g >= 0.0001) return g.toFixed(6) + ' FLOW';
+  return '< 0.0001 FLOW';
 }
 
-function formatGrowShort(raw: string | number): string {
-  const g = toGrow(raw);
+function formatFlowShort(raw: string | number): string {
+  const g = toFlow(raw);
   if (g === 0) return '0';
   if (g >= 1_000_000) return (g / 1_000_000).toFixed(1) + 'M';
   if (g >= 1_000) return (g / 1_000).toFixed(1) + 'K';
@@ -141,7 +141,7 @@ export default function GrowTokenPage() {
     setBusy('transfer');
     try {
       await tokenActions.transfer(transferTo, base);
-      toast.success(`Sent ${transferAmount} GROW to ${truncAddr(transferTo)}`);
+      toast.success(`Sent ${transferAmount} FLOW to ${truncAddr(transferTo)}`);
       setTransferTo(''); setTransferAmount('');
       setTimeout(loadBalances, 3000);
     } catch (err: unknown) {
@@ -156,7 +156,7 @@ export default function GrowTokenPage() {
     setBusy('approve');
     try {
       await tokenActions.approve(VAULT_ID, base);
-      toast.success(`Approved ${approveAmount} GROW for vault`);
+      toast.success(`Approved ${approveAmount} FLOW for vault`);
       setApproveAmount('');
       setTimeout(loadBalances, 3000);
     } catch (err: unknown) {
@@ -171,7 +171,7 @@ export default function GrowTokenPage() {
     setBusy('deposit');
     try {
       await vaultActions.depositTokens(GROW_TOKEN_ID, base);
-      toast.success(`Deposited ${depositAmount} GROW to vault`);
+      toast.success(`Deposited ${depositAmount} FLOW to vault`);
       setDepositAmount('');
       setTimeout(loadBalances, 3000);
     } catch (err: unknown) {
@@ -186,7 +186,7 @@ export default function GrowTokenPage() {
     setBusy('withdraw');
     try {
       await vaultActions.withdrawTokens(GROW_TOKEN_ID, base);
-      toast.success(`Withdrew ${withdrawAmount} GROW from vault`);
+      toast.success(`Withdrew ${withdrawAmount} FLOW from vault`);
       setWithdrawAmount('');
       setTimeout(loadBalances, 3000);
     } catch (err: unknown) {
@@ -200,11 +200,11 @@ export default function GrowTokenPage() {
       const target = account?.decodedAddress || '0x08568f09eefb2ff5c3fe9cdac3dc2ca2b3ebbdadbf2fc41982e8970fe21ecc71';
       try {
         await api.growToken.faucet(target);
-        toast.success('Minted 1,000 GROW to your wallet!');
+        toast.success('Minted 1,000 FLOW to your wallet!');
       } catch {
-        const thousandGrow = (BigInt(1000) * BigInt(ONE_GROW)).toString();
-        await tokenActions.approve(VAULT_ID, thousandGrow);
-        toast.success('Signed GROW Token Vault Allowance on Vara Mainnet!');
+        const thousandFlow = (BigInt(1000) * BigInt(ONE_FLOW)).toString();
+        await tokenActions.approve(VAULT_ID, thousandFlow);
+        toast.success('Signed FLOW Token Vault Allowance on Vara Mainnet!');
       }
       setTimeout(loadBalances, 3500);
     } catch (err: unknown) {
@@ -252,8 +252,8 @@ export default function GrowTokenPage() {
 
   void adminAddress;
 
-  const walletGrow = toGrow(balance);
-  const hasTokens = walletGrow > 0;
+  const walletFlow = toFlow(balance);
+  const hasTokens = walletFlow > 0;
   const hasAllowance = Number(allowance) > 0;
   const hasVaultDeposit = Number(vaultBalance.available) > 0 || Number(vaultBalance.allocated) > 0;
   const flowStep = hasVaultDeposit ? 4 : hasAllowance ? 3 : hasTokens ? 2 : 1;
@@ -262,7 +262,7 @@ export default function GrowTokenPage() {
     <div className="max-w-5xl mx-auto space-y-6">
       <PageHeader
         eyebrow="TOKEN"
-        title="GROW Token"
+        title="FLOW Token"
         subtitle="Stream-enabled token for real-time payments on Vara"
         icon={<Coins className="w-7 h-7 text-[#00c9a3]" />}
         actions={
@@ -289,7 +289,7 @@ export default function GrowTokenPage() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="font-bold text-white font-bold text-lg">GROW</span>
+                  <span className="font-bold text-white font-bold text-lg">FLOW</span>
                   <span className="inline-block px-3 py-1 text-[10px] font-mono tracking-widest uppercase rounded-full bg-[rgba(0,201,163,0.1)] text-[#00c9a3] border border-[rgba(0,201,163,0.2)]">VFT</span>
                   <span className="inline-block px-3 py-1 text-[10px] font-mono tracking-widest uppercase rounded-full bg-[rgba(255,255,255,0.1)] text-white border border-[rgba(255,255,255,0.2)]">Testnet</span>
                 </div>
@@ -301,7 +301,7 @@ export default function GrowTokenPage() {
               </div>
               <div className="text-right hidden sm:block">
                 <p className="text-10px-nav-heading text-[#6a8090] uppercase tracking-wider">Total Supply</p>
-                <p className="font-bold text-white gs-mono font-bold text-[#e2e8f0] tabular-nums">{formatGrowShort(totalSupply)} GROW</p>
+                <p className="font-bold text-white gs-mono font-bold text-[#e2e8f0] tabular-nums">{formatFlowShort(totalSupply)} FLOW</p>
               </div>
             </div>
           </div>
@@ -318,7 +318,7 @@ export default function GrowTokenPage() {
                   <Icon className={`w-3.5 h-3.5 ${color}`} />
                   <span className="text-10px-nav-heading text-[#6a8090] uppercase tracking-wider">{label}</span>
                 </div>
-                <p className={`font-bold text-white gs-mono text-base font-bold tabular-nums ${color}`}>{formatGrowShort(value)}</p>
+                <p className={`font-bold text-white gs-mono text-base font-bold tabular-nums ${color}`}>{formatFlowShort(value)}</p>
                 <p className="text-[10px] text-[#6a8090]">{sub}</p>
               </div>
             ))}
@@ -334,7 +334,7 @@ export default function GrowTokenPage() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {[
-              { step: 1, title: 'Get GROW', desc: 'Mint from faucet', done: hasTokens, tab: 'faucet' as const },
+              { step: 1, title: 'Get FLOW', desc: 'Mint from faucet', done: hasTokens, tab: 'faucet' as const },
               { step: 2, title: 'Approve', desc: 'Allow vault access', done: hasAllowance, tab: 'approve' as const },
               { step: 3, title: 'Deposit', desc: 'Fund your vault', done: hasVaultDeposit, tab: 'vault' as const },
               { step: 4, title: 'Stream', desc: 'Start streaming', done: false, tab: null },
@@ -396,20 +396,20 @@ export default function GrowTokenPage() {
                 <div>
                   <h3 className="font-bold text-white font-medium mb-1">Testnet Faucet</h3>
                   <p className="text-sm text-[#6a8090]">
-                    Get free GROW tokens on Vara testnet to try streaming. Each click mints 1,000 GROW.
+                    Get free FLOW tokens on Vara testnet to try streaming. Each click mints 1,000 FLOW.
                   </p>
                 </div>
                 <div className="bg-[rgba(8,11,16,0.5)] rounded-md p-4 border border-[#1a2030]">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-xs text-[#6a8090]">Your wallet balance</span>
-                    <span className="gs-mono font-bold text-[#00c9a3] tabular-nums">{formatGrow(balance)}</span>
+                    <span className="gs-mono font-bold text-[#00c9a3] tabular-nums">{formatFlow(balance)}</span>
                   </div>
                   <button onClick={handleFaucet} disabled={busy === 'faucet' || !account}
                     className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all bg-[#00c9a3] text-black hover:bg-[#00dfb5] disabled:opacity-50 disabled:cursor-not-allowed w-full !min-h-11">
                     {busy === 'faucet' ? (
                       <><RefreshCw className="w-4 h-4 animate-spin" /> Minting...</>
                     ) : (
-                      <><Coins className="w-4 h-4" /> Mint 1,000 GROW</>
+                      <><Coins className="w-4 h-4" /> Mint 1,000 FLOW</>
                     )}
                   </button>
                 </div>
@@ -429,22 +429,22 @@ export default function GrowTokenPage() {
                 <div>
                   <h3 className="font-bold text-white font-medium mb-1">Approve Vault</h3>
                   <p className="text-sm text-[#6a8090]">
-                    Allow the vault contract to move GROW from your wallet. Required before depositing.
+                    Allow the vault contract to move FLOW from your wallet. Required before depositing.
                   </p>
                 </div>
                 <div className="bg-[rgba(8,11,16,0.5)] rounded-md p-4 border border-[#1a2030] space-y-3">
                   <div className="flex items-center justify-between text-xs">
                     <span className="text-[#6a8090]">Current allowance</span>
-                    <span className="gs-mono text-[#00c9a3] font-medium">{formatGrow(allowance)}</span>
+                    <span className="gs-mono text-[#00c9a3] font-medium">{formatFlow(allowance)}</span>
                   </div>
                   <div>
-                    <label className="block text-xs text-[#6a8090] mb-1.5">Amount (GROW)</label>
+                    <label className="block text-xs text-[#6a8090] mb-1.5">Amount (FLOW)</label>
                     <div className="flex gap-2">
                       <div className="relative flex-1">
                         <input value={approveAmount} onChange={e => setApproveAmount(e.target.value)}
                           type="number" step="any" min="0" placeholder="e.g. 1000"
                           className="w-full bg-[#080b10] border border-[#1a2030] rounded-lg px-4 py-2.5 text-white outline-none focus:border-[#00c9a3] transition-colors pr-16" />
-                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6a8090]">GROW</span>
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6a8090]">FLOW</span>
                       </div>
                       <button onClick={handleApprove} disabled={busy === 'approve' || !approveAmount}
                         className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all bg-[#1a2030] text-white hover:bg-[#2a3a4a] disabled:opacity-50 disabled:cursor-not-allowed shrink-0 !text-sm">
@@ -457,7 +457,7 @@ export default function GrowTokenPage() {
                       { label: '1,000', val: '1000' },
                       { label: '10,000', val: '10000' },
                       { label: '100,000', val: '100000' },
-                      { label: 'Max (wallet)', val: String(toGrow(balance)) },
+                      { label: 'Max (wallet)', val: String(toFlow(balance)) },
                     ].map(({ label, val }) => (
                       <button key={label} onClick={() => setApproveAmount(val)}
                         className="inline-block px-3 py-1 text-[10px] font-mono tracking-widest uppercase rounded-full bg-[rgba(255,255,255,0.05)] text-[#e2e8f0] border border-[#1a2030] cursor-pointer hover:bg-[rgba(255,255,255,0.1)] hover:border-[#00c9a3] transition-colors">
@@ -474,7 +474,7 @@ export default function GrowTokenPage() {
                 <div>
                   <h3 className="font-bold text-white font-medium mb-1">Vault Deposit & Withdraw</h3>
                   <p className="text-sm text-[#6a8090]">
-                    Deposit GROW into the vault to fund streams. Withdraw available (unallocated) GROW anytime.
+                    Deposit FLOW into the vault to fund streams. Withdraw available (unallocated) FLOW anytime.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -483,14 +483,14 @@ export default function GrowTokenPage() {
                       <h4 className="text-sm font-medium flex items-center gap-1.5">
                         <ArrowUpFromLine className="w-3.5 h-3.5 text-[#00c9a3]" /> Deposit
                       </h4>
-                      <span className="text-[11px] text-[#6a8090]">Wallet: {formatGrowShort(balance)} GROW</span>
+                      <span className="text-[11px] text-[#6a8090]">Wallet: {formatFlowShort(balance)} FLOW</span>
                     </div>
                     <div>
                       <div className="relative">
                         <input value={depositAmount} onChange={e => setDepositAmount(e.target.value)}
                           type="number" step="any" min="0" placeholder="e.g. 500"
                           className="w-full bg-[#080b10] border border-[#1a2030] rounded-lg px-4 py-2.5 text-white outline-none focus:border-[#00c9a3] transition-colors pr-16" />
-                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6a8090]">GROW</span>
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6a8090]">FLOW</span>
                       </div>
                       <div className="flex gap-1.5 mt-2">
                         {['100', '500', '1000'].map(v => (
@@ -499,7 +499,7 @@ export default function GrowTokenPage() {
                             {v}
                           </button>
                         ))}
-                        <button onClick={() => setDepositAmount(String(toGrow(balance)))}
+                        <button onClick={() => setDepositAmount(String(toFlow(balance)))}
                           className="inline-block px-3 py-1 text-[10px] font-mono tracking-widest uppercase rounded-full bg-[rgba(255,255,255,0.05)] text-[#e2e8f0] border border-[#1a2030] cursor-pointer hover:bg-[rgba(255,255,255,0.1)] hover:border-[#00c9a3] transition-colors">
                           Max
                         </button>
@@ -516,14 +516,14 @@ export default function GrowTokenPage() {
                       <h4 className="text-sm font-medium flex items-center gap-1.5">
                         <ArrowDownToLine className="w-3.5 h-3.5 text-[#e2e8f0]" /> Withdraw
                       </h4>
-                      <span className="text-[11px] text-[#6a8090]">Available: {formatGrowShort(vaultBalance.available)} GROW</span>
+                      <span className="text-[11px] text-[#6a8090]">Available: {formatFlowShort(vaultBalance.available)} FLOW</span>
                     </div>
                     <div>
                       <div className="relative">
                         <input value={withdrawAmount} onChange={e => setWithdrawAmount(e.target.value)}
                           type="number" step="any" min="0" placeholder="e.g. 250"
                           className="w-full bg-[#080b10] border border-[#1a2030] rounded-lg px-4 py-2.5 text-white outline-none focus:border-[#00c9a3] transition-colors pr-16" />
-                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6a8090]">GROW</span>
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6a8090]">FLOW</span>
                       </div>
                       <div className="flex gap-1.5 mt-2">
                         {['100', '250', '500'].map(v => (
@@ -532,7 +532,7 @@ export default function GrowTokenPage() {
                             {v}
                           </button>
                         ))}
-                        <button onClick={() => setWithdrawAmount(String(toGrow(vaultBalance.available)))}
+                        <button onClick={() => setWithdrawAmount(String(toFlow(vaultBalance.available)))}
                           className="inline-block px-3 py-1 text-[10px] font-mono tracking-widest uppercase rounded-full bg-[rgba(255,255,255,0.05)] text-[#e2e8f0] border border-[#1a2030] cursor-pointer hover:bg-[#2a3a4a] hover:border-[#3a4a5a] transition-colors">
                           Max
                         </button>
@@ -550,9 +550,9 @@ export default function GrowTokenPage() {
             {activeTab === 'transfer' && (
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-bold text-white font-medium mb-1">Transfer GROW</h3>
+                  <h3 className="font-bold text-white font-medium mb-1">Transfer FLOW</h3>
                   <p className="text-sm text-[#6a8090]">
-                    Send GROW directly from your wallet to another address. For continuous payments, use Streams instead.
+                    Send FLOW directly from your wallet to another address. For continuous payments, use Streams instead.
                   </p>
                 </div>
                 <div className="bg-[rgba(8,11,16,0.5)] rounded-md p-4 border border-[#1a2030] space-y-3">
@@ -563,13 +563,13 @@ export default function GrowTokenPage() {
                       className="w-full bg-[#080b10] border border-[#1a2030] rounded-lg px-4 py-2.5 text-white outline-none focus:border-[#00c9a3] transition-colors gs-mono !text-xs" />
                   </div>
                   <div>
-                    <label className="block text-xs text-[#6a8090] mb-1.5">Amount (GROW)</label>
+                    <label className="block text-xs text-[#6a8090] mb-1.5">Amount (FLOW)</label>
                     <div className="flex gap-2">
                       <div className="relative flex-1">
                         <input value={transferAmount} onChange={e => setTransferAmount(e.target.value)}
                           type="number" step="any" min="0" placeholder="e.g. 100"
                           className="w-full bg-[#080b10] border border-[#1a2030] rounded-lg px-4 py-2.5 text-white outline-none focus:border-[#00c9a3] transition-colors pr-16" />
-                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6a8090]">GROW</span>
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6a8090]">FLOW</span>
                       </div>
                       <button onClick={handleTransfer} disabled={busy === 'transfer' || !transferTo || !transferAmount}
                         className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all bg-[#1a2030] text-white hover:bg-[#2a3a4a] disabled:opacity-50 disabled:cursor-not-allowed shrink-0 !text-sm">
@@ -662,7 +662,7 @@ export default function GrowTokenPage() {
               ['Standard', 'VFT (Vara Fungible Token)'],
               ['Decimals', String(DECIMALS)],
               ['Network', 'Vara Testnet'],
-              ['Total Supply', formatGrow(totalSupply)],
+              ['Total Supply', formatFlow(totalSupply)],
             ].map(([k, v]) => (
               <div key={k} className="flex justify-between py-1.5 border-b border-[#1a2030]">
                 <span className="text-[#6a8090]">{k}</span>
@@ -682,7 +682,7 @@ export default function GrowTokenPage() {
               <Waves className="w-5 h-5 text-[#00c9a3]" />
               <div>
                 <p className="font-semibold text-sm">Ready to stream!</p>
-                <p className="text-xs text-[#6a8090] mt-0.5">You have {formatGrow(vaultBalance.available)} in the vault. Create a per-second stream.</p>
+                <p className="text-xs text-[#6a8090] mt-0.5">You have {formatFlow(vaultBalance.available)} in the vault. Create a per-second stream.</p>
               </div>
             </div>
             <ChevronRight className="w-5 h-5 text-[#00c9a3] group-hover:translate-x-1 transition-transform" />

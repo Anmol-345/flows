@@ -13,13 +13,13 @@ type FeedEvent = {
 };
 
 const E_POOL = [
-  ['alice.eth', 'received a grant stream', '4.1 GROW/s'],
-  ['dev-dao.eth', 'opened a builder stream', '1.8 GROW/s'],
-  ['core-team.eth', 'rewarded 14 contributors', '1,250 GROW'],
+  ['alice.eth', 'received a grant stream', '4.1 FLOW/s'],
+  ['dev-dao.eth', 'opened a builder stream', '1.8 FLOW/s'],
+  ['core-team.eth', 'rewarded 14 contributors', '1,250 FLOW'],
   ['mira.eth', 'joined the open source fund', '+1 connection'],
-  ['protocol-dao.eth', 'started a 12-month incentive', '4,500 GROW/mo'],
-  ['kai.eth', 'claimed their rewards', '320 GROW'],
-  ['north.eth', 'funded a community bounty', '900 GROW']
+  ['protocol-dao.eth', 'started a 12-month incentive', '4,500 FLOW/mo'],
+  ['kai.eth', 'claimed their rewards', '320 FLOW'],
+  ['north.eth', 'funded a community bounty', '900 FLOW']
 ];
 
 // --- Hook ---

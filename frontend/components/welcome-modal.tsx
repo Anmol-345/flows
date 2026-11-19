@@ -17,8 +17,8 @@ const steps = [
   {
     icon: Coins,
     step: '1',
-    title: 'Mint GROW Tokens',
-    desc: 'Head to the GROW Token page and tap the faucet to get 1,000 free testnet tokens instantly.',
+    title: 'Mint FLOW Tokens',
+    desc: 'Head to the FLOW Token page and tap the faucet to get 1,000 free testnet tokens instantly.',
     color: 'bg-gradient-to-br from-forest to-[#2c4318]',
     accent: 'text-moss',
     border: 'border-moss/25',
@@ -29,7 +29,7 @@ const steps = [
     icon: CheckCircle,
     step: '2',
     title: 'Approve & Deposit',
-    desc: 'Approve the TokenVault to spend your GROW, then deposit tokens into your vault escrow balance.',
+    desc: 'Approve the TokenVault to spend your FLOW, then deposit tokens into your vault escrow balance.',
     color: 'bg-gradient-to-br from-forest to-[#2c4318]',
     accent: 'text-forest',
     border: 'border-forest/20',
@@ -106,7 +106,7 @@ export default function WelcomeModal() {
         <div className="flex flex-row gap-8 px-6 py-4">
           <div className="flex-1 space-y-3">
             <p className="text-sm leading-relaxed" style={{ color: '#e2e8f0' }}>
-              Stream GROW tokens per-second to any address on Vara. Get started in 4 steps:
+              Stream FLOW tokens per-second to any address on Vara. Get started in 4 steps:
             </p>
 
             <div className="space-y-1.5">

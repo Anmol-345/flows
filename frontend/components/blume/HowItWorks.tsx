@@ -101,7 +101,7 @@ export function HowItWorks() {
             HOW IT WORKS
           </div>
           <h2 style={{ fontSize: "clamp(32px, 5vw, 48px)", fontWeight: 800, letterSpacing: "-0.02em", margin: 0 }}>
-            How the growth network works
+            How the flow network works
           </h2>
         </div>
 
@@ -180,7 +180,7 @@ export function HowItWorks() {
               <div className={`step-badge vine-element ${step2Revealed ? 'badge-active' : 'badge-inactive'}`} style={{ position: "absolute", left: "-102px", top: "50%", transform: "translateY(-50%)", width: "32px", height: "32px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", fontWeight: 700, fontFamily: "ui-monospace, monospace", border: "2px solid", transition: "all 400ms" }}>
                 02
               </div>
-              <h3 style={{ fontSize: "28px", fontWeight: 700, marginBottom: "16px" }}>Grow your network, grow your impact</h3>
+              <h3 style={{ fontSize: "28px", fontWeight: 700, marginBottom: "16px" }}>Flow your network, flow your impact</h3>
               <p style={{ fontSize: "18px", color: "#475569", lineHeight: 1.6 }}>
                 Connect with DAOs, open source projects, and communities. Your contributions earn rewards automatically.
               </p>

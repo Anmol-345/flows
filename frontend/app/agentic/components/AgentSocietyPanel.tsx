@@ -230,7 +230,7 @@ export default function AgentSocietyPanel() {
       `Approve in SubWallet: Spawning ${agentCountInput} Vara Agents (+100 VARA Protocol Bonus + ${creatorTopUpInput} VARA Top-Up each)...`
     );
     try {
-      const payload = encodePlaceSpotOrderPayload('GROW/VARA', true, 0.0425, Math.max(10, creatorTopUpInput));
+      const payload = encodePlaceSpotOrderPayload('FLOW/VARA', true, 0.0425, Math.max(10, creatorTopUpInput));
       const blockHash = await signOnVaraMainnet(STONK_ORDERBOOK_PROGRAM_ID, payload);
       setLatestTxUrl(`https://vara.subscan.io/block/${blockHash}`);
       const res = await api.agentic.agents.spawn({

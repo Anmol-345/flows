@@ -34,7 +34,7 @@ const STONK_ORDERBOOK_PROGRAM_ID = MAINNET_CONTRACTS.stonkOrderbook;
 
 const AGENT_ROLE_CATALOG = [
   { code: 'PERP_TRADER', title: 'Momentum Perps Trader (1x–5x)', defaultMarket: 'NVDA', defaultLev: 5 },
-  { code: 'CLOB_MM', title: 'Spot CLOB Market Maker', defaultMarket: 'GROW/VARA', defaultLev: 1 },
+  { code: 'CLOB_MM', title: 'Spot CLOB Market Maker', defaultMarket: 'FLOW/VARA', defaultLev: 1 },
   { code: 'RISK_GUARD', title: 'Solvency & Liquidation Guard', defaultMarket: 'TSLA', defaultLev: 3 },
   { code: 'BELL_ORACLE', title: 'Opening Bell Parimutuel Predictor', defaultMarket: 'SPY', defaultLev: 5 },
   { code: 'FUNDING_ARB', title: 'Cross-Vault Funding Arbitrageur', defaultMarket: 'AAPL', defaultLev: 3 },
@@ -45,7 +45,7 @@ const AGENT_ROLE_CATALOG = [
 
 const CONTRACTS_LIST = [
   { key: 'stonkPerpsDesk', name: 'Stonk on Vara 5x Perps Desk', defaultId: '0x8073da7aa8e51624ef4c1d41a8e22065cfe8b9ff9e6d5b7f969158397465da81', role: '24/7 Stock & Crypto 1x–5x Leveraged Perps + Call the Open Vault (DeFiLlama Indexed)', category: 'RISK', iface: 'OpenStockPosition, CloseStockPosition' },
-  { key: 'stonkOrderbook', name: 'Stonk on Vara Spot CLOB', defaultId: '0x2c1dd07810480a34b7369fbf0ff0c97651c6db1f26ffc5eaff6490d6b20263cf', role: 'On-Chain Central Limit Orderbook for GROW/VARA & Stock Spot Pairs (DeFiLlama Indexed)', category: 'RISK', iface: 'PlaceSpotOrder, FillSpotOrder' },
+  { key: 'stonkOrderbook', name: 'Stonk on Vara Spot CLOB', defaultId: '0x2c1dd07810480a34b7369fbf0ff0c97651c6db1f26ffc5eaff6490d6b20263cf', role: 'On-Chain Central Limit Orderbook for FLOW/VARA & Stock Spot Pairs (DeFiLlama Indexed)', category: 'RISK', iface: 'PlaceSpotOrder, FillSpotOrder' },
   { key: 'streamCoreV3', name: 'StreamCore V3', defaultId: '0x4ae03ca006e92fe188d3c61d3d39a1d05c9fdf1c0a16c750b103269deccfa784', role: 'V3 Multi-Token Per-Second Streaming Engine (7-Day gVARA Yield)', category: 'STREAMING', iface: 'CreateStream, Deposit, Withdraw' },
   { key: 'streamCore', name: 'StreamCore V2', defaultId: '0x8298c2eea5c6bbe55a9cfe72283b5399098fd6a54d9a2a14c2bedba8eea50659', role: 'Real-Time Money Streaming Engine (2,399+ Mainnet Streams)', category: 'STREAMING', iface: 'CreateStream, StopStream, Withdraw' },
   { key: 'tokenVault', name: 'TokenVault', defaultId: '0x657cf9c4f929aeac97092037826c1117f9e6cd0e3c4edc44e49decc17b840aa9', role: 'Collateral Custody & Locking (DeFiLlama TVL Vault)', category: 'SECURITY', iface: 'DepositNative, WithdrawNative' },
@@ -53,7 +53,7 @@ const CONTRACTS_LIST = [
   { key: 'permissionManager', name: 'PermissionManager', defaultId: '0x52f4299e964dab5e97c91cdd10e2d6e635b19696ab8389889aabceba3de9e581', role: 'Scoped Agent Authority Delegation', category: 'SECURITY', iface: 'GrantRole, RevokeRole' },
   { key: 'bountyAdapter', name: 'BountyAdapter', defaultId: '0x7697bb2e8655e6cd7294389a0289355f48fd5459914d2a735c9966dad548bd4f', role: 'Milestone GitHub & AI Agent Escrow Streams', category: 'STREAMING', iface: 'Create, Claim, Complete' },
   { key: 'identityRegistry', name: 'IdentityRegistry', defaultId: '0x6f413156308663798a77507cf0ea6e79bdbf53add3579ccd4317fc320acf7f29', role: 'Agent & User On-Chain Scoring', category: 'SECURITY', iface: 'RegisterIdentity, Verify' },
-  { key: 'growToken', name: 'GrowToken (GROW)', defaultId: '0x728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163', role: 'Governance & Protocol Incentives', category: 'TOKENS', iface: 'Transfer, Mint, Approve' },
+  { key: 'growToken', name: 'FlowToken (FLOW)', defaultId: '0x728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163', role: 'Governance & Protocol Incentives', category: 'TOKENS', iface: 'Transfer, Mint, Approve' },
   { key: 'gvaraToken', name: 'gVARA V2 (Staked Yield)', defaultId: '0x04314af41b7dbac322e3e66920211d2f799719e1cdc3122a99752f72b6ae84ee', role: 'Liquid Staked Yield & Margin Token', category: 'TOKENS', iface: 'Mint, Transfer, Approve' },
   { key: 'gvaraV3Token', name: 'gVARA V3 (Reward Stream)', defaultId: '0x086c7257f39302f9346ed8b7d2839ef1c728fc04997b6056581c0b3f396710ee', role: 'V3 7-Day Reward Stream Token', category: 'TOKENS', iface: 'Mint, Transfer, Stream' },
   { key: 'questSeeds', name: 'QuestSeeds', defaultId: '0xefbe2c4a66e05cbde419196c1196ff6e790a59b7c0fd601ebc035c3c8dd7466d', role: 'Proof-of-Engagement Ledger', category: 'TOKENS', iface: 'Mint, AwardSeeds, Redeem' },
@@ -174,7 +174,7 @@ function AgentsDashboardContent() {
   const [epochTimeRemaining, setEpochTimeRemaining] = useState(240);
 
   // ── MODULE 2: SPOT CLOB ORDERBOOK DESK STATE ──
-  const [spotPair, setSpotPair] = useState<'GROW/VARA' | 'VARA/USDC' | 'gVARA/VARA' | 'NVDA/VARA'>('GROW/VARA');
+  const [spotPair, setSpotPair] = useState<'FLOW/VARA' | 'VARA/USDC' | 'gVARA/VARA' | 'NVDA/VARA'>('FLOW/VARA');
   const [spotOrderType, setSpotOrderType] = useState<'LIMIT' | 'MARKET'>('LIMIT');
   const [spotPriceInput, setSpotPriceInput] = useState('0.0425');
   const [spotAmountInput, setSpotAmountInput] = useState('250');
@@ -1480,19 +1480,19 @@ function AgentsDashboardContent() {
                       </a>
                     </div>
                     <p className="text-xs text-[#6B7280] mt-1">
-                      Place on-chain Limit or Market orders across GROW/VARA, VARA/USDC, gVARA/VARA, and NVDA/VARA.
+                      Place on-chain Limit or Market orders across FLOW/VARA, VARA/USDC, gVARA/VARA, and NVDA/VARA.
                     </p>
                   </div>
 
                   <div className="flex items-center gap-1.5 flex-wrap">
-                    {(['GROW/VARA', 'VARA/USDC', 'gVARA/VARA', 'NVDA/VARA'] as const).map((pair) => (
+                    {(['FLOW/VARA', 'VARA/USDC', 'gVARA/VARA', 'NVDA/VARA'] as const).map((pair) => (
                       <button
                         key={pair}
                         type="button"
                         onClick={() => {
                           setSpotPair(pair);
                           setSpotPriceInput(
-                            pair === 'GROW/VARA'
+                            pair === 'FLOW/VARA'
                               ? '0.0425'
                               : pair === 'VARA/USDC'
                               ? '0.00042'
@@ -1810,7 +1810,7 @@ function AgentsDashboardContent() {
                               onChange={(e) => updateSlotField(idx, 'market', e.target.value)}
                               className="w-full rounded-lg px-2.5 py-1.5 text-xs font-mono"
                             >
-                              {['NVDA', 'TSLA', 'AAPL', 'MSFT', 'SPY', 'QQQ', 'GROW/VARA', 'VARA/USDC'].map((m) => (
+                              {['NVDA', 'TSLA', 'AAPL', 'MSFT', 'SPY', 'QQQ', 'FLOW/VARA', 'VARA/USDC'].map((m) => (
                                 <option key={m} value={m}>
                                   {m}
                                 </option>

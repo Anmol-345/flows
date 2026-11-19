@@ -15,7 +15,7 @@ const CONTRACTS = [
   {
     key: 'Stonk on Vara Spot CLOB',
     category: 'DeFi Â· Spot Orderbook',
-    role: 'On-Chain Central Limit Order Book (GROW/VARA, wVARA/VARA & RWA Pairs)',
+    role: 'On-Chain Central Limit Order Book (FLOW/VARA, wVARA/VARA & RWA Pairs)',
     programId: '0x2c1dd07810480a34b7369fbf0ff0c97651c6db1f26ffc5eaff6490d6b20263cf',
     nativeVaraBalance: '1.00',
     tvlTracked: false,
@@ -109,7 +109,7 @@ const CONTRACTS = [
     tvlTracked: false,
   },
   {
-    key: 'GrowToken (GROW)',
+    key: 'FlowToken (FLOW)',
     category: 'Ecosystem Â· Governance Token',
     role: 'Core Ecosystem Utility & Stream Settlement Token',
     programId: '0x728d04df91561c66938053a4f5178f749da004ebd219ca05f7c090609a6f7163',
@@ -296,7 +296,7 @@ export async function GET() {
       {
         category: 'Stonk on Vara Spot CLOB',
         actor: 'kGhBUeLMLXKB...v92jr â†’ OrderbookDex (0x2c1dd0...63cf)',
-        contract: 'StonkBaseService::PlaceSpotOrder("GROW/VARA", Bid)',
+        contract: 'StonkBaseService::PlaceSpotOrder("FLOW/VARA", Bid)',
         volumeVara: '420,000',
         blockNumber: '37610206',
         blockHash: '0x59e7df41b87d694b4579a6d5a3b00b34131c49f8b2ef6329fb9e55df66ef4e24',

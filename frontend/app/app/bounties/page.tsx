@@ -23,7 +23,7 @@ interface OnChainBountyCard {
   title: string;
   org: string;
   track: 'SAILS RUST' | 'AI AGENTS' | 'FRONTEND' | 'DEFI';
-  budgetGrow: number;
+  budgetFlow: number;
   maxFlowPerDay: number;
   minScore: number;
   status: 'OPEN' | 'CLAIMED' | 'STREAMING';
@@ -38,7 +38,7 @@ const VERIFIED_MAINNET_BOUNTIES: OnChainBountyCard[] = [
     title: 'Build Autonomous Sails Delayed-Message Liquidation Keeper',
     org: 'Flows Core Protocol',
     track: 'SAILS RUST',
-    budgetGrow: 25000,
+    budgetFlow: 25000,
     maxFlowPerDay: 1200,
     minScore: 80,
     status: 'OPEN',
@@ -51,7 +51,7 @@ const VERIFIED_MAINNET_BOUNTIES: OnChainBountyCard[] = [
     title: 'Integrate Custom Multi-Agent Perps Hedging Strategy on StonkPerpsDesk',
     org: 'EuclidPrime AI Syndicate',
     track: 'AI AGENTS',
-    budgetGrow: 18000,
+    budgetFlow: 18000,
     maxFlowPerDay: 900,
     minScore: 75,
     status: 'OPEN',
@@ -64,7 +64,7 @@ const VERIFIED_MAINNET_BOUNTIES: OnChainBountyCard[] = [
     title: 'SubWallet & Talisman Deep-Link Mobile Signing SDK Widget',
     org: 'Vara Ecosystem Builders',
     track: 'FRONTEND',
-    budgetGrow: 12500,
+    budgetFlow: 12500,
     maxFlowPerDay: 750,
     minScore: 70,
     status: 'OPEN',
@@ -77,7 +77,7 @@ const VERIFIED_MAINNET_BOUNTIES: OnChainBountyCard[] = [
     title: 'DeFiLlama Custom SuperToken TVL & Yield Analytics Indexer',
     org: 'Flows Analytics',
     track: 'DEFI',
-    budgetGrow: 15000,
+    budgetFlow: 15000,
     maxFlowPerDay: 850,
     minScore: 78,
     status: 'STREAMING',
@@ -120,7 +120,7 @@ export default function BountiesPage() {
     e.preventDefault();
     const budgetNum = parseFloat(budget);
     if (!title.trim() || isNaN(budgetNum) || budgetNum <= 0) {
-      toast.error('Enter a valid bounty title and GROW budget.');
+      toast.error('Enter a valid bounty title and FLOW budget.');
       return;
     }
     setBusyId(-1);
@@ -142,7 +142,7 @@ export default function BountiesPage() {
           title: title.trim(),
           org: account?.name || 'Community Sponsor',
           track,
-          budgetGrow: budgetNum,
+          budgetFlow: budgetNum,
           maxFlowPerDay: Math.round(budgetNum / 14),
           minScore,
           status: 'OPEN',
@@ -246,7 +246,7 @@ export default function BountiesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-[#6B7280] mb-1">Total Budget (GROW)</label>
+                <label className="block text-xs font-medium text-[#6B7280] mb-1">Total Budget (FLOW)</label>
                 <input
                   required
                   type="number"
@@ -284,7 +284,7 @@ export default function BountiesPage() {
             </div>
 
             <button type="submit" disabled={busyId === -1} className="gs-btn-primary w-full py-2.5 text-sm">
-              {busyId === -1 ? 'Signing in SubWallet…' : `Sign & Create ${budget} GROW Bounty on Vara Mainnet`}
+              {busyId === -1 ? 'Signing in SubWallet…' : `Sign & Create ${budget} FLOW Bounty on Vara Mainnet`}
             </button>
           </form>
         </Reveal>
@@ -335,7 +335,7 @@ export default function BountiesPage() {
                   </span>
                 </div>
                 <span className="font-mono text-sm font-bold text-[#136F46]">
-                  {bounty.budgetGrow.toLocaleString()} GROW
+                  {bounty.budgetFlow.toLocaleString()} FLOW
                 </span>
               </div>
 
@@ -349,7 +349,7 @@ export default function BountiesPage() {
                   <ShieldCheck className="w-3.5 h-3.5 text-[#136F46]" /> Min Score: {bounty.minScore}
                 </span>
                 <span className="flex items-center gap-1">
-                  <Coins className="w-3.5 h-3.5 text-[#136F46]" /> Up to {bounty.maxFlowPerDay} GROW/day
+                  <Coins className="w-3.5 h-3.5 text-[#136F46]" /> Up to {bounty.maxFlowPerDay} FLOW/day
                 </span>
                 <span className="flex items-center gap-1">
                   <Users className="w-3.5 h-3.5" /> {bounty.submissions} Claims

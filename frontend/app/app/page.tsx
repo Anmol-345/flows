@@ -76,9 +76,9 @@ function fmtGrow(raw: string | number): string {
 function fmtFlowRate(raw: number): string {
   if (raw === 0) return '0';
   const g = raw / ONE_GROW;
-  if (g >= 1) return g.toFixed(2) + ' GROW/s';
-  if (g >= 0.001) return g.toFixed(4) + ' GROW/s';
-  return g.toFixed(6) + ' GROW/s';
+  if (g >= 1) return g.toFixed(2) + ' FLOW/s';
+  if (g >= 0.001) return g.toFixed(4) + ' FLOW/s';
+  return g.toFixed(6) + ' FLOW/s';
 }
 
 export default function DashboardPage() {
@@ -286,7 +286,7 @@ export default function DashboardPage() {
           <Link href="/app/grow" data-reveal-item className="gs-card p-4 group block">
             <div className="flex items-center gap-2 mb-2">
               <Coins className="w-4 h-4 text-[#136F46]" />
-              <span className="text-xs font-medium text-[#6B7280]">GROW / gVARA Supply</span>
+              <span className="text-xs font-medium text-[#6B7280]">FLOW / gVARA Supply</span>
             </div>
             <p className="gs-display text-xl gs-mono tabular-nums text-[#136F46] font-semibold">
               <CountUp value={Number(growBalance) / ONE_GROW} format={(v) => fmtGrow(v * ONE_GROW)} />
@@ -301,7 +301,7 @@ export default function DashboardPage() {
             <p className="gs-display text-xl gs-mono tabular-nums font-semibold">
               <CountUp value={Number(vaultAvailable) / ONE_GROW} format={(v) => fmtGrow(v * ONE_GROW)} />
             </p>
-            <p className="text-[11px] text-[#6B7280] mt-1">VARA & GROW in TokenVault</p>
+            <p className="text-[11px] text-[#6B7280] mt-1">VARA & FLOW in TokenVault</p>
           </Link>
           <Link href="/app/streams" data-reveal-item className="gs-card p-4 group block">
             <div className="flex items-center gap-2 mb-2">
@@ -364,14 +364,14 @@ export default function DashboardPage() {
               href: '/app/streams',
               icon: Waves,
               title: 'Money Streams (V2 + V3)',
-              desc: 'Stream VARA or GROW per-second with real-time liquidation buffers',
+              desc: 'Stream VARA or FLOW per-second with real-time liquidation buffers',
               label: 'Open Streams',
             },
             {
               href: '/app/vault',
               icon: Vault,
               title: 'Token & Native VARA Vault',
-              desc: 'Deposit and withdraw VARA & GROW in the DeFiLlama-tracked vault',
+              desc: 'Deposit and withdraw VARA & FLOW in the DeFiLlama-tracked vault',
               label: 'Manage Vault',
             },
             {
@@ -384,9 +384,9 @@ export default function DashboardPage() {
             {
               href: '/app/grow',
               icon: Coins,
-              title: 'GROW Token & Faucet',
-              desc: 'Mint testnet/demo GROW, approve allowances, and transfer tokens',
-              label: 'Open GROW Token',
+              title: 'FLOW Token & Faucet',
+              desc: 'Mint testnet/demo FLOW, approve allowances, and transfer tokens',
+              label: 'Open FLOW Token',
             },
             {
               href: '/app/identity',
@@ -472,7 +472,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="text-right shrink-0">
                       <p className="gs-mono text-xs font-semibold tabular-nums">
-                        {deposited.toFixed(2)} {isNative ? 'VARA' : 'GROW'}
+                        {deposited.toFixed(2)} {isNative ? 'VARA' : 'FLOW'}
                       </p>
                       <p className="gs-mono text-[10px] text-[#136F46]">
                         {(Number(s.flow_rate) / ONE_GROW).toFixed(4)}/s

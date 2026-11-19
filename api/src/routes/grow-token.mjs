@@ -8,7 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const router = Router();
 const C = 'growToken';
 
-const FAUCET_AMOUNT = BigInt('1000000000000000'); // 1,000 GROW
+const FAUCET_AMOUNT = BigInt('1000000000000000'); // 1,000 FLOW
 const RATE_LIMIT_MS = 5 * 60 * 1000; // 5 minutes between requests per address
 
 const faucetState = {
@@ -190,7 +190,7 @@ router.post('/faucet', async (req, res, next) => {
       success: true,
       to,
       amount: FAUCET_AMOUNT.toString(),
-      amountHuman: '1,000 GROW',
+      amountHuman: '1,000 FLOW',
       blockHash,
     });
   } catch (err) { next(err); }
@@ -200,7 +200,7 @@ router.get('/faucet/config', async (req, res) => {
   res.json({
     mode: faucetState.mode,
     amountPerMint: FAUCET_AMOUNT.toString(),
-    amountHuman: '1,000 GROW',
+    amountHuman: '1,000 FLOW',
     rateLimitSeconds: RATE_LIMIT_MS / 1000,
   });
 });

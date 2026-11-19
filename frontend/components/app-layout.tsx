@@ -27,7 +27,7 @@ const coreNavItems = [
   { href: '/app', label: 'Overview & Balances', icon: LayoutDashboard },
   { href: '/app/streams', label: 'Money Streams', icon: Waves },
   { href: '/app/vault', label: 'Vault & Wrap (gVARA/wVARA)', icon: Vault },
-  { href: '/app/grow', label: 'GROW Token & Faucet', icon: Coins },
+  { href: '/app/grow', label: 'FLOW Token & Faucet', icon: Coins },
   { href: '/app/splits', label: 'Revenue Splits (60/15/15/10)', icon: GitFork },
   { href: '/app/bounties', label: 'Bounties & Grants', icon: Briefcase },
 ];

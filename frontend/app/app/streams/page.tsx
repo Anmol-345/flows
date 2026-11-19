@@ -91,7 +91,7 @@ function tokenSymbol(token?: string): string {
   const t = (token || '').toLowerCase();
   if (t === GVARA_TOKEN.toLowerCase()) return 'gVARA';
   if (t === ZERO_TOKEN || t === '0x0') return 'VARA';
-  return 'GROW';
+  return 'FLOW';
 }
 
 function toBaseUnits(amountStr: string): string {
@@ -245,7 +245,7 @@ export default function StreamsPage() {
 
   const selectedTokenHex =
     streamAsset === 'gvara' ? GVARA_TOKEN : streamAsset === 'vara' ? ZERO_TOKEN : GROW_TOKEN;
-  const selectedSymbol = streamAsset === 'gvara' ? 'gVARA' : streamAsset === 'vara' ? 'VARA' : 'GROW';
+  const selectedSymbol = streamAsset === 'gvara' ? 'gVARA' : streamAsset === 'vara' ? 'VARA' : 'FLOW';
 
   const minRequiredDeposit = flowRate ? parseFloat(flowRate) * MIN_BUFFER_SECONDS : 0;
   const isDepositSufficient = deposit ? parseFloat(deposit) >= minRequiredDeposit : false;
@@ -363,7 +363,7 @@ export default function StreamsPage() {
       <PageHeader
         eyebrow="PER-SECOND MONEY STREAMING · STREAMCORE V2 & V3"
         title="Real-Time Money Streams"
-        subtitle="Stream gVARA, VARA, or GROW per-second to contributors, AI squads, or treasury vaults on Vara Mainnet"
+        subtitle="Stream gVARA, VARA, or FLOW per-second to contributors, AI squads, or treasury vaults on Vara Mainnet"
         icon={<Waves className="w-6 h-6 text-[#136F46]" />}
         actions={
           <div className="flex items-center gap-2">
@@ -402,7 +402,7 @@ export default function StreamsPage() {
                 {[
                   { id: 'gvara' as const, label: 'gVARA (1-Click Auto-Wrap)' },
                   { id: 'vara' as const, label: 'Vault VARA' },
-                  { id: 'grow' as const, label: 'Vault GROW' },
+                  { id: 'grow' as const, label: 'Vault FLOW' },
                 ].map((opt) => (
                   <button
                     key={opt.id}
@@ -445,11 +445,11 @@ export default function StreamsPage() {
               ) : (
                 <>
                   <span className="text-[#6B7280]">
-                    TokenVault Available GROW:{' '}
-                    <strong className="font-mono text-[#136F46]">{userBal.vaultGrow.toFixed(2)} GROW</strong>
+                    TokenVault Available FLOW:{' '}
+                    <strong className="font-mono text-[#136F46]">{userBal.vaultGrow.toFixed(2)} FLOW</strong>
                   </span>
                   <Link href="/app/vault" className="text-[#136F46] font-semibold hover:underline">
-                    Deposit GROW to TokenVault first →
+                    Deposit FLOW to TokenVault first →
                   </Link>
                 </>
               )}

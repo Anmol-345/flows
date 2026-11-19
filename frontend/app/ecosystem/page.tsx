@@ -131,7 +131,7 @@ export default function EcosystemPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Partner with Flows to bring real-time payments to your users.
-            Integrate, co-build, and grow together.
+            Integrate, co-build, and flow together.
           </motion.p>
         </div>
       </AuroraBackground>

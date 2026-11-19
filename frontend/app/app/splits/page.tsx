@@ -126,7 +126,7 @@ export default function SplitsPage() {
     try {
       const units = BigInt(Math.floor(amt * ONE_TOKEN)).toString();
       const tx = await distribute(groupId, useNativeVara ? ZERO_TOKEN : GROW_TOKEN, units);
-      toast.success(`Distributed ${amt} ${useNativeVara ? 'VARA' : 'GROW'} across Group #${groupId}! Block: ${tx.blockHash.slice(0, 12)}…`);
+      toast.success(`Distributed ${amt} ${useNativeVara ? 'VARA' : 'FLOW'} across Group #${groupId}! Block: ${tx.blockHash.slice(0, 12)}…`);
     } catch (err: unknown) {
       toast.error(err instanceof Error ? err.message : 'Distribution failed');
     }
@@ -264,7 +264,7 @@ export default function SplitsPage() {
           <div className="border-b gs-divider pb-3">
             <h3 className="text-sm font-semibold">Execute Instant Split Distribution</h3>
             <p className="text-xs text-[#6B7280]">
-              Route VARA or GROW across any active Split Group on Vara Mainnet
+              Route VARA or FLOW across any active Split Group on Vara Mainnet
             </p>
           </div>
 
@@ -307,14 +307,14 @@ export default function SplitsPage() {
                       : 'border-[#E6E8E5] text-[#6B7280]'
                   }`}
                 >
-                  GROW Token
+                  FLOW Token
                 </button>
               </div>
             </div>
 
             <div>
               <label className="block text-xs font-medium text-[#6B7280] mb-1">
-                Amount ({useNativeVara ? 'VARA' : 'GROW'})
+                Amount ({useNativeVara ? 'VARA' : 'FLOW'})
               </label>
               <input
                 type="number"
@@ -335,7 +335,7 @@ export default function SplitsPage() {
               <Send className="w-3.5 h-3.5" />
               {txLoading
                 ? 'Broadcasting…'
-                : `Distribute ${distAmount || '0'} ${useNativeVara ? 'VARA' : 'GROW'} to Group #${distGroupId}`}
+                : `Distribute ${distAmount || '0'} ${useNativeVara ? 'VARA' : 'FLOW'} to Group #${distGroupId}`}
             </button>
           </div>
         </div>

@@ -115,7 +115,7 @@ const useCases = [
     icon: Lock,
     title: "Vesting Streams",
     tagline: "Linear token unlock with control",
-    description: "Replace cliff-and-vest with smooth linear streaming. Token holders see their balance grow every second. Configurable stoppability gives both parties flexibility.",
+    description: "Replace cliff-and-vest with smooth linear streaming. Token holders see their balance flow every second. Configurable stoppability gives both parties flexibility.",
     features: [
       "Linear per-second vesting",
       "Configurable cliff period",

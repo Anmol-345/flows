@@ -142,13 +142,13 @@ export function HeroStreamShowcase() {
             Open Source Builder
           </div>
           <div style={{ fontSize: "26px", fontWeight: 800, color: "#ffffff", fontFamily: "ui-monospace, monospace", margin: "6px 0 16px" }}>
-            1,200 <span style={{ fontSize: "15px", color: "#34d399" }}>GROW/mo</span>
+            1,200 <span style={{ fontSize: "15px", color: "#34d399" }}>FLOW/mo</span>
           </div>
 
           {/* Progress Indicator */}
           <div>
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#94a3b8", marginBottom: "6px" }}>
-              <span>Growth Progress</span>
+              <span>Flow Progress</span>
               <span style={{ color: "#34d399", fontWeight: 700 }}>{unlockedPct}%</span>
             </div>
             <div style={{ height: "5px", background: "#1e293b", borderRadius: "3px", overflow: "hidden" }}>
@@ -253,7 +253,7 @@ export function HeroStreamShowcase() {
                 }}
               >
                 {streamRate.toFixed(2)}{" "}
-                <span style={{ fontSize: "20px", color: "#34d399", fontWeight: 600 }}>GROW/s</span>
+                <span style={{ fontSize: "20px", color: "#34d399", fontWeight: 600 }}>FLOW/s</span>
                 <span className="term-cursor" />
               </div>
             </div>
@@ -264,7 +264,7 @@ export function HeroStreamShowcase() {
                 <span style={{ color: "#38bdf8" }}>[NETWORK]</span> builder.eth ➔ community reward flowing
               </div>
               <div>
-                <span style={{ color: "#34d399" }}>[GROWTH]</span> 420 contributors earning &bull; Zero friction
+                <span style={{ color: "#34d399" }}>[FLOW]</span> 420 contributors earning &bull; Zero friction
               </div>
             </div>
 
@@ -317,7 +317,7 @@ export function HeroStreamShowcase() {
         >
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "18px" }}>
             <span style={{ fontSize: "11px", fontWeight: 700, color: "#38bdf8", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-              GROWTH NETWORK
+              FLOW NETWORK
             </span>
             <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#38bdf8", boxShadow: "0 0 6px #38bdf8" }} />
           </div>
@@ -326,7 +326,7 @@ export function HeroStreamShowcase() {
             Active Contributors
           </div>
           <div style={{ fontSize: "26px", fontWeight: 800, color: "#ffffff", fontFamily: "ui-monospace, monospace", margin: "6px 0 16px" }}>
-            420 <span style={{ fontSize: "15px", color: "#38bdf8" }}>growing</span>
+            420 <span style={{ fontSize: "15px", color: "#38bdf8" }}>flowing</span>
           </div>
 
           {/* Node Topology */}
@@ -337,7 +337,7 @@ export function HeroStreamShowcase() {
           </div>
 
           <div style={{ marginTop: "16px", fontSize: "12px", color: "#64748b", fontFamily: "ui-monospace, monospace" }}>
-            Social &bull; Permissionless growth
+            Social &bull; Permissionless flow
           </div>
         </div>
       </div>

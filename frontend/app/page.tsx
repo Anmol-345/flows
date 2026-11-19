@@ -141,13 +141,13 @@ import { HomeMiddleSections } from "@/components/blume/HomeMiddleSections";
         <div className={"sidecar-hero-content"} data-astro-cid-sc5xoz2y={""}>
           <div className={"sidecar-hero-text"} data-astro-cid-sc5xoz2y={""}>
             <h1 className={"sidecar-hero-title"} data-astro-cid-sc5xoz2y={""}>
-              {" Grow together, "}
+              {" Flow together, "}
               <br data-astro-cid-sc5xoz2y={""} />
               {"on-chain."}
             </h1>
             <p className={"sidecar-hero-subtitle"} data-astro-cid-sc5xoz2y={""}>
               {
-                " Flows is the money streaming protocol where communities fund contributors, stream rewards in real time, and grow together as one network. "
+                " Flows is the money streaming protocol where communities fund contributors, stream rewards in real time, and flow together as one network. "
               }
             </p>
             <div className={"sidecar-hero-cta"} data-astro-cid-sc5xoz2y={""} style={{ display: 'flex', justifyContent: 'center' }}>
@@ -289,14 +289,14 @@ import { HomeMiddleSections } from "@/components/blume/HomeMiddleSections";
             id={"sidecar-conclusion-title"}
             data-astro-cid-7mp4itxr={""}
           >
-            {"\nReady to grow?\n"}
+            {"\nReady to flow?\n"}
           </h2>
           <p
             className={"sidecar-conclusion__copy"}
             data-astro-cid-7mp4itxr={""}
           >
             {
-              "\nJoin builders, DAOs, and contributors already growing together on Flows. Start streaming value to your network in seconds.\n"
+              "\nJoin builders, DAOs, and contributors already flowing together on Flows. Start streaming value to your network in seconds.\n"
             }
           </p>
           <div
